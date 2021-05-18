@@ -12,9 +12,11 @@
      
     // Redirecciono al usuario a la página principal del sitio.
     header("HTTP/1.1 302 Moved Temporarily"); 
-    header("Location: dash1.html"); 
+    header("Location: dash1.php"); 
   }else{
-    echo 'El email o password es incorrecto, <a href="index.html">vuelva a intenarlo</a>.<br/>';
+    header("HTTP/1.1 302 Moved Temporarily"); 
+    header("Location: index.html");     
+    
   }
  
 ?>
