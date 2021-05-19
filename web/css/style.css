@@ -32,6 +32,9 @@ body{
     width: 100%;
     padding: 3em 0;
 }
+.red{
+    color: #c2113b !important;
+}
 h1{
     font-family:'SourceBold';
     font-size: 2.2em;    
@@ -281,6 +284,9 @@ h2 span{
     color: #012869;
     width: 100%;
 }
+.box-title.red{
+    color: #c2113b;
+}
 .box-title h1{
     font-size:2em;
     padding: 0.8em 0;
@@ -304,7 +310,9 @@ h2 span{
     width: 100%;
     margin-top: 1.5em;
 }
-
+.blue-info.red-bg{
+    background: #c2113b;
+}
 .blue-info .info-box{
     border-left: 1px solid #ffffff;
     padding: 1em 0;
@@ -342,6 +350,9 @@ h2 span{
     margin-top: 1.5em;
     padding: 0.4em 0;
 }
+.adicional.red-bg{
+    background: #c2113b;
+}
 .adicional p{
     font-family:'SourceBold';
     color: #ffffff;
@@ -362,17 +373,47 @@ h2 span{
     border-radius: 1em;
 }
 .util-box.blue-bg{
-    background: #012869;;
+    background: #012869;
 }
-.util-box.blue-bg h4{
+.util-box.red-bg{
+    background: #c2113b;
+}
+.util-box.blue-bg h4,
+.util-box.red-bg h4{
     font-family:'SourceBold';
     color: #ffffff;
     text-transform: uppercase;
     margin-left: 20px;
 }
-.util-box.blue-bg h4.border-aux{
+.util-box.blue-bg h4.border-aux
+{
     margin-left: 0;
     border-bottom: 1px solid #a6a6a6;
+}
+.util-box.red-bg h4.border-aux-w{
+    margin-left: 0;
+    border-bottom: 1px solid #ffffff;
+}
+.util-box.red-bg p{
+    color: #ffffff;
+    font-size: 1.2em;
+    width: 90%;
+    margin: 0 auto;
+}
+.respuesta{
+    font-family:'SourceBold';
+    background: #ffffff;
+    box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
+    border-radius: 0.2em;
+    font-size: 5em;
+    max-width: 250px;
+    margin: 0.6em auto;
+    padding: 0.1em 0;
+    text-align: center;
+}
+.respuesta.empty{
+    box-shadow: none;
+    margin: 0 auto 0.5em;    
 }
 .mapa h4{
     font-family:'SourceBold';
@@ -386,6 +427,10 @@ h2 span{
     margin-left: 20px;
     color: #464646;
     font-size: 1.2em;
+}
+.adj-width{
+    width: 70%;
+    margin: 0 auto;
 }
 .preguntas{
     height: 330px;
@@ -411,6 +456,10 @@ h2 span{
     background: #012869;
     color: #ffffff;
 }
+.preguntas.red-bg li a:active,.preguntas.red-bg li a:focus{
+    background: #c2113b;
+    color: #ffffff;
+}
 .btn-secondary,.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
     background: #012869;
     color: #ffffff;
@@ -419,7 +468,10 @@ h2 span{
     padding: 0.35em 1em;
     margin: 1em auto;
 }
-.btn-lateral,.btn-lateral:hover,.btn-lateral:focus,.btn-lateral:active{
+.btn-lateral,
+.btn-lateral:hover,
+.btn-lateral:focus,
+.btn-lateral:active{
     background: #0065ba;
     color: #ffffff;
     border-radius: 10px;
@@ -429,6 +481,12 @@ h2 span{
     max-width: 245px;
     box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
     font-size: 1.2em;
+}
+.btn-lateral.red-bg,
+.red-bg.btn-lateral:hover,
+.red-bg.btn-lateral:focus,
+.red-bg.btn-lateral:active{
+    background: #c2113b;
 }
 .btn-lateral img{
     width: 22px;
@@ -441,7 +499,7 @@ h2 span{
 #map_inner a{
     color: transparent !important;
     position: absolute;
-    left: -100000;
+    left: -100000px;
     z-index: -10;
 }
 @media screen and (max-width:1440px) {
