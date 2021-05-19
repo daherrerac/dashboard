@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
   session_start();
    
   // Controlo si el usuario ya está logueado en el sistema.
@@ -10,7 +10,7 @@
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
   }
-?>  
+?>  --> 
 <!doctype html>
 <html lang="es">
   <head>
@@ -54,15 +54,10 @@
                                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="box-message">
-                                <h3>
-                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                </h3>
-                            </div>
+                            </div>                            
                             <div class="box-buttons">
-                                <a href="#">
-                                    <img src="img/icono-03.svg" alt="">
+                                <a href="#" class="btn-light-blue">
+                                    <img src="img/icono-02.svg" alt="">
                                     Encuesta servidores públicos
                                 </a>
                                 <a href="#">
@@ -113,7 +108,7 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                ENCUESTA GENERAL DE TOLERANCIA SOCIAL E INSTITUCIONAL CONTRA LAS MUJERES
+                            ENCUESTA DE TOLERANCIA SOCIAL E INSTITUCIONAL CONTRA LAS MUJERES A SERVIDORES PÚBLICOS
                             </h1>
                             <div class="linea"></div>
                             <h2>
@@ -122,7 +117,7 @@
                             </h2>
                         </div>
                     </div>
-                </div>
+                </div>                
                 <div class="row">
                     <div class="col-lg-10">
                         <div class="blue-info">
@@ -200,20 +195,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-5">
+                    <div class="col-lg-12">
                         <div class="util-box">
                             <div class="mapa">
-                                <h4>Regiones PDET</h4>
-                                <p>Seleccione en el mapa la región PET que desee consultar</p>
-                                <div id="map"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="util-box">
-                            <div class="mapa">
-                                <h4>Preguntas</h4>
-                                <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
+                                <h4>
+                                    Preguntas
+                                </h4>
+                                <p>
+                                    Seleccione una pregunta para ver los resultados
+                                </p>
                             </div>
                             <div class="preguntas">
                                 <ul>
@@ -229,78 +219,24 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="util-box blue-bg">
-                                    <h4>Hombres</h4>
-                                    <div id="chart"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="util-box blue-bg">
-                                    <h4>Mujeres</h4>
-                                    <div id="chart-2"></div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="util-box blue-bg">
+                            <h4 class="text-center py-2 border-aux">Hombres</h4>
+                            <div id="chart"></div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="util-box">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="mapa">
-                                        <h4>
-                                            SELECCIONE LAS REGIONES PDET QUE DESEE COMPARAR
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            REGIÓN PDET
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                          <li><a class="dropdown-item" href="#">Action</a></li>
-                                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            REGIÓN PDET
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                          <li><a class="dropdown-item" href="#">Action</a></li>
-                                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                    <div class="util-box">
-                        <div id="chartb"></div>
-                    </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="util-box">
-                            <div id="chartc"></div>
+                    <div class="col-lg-6">
+                        <div class="util-box blue-bg">
+                            <h4 class="text-center py-2 border-aux">Mujeres</h4>
+                            <div id="chart-2"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 
     <script>

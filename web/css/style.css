@@ -96,7 +96,7 @@ h2 span{
     background: #012869;
     display: block;
     width: 100%;
-    padding: 0.5em 3em;
+    padding: 0.5em 1.4em;
 }
 .box-select .form-select{
     margin: 1em auto;
@@ -133,6 +133,21 @@ h2 span{
     border-radius: 0.5em;
     max-width: 245px;
     box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
+}
+.box-buttons a.btn-light-blue{
+    background: #0065ba;
+    color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0.5em 0.5em;
+    margin: 1em auto;
+    max-width: 245px;
+    box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
+}
+.box-buttons img{
+    width: 20px;
+    margin-left: 10px;   
+    margin-right: 5px; 
 }
 .red-menu .box-buttons a{
     color: #464646;
@@ -253,7 +268,7 @@ h2 span{
     margin-left: 5em;  
 }  
   /* Clear floats after the columns */
-  .fila:after {
+.fila:after {
     content: "";
     display: table;
     clear: both;
@@ -333,6 +348,10 @@ h2 span{
     font-size: 1.6em;
     margin-left: 0.7em;
 }
+.adicional span{
+    color: #0065ba;
+    margin-right: 0.5em;
+}
 .adicional .box-buttons{
     padding: 0em 0;
 }
@@ -350,6 +369,10 @@ h2 span{
     color: #ffffff;
     text-transform: uppercase;
     margin-left: 20px;
+}
+.util-box.blue-bg h4.border-aux{
+    margin-left: 0;
+    border-bottom: 1px solid #a6a6a6;
 }
 .mapa h4{
     font-family:'SourceBold';
@@ -393,11 +416,33 @@ h2 span{
     color: #ffffff;
     border-radius: 15px;
     width: 90%;
-    padding: 0.5em 1em;
+    padding: 0.35em 1em;
     margin: 1em auto;
+}
+.btn-lateral,.btn-lateral:hover,.btn-lateral:focus,.btn-lateral:active{
+    background: #0065ba;
+    color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0.5em 0.5em;
+    margin: 1em auto;
+    max-width: 245px;
+    box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
+    font-size: 1.2em;
+}
+.btn-lateral img{
+    width: 22px;
+    margin-left: -10px;
+    margin-right: 10px;
 }
 .dropdown-menu{
     width: 90%;
+}
+#map_inner a{
+    color: transparent !important;
+    position: absolute;
+    left: -100000;
+    z-index: -10;
 }
 @media screen and (max-width:1440px) {
     .logo {
