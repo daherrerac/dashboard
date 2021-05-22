@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
   session_start();
    
   // Controlo si el usuario ya está logueado en el sistema.
@@ -10,7 +10,7 @@
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
   }
-?>  
+?>   -->
 <!doctype html>
 <html lang="es">
   <head>
@@ -20,12 +20,135 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="mapdata.js"></script>
-    <script src="countrymap.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script type="text/javascript" src="js/papaparse.min.js"></script>
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">        
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
+    <script src="js/jquery.mapael.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".mapcontainer").mapael({
+                map: {
+                    // Set the name of the map to display
+                    name: "col",
+                    
+                    zoom: {
+                        enabled: true,
+                        maxLevel: 10
+                    }
+                    , defaultPlot: {
+                        attrs: {
+                            fill: "#004a9b"
+                            , opacity: 1
+                        }
+                        , attrsHover: {
+                            opacity: 1
+                        }
+                        , text: {
+                            attrs: {
+                                fill: "#505444"
+                            }
+                            , attrsHover: {
+                                fill: "#000"
+                            }
+                        }
+                    }
+                    , defaultArea: {
+                        attrs: {
+                            fill: "#cccccc"
+                            , stroke: "#efefef"
+                        }
+                        , attrsHover: {
+                            fill: "#cccccc"
+                        }
+                        , text: {
+                            attrs: {
+                                fill: "#505444"
+                            }
+                            , attrsHover: {
+                                fill: "#000"
+                            }
+                        }
+                    }
+                },areas: {                    
+                    "path430": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path440": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path432": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path293": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path8": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path255": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path248": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path144": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path244": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                },
+            });
+        });
+    </script>
 
 
     <title>Dashboard - Page 1</title>
@@ -44,31 +167,25 @@
                             <h2>
                                 Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres
                             </h2>
-        
-                            <div class="box-select">
-                                <div class="dropdown">
-                                    <button class="btn btn-lateral dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                       <img src="img/icono-02.svg" alt=""> Encuesta General
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+
+                            <div class="box-buttons">
+                                <a href="dash1.php" class="activo">
+                                    <img src="img/icono-02.svg" alt="">
+                                    Encuesta general
+                                </a>
+                            </div>                            
                             <div class="box-message">
-                                <h3>
+                                <a href="dash2.php" class="activo">
                                     Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                </h3>
+                                </a>
                             </div>
                             <div class="box-buttons">
-                                <a href="#">
+                                <a href="dash3.html">
                                     <img src="img/icono-03.svg" alt="">
                                     Encuesta servidores públicos
                                 </a>
                                 <a href="#">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">    
+                                    <img src="img/info-blue.png" alt="">    
                                     Ficha técnica
                                 </a>
                             </div>
@@ -78,11 +195,11 @@
                                 Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="#">
+                                <a href="dash4.html">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="#">
+                                <a href="dash5.html">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
@@ -91,7 +208,7 @@
                                     Entorno Institucional LGBTIQ
                                 </a>
                                 <a href="#">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">     
+                                    <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
                             </div>
@@ -99,11 +216,11 @@
                         <div class="gray-menu">
                             <div class="box-buttons">
                                 <a href="#" class="blue-bg">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">
+                                    <img src="img/info-w.png" alt="">
                                     Entorno Institucional Paz
                                 </a>
                                 <a href="#" class="blue-bg">
-                                    <img src="img/chat-svgrepo-com.svg" alt="">
+                                    <img src="img/chat.png" alt="">
                                     Entorno Institucional Mujeres</a>                        
                             </div>
                         </div>
@@ -126,50 +243,50 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-9">
                         <div class="blue-info">
                             <div class="row">
+                                <div class="col-4">
+                                    <div class="info-box">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="punto"></div>
+                                            </div>
+                                            <div class="col-8">
+                                                <p>Lorem ipsum
+                                                    Etiam a ligula non
+                                                 </p>
+                                                 <div class="numero">
+                                                     123
+                                                 </div>
+                                            </div>                                                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="info-box">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="punto"></div>
+                                            </div>
+                                            <div class="col-8">
+                                                <p>Lorem ipsum
+                                                    Etiam a ligula non
+                                                 </p>
+                                                 <div class="numero">
+                                                     123
+                                                 </div>
+                                            </div>                                                                    
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-4">
                                     <div class="info-box primero">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="punto"></div>
                                             </div>
-                                            <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
-                                                 </p>
-                                                 <div class="numero">
-                                                     123
-                                                 </div>
-                                            </div>                                                                    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="info-box">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="punto"></div>
-                                            </div>
-                                            <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
-                                                 </p>
-                                                 <div class="numero">
-                                                     123
-                                                 </div>
-                                            </div>                                                                    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="info-box">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="punto"></div>
-                                            </div>
-                                            <div class="col-8">
+                                            <div class="col-8 last">
                                                 <p>Lorem ipsum
                                                     Etiam a ligula non
                                                  </p>
@@ -183,7 +300,7 @@
                             </div>                                                       
                         </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
@@ -207,7 +324,11 @@
                             <div class="mapa">
                                 <h4>Regiones PDET</h4>
                                 <p>Seleccione en el mapa la región PET que desee consultar</p>
-                                <div id="map"></div>
+                                <div class="mapcontainer">
+                                    <div class="map">
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -220,13 +341,13 @@
                             <div class="preguntas">
                                 <ul>
                                     <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
+                                        <a href="#" id="btn1">De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
                                     </li>
                                     <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
+                                        <a href="#" id="btn2">De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
                                     </li>
                                     <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                        <a href="#" id="trigger-qc">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
                                     </li>
                                 </ul>
                             </div>
@@ -234,14 +355,17 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="util-box blue-bg">
-                                    <h4>Hombres</h4>
-                                    <div id="chart"></div>
+                                    <h4 class="py-2">Hombres</h4>
+                                    <!-- <div id="chart"></div>
+                                    <div id="chartalt" style="display:none"></div> -->
+                                    <canvas id="myChart" width="400" height="280" ></canvas>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="util-box blue-bg">
-                                    <h4>Mujeres</h4>
+                                    <h4 class="py-2">Mujeres</h4>
                                     <div id="chart-2"></div>
+                                    <canvas id="myChart2" width="400" height="280" ></canvas>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +376,7 @@
                         <div class="util-box">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="mapa">
+                                    <div class="mapa mt-2">
                                         <h4>
                                             SELECCIONE LAS REGIONES PDET QUE DESEE COMPARAR
                                         </h4>
@@ -264,9 +388,8 @@
                                             REGIÓN PDET
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                          <li><a class="dropdown-item" href="#">Action</a></li>
-                                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <li><a class="dropdown-item" href="#" id="reg1">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
+                                            <li><a class="dropdown-item" href="#" >SUR DE BOLIVAR</a></li>                                          
                                         </ul>
                                     </div>
                                 </div>
@@ -276,9 +399,8 @@
                                             REGIÓN PDET
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                          <li><a class="dropdown-item" href="#">Action</a></li>
-                                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <li><a class="dropdown-item" href="#">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
+                                            <li><a class="dropdown-item" href="#" id="reg2">SUR DE BOLIVAR</a></li> 
                                         </ul>
                                     </div>
                                 </div>
@@ -290,6 +412,7 @@
                     <div class="col-lg-12">
                     <div class="util-box">
                         <div id="chartb"></div>
+                        <div id="chartbalt" style="display: none;"></div>
                     </div>
                     </div>
                 </div>
@@ -297,6 +420,7 @@
                     <div class="col-lg-12">
                         <div class="util-box">
                             <div id="chartc"></div>
+                            <div id="chartcalt" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -304,133 +428,317 @@
         </div>
         
     </div>
-
+    
+    
     <script>
-        var options = {
-            grid:{
-                show:false
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+    var data = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años', '40 a 44 años'],
+            datasets: [{                
+                data: [37.43, 30.78, 85.95, 95.97, 29.86, 50.96],
+                backgroundColor: [
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF'
+                ],
+                borderColor: [
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF'
+                ],
+                color:'#ffffff',
+                borderWidth: 0
+            }]
+        },
+        options: {
+            legend: {
+                display: false,
+                color:'#ffffff'
             },
-            series: [{
-                data: [37.46, 37.46, 37.46, 37.46, 37.46]
-            }],
-                chart: {
-                type: 'bar',
-                height: 280
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 4,
-                    horizontal: true,
-                }
-            },
-            dataLabels: {
-                enabled: true
-            },
-            yaxis:{
-                labels:{
-                    show:true, 
-                    style: {
-                        colors: ['#ffffff'],
-                        fontSize: '12px',                                        
-                        cssClass: 'apexcharts-xaxis-label',
-                    },
-                }
-            },        
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-                labels: {
-                    show:false,                    
-                }, 
-                axisBorder: {
-                    show: false,                    
-                }, 
-                axisTicks:{
-                    show: false,                    
-                },
-                forceNiceScale: true,              
-            },
-
-            tickAmount: 10
-            
-        };
-
-        var chart    = new ApexCharts(document.querySelector("#chart"), options);
-        var chartsub = new ApexCharts(document.querySelector("#chart-2"), options);
-        chart.render();
-        chartsub.render();
-
-        var options2 = {
-            series: [
-                {
-                    name: 'Región 1',
-                    data: [44, 55, 57, 56, 61]
-                }, 
-                {
-                    name: 'Región 2',
-                    data: [76, 85, 90, 98, 87]
-                }, 
-            ],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '25%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top', // top, center, bottom
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val + "%";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#304758']
-                }
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-            },
-            yaxis: {
-                
-            },
-            fill: {
-                opacity: 0.8
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                    return val + " %"
+            borderRadius: 10,
+            indexAxis: 'y',
+            responsive:true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"',
+                    color:'#ffffff',
+                    padding: {
+                        top: 10,
+                        bottom: 10,
+                        left:50,
+                        right:50
                     }
                 }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        min: 0,
+                        max: 100,
+                        stepSize: 10
+                    },
+                    grid: {
+                        display: false,
+                        
+                    },
+                    
+                },
+                y:{
+                    grid: {
+                        display: false,                        
+                    },
+                }
+                
             }
-        };
+        }
+    });
+    var datab = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años', '40 a 44 años'],
+            datasets: [{                
+                data: [90.43, 30.78, 85.95, 5.97, 29.86, 50.96],
+                backgroundColor: [
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF'
+                ],
+                borderColor: [
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF',
+                    '#14DFFF'
+                ],
+                color:'#ffffff',
+                borderWidth: 0
+            }]
+        },
+        options: {
+            legend: {
+                display: false,
+                color:'#ffffff'
+            },
+            indexAxis: 'y',
+            borderRadius: 10,
+            responsive:true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"',
+                    color:'#ffffff',
+                    padding: {
+                        top: 10,
+                        bottom: 10,
+                        left:50,
+                        right:50
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        min: 0,
+                        max: 100,
+                        stepSize: 10
+                    },
+                    grid: {
+                        display: false,
+                        
+                    },
+                    
+                },
+                y:{
+                    grid: {
+                        display: false,                        
+                    },
+                }
+                
+            }
+        }
+    });
 
-        var chartb = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc = new ApexCharts(document.querySelector("#chartc"), options2);
-        chartb.render();
-        chartc.render();
-    </script>
+    $("#btn1").on("click", function() {
+        event.preventDefault();
+        data.destroy();
+        var data1 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años', '40 a 44 años'],
+                datasets: [{                
+                    data: [7.43, 3.78, 85.95, 95.97, 29.86, 5.96],
+                    backgroundColor: [
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF'
+                    ],
+                    borderColor: [
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF'
+                    ],
+                    color:'#ffffff',
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                    color:'#ffffff'
+                },
+                indexAxis: 'y',
+                borderRadius: 10,
+                responsive:true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"',
+                        color:'#ffffff',
+                        padding: {
+                            top: 10,
+                            bottom: 10,
+                            left:50,
+                            right:50
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            min: 0,
+                            max: 100,
+                            stepSize: 10
+                        },
+                        grid: {
+                            display: false,
+                            
+                        },
+                        
+                    },
+                    y:{
+                        grid: {
+                            display: false,                        
+                        },
+                    }
+                    
+                }
+            }
+        });
+
+    });
+    $("#btn2").on("click", function() {
+        event.preventDefault();
+        datab.destroy();
+        var data2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años', '40 a 44 años'],
+                datasets: [{                
+                    data: [70.43, 3.78, 85.95, 50.97, 29.86, 50.96],
+                    backgroundColor: [
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF'
+                    ],
+                    borderColor: [
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF',
+                        '#14DFFF'
+                    ],
+                    color:'#ffffff',
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                    color:'#ffffff'
+                },
+                indexAxis: 'y',
+                borderRadius: 10,
+                responsive:true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"',
+                        color:'#ffffff',
+                        padding: {
+                            top: 10,
+                            bottom: 10,
+                            left:50,
+                            right:50
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            min: 0,
+                            max: 100,
+                            stepSize: 10
+                        },
+                        grid: {
+                            display: false,
+                            
+                        },
+                        
+                    },
+                    y:{
+                        grid: {
+                            display: false,                        
+                        },
+                    }
+                    
+                }
+            }
+        });
+    });
+
+   
     
+    
+</script>
     
     
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/mapa/col.js"></script>
+    <script src="js/main.js"></script>
     
     
 
