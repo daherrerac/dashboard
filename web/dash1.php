@@ -24,6 +24,8 @@
     <script src="mapdata.js"></script>
     <script src="countrymap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script type="text/javascript" src="js/papaparse.min.js"></script>
+    <script src="js/main.js"></script>
 
 
     <title>Dashboard - Page 1</title>
