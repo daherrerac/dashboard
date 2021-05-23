@@ -104,23 +104,23 @@
                             </h2>
 
                             <div class="box-buttons">
-                                <a href="dash3.html">
+                                <a href="dash3.html" class="hblue">
                                     <img src="img/icono-03.svg" alt="">
                                     Encuesta general
                                 </a>
                             </div>                            
-                            <div class="box-message">
+                            <div class="box-message activo">
                                 <a href="#">
                                     Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                 </a>
                             </div>
                             <div class="box-buttons">
-                                <a href="dash3.html">
+                                <a href="dash3.html" class="hblue">
                                     <img src="img/icono-03.svg" alt="">
                                     Encuesta servidores públicos
                                 </a>
-                                <a href="#">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">    
+                                <a href="#" class="hblue">
+                                    <img src="img/info-blue.png" alt="" >  
                                     Ficha técnica
                                 </a>
                             </div>
@@ -130,32 +130,32 @@
                                 Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html">
+                                <a href="dash4.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html">
+                                <a href="dash5.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#">
+                                <a href="#" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTIQ
                                 </a>
-                                <a href="#">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">     
+                                <a href="#" class="hred">
+                                    <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
                             </div>
                         </div>
                         <div class="gray-menu">
                             <div class="box-buttons">
-                                <a href="#" class="blue-bg">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">
+                                <a href="#" class="blue-bg hblue">
+                                    <img src="img/info-w.png" alt="">
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="#" class="blue-bg">
-                                    <img src="img/chat-svgrepo-com.svg" alt="">
+                                <a href="#" class="blue-bg hblue">
+                                    <img src="img/chat.png" alt="">
                                     Entorno Institucional Mujeres</a>                        
                             </div>
                         </div>
@@ -167,18 +167,18 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                ENCUESTA GENERAL DE TOLERANCIA SOCIAL E INSTITUCIONAL CONTRA LAS MUJERES
+                                Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional contra las
-                                MujeresTolerancia Social e Institucional contra las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
+                            En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional contra
+                            las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
                             </h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-9">
                         <div class="blue-info">
                             <div class="row">
                                 <div class="col-4">
@@ -221,7 +221,7 @@
                                             <div class="col-4">
                                                 <div class="punto"></div>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-8 last">
                                                 <p>Lorem ipsum
                                                     Etiam a ligula non
                                                  </p>
@@ -235,17 +235,17 @@
                             </div>                                                       
                         </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
                                 <a href="#">
-                                    <img src="img/download-svgrepo-com.svg" alt="">
+                                    <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
                                 </a>
                                 <a href="#">
-                                    <img src="img/play-svgrepo-com.svg" alt="">
+                                    <img src="img/play.png" alt="">
                                     <span>|</span>
                                     VER VIDEO
                                 </a>                        

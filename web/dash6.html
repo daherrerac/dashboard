@@ -149,7 +149,7 @@
         });
     </script>
 
-    <title>Dashboard - Page 4</title>
+    <title>Dashboard - Page 5</title>
   </head>
   <body style="overflow-y: auto;background: #fbfbfb;">
       
@@ -193,16 +193,16 @@
                                 Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html" class="activo-red">
-                                    <img src="img/icono-05-w.png" alt="">    
+                                <a href="dash4.html" class="hred">
+                                    <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html" class="hred">
+                                <a href="dash5.html" class="hred" >
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#" class="hred">
-                                    <img src="img/icono-05.svg" alt="">    
+                                <a href="dash6.html"  class="activo-red">
+                                    <img src="img/icono-05-w.png" alt="">    
                                     Entorno Institucional LGBTIQ
                                 </a>
                                 <a href="#" class="hred">
@@ -368,8 +368,8 @@
                             <div class="col-lg-5">
                                 <div class="util-box red-bg pb-4">
                                     <h4 class="text-center py-3 border-aux-w">Anorí</h4>
-                                    <p class="text-center">A la pregunta <span>¿Se plantea implementación de política?</span> la respuesta es: </p>
-                                    <div class="respuesta red py-4">
+                                    <p class="text-center pb-4">¿Se  mencionan las personas de los Sectores Sociales LGBTI como participantes en la formulación del plan? 	 </p>
+                                    <div class="respuesta red p-4">
                                         SI
                                     </div>
                                 </div>
@@ -396,7 +396,7 @@
                                                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                                                         </ul>
                                                     </div>
-                                                    <div class="respuesta red empty py-4">
+                                                    <div class="respuesta red empty p-4"> 
                                                         SI
                                                     </div>
                                                 </div>
@@ -414,7 +414,9 @@
                                                         </ul>
                                                     </div>
                                                     <div class="respuesta red empty py-4">
+                                                        
                                                         SI
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -431,124 +433,7 @@
         </div>
     </div>
 
-    <script>
-        var options = {
-            grid:{
-                show:false
-            },
-            series: [{
-                data: [37.46, 37.46, 37.46, 37.46, 37.46]
-            }],
-                chart: {
-                type: 'bar',
-                height: 280
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 4,
-                    horizontal: true,
-                }
-            },
-            dataLabels: {
-                enabled: true
-            },
-            yaxis:{
-                labels:{
-                    show:true, 
-                    style: {
-                        colors: ['#ffffff'],
-                        fontSize: '12px',                                        
-                        cssClass: 'apexcharts-xaxis-label',
-                    },
-                }
-            },        
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-                labels: {
-                    show:false,                    
-                }, 
-                axisBorder: {
-                    show: false,                    
-                }, 
-                axisTicks:{
-                    show: false,                    
-                },
-                forceNiceScale: true,              
-            },
-
-            tickAmount: 10
-            
-        };
-
-        var chart    = new ApexCharts(document.querySelector("#chart"), options);
-        var chartsub = new ApexCharts(document.querySelector("#chart-2"), options);
-        chart.render();
-        chartsub.render();
-
-        var options2 = {
-            series: [
-                {
-                    name: 'Región 1',
-                    data: [44, 55, 57, 56, 61]
-                }, 
-                {
-                    name: 'Región 2',
-                    data: [76, 85, 90, 98, 87]
-                }, 
-            ],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '25%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top', // top, center, bottom
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val + "%";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#304758']
-                }
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-            },
-            yaxis: {
-                
-            },
-            fill: {
-                opacity: 0.8
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                    return val + " %"
-                    }
-                }
-            }
-        };
-
-        var chartb = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc = new ApexCharts(document.querySelector("#chartc"), options2);
-        chartb.render();
-        chartc.render();
-    </script>
+   
     
     
     

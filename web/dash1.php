@@ -180,12 +180,12 @@
                                 </a>
                             </div>
                             <div class="box-buttons">
-                                <a href="dash3.html">
-                                    <img src="img/icono-03.svg" alt="">
+                                <a href="dash3.html" class="hblue">
+                                    <img src="img/icono-03.svg" alt="" >
                                     Encuesta servidores públicos
                                 </a>
-                                <a href="#">
-                                    <img src="img/info-blue.png" alt="">    
+                                <a href="#" class="hblue">
+                                    <img src="img/info-blue.png" alt="" >    
                                     Ficha técnica
                                 </a>
                             </div>
@@ -195,19 +195,19 @@
                                 Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html">
+                                <a href="dash4.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html">
+                                <a href="dash5.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#">
+                                <a href="#" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTIQ
                                 </a>
-                                <a href="#">
+                                <a href="#" class="hred">
                                     <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
@@ -215,11 +215,11 @@
                         </div>
                         <div class="gray-menu">
                             <div class="box-buttons">
-                                <a href="#" class="blue-bg">
+                                <a href="#" class="blue-bg hblue">
                                     <img src="img/info-w.png" alt="">
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="#" class="blue-bg">
+                                <a href="#" class="blue-bg hblue">
                                     <img src="img/chat.png" alt="">
                                     Entorno Institucional Mujeres</a>                        
                             </div>
@@ -281,7 +281,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="info-box primero">
+                                    <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="punto"></div>
@@ -305,12 +305,12 @@
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
                                 <a href="#">
-                                    <img src="img/download-svgrepo-com.svg" alt="">
+                                    <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
                                 </a>
                                 <a href="#">
-                                    <img src="img/play-svgrepo-com.svg" alt="">
+                                    <img src="img/play.png" alt="">
                                     <span>|</span>
                                     VER VIDEO
                                 </a>                        
@@ -348,6 +348,18 @@
                                     </li>
                                     <li>
                                         <a href="#" id="trigger-qc">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
                                     </li>
                                 </ul>
                             </div>
@@ -411,16 +423,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="util-box">
-                        <div id="chartb"></div>
-                        <div id="chartbalt" style="display: none;"></div>
+                        
                     </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
-                            <div id="chartc"></div>
-                            <div id="chartcalt" style="display: none;"></div>
+                            
                         </div>
                     </div>
                 </div>

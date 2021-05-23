@@ -112,7 +112,7 @@ h2 span{
     background: rgb(0,31,82);
     background: linear-gradient(90deg, rgba(0,31,82,1) 0%, rgba(1,54,122,1) 35%); 
 }
-.box-message:hover{
+.box-message:hover,.box-message.activo{
     border-left: 4px solid #14DFFF;
 }
 .box-message a{
@@ -147,6 +147,17 @@ h2 span{
 .box-buttons a.activo{
     background: #0065BA;
     color: #ffffff;
+}
+.box-buttons a.hblue:hover{
+    background: #0065BA;
+    color: #ffffff;
+}
+.box-buttons a.hred:hover{
+    background: #EF184B;
+    color: #ffffff;
+}
+.box-buttons a.hblue:hover img,.box-buttons a.hred:hover img{
+    filter:brightness(0) invert(1);    
 }
 .box-buttons a.activo-red{
     background: #EF184B;
@@ -313,6 +324,10 @@ h2 span{
 	padding: 0.8em 0;
 	margin: 0 auto;
 	width: 59%;
+    text-transform: uppercase;
+}
+.box-title.red h2{
+    color: #474747;
 }
 .box-title .linea{
     height: 1px;
@@ -382,7 +397,7 @@ h2 span{
     font-family:'SourceBold';
     color: #ffffff;
     font-size: 1.6em;
-    margin-left: 0.7em;
+    text-align: center;
 }
 .adicional span{
     color: #0065ba;
@@ -391,11 +406,15 @@ h2 span{
 .adicional .box-buttons{
     padding: 0em 0;
 }
+.adicional .box-buttons a {	
+	color: #474747;
+}
 .util-box{
     background: #ffffff;
     box-shadow: 1px 1px 10px #a6a6a6b6;
     margin-top: 2em;
     border-radius: 1em;
+    padding-bottom: 0.8em;
 }
 .util-box.blue-bg{
     background: #022869;
@@ -432,7 +451,7 @@ h2 span{
     background: #ffffff;
     box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
     border-radius: 0.2em;
-    font-size: 4.5em;
+    font-size: 4.2em;
     max-width: 250px;
     margin: 0.6em auto;
     padding: 0.15em 0;
@@ -442,6 +461,10 @@ h2 span{
 .respuesta.empty{
     box-shadow: none;
     margin: 0 auto 0.5em;    
+}
+.respuesta.small-text{
+    font-size: 2em;
+    padding: 0.8em;
 }
 .respuesta-aux{
     font-family:'SourceBold';
@@ -475,6 +498,9 @@ h2 span{
 .preguntas{
     height: 240px;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #474747 #DADADA;
+    padding: 0 0 10px 0;
 }
 .preguntas ul{
     margin-left: 20px;
@@ -492,7 +518,9 @@ h2 span{
     margin: 0.5em 0.2em;
     border-radius: 0.5em;
 }
-.preguntas li a:active,.preguntas li a:focus{
+.preguntas li a:active,
+.preguntas li a:focus,
+.preguntas li a:hover{
     background: #022869;
     color: #ffffff;
 }
@@ -500,6 +528,29 @@ h2 span{
     background: #C2113B;
     color: #ffffff;
 }
+.preguntas.red-bg li a:active,
+.preguntas.red-bg li a:focus,
+.preguntas.red-bg li a:hover{
+    background: #C2113B;
+    color: #ffffff;
+}
+
+  
+  /* Works on Chrome, Edge, and Safari */
+.preguntas::-webkit-scrollbar {
+    width: 15px;
+}
+  
+.preguntas::-webkit-scrollbar-track {
+    background: #DADADA;
+}
+  
+.preguntas::-webkit-scrollbar-thumb {
+    background-color: #474747;
+    border-radius: 20px;
+    border: 3px solid #DADADA;
+}
+
 .btn-secondary,.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active{
     background: #022869;
     color: #ffffff;
@@ -534,27 +585,50 @@ h2 span{
     margin-right: 10px;
 }
 .dropdown-menu{
-    width: 97%;
+    width: 90%;
 }
-#map_inner a{
-    color: transparent !important;
-    position: absolute;
-    left: -100000px;
-    z-index: -10;
+.dropdown-toggle::after {
+	display: inline-block;
+	margin-left: 6.255em;
 }
 .map{
-    max-height: 800px;
+    max-height: 560px;
     position: relative;
 }
 .map svg{
     display: block;
     margin: 0 auto;
-    max-height: 600px;
+    max-height: 560px;
     width: 70%;
 }
 .mapcontainer{
     width: 100%;
-    max-height: 800px;
+    max-height: 700px;
+    padding-top: 2em;
+}
+.red .zoomButton{
+    color:#C2113B;
+}
+.zoomButton{
+    font-family:'SourceBlack';
+    position: absolute;
+    left: 25px;
+    font-size: 1.5em;
+    box-shadow: 1px 1px 10px #a6a6a6b6;
+    color: #022869;
+    padding: 5px 10px;
+    width: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+.zoomButton.zoomReset{
+    top: 0;
+}
+.zoomButton.zoomIn{
+    top:45px;
+}
+.zoomButton.zoomOut{
+    top:90px;
 }
 @media screen and (max-width:1440px) {
     .logo {
