@@ -20,13 +20,136 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="mapdata.js"></script>
-    <script src="countrymap.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="css/style.css">    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
+    <script src="js/jquery.mapael.min.js"></script>
 
+    <script>
+        $(function () {
+            $(".mapcontainer").mapael({
+                map: {
+                    // Set the name of the map to display
+                    name: "col",
+                    
+                    zoom: {
+                        enabled: true,
+                        maxLevel: 10
+                    }
+                    , defaultPlot: {
+                        attrs: {
+                            fill: "#004a9b"
+                            , opacity: 1
+                        }
+                        , attrsHover: {
+                            opacity: 1
+                        }
+                        , text: {
+                            attrs: {
+                                fill: "#505444"
+                            }
+                            , attrsHover: {
+                                fill: "#000"
+                            }
+                        }
+                    }
+                    , defaultArea: {
+                        attrs: {
+                            fill: "#cccccc"
+                            , stroke: "#efefef"
+                        }
+                        , attrsHover: {
+                            fill: "#cccccc"
+                        }
+                        , text: {
+                            attrs: {
+                                fill: "#505444"
+                            }
+                            , attrsHover: {
+                                fill: "#000"
+                            }
+                        }
+                    }
+                },areas: {                    
+                    "path430": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path440": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path432": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path293": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path8": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path255": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path248": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path144": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                    "path244": {
+                        attrs: {
+                            fill: "#767676"
+                        }
+                        , attrsHover: {
+                            fill: "#022869"
+                        }
+                    },
+                },
+            });
+        });
+    </script>
 
-    <title>Dashboard - Page 1</title>
+    <title>Dashboard - Page 5</title>
   </head>
   <body style="overflow-y: auto;background: #fbfbfb;">
       
@@ -42,24 +165,25 @@
                             <h2>
                                 Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres
                             </h2>
-        
-                            <div class="box-select">
-                                <div class="dropdown">
-                                    <button class="btn btn-lateral dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                       <img src="img/icono-02.svg" alt=""> Encuesta General
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" href="dash1.php">Encuesta General</a></li>                                        
-                                    </ul>
-                                </div>
-                            </div>                            
+
                             <div class="box-buttons">
-                                <a href="#" class="btn-light-blue">
-                                    <img src="img/icono-02.svg" alt="">
+                                <a href="dash1.php" class="hblue">
+                                    <img src="img/icono-03.svg" alt="">
+                                    Encuesta general
+                                </a>
+                            </div>                            
+                            <div class="box-message">
+                                <a href="dash2.php" >
+                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                </a>
+                            </div>
+                            <div class="box-buttons">
+                                <a href="dash3.html" class="hblue">
+                                    <img src="img/icono-03.svg" alt="" >
                                     Encuesta servidores públicos
                                 </a>
-                                <a href="#">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">    
+                                <a href="#" class="hblue">
+                                    <img src="img/info-blue.png" alt="" >    
                                     Ficha técnica
                                 </a>
                             </div>
@@ -69,32 +193,32 @@
                                 Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html">
+                                <a href="dash4.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html">
-                                    <img src="img/icono-05.svg" alt="">
+                                <a href="dash5.html" class="activo-red" >
+                                    <img src="img/icono-05-w.png" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#">
+                                <a href="#" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTIQ
                                 </a>
-                                <a href="#">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">     
+                                <a href="#" class="hred">
+                                    <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
                             </div>
                         </div>
                         <div class="gray-menu">
                             <div class="box-buttons">
-                                <a href="#" class="blue-bg">
-                                    <img src="img/information-button-svgrepo-com.svg" alt="">
+                                <a href="#" class="blue-bg hblue">
+                                    <img src="img/info-w.png" alt="">
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="#" class="blue-bg">
-                                    <img src="img/chat-svgrepo-com.svg" alt="">
+                                <a href="#" class="blue-bg hblue">
+                                    <img src="img/chat.png" alt="">
                                     Entorno Institucional Mujeres</a>                        
                             </div>
                         </div>
@@ -106,38 +230,21 @@
                     <div class="col-lg-12">
                         <div class="box-title red">
                             <h1>
-                                ESTUDIO DE ENTORNO INSTITUCIONAL HABILITANTE PARA EL EMPODERAMIENTO DE GÉNERO EN COLOMBIA
+                                Estudio de entorno institucional habilitante para el empoderamiento de género en Colombia 
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                                En el segundo semestre de 2020, USAID/Colombia realizó el estudio Retos del Entorno Institucional para el Empoderamiento de
-                                Género en Colombia en 65 municipios PDET y tres ciudades capitales: Cali, Quibdó y Cartagena.
+                                En el segundo semestre de 2020, USAID/Colombia realizó el estudio Retos del Entorno Institucional 
+                                para el Empoderamiento de Género en Colombia en 65 municipios PDET y tres ciudades capitales: Cali, Quibdó y Cartagena.
                             </h2>
                         </div>
                     </div>
                 </div>                
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-9">
                         <div class="blue-info red-bg">
                             <div class="row">
                                 <div class="col-4">
-                                    <div class="info-box primero">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="punto"></div>
-                                            </div>
-                                            <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
-                                                 </p>
-                                                 <div class="numero">
-                                                     123
-                                                 </div>
-                                            </div>                                                                    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -161,6 +268,23 @@
                                                 <div class="punto"></div>
                                             </div>
                                             <div class="col-8">
+                                                <p>Lorem ipsum
+                                                    Etiam a ligula non
+                                                 </p>
+                                                 <div class="numero">
+                                                     123
+                                                 </div>
+                                            </div>                                                                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="info-box">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="punto"></div>
+                                            </div>
+                                            <div class="col-8 last">
                                                 <p>Lorem ipsum
                                                     Etiam a ligula non
                                                  </p>
@@ -174,17 +298,17 @@
                             </div>                                                       
                         </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                         <div class="adicional red-bg">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="#">
-                                    <img src="img/download-svgrepo-com.svg" alt="">
+                                <a href="#" class="hred">
+                                    <img src="img/down-red.png" alt="">
                                     <span class="red">|</span>
                                     VER INFOGRAFÍA
                                 </a>
-                                <a href="#">
-                                    <img src="img/play-svgrepo-com.svg" alt="">
+                                <a href="#" class="hred">
+                                    <img src="img/play-red.png" alt="">
                                     <span class="red">|</span>
                                     VER VIDEO
                                 </a>                        
@@ -198,7 +322,11 @@
                             <div class="mapa">
                                 <h4 class="red">Municipios donde se llevó a cabo el estudio</h4>
                                 <p>Seleccione en el mapa el municipio que sesee consultar</p>
-                                <div id="map"></div>
+                                <div class="mapcontainer">
+                                    <div class="map red">
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -216,14 +344,23 @@
                             <div class="preguntas red-bg">
                                 <ul>
                                     <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
+                                        <a href="#">¿Hay presencia de políticas públicas para las victimas del conflicto armado?</a>
                                     </li>
                                     <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
+                                        <a href="#">¿Se planea formulación de política públicas en el tema?</a>
                                     </li>
                                     <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                        <a href="#">¿Se plantea implementación de política?</a>
                                     </li>
+                                    <li>
+                                        <a href="#">¿Se planean ambas? </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">¿Cuentan con mecanismos de victimas o paz?</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">¿Se busca implementar?</a>
+                                    </li>                                    
                                 </ul>
                             </div>                            
                         </div>
@@ -231,9 +368,9 @@
                             <div class="col-lg-5">
                                 <div class="util-box red-bg pb-4">
                                     <h4 class="text-center py-3 border-aux-w">Anorí</h4>
-                                    <p class="text-center">Nombre del mecanismo de género </p>
-                                    <div class="respuesta red py-5">
-                                        SI
+                                    <p class="text-center pb-4">A la pregunta <span>¿Se plantea implementación de política?</span> la respuesta es: </p>
+                                    <div class="respuesta red p-4">
+                                        NO APLICA
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +396,7 @@
                                                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                                                         </ul>
                                                     </div>
-                                                    <div class="respuesta red empty">
+                                                    <div class="respuesta red empty p-4"> 
                                                         NO APLICA
                                                     </div>
                                                 </div>
@@ -276,8 +413,10 @@
                                                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                                                         </ul>
                                                     </div>
-                                                    <div class="respuesta-aux red empty">
-                                                        <small>Secretaría de las mujeres, Equidad de Género e Igualdad de Derecho</small>
+                                                    <div class="respuesta red empty py-4 small-text">
+                                                        
+                                                        Secretaría de las Mujeres, Equidad de Género e Igualdad de Derecho
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -294,124 +433,7 @@
         </div>
     </div>
 
-    <script>
-        var options = {
-            grid:{
-                show:false
-            },
-            series: [{
-                data: [37.46, 37.46, 37.46, 37.46, 37.46]
-            }],
-                chart: {
-                type: 'bar',
-                height: 280
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 4,
-                    horizontal: true,
-                }
-            },
-            dataLabels: {
-                enabled: true
-            },
-            yaxis:{
-                labels:{
-                    show:true, 
-                    style: {
-                        colors: ['#ffffff'],
-                        fontSize: '12px',                                        
-                        cssClass: 'apexcharts-xaxis-label',
-                    },
-                }
-            },        
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-                labels: {
-                    show:false,                    
-                }, 
-                axisBorder: {
-                    show: false,                    
-                }, 
-                axisTicks:{
-                    show: false,                    
-                },
-                forceNiceScale: true,              
-            },
-
-            tickAmount: 10
-            
-        };
-
-        var chart    = new ApexCharts(document.querySelector("#chart"), options);
-        var chartsub = new ApexCharts(document.querySelector("#chart-2"), options);
-        chart.render();
-        chartsub.render();
-
-        var options2 = {
-            series: [
-                {
-                    name: 'Región 1',
-                    data: [44, 55, 57, 56, 61]
-                }, 
-                {
-                    name: 'Región 2',
-                    data: [76, 85, 90, 98, 87]
-                }, 
-            ],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '25%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top', // top, center, bottom
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val + "%";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#304758']
-                }
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-            },
-            yaxis: {
-                
-            },
-            fill: {
-                opacity: 0.8
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                    return val + " %"
-                    }
-                }
-            }
-        };
-
-        var chartb = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc = new ApexCharts(document.querySelector("#chartc"), options2);
-        chartb.render();
-        chartc.render();
-    </script>
+   
     
     
     
@@ -420,6 +442,8 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/mapa/col.js"></script>
+    <script src="js/main.js"></script>
     
     
 
