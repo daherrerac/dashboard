@@ -27,66 +27,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
+    <script src="js/mapahandler.js"></script>    
 
-    <script>
-        $(function () {
-            $(".mapcontainer").mapael({
-                map: {
-                    // Set the name of the map to display
-                    name: "col",
-                    
-                    zoom: {
-                        enabled: true,
-                        maxLevel: 10
-                    }
-                    , defaultPlot: {
-                        attrs: {
-                            fill: "#004a9b"
-                            , opacity: 1
-                        }
-                        , attrsHover: {
-                            opacity: 1
-                        }
-                        , text: {
-                            attrs: {
-                                fill: "#505444"
-                            }
-                            , attrsHover: {
-                                fill: "#000"
-                            }
-                        }
-                    }
-                    , defaultArea: {
-                        attrs: {
-                            fill: "#cccccc"
-                            , stroke: "#efefef"
-                        }
-                        , attrsHover: {
-                            fill: "#002e6c"
-                        }
-                        , text: {
-                            attrs: {
-                                fill: "#505444"
-                            }
-                            , attrsHover: {
-                                fill: "#000"
-                            }
-                        }
-                    }
-                },areas: {                    
-                    "path107": {
-                        attrs: {
-                            fill: "#b2b2b2"
-                        }
-                        , attrsHover: {
-                            fill: "#f6f6f6"
-                        }
-                    }
-                },
-            });
-        });
-    </script>
-    <title>Dashboard - Page 1</title>
+    
+    <title>Dashboard - Page 2</title>
+    <style>
+        .mapael .mapTooltip {
+            font-family:'SourceBold';
+            position: absolute;
+            background-color: #ffffff;            
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            max-width: 200px;
+            display: none;
+            color: #022869;
+            border: 1px solid #a6a6a6;
+            text-align: center;
+        }
+    </style>
   </head>
   <body style="overflow-y: auto;background: #fbfbfb;">
       
@@ -654,9 +613,9 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
      
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/mapa/col.js"></script>
     
     
 

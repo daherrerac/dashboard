@@ -630,6 +630,18 @@ h2 span{
 .zoomButton.zoomOut{
     top:90px;
 }
+.mapael .mapTooltip {
+    font-family:'SourceBold';
+    position: absolute;
+    background-color: #ffffff;            
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;    
+    border: 1px solid #a6a6a6;
+    text-align: center;
+}
 @media screen and (max-width:1440px) {
     .logo {
         padding-top: 20px;

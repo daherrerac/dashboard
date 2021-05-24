@@ -26,132 +26,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
-
-    <script>
-        $(function () {
-            $(".mapcontainer").mapael({
-                map: {
-                    // Set the name of the map to display
-                    name: "col",
-                    
-                    zoom: {
-                        enabled: true,
-                        maxLevel: 10
-                    }
-                    , defaultPlot: {
-                        attrs: {
-                            fill: "#004a9b"
-                            , opacity: 1
-                        }
-                        , attrsHover: {
-                            opacity: 1
-                        }
-                        , text: {
-                            attrs: {
-                                fill: "#505444"
-                            }
-                            , attrsHover: {
-                                fill: "#000"
-                            }
-                        }
-                    }
-                    , defaultArea: {
-                        attrs: {
-                            fill: "#cccccc"
-                            , stroke: "#efefef"
-                        }
-                        , attrsHover: {
-                            fill: "#cccccc"
-                        }
-                        , text: {
-                            attrs: {
-                                fill: "#505444"
-                            }
-                            , attrsHover: {
-                                fill: "#000"
-                            }
-                        }
-                    }
-                },areas: {                    
-                    "path430": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path440": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path432": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path293": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path8": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path255": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path248": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path144": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path244": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                },
-            });
-        });
-    </script>
+    <script src="js/mapahandler.js"></script>    
+    
 
 
     <title>Dashboard - Page 1</title>
+    <style>
+        .mapael .mapTooltip {
+            color: #022869;
+        }
+    </style>
+
   </head>
   <body style="overflow-y: auto;background: #fbfbfb;">
       
@@ -747,7 +632,7 @@
     
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/mapa/col.js"></script>
+    <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>
     
     
