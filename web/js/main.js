@@ -198,16 +198,22 @@ class Dashboard {
   menGraph;
   womenGraph;
   selectedQuestion;
+  
 
   constructor(){
     this.dr = new DashboardDataReader();
     this.survey = Object.keys(DashboardDataReader.urls)[0];
+    this.mapClickCallback = (region) => {
+      this.region = region;
+      this.updateGraph(this.menGraph, this.selectedQuestion, {Region:this.region, Sexo:"HOMBRE"});
+      this.updateGraph(this.womenGraph, this.selectedQuestion, {Region:this.region, Sexo:"MUJER"});
+    }
     this.init();
   }
 
   async init(){
     // TODO iniciar un loader o algo aca
-
+  
     await this.dr.parseFiles();
 
     // esconder loader
@@ -215,11 +221,15 @@ class Dashboard {
     // asignar parametros por defecto
     this.region = this.dr.getFilters(this.survey, "Region")[0]; // seleccionar la primera region de la lista
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
+    
     // inicializar graficas
     this.initGraphs();
     
     // cargar informacion de preguntas de preguntas por defecto
     this.loadQuestions();
+
+    // incializar mapa
+    initMapHandler(this.mapClickCallback);
   }
 
   initGraphs(){
@@ -269,7 +279,11 @@ class Dashboard {
     this.womenGraph.update();
   }
 
-  updateGraph(graph, newData, title){
+  updateGraph(graph, title, filter){
+    const labelColumn = "Grupo de edad";
+    // cargar datos del grafico
+    let newData = this.dr.getColumnData(this.survey, title, labelColumn, filter);
+    //console.log("graphData1", graphData1);
     this.selectedQuestion = title;
     graph.data.labels = newData.labels;
     graph.data.datasets[0].data = newData.data;
@@ -293,24 +307,14 @@ class Dashboard {
       a.addEventListener('click', function(event) {
         event.preventDefault();
         console.log("Click question", event.target);
-        const labelColumn = "Grupo de edad";
-        // cargar datos del grafico 1
-        const filter = {Region:self.region, Sexo:"HOMBRE"};
-        let graphData1 = self.dr.getColumnData(self.survey, event.target.innerHTML, labelColumn, filter);
-        //console.log("graphData1", graphData1);
-        self.updateGraph(self.menGraph, graphData1, event.target.innerHTML);
-
-        // cargar datos del grafico 2
-        const filter2 = {Region:self.region, Sexo:"MUJER"};
-        let graphData2 = self.dr.getColumnData(self.survey, event.target.innerHTML, labelColumn, filter2);
-        //console.log("graphData2", graphData2);
-        self.updateGraph(self.womenGraph, graphData2, event.target.innerHTML);
+        self.updateGraph(self.menGraph, event.target.innerHTML, {Region:self.region, Sexo:"HOMBRE"});
+        self.updateGraph(self.womenGraph, event.target.innerHTML, {Region:self.region, Sexo:"MUJER"});
       });
     });
   }
 }
 
-// procesar archivos CSV
+// iniciar funciones y carga de datos
 let dash = new Dashboard();
 dash.init();
 

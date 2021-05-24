@@ -26,7 +26,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
-<<<<<<< HEAD
     <script src="js/papaparse.min.js"></script>
 
     <script>
@@ -151,10 +150,8 @@
             });
         });
     </script>
-=======
     <script src="js/mapahandler.js"></script>    
     
->>>>>>> 1cd888edc688dd3b53a1588f80520dfe6b93b75c
 
 
     <title>Dashboard - Page 1</title>
