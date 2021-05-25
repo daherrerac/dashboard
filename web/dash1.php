@@ -350,25 +350,7 @@
                             <div class="preguntas">
                                 <ul>
                                     <li>
-                                        <a href="#" id="btn1">De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="btn2">De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="trigger-qc">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                        Cargando preguntas ...
                                     </li>
                                 </ul>
                             </div>
@@ -404,7 +386,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="dropdown">
+                                    <div class="dropdown region">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             REGIÓN PDET
                                         </button>
@@ -415,7 +397,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="dropdown">
+                                    <div class="dropdown region">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                             REGIÓN PDET
                                         </button>
@@ -469,9 +451,13 @@
     <script src="js/charts-config.js"></script>
     <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // iniciar dashboard
+        // iniciar funciones y carga de datos
+        let dash = new Dashboard('hogaresGenerales');
+    </script>
     
     
-
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

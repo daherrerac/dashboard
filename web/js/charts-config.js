@@ -4,14 +4,13 @@ const chartConfig = {
   datasetsColor: '#ffffff',
   datasetsBorderWidth: 0,
   options: {
-    legend: {
-      display: false,
-      color: '#ffffff'
-    },
     borderRadius: 10,
     indexAxis: 'y',
     responsive: true,
     plugins: {
+      legend: {
+        display: false,
+      },
       title: {
         display: true,
         text: '',
