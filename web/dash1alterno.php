@@ -10,7 +10,7 @@
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
   }
-?>  -->
+?>   -->
 <!doctype html>
 <html lang="es">
   <head>
@@ -45,7 +45,13 @@
   <body style="overflow-y: auto;background: #fbfbfb;">
       
     <div class="container-fluid">
-        <div class="fila">
+        <div class="menu-lateral">
+            <div class="logo-left">
+                <img src="img/logo.svg" alt="" onclick="openNav()">
+            </div>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="columna1">
                 <div class="col-lg-12">
                     <div class="menu-lateral">
@@ -117,6 +123,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="fila">
+            
             <div class="columna2">
                 <div class="row">
                     <div class="col-lg-12">
@@ -133,7 +142,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xxl-10 col-xl-9 col-md-12">
+                    <div class="col-lg-9">
                         <div class="blue-info">
                             <div class="row">
                                 <div class="col-4">
@@ -190,7 +199,7 @@
                             </div>                                                       
                         </div>
                     </div>
-                    <div class="col-xxl-2 col-xl-3 col-md-12">
+                    <div class="col-lg-3">
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
@@ -208,9 +217,21 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row">                
-                    <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="util-box">
+                            <div class="mapa">
+                                <h4>Regiones PDET</h4>
+                                <p>Seleccione en el mapa la región PDET que desee consultar</p>
+                                <div class="mapcontainer">
+                                    <div class="map">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
                         <div class="util-box">
                             <div class="mapa">
                                 <h4>Preguntas</h4>
@@ -242,47 +263,24 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="util-box">
-                            <div class="mapa">
-                                <h4>Regiones PDET</h4>
-                                <p>Seleccione en el mapa la región PDET que desee consultar</p>
-                                <div class="mapcontainer">
-                                    <div class="map">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                    
-                        <div class="row ">
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-6">
                                 <div class="util-box blue-bg">
                                     <h4 class="py-2">Hombres</h4>
                                     <!-- <div id="chart"></div>
                                     <div id="chartalt" style="display:none"></div> -->
-                                    <canvas id="myChart"  width="630" height="280"></canvas>
+                                    <canvas id="myChart" width="400" height="260" ></canvas>
                                 </div>
                             </div>
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                            <div class="col-lg-6">
                                 <div class="util-box blue-bg">
                                     <h4 class="py-2">Mujeres</h4>                                    
-                                    <canvas id="myChart2" width="630" height="280"></canvas>
+                                    <canvas id="myChart2" width="400" height="260" ></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-
-                
-                
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
@@ -294,8 +292,8 @@
                                         </h4>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <!-- <div class="dropdown">
+                                <div class="col-lg-3">
+                                    <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             REGIÓN PDET
                                         </button>
@@ -303,17 +301,10 @@
                                             <li><a class="dropdown-item" href="#" id="reg1">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
                                             <li><a class="dropdown-item" href="#" >SUR DE BOLIVAR</a></li>                                          
                                         </ul>
-                                    </div> -->
-                                    <div class="custom-select mt-3">
-                                        <select id="region1">
-                                            <option>REGIÓN PDET</option>
-                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
-                                            <option value="2">REGIÓN 2</option>                                       
-                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <!-- <div class="dropdown">
+                                <div class="col-lg-3">
+                                    <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                             REGIÓN PDET
                                         </button>
@@ -321,29 +312,15 @@
                                             <li><a class="dropdown-item" href="#">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
                                             <li><a class="dropdown-item" href="#" id="reg2">SUR DE BOLIVAR</a></li> 
                                         </ul>
-                                    </div> -->
-                                    <div class="custom-select mt-3">
-                                        <select id="region2">
-                                            <option>REGIÓN PDET</option>
-                                            <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
-                                            <option value="2">REGIÓN 3</option>                                       
-                                        </select>
                                     </div>
                                 </div>
                             </div>                            
                         </div>
                     </div>
                 </div>
-
-
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="util-box">
-                        <div class="mapa">
-                            <h4 class="text-center">
-                                Hombres
-                            </h4>
-                        </div>
                         <div id="chartb"></div>
                         <div id="chartbalt" style="display: none;"></div>
                     </div>
@@ -352,11 +329,6 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
-                            <div class="mapa">
-                                <h4 class="text-center">
-                                    Mujeres
-                                </h4>
-                            </div>                           
                             <div id="chartc"></div>
                             <div id="chartcalt" style="display: none;"></div>
                         </div>
@@ -368,7 +340,107 @@
     </div>
     
     
-    <script>        
+    <script>
+        var options = {
+            grid:{
+                show:false
+            },
+            series: [{
+                data: [37.46, 37.46, 37.46, 37.46, 37.46]
+            }],
+                chart: {
+                type: 'bar',
+                height: 280
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    horizontal: true,
+                }
+            },
+            dataLabels: {
+                enabled: true
+            },
+            yaxis:{
+                labels:{
+                    show:true, 
+                    style: {
+                        colors: ['#ffffff'],
+                        fontSize: '12px',                                        
+                        cssClass: 'apexcharts-xaxis-label',
+                    },
+                }
+            },        
+            xaxis: {
+                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
+                labels: {
+                    show:false,                    
+                }, 
+                axisBorder: {
+                    show: false,                    
+                }, 
+                axisTicks:{
+                    show: false,                    
+                },
+                forceNiceScale: true,              
+            },
+
+            tickAmount: 10
+            
+        };
+        var options3 = {
+            grid:{
+                show:false
+            },
+            series: [{
+                data: [7.46, 97.46, 37.46, 37.46, 67.46]
+            }],
+                chart: {
+                type: 'bar',
+                height: 280
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    horizontal: true,
+                }
+            },
+            dataLabels: {
+                enabled: true
+            },
+            yaxis:{
+                labels:{
+                    show:true, 
+                    style: {
+                        colors: ['#ffffff'],
+                        fontSize: '12px',                                        
+                        cssClass: 'apexcharts-xaxis-label',
+                    },
+                }
+            },        
+            xaxis: {
+                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
+                labels: {
+                    show:false,                    
+                }, 
+                axisBorder: {
+                    show: false,                    
+                }, 
+                axisTicks:{
+                    show: false,                    
+                },
+                forceNiceScale: true,              
+            },
+
+            tickAmount: 10
+            
+        };
+
+        var chart    = new ApexCharts(document.querySelector("#chart"), options);
+        var chartsub = new ApexCharts(document.querySelector("#chart-2"), options);
+        chart.render();
+        chartsub.render();
+
         var options2 = {
             series: [
                 {
@@ -380,30 +452,18 @@
                     data: [76, 85, 90, 98, 87]
                 }, 
             ],
-            colors: ['#14DFFF','#022869'],
             chart: {
-                toolbar:{
-                        show:false
-                },
                 type: 'bar',
                 height: 350
             },
             plotOptions: {
                 bar: {
                     horizontal: false,
-                    columnWidth: '20%',
+                    columnWidth: '25%',
                     endingShape: 'rounded',
                     dataLabels: {
                         position: 'top', // top, center, bottom
                     },
-                    colors:{
-                        ranges:{
-                            from: 0,
-                            to: 100,
-                            color:'#022869'
-                        }
-                        
-                    }
                 },
             },
             dataLabels: {
@@ -414,7 +474,7 @@
                 offsetY: -20,
                 style: {
                     fontSize: '12px',
-                    colors: ['#022869']
+                    colors: ['#304758']
                 }
             },
             stroke: {
@@ -427,8 +487,10 @@
             },
             yaxis: {
                 
-            }
-            ,
+            },
+            fill: {
+                opacity: 0.8
+            },
             tooltip: {
                 y: {
                     formatter: function (val) {
@@ -436,19 +498,129 @@
                     }
                 }
             }
-            ,fill: {
-                colors: ['#14DFFF','#022869']
+        };
+
+        var options4 = {
+            grid:{
+                show:false
+            },
+            series: [{
+                data: [1.46, 97.46, 17.46, 8.46, 67.46]
+            }],
+                chart: {
+                type: 'bar',
+                height: 280
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    horizontal: true,
+                }
+            },
+            dataLabels: {
+                enabled: true
+            },
+            yaxis:{
+                labels:{
+                    show:true, 
+                    style: {
+                        colors: ['#ffffff'],
+                        fontSize: '12px',                                        
+                        cssClass: 'apexcharts-xaxis-label',
+                    },
+                }
+            },        
+            xaxis: {
+                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
+                labels: {
+                    show:false,                    
+                }, 
+                axisBorder: {
+                    show: false,                    
+                }, 
+                axisTicks:{
+                    show: false,                    
+                },
+                forceNiceScale: true,              
+            },
+
+            tickAmount: 10
+            
+        };
+
+
+        var options5 = {
+            series: [
+                {
+                    name: 'Región 1',
+                    data: [4, 75, 57, 56, 1]
+                }, 
+                {
+                    name: 'Región 2',
+                    data: [6, 85, 90, 98, 7]
+                }, 
+            ],
+            chart: {
+                type: 'bar',
+                height: 350
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '25%',
+                    endingShape: 'rounded',
+                    dataLabels: {
+                        position: 'top', // top, center, bottom
+                    },
+                },
+            },
+            dataLabels: {
+                enabled: true,
+                formatter: function (val) {
+                    return val + "%";
+                },
+                offsetY: -20,
+                style: {
+                    fontSize: '12px',
+                    colors: ['#304758']
+                }
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+            xaxis: {
+                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
+            },
+            yaxis: {
+                
+            },
+            fill: {
+                opacity: 0.8
+            },
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                    return val + " %"
+                    }
+                }
             }
         };
 
-        
-
-       
 
         var chartb      = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc      = new ApexCharts(document.querySelector("#chartc"), options2);        
+        var chartc      = new ApexCharts(document.querySelector("#chartc"), options2);
+        var chartalt    = new ApexCharts(document.querySelector("#chartalt"), options3);
+        var chartalt2   = new ApexCharts(document.querySelector("#chartalt2"), options4);
+        var chartbalt   = new ApexCharts(document.querySelector("#chartbalt"), options5);
+        var chartcalt   = new ApexCharts(document.querySelector("#chartcalt"), options5);
         chartb.render();
         chartc.render();
+        chartbalt.render();
+        chartcalt.render();
+        chartalt.render();
+        chartalt2.render();
         
     </script>
     

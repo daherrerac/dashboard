@@ -26,130 +26,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
 
-    <script>
-        $(function () {
-            $(".mapcontainer").mapael({
-                map: {
-                    // Set the name of the map to display
-                    name: "col",
-                    
-                    zoom: {
-                        enabled: true,
-                        maxLevel: 10
-                    }
-                    , defaultPlot: {
-                        attrs: {
-                            fill: "#004a9b"
-                            , opacity: 1
-                        }
-                        , attrsHover: {
-                            opacity: 1
-                        }
-                        , text: {
-                            attrs: {
-                                fill: "#505444"
-                            }
-                            , attrsHover: {
-                                fill: "#000"
-                            }
-                        }
-                    }
-                    , defaultArea: {
-                        attrs: {
-                            fill: "#cccccc"
-                            , stroke: "#efefef"
-                        }
-                        , attrsHover: {
-                            fill: "#cccccc"
-                        }
-                        , text: {
-                            attrs: {
-                                fill: "#505444"
-                            }
-                            , attrsHover: {
-                                fill: "#000"
-                            }
-                        }
-                    }
-                },areas: {                    
-                    "path430": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path440": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path432": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path293": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path8": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path255": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path248": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path144": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                    "path244": {
-                        attrs: {
-                            fill: "#767676"
-                        }
-                        , attrsHover: {
-                            fill: "#022869"
-                        }
-                    },
-                },
-            });
-        });
-    </script>
+    <script src="js/mapahandler-red.js"></script>  
 
     <title>Dashboard - Page 5</title>
+    <style>
+        .mapael .mapTooltip {
+            color:#C2113B;
+        }
+    </style>
   </head>
   <body style="overflow-y: auto;background: #fbfbfb;">
       
@@ -201,7 +85,7 @@
                                     <img src="img/icono-05-w.png" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#" class="hred">
+                                <a href="dash6.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTIQ
                                 </a>
@@ -215,11 +99,12 @@
                             <div class="box-buttons">
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/info-w.png" alt="">
-                                    Entorno Institucional Paz
+                                    Sobre el proyecto
                                 </a>
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/chat.png" alt="">
-                                    Entorno Institucional Mujeres</a>                        
+                                    Contácto
+                                </a>                        
                             </div>
                         </div>
                     </div>
@@ -442,7 +327,7 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/mapa/col.js"></script>
+    <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>
     
     

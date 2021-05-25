@@ -367,7 +367,7 @@ h2 span{
     width: 75px;
     border-radius: 50%;
     background: #ffffff;
-    margin: 1em 0 1em auto;
+    margin: 1em 0 1em 0.8em;
     display: block;
 }
 .info-box p{
@@ -384,11 +384,15 @@ h2 span{
     margin: 0;
 }
 .adicional{
+    font-family:'SourceSemiBold';
     background: #0065ba;
     border-radius: 0.8em;
     width: 100%;
     margin-top: 1.5em;
     padding: 0.4em 0;
+    max-width: 260px;
+    margin-right: 0;
+    margin-left: auto;
 }
 .adicional.red-bg{
     background: #C2113B;
@@ -397,7 +401,8 @@ h2 span{
     font-family:'SourceBold';
     color: #ffffff;
     font-size: 1.6em;
-    text-align: center;
+    text-align: left;
+    margin-left: 0.8em;
 }
 .adicional span{
     color: #0065ba;
@@ -418,8 +423,12 @@ h2 span{
 }
 .util-box.blue-bg{
     background: #022869;
-    height: 392px;
+    height: 330px;
     position: relative;
+    padding: 0 1.5em;
+    max-width: 640px;
+    margin-right: 0;
+    margin-left: auto;
 }
 .util-box.red-bg{
     background: #C2113B;
@@ -428,8 +437,7 @@ h2 span{
 .util-box.red-bg h4{
     font-family:'SourceBold';
     color: #ffffff;
-    text-transform: uppercase;
-    margin-left: 20px;
+    text-transform: uppercase;    
 }
 .util-box.blue-bg h4.border-aux
 {
@@ -523,6 +531,7 @@ h2 span{
 .preguntas li a:hover{
     background: #022869;
     color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
 }
 .preguntas.red-bg li a:active,.preguntas.red-bg li a:focus{
     background: #C2113B;
@@ -536,7 +545,7 @@ h2 span{
 }
 
   
-  /* Works on Chrome, Edge, and Safari */
+/* Works on Chrome, Edge, and Safari */
 .preguntas::-webkit-scrollbar {
     width: 15px;
 }
@@ -585,25 +594,29 @@ h2 span{
     margin-right: 10px;
 }
 .dropdown-menu{
-    width: 90%;
+    width: max-content;
 }
 .dropdown-toggle::after {
 	display: inline-block;
-	margin-left: 6.255em;
+	margin-left: auto;
 }
+select option{
+    font-family:'SourceBold';
+}
+
 .map{
     max-height: 560px;
     position: relative;
 }
 .map svg{
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; 
     max-height: 560px;
     width: 70%;
 }
 .mapcontainer{
     width: 100%;
-    max-height: 700px;
+    max-height: 570px;
     padding-top: 2em;
 }
 .red .zoomButton{
@@ -642,15 +655,47 @@ h2 span{
     border: 1px solid #a6a6a6;
     text-align: center;
 }
-@media screen and (max-width:1440px) {
+
+@media screen and (max-width:1640px) {
     .logo {
+        max-width: 320px;
         padding-top: 20px;
         padding-bottom: 40px;
     }
+    .separador{
+        height: 70px;
+    }
+    .olvido{
+        font-size: 1.5em;
+    }
 }
-@media screen and (max-width:1400px) {
+@media screen and (min-width:1400px){
+    .encuesta{
+        display: none;
+    }
+    .datos1{
+        display: block;
+    }
+}
+@media screen and (max-width:1399px) {
     .separador{
         height: 0;
+    }
+    .encuesta{
+        display: inline-block;
+    }
+    .datos1{
+        display: none;
+    }
+    
+    .util-box.blue-bg{
+        height: 320px;
+    }
+}
+@media screen and (max-width:1280px) {
+    .info-box .punto{
+        width: 60px;
+        height: 60px;
     }
 }
 @media screen and (max-width:1024px) {
@@ -658,6 +703,13 @@ h2 span{
         padding-top: 20px;
         padding-bottom: 40px;
         max-width: 80%;
+    }
+    .mapa h4{
+        text-align: center;
+        padding: 0;
+    }
+    .form-select{
+        margin: 0 auto;
     }
 }
 @media screen and (max-width:992px) {    
@@ -682,6 +734,20 @@ h2 span{
     }
     .imagen{
         overflow: hidden;
+    }
+    .info-box .punto {
+        height: 50px;
+        width: 50px;
+    }
+    .adicional{
+        max-width: 100%;
+    }
+    .btn-secondary {
+        margin: 0 auto;
+        display: block;
+    }
+    .info-box .punto {
+        margin: 1em 0.1em 1em 0.2em;        
     }
 }
 @media screen and (max-width:767px) { 
@@ -718,13 +784,113 @@ h2 span{
 }
 
 /*graficas*/
-#chart{
-    position: absolute;
-    top: 50px;
-    z-index: 1;
+/*the container must be positioned relative:*/
+.form-select{
+    
+    width: 95%;
+    background: #022869;
+    color: #ffffff;
+    border-radius: 15px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position:98% center;
+    background-size: 1rem;
+    padding-right: 5px;
 }
-#chartalt{
-    position: absolute;
-    top: 50px;
-    z-index: 1;
+.custom-select {
+    position: relative;
+    font-family:'SourceBold';
+  }
+  
+.custom-select select {
+    display: none; /*hide original SELECT element:*/
 }
+  
+.select-selected {
+    background-color: #022869;
+    border-radius: 15px;
+    font-size: 1.1em;
+}
+  
+  /*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+  
+  /*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+  
+  /*style the items (options), including the selected item:*/
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+    width: 95%;
+    margin: 0 auto;
+}
+.select-items div{
+    color: #474747;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.1em;
+}
+  
+  /*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: #ffffff;
+    color:#474747;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: 1px dotted #022869;
+}
+  
+  /*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+  
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;    
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-color: #ffffff;
+  }
+  
+  
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }

@@ -36,7 +36,7 @@ function initMapHandler(clickCallbak){
                     }
                     , text: {
                         attrs: {
-                            fill: "#505444"
+                            fill: "#FFFFFF"
                         }
                         , attrsHover: {
                             fill: "#000"
@@ -59,7 +59,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -91,7 +91,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -122,7 +122,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -153,7 +153,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -184,7 +184,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -215,7 +215,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -229,7 +229,7 @@ function initMapHandler(clickCallbak){
                             clickCallbak("SUR DE CORDOBA");
                         }
                     },
-                    tooltip: {content: "SUR DE CÓRDOVA"}
+                    tooltip: {content: "SUR DE CÓRDOBA"}
                 },
                 "BAJO CAUCA Y NORDESTE ANTIOQUENO": {
                     attrs: {
@@ -246,7 +246,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -277,7 +277,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -308,7 +308,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -339,7 +339,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -370,7 +370,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -401,7 +401,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -432,7 +432,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {
@@ -463,7 +463,7 @@ function initMapHandler(clickCallbak){
                             if (mapElem.originalAttrs.fill == "#767676") {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#0088db"
+                                        fill: "#022869"
                                     }
                                 };
                             } else {

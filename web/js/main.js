@@ -1,5 +1,3 @@
-const siteurl = 'http://dashboard.local/';
-
 
 /** Funcion para leer archivos csv */
 function parseFile(url) {
@@ -25,15 +23,23 @@ function parseFile(url) {
 class DashboardDataReader {
 
   data;
-  // ubicacion de archivos csv
+  //ubicacion de archivos csv
   static urls = {
-    'hogaresGenerales':siteurl + 'csv/hogares_general.csv',
-    'mujeresEtnicas':siteurl + 'csv/hogares_mujeres_etnicas.csv',
-    'servidoresPublicos':siteurl + 'csv/encuesta_servidores_publicos.csv',
-    'entornoInstitucionalPaz':siteurl + 'csv/entorno_institucional_paz.csv',
-    'entornoInstitucionalMujeres':siteurl + 'csv/entorno_institucional_mujeres.csv',
-    'entornoInstitucionalLGBTI':siteurl + 'csv/entorno_institucional_lgbti.csv'
-  };
+    'hogaresGenerales':'http://dashboard.test/csv/hogares_general.csv',
+    'mujeresEtnicas':'http://dashboard.test/csv/hogares_mujeres_etnicas.csv',
+    'servidoresPublicos':'http://dashboard.test/csv/encuesta_servidores_publicos.csv',
+    'entornoInstitucionalPaz':'http://dashboard.test/csv/entorno_institucional_paz.csv',
+    'entornoInstitucionalMujeres':'http://dashboard.test/csv/entorno_institucional_mujeres.csv',
+    'entornoInstitucionalLGBTI':'http://dashboard.test/csv/entorno_institucional_lgbti.csv'
+  }; 
+  /* static urls ={
+    'hogaresGenerales':'http://pruebas.kugelelectronics.com.co/dashboard/csv/hogares_general.csv',
+    'mujeresEtnicas':'http://pruebas.kugelelectronics.com.co/dashboard//csv/hogares_mujeres_etnicas.csv',
+    'servidoresPublicos':'http://pruebas.kugelelectronics.com.co/dashboard/csv/encuesta_servidores_publicos.csv',
+    'entornoInstitucionalPaz':'http://pruebas.kugelelectronics.com.co/dashboard/csv/entorno_institucional_paz.csv',
+    'entornoInstitucionalMujeres':'http://pruebas.kugelelectronics.com.co/dashboard//csv/entorno_institucional_mujeres.csv',
+    'entornoInstitucionalLGBTI':'http://pruebas.kugelelectronics.com.co/dashboard/csv/entorno_institucional_lgbti.csv'
+  }; */
 
   // declaracion de filtros
   static filterFields = ['Region','Region PDET', 'Departamento', 'Municipio PDET', 'Grupo de edad', 'Sexo',
@@ -43,28 +49,6 @@ class DashboardDataReader {
   async parseFile(url){
     const res = await parseFile(url);
     return res;
-  }
-
-  async parseDashboardFile(surveyKey){
-    let data={};
-    const lowercaseFilters = DashboardDataReader.filterFields.map((el) => el.toLowerCase());
-
-    let csvData = await this.parseFile(DashboardDataReader.urls[surveyKey]);
-    let questions = csvData[0].filter((value) => {
-      return !lowercaseFilters.includes(value.toLowerCase().trim());
-    });
-    let headers = csvData[0].map(el => el.trim());
-    // eliminar encabezado de tabla de datos
-    csvData.shift();
-    // crear objeto de resultado final
-    data[surveyKey] = {
-      questions,
-      headers,
-      data: csvData 
-    };
-    this.data = data;
-    this.getFiltersFromData();
-    console.log("data", this.data);
   }
 
   async parseFiles(){
@@ -132,14 +116,6 @@ class DashboardDataReader {
     return [];
   }
 
-  /**
-   * Retorna la lista de elementos de los campos de filros del survey dado. 
-   * Ej. Grupo de edad, Sexo, o region del survey  hogaresGenerales. 
-   * @param {string} survey un survey de la siguiente lista:  hogaresGenerales, mujeresEtnicas, 
-   * servidoresPublicos, entornoInstitucionalPaz, entornoInstitucionalMujeres, entornoInstitucionalLGBTI
-   * @param {string} filterKey uno de los campos de filtro del survey
-   * @returns array con valores unicos del filtro especificado para cada survey
-   */
   getFilters(survey, filterKey){
     if (this.data[survey] &&  this.data[survey].filters[filterKey]) {
       return this.data[survey].filters[filterKey];
@@ -170,7 +146,7 @@ class DashboardDataReader {
           evalData = evalData.filter((value) => {
             let conditionMet = true;
             for (let indexObj of indexes) {
-              conditionMet = conditionMet && value[indexObj.index] && value[indexObj.index].trim().toLowerCase() === indexObj.value;
+              conditionMet = conditionMet && value[indexObj.index].trim().toLowerCase() === indexObj.value;
             }
             return conditionMet;
           });
@@ -212,29 +188,11 @@ class DashboardDataReader {
 }
 
 class HTMLbuilder {
-  static createPreguntasLiElement(pregunta){
+  static createPreguntasUL(pregunta){
     let liEl = document.createElement('li');
     let aEl = document.createElement('a');
     aEl.href = "#";
     aEl.innerHTML = pregunta;
-    liEl.appendChild(aEl);
-    return liEl;
-  }
-
-  static createSelectorLiElement(option, id = undefined, attrs){
-    let liEl = document.createElement('li');
-    let aEl = document.createElement('a');
-    aEl.href = "#";
-    aEl.classList.add("dropdown-item");
-    aEl.innerHTML = option;
-    if (id) {
-      aEl.id = id;
-    }
-    if (attrs) {
-      for (let key of Object.keys(attrs)){
-        aEl.setAttribute(key, attrs[key]);
-      }
-    }
     liEl.appendChild(aEl);
     return liEl;
   }
@@ -248,22 +206,15 @@ class Dashboard {
   menGraph;
   womenGraph;
   selectedQuestion;
-  hasMap;
-
-  graphRegionSelection1;
-  graphRegionSelection2;
   
 
-  constructor(survey, hasMap = true){
+  constructor(){
     this.dr = new DashboardDataReader();
-    this.survey = survey;
-    this.hasMap = hasMap;
-    if (this.hasMap){
-      this.mapClickCallback = (region) => {
-        this.region = region;
-        this.updateGraph(this.menGraph, {Region:this.region, Sexo:"HOMBRE"});
-        this.updateGraph(this.womenGraph, {Region:this.region, Sexo:"MUJER"});
-      }
+    this.survey = Object.keys(DashboardDataReader.urls)[0];
+    this.mapClickCallback = (region) => {
+      this.region = region;
+      this.updateGraph(this.menGraph, this.selectedQuestion, {Region:this.region, Sexo:"HOMBRE"});
+      this.updateGraph(this.womenGraph, this.selectedQuestion, {Region:this.region, Sexo:"MUJER"});
     }
     this.init();
   }
@@ -271,12 +222,12 @@ class Dashboard {
   async init(){
     // TODO iniciar un loader o algo aca
   
-    await this.dr.parseDashboardFile(this.survey);
+    await this.dr.parseFiles();
+
+    // esconder loader
 
     // asignar parametros por defecto
-    if (this.hasMap){
-      this.region = this.dr.getFilters(this.survey, "Region")[0]; // seleccionar la primera region de la lista
-    }
+    this.region = this.dr.getFilters(this.survey, "Region")[0]; // seleccionar la primera region de la lista
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
     
     // inicializar graficas
@@ -285,32 +236,22 @@ class Dashboard {
     // cargar informacion de preguntas de preguntas por defecto
     this.loadQuestions();
 
-    // cargar regiones en selectores inferiores
-    this.loadRegions();
-
     // incializar mapa
-    if (this.hasMap){
-      initMapHandler(this.mapClickCallback);
-    }
-
-    // TODO esconder loader
+    initMapHandler(this.mapClickCallback);
   }
 
   initGraphs(){
     let menGraphEl = document.getElementById('myChart').getContext('2d');
     let womenGraphEl = document.getElementById('myChart2').getContext('2d');
-    let filter = {Sexo:"HOMBRE"};
-    if (this.hasMap){
-      filter.Region=this.region;
-    }
+    const filter = {Region:this.region, Sexo:"HOMBRE"};
     const labelColumn = "Grupo de edad";
     let graphData1 = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
-
+    // console.log("graphData1", graphData1);
     this.menGraph = new Chart(menGraphEl, {
       type: 'bar',
-      data: {
+      data: {        
         labels: graphData1.labels,
-        datasets: [{
+        datasets: [{          
           data: graphData1.data,
           backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
           borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
@@ -320,17 +261,16 @@ class Dashboard {
       },
       options: chartConfig.options
     });
-    let filter2 = {Region:this.region, Sexo:"MUJER"};
-    if (this.hasMap){
-      filter2.Region=this.region;
-    }
+    const filter2 = {Region:this.region, Sexo:"MUJER"};
     let graphData2 = this.dr.getColumnData(this.survey, this.selectedQuestion, labelColumn, filter2);
+    // console.log("graphData2", graphData2);
+
 
     this.womenGraph = new Chart(womenGraphEl, {
       type: 'bar',
-      data: {
+      data: {        
         labels: graphData2.labels,
-        datasets: [{
+        datasets: [{          
           data: graphData2.data,
           backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
           borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
@@ -347,14 +287,15 @@ class Dashboard {
     this.womenGraph.update();
   }
 
-  updateGraph(graph, filter){
+  updateGraph(graph, title, filter){
     const labelColumn = "Grupo de edad";
     // cargar datos del grafico
-    let newData = this.dr.getColumnData(this.survey, this.selectedQuestion, labelColumn, filter);
+    let newData = this.dr.getColumnData(this.survey, title, labelColumn, filter);
     //console.log("graphData1", graphData1);
+    this.selectedQuestion = title;
     graph.data.labels = newData.labels;
     graph.data.datasets[0].data = newData.data;
-    graph.options.plugins.title.text = this.selectedQuestion;
+    graph.options.plugins.title.text = title;
     graph.update();
   }
 
@@ -366,110 +307,164 @@ class Dashboard {
     pregUL.innerHTML = '';
     // insertar preguntas en DOM
     questions.forEach((q) => {
-      pregUL.append(HTMLbuilder.createPreguntasLiElement(q));
+      pregUL.append(HTMLbuilder.createPreguntasUL(q));
     });
     // inicializar eventos de clic en cada pregunta
     const aTags = document.querySelectorAll('.preguntas ul li a');
     aTags.forEach((a) => {
       a.addEventListener('click', function(event) {
         event.preventDefault();
-        self.selectedQuestion = event.target.innerHTML;
-        // Limpiar la clase selected en todos los elementos
-        const aTags2 = document.querySelectorAll('.preguntas ul li a');
-        aTags2.forEach((a) => {
-          a.classList.remove('selected');
-        });
-        // adicionar clase selected al elemento del evento
-        this.classList.add('selected');
-        console.log("Click question", self.selectedQuestion);
-        self.updateGraph(self.menGraph, {Region:self.region, Sexo:"HOMBRE"});
-        self.updateGraph(self.womenGraph, {Region:self.region, Sexo:"MUJER"});
-      });
-    });
-  }
-
-  loadRegions(){
-    let self = this;
-    const regionsDropDown = document.querySelectorAll('.dropdown.region ul');
-    const regionsList = this.dr.getFilters(this.survey, 'Region');
-    self.graphRegionSelection1 = regionsList[0];
-    self.graphRegionSelection2 = regionsList[1];
-    regionsDropDown.forEach((ul, i) => {
-      // limpiar opciones
-      ul.innerHTML = '';
-      regionsList.forEach((q, i2) => {
-        ul.append(HTMLbuilder.createSelectorLiElement(q, "selRegion"+i+i2, {target: "selector"+i}));
-      });
-    });
-    // adicionar eventos a las regiones cargadas
-    const dropDownAction = document.querySelectorAll('.dropdown.region ul li a');
-    dropDownAction.forEach((a) => {
-      a.addEventListener('click', function(event) {
-        event.preventDefault();
-        if (a.getAttribute('target') == 'selector0'){
-          self.graphRegionSelection1 = a.innerHTML;
-        } else if (a.getAttribute('target') == 'selector1'){
-          self.graphRegionSelection2 = a.innerHTML;
-        }
-        console.log("Region seleccionada:", a.innerHTML, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
+        console.log("Click question", event.target);
+        self.updateGraph(self.menGraph, event.target.innerHTML, {Region:self.region, Sexo:"HOMBRE"});
+        self.updateGraph(self.womenGraph, event.target.innerHTML, {Region:self.region, Sexo:"MUJER"});
       });
     });
   }
 }
 
+// iniciar funciones y carga de datos
+let dash = new Dashboard();
+dash.init();
 
 
 // cargar informacion de charts
 
 $( "#trigger-qb" ).click(function(event) {
-    event.preventDefault();
-    $( "#chart" ).toggle( function() {
+  event.preventDefault();
+  $( "#chart" ).toggle( function() {
+    // Animation complete.
+  });
+  $( "#chartalt" ).toggle(  function() {
       // Animation complete.
-    });
-    $( "#chartalt" ).toggle(  function() {
-        // Animation complete.
-    });
-    $( "#chart-2" ).toggle(  function() {
-        // Animation complete.
-    });
-    $( "#chartalt2" ).toggle(  function() {
-        // Animation complete.
-    });
+  });
+  $( "#chart-2" ).toggle(  function() {
+      // Animation complete.
+  });
+  $( "#chartalt2" ).toggle(  function() {
+      // Animation complete.
+  });
 });
 $( "#trigger-qc" ).click(function(event) {
-    event.preventDefault();
-    $( "#chart" ).toggle(  function() {
+  event.preventDefault();
+  $( "#chart" ).toggle(  function() {
+    // Animation complete.
+  });
+  $( "#chartalt" ).toggle(  function() {
       // Animation complete.
-    });
-    $( "#chartalt" ).toggle(  function() {
-        // Animation complete.
-    });
-    $( "#chart-2" ).toggle(  function() {
-        // Animation complete.
-    });
-    $( "#chartalt2" ).toggle(  function() {
-        // Animation complete.
-    });
+  });
+  $( "#chart-2" ).toggle(  function() {
+      // Animation complete.
+  });
+  $( "#chartalt2" ).toggle(  function() {
+      // Animation complete.
+  });
 });
 
 $( "#reg1" ).click(function(event) {
-    event.preventDefault();
-    $( "#chartb" ).toggle(  function() {
+  event.preventDefault();
+  $( "#chartb" ).toggle(  function() {
+    // Animation complete.
+  });
+  $( "#chartbalt" ).toggle(  function() {
       // Animation complete.
-    });
-    $( "#chartbalt" ).toggle(  function() {
-        // Animation complete.
-    });
-    
+  });
+  
 });
 
 $( "#reg2" ).click(function(event) {
-    event.preventDefault();
-    $( "#chartc" ).toggle(  function() {
+  event.preventDefault();
+  $( "#chartc" ).toggle(  function() {
+    // Animation complete.
+  });
+  $( "#chartcalt" ).toggle(  function() {
       // Animation complete.
-    });
-    $( "#chartcalt" ).toggle(  function() {
-        // Animation complete.
-    });
-    
+  });
+  
 });
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "260px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);

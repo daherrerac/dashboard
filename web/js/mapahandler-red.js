@@ -59,7 +59,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -90,7 +90,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -121,7 +121,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -152,7 +152,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -183,7 +183,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -214,7 +214,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -245,7 +245,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -276,7 +276,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -307,7 +307,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -338,7 +338,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -369,7 +369,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -400,7 +400,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -431,7 +431,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -462,7 +462,7 @@ $(function () {
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
-                                    fill: "#0088db"
+                                    fill: "#C2113B"
                                 }
                             };
                         } else {
@@ -489,7 +489,8 @@ $(function () {
                 tooltip: {content: "Anorí"},
                 eventHandlers: {
                     click: function () {                        
-                        alert("Anorí");
+                        document.getElementById("municipio").innerHTML = "Anorí";
+                        document.getElementById("mun-res").innerHTML = "NO";
                     }
                 },
             },
@@ -501,11 +502,24 @@ $(function () {
                 tooltip: {content: "Mesetas"},
                 eventHandlers: {
                     click: function () {                        
-                        alert("Mesetas");
+                        document.getElementById("municipio").innerHTML = "Mesetas";
+                        document.getElementById("mun-res").innerHTML = "SI";
                     }
                 },
             },
-            
+            'QUIBDO': {
+                type: "circle",
+                size: 20,
+                x: 290,
+                y: 360,
+                tooltip: {content: "Quibdó"},
+                eventHandlers: {
+                    click: function () {                        
+                        document.getElementById("municipio").innerHTML = "Quibdó";
+                        document.getElementById("mun-res").innerHTML = "NO";
+                    }
+                },
+            },
             
         }
     });

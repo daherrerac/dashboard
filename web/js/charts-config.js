@@ -2,25 +2,40 @@ const chartConfig = {
   datasetsBackgroundColor: '#14DFFF',
   datasetsBorderColor: '#14DFFF',
   datasetsColor: '#ffffff',
-  datasetsBorderWidth: 0,
-  options: {
+  datasetsBorderWidth: 0,  
+  color:'#ffffff',
+  fontColor:'#ffffff',  
+  responsive:true,
+  maintainAspectRatio:true,
+  options: {  
+    fontColor:'#ffffff',      
+    legend: {
+      display: false,
+      color: '#ffffff',
+      fontColor:'#ffffff',      
+    },    
     borderRadius: 10,
     indexAxis: 'y',
-    responsive: true,
+    responsive: true,    
     plugins: {
-      legend: {
-        display: false,
-      },
       title: {
         display: true,
+        fullSize:true,
+        fontColor:'#ffffff',      
+        font:{
+          size:20
+        },
+        padding:{
+          top: 0,
+          bottom: 10
+        },
         text: '',
-        color: '#ffffff',
-        padding: {
-          top: 10,
-          bottom: 10,
-          left: 50,
-          right: 50
-        }
+        color: '#ffffff', 
+        align :'center',       
+        fontColor:'#ffffff',      
+      },
+      legend:{
+        display:false
       }
     },
     scales: {
@@ -29,18 +44,26 @@ const chartConfig = {
         ticks: {
           min: 0,
           max: 100,
-          stepSize: 10
+          stepSize: 10,
+          color:'#ffffff',
+          callback: function(value, index, values) {
+              return value + '%';
+          }
         },
+        fontColor:'#ffffff',      
         grid: {
           display: false,
-
         },
-
+        suggestedMin: 0,
+        suggestedMax: 100     
       },
       y: {
         grid: {
           display: false,
         },
+        ticks:{
+          color:'#ffffff',
+        }      
       }
 
     }

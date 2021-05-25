@@ -18,16 +18,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-
+    <link rel="stylesheet" href="css/style.css">       
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
+    <script src="js/papaparse.min.js"></script>
+
+    
     <script src="js/mapahandler.js"></script>    
+    
 
     
     <title>Dashboard - Page 2</title>
@@ -63,13 +66,13 @@
                             </h2>
 
                             <div class="box-buttons">
-                                <a href="dash3.html" class="hblue">
+                                <a href="dash1.php" class="hblue">
                                     <img src="img/icono-03.svg" alt="">
                                     Encuesta general
                                 </a>
                             </div>                            
                             <div class="box-message activo">
-                                <a href="#">
+                                <a href="dash2.php">
                                     Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                 </a>
                             </div>
@@ -111,11 +114,12 @@
                             <div class="box-buttons">
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/info-w.png" alt="">
-                                    Entorno Institucional Paz
+                                    Sobre el proyecto
                                 </a>
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/chat.png" alt="">
-                                    Entorno Institucional Mujeres</a>                        
+                                    Contácto
+                                </a>                        
                             </div>
                         </div>
                     </div>
@@ -126,12 +130,12 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                ENCUESTA GENERAL DE TOLERANCIA SOCIAL E INSTITUCIONAL CONTRA LAS MUJERES
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                            En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional contra
-                            las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
+                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional contra las
+                                MujeresTolerancia Social e Institucional contra las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
                             </h2>
                         </div>
                     </div>
@@ -141,7 +145,7 @@
                         <div class="blue-info">
                             <div class="row">
                                 <div class="col-4">
-                                    <div class="info-box primero">
+                                    <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="punto"></div>
@@ -217,7 +221,7 @@
                         <div class="util-box">
                             <div class="mapa">
                                 <h4>Regiones PDET</h4>
-                                <p>Seleccione en el mapa la región PET que desee consultar</p>
+                                <p>Seleccione en el mapa la región PDET que desee consultar</p>
                                 <div class="mapcontainer">
                                     <div class="map">
                                         
@@ -235,13 +239,25 @@
                             <div class="preguntas">
                                 <ul>
                                     <li>
-                                        <a href="#" id="trigger-q">De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
+                                        <a href="#" >De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
                                     </li>
                                     <li>
-                                        <a href="#" id="trigger-qb">De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
+                                        <a href="#" >De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
                                     </li>
                                     <li>
-                                        <a href="#" id="trigger-qc">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                        <a href="#" >De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
                                     </li>
                                 </ul>
                             </div>
@@ -250,15 +266,15 @@
                             <div class="col-lg-6">
                                 <div class="util-box blue-bg">
                                     <h4 class="py-2">Hombres</h4>
-                                    <div id="chart"></div>
-                                    <div id="chartalt" style="display: none;"></div>
+                                    <!-- <div id="chart"></div>
+                                    <div id="chartalt" style="display:none"></div> -->
+                                    <canvas id="myChart" width="400" height="280" ></canvas>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="util-box blue-bg">
-                                    <h4 class="py-2">Mujeres</h4>
-                                    <div id="chart-2"></div>
-                                    <div id="chartalt2" style="display: none;"></div>
+                                    <h4 class="py-2">Mujeres</h4>                                    
+                                    <canvas id="myChart2" width="400" height="280" ></canvas>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +285,7 @@
                         <div class="util-box">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="mapa">
+                                    <div class="mapa mt-2">
                                         <h4>
                                             SELECCIONE LAS REGIONES PDET QUE DESEE COMPARAR
                                         </h4>
@@ -607,13 +623,14 @@
     </script>
     
     
-    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-     
+    
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mapa/col.js"></script>
+    <script src="js/charts-config.js"></script>
     <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>
     
