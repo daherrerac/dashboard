@@ -24,22 +24,22 @@ class DashboardDataReader {
 
   data;
   //ubicacion de archivos csv
-  static urls = {
+  /* static urls = {
     'hogaresGenerales':'http://dashboard.test/csv/hogares_general.csv',
     'mujeresEtnicas':'http://dashboard.test/csv/hogares_mujeres_etnicas.csv',
     'servidoresPublicos':'http://dashboard.test/csv/encuesta_servidores_publicos.csv',
     'entornoInstitucionalPaz':'http://dashboard.test/csv/entorno_institucional_paz.csv',
     'entornoInstitucionalMujeres':'http://dashboard.test/csv/entorno_institucional_mujeres.csv',
     'entornoInstitucionalLGBTI':'http://dashboard.test/csv/entorno_institucional_lgbti.csv'
-  }; 
-  /* static urls ={
+  };  */
+  static urls ={
     'hogaresGenerales':'http://pruebas.kugelelectronics.com.co/dashboard/csv/hogares_general.csv',
     'mujeresEtnicas':'http://pruebas.kugelelectronics.com.co/dashboard//csv/hogares_mujeres_etnicas.csv',
     'servidoresPublicos':'http://pruebas.kugelelectronics.com.co/dashboard/csv/encuesta_servidores_publicos.csv',
     'entornoInstitucionalPaz':'http://pruebas.kugelelectronics.com.co/dashboard/csv/entorno_institucional_paz.csv',
     'entornoInstitucionalMujeres':'http://pruebas.kugelelectronics.com.co/dashboard//csv/entorno_institucional_mujeres.csv',
     'entornoInstitucionalLGBTI':'http://pruebas.kugelelectronics.com.co/dashboard/csv/entorno_institucional_lgbti.csv'
-  }; */
+  };
 
   // declaracion de filtros
   static filterFields = ['Region','Region PDET', 'Departamento', 'Municipio PDET', 'Grupo de edad', 'Sexo',
@@ -251,7 +251,8 @@ class Dashboard {
       type: 'bar',
       data: {        
         labels: graphData1.labels,
-        datasets: [{          
+        datasets: [{  
+          label:this.region,          
           data: graphData1.data,
           backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
           borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
@@ -270,7 +271,8 @@ class Dashboard {
       type: 'bar',
       data: {        
         labels: graphData2.labels,
-        datasets: [{          
+        datasets: [{   
+          label:this.region,       
           data: graphData2.data,
           backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
           borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
@@ -294,6 +296,7 @@ class Dashboard {
     //console.log("graphData1", graphData1);
     this.selectedQuestion = title;
     graph.data.labels = newData.labels;
+    graph.data.datasets[0].label = filter.Region;
     graph.data.datasets[0].data = newData.data;
     graph.options.plugins.title.text = title;
     graph.update();

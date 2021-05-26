@@ -56,24 +56,38 @@
                             <h2>
                                 Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres
                             </h2>
-
-                            <div class="box-buttons">
-                                <a href="dash1.php" class="activo">
-                                    <img src="img/icono-02.svg" alt="">
-                                    Encuesta general
-                                </a>
-                            </div>                            
-                            <div class="box-message">
-                                <a href="dash2.php" class="activo">
-                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                </a>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                      Encuesta General
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="box-buttons">
+                                            <a href="dash1.php" class="activo">
+                                                <img src="img/icono-02.svg" alt="">
+                                                Encuesta general
+                                            </a>
+                                        </div>
+                                        <div class="box-message">
+                                            <a href="dash2.php" class="activo">
+                                                Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                            </a>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>                                                                
                             </div>
+                                                        
+                            
                             <div class="box-buttons">
                                 <a href="dash3.html" class="hblue">
                                     <img src="img/icono-03.svg" alt="" >
                                     Encuesta servidores públicos
                                 </a>
-                                <a href="#" class="hblue">
+                                <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img src="img/info-blue.png" alt="" >    
                                     Ficha técnica
                                 </a>
@@ -96,7 +110,7 @@
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTIQ
                                 </a>
-                                <a href="#" class="hred">
+                                <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
@@ -267,13 +281,17 @@
                                     <h4 class="py-2">Hombres</h4>
                                     <!-- <div id="chart"></div>
                                     <div id="chartalt" style="display:none"></div> -->
-                                    <canvas id="myChart"  width="630" height="280"></canvas>
+                                    <div class="chart">
+                                        <canvas id="myChart"  width="630" height="280"></canvas>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xxl-12 col-xl-12 col-lg-12">
                                 <div class="util-box blue-bg">
                                     <h4 class="py-2">Mujeres</h4>                                    
-                                    <canvas id="myChart2" width="630" height="280"></canvas>
+                                    <div class="chart">
+                                        <canvas id="myChart2" width="630" height="280"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -452,6 +470,39 @@
         
     </script>
     
+
+
+  
+  <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">            
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="fichas/Fichas Tecnicas-01.jpg" alt="">
+                </div>
+            
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">            
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="fichas/Fichas Tecnicas-02.jpg" alt="">
+                </div>
+            
+            </div>
+        </div>
+        </div>
+    </div>
     
     <!-- Optional JavaScript; choose one of the two! -->
 

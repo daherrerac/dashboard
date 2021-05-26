@@ -10,9 +10,7 @@ const chartConfig = {
   options: {  
     fontColor:'#ffffff',      
     legend: {
-      display: false,
-      color: '#ffffff',
-      fontColor:'#ffffff',      
+      display: false,     
     },    
     borderRadius: 10,
     indexAxis: 'y',
@@ -35,7 +33,10 @@ const chartConfig = {
         fontColor:'#ffffff',      
       },
       legend:{
-        display:false
+        display:true,
+        labels: {
+          color: '#ffffff'
+      }
       }
     },
     scales: {

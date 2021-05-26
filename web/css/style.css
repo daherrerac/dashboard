@@ -99,6 +99,28 @@ h2 span{
     margin: 0 auto;
     padding: 1em 0;
 }
+.blue-menu .accordion h2{
+    padding: 0;
+}
+.blue-menu .accordion-item {
+    background-color: #011e52;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.blue-menu .accordion-button{
+    background-color: #011e52;
+    color: #ffffff;
+}
+.blue-menu .accordion-button:focus{
+    border-color: #dedede;
+    box-shadow: 0 0 0 0.2rem #dedede50;
+
+}
+.blue-menu .accordion-body {
+    padding: 0;
+}
+.blue-menu .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
 .box-select{
     background: #022869;
     display: block;
@@ -367,14 +389,14 @@ h2 span{
     width: 75px;
     border-radius: 50%;
     background: #ffffff;
-    margin: 1em 0 1em 0.8em;
+    margin: 1em 0 1em 0em;
     display: block;
 }
 .info-box p{
     color: #ffffff;
     padding: 0;
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1.3em;
     max-width: 120px;
 }
 .info-box .numero{
@@ -422,14 +444,13 @@ h2 span{
     padding-bottom: 0.8em;
 }
 .util-box.blue-bg{
-    background: #022869;
-    height: 330px;
+    background: #022869;    
     position: relative;
-    padding: 0 1.5em;
-    max-width: 640px;
+    padding: 0 1.5em;    
     margin-right: 0;
     margin-left: auto;
 }
+
 .util-box.red-bg{
     background: #C2113B;
 }
@@ -453,6 +474,11 @@ h2 span{
     font-size: 1.2em;
     width: 90%;
     margin: 0 auto;
+}
+.chart{
+    max-width: 630px;
+    margin: 0 auto;
+    height: 312px;
 }
 .respuesta{
     font-family:'SourceBold';
@@ -491,13 +517,13 @@ h2 span{
     color: #022869;    
     text-transform: uppercase;
     padding-left: 20px;
-    font-size: 1.5em;
+    font-size: 1.7em;
     padding-top: 20px;
 }
 .mapa p{
     margin-left: 20px;
     color: #464646;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 .adj-width{
     width: 70%;
@@ -520,7 +546,7 @@ h2 span{
     text-decoration: none;
     color: #464646;
     display: block;
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding: 0.7em 1em;
     border-radius: 0.2em;
     margin: 0.5em 0.2em;
@@ -605,18 +631,18 @@ select option{
 }
 
 .map{
-    max-height: 560px;
+    max-height: 650px;
     position: relative;
 }
 .map svg{
     display: block;
     margin: 0 auto; 
-    max-height: 560px;
+    max-height: 650px;
     width: 70%;
 }
 .mapcontainer{
     width: 100%;
-    max-height: 570px;
+    max-height: 650px;
     padding-top: 2em;
 }
 .red .zoomButton{
@@ -655,7 +681,27 @@ select option{
     border: 1px solid #a6a6a6;
     text-align: center;
 }
-
+.modal-header{
+    padding: 0;
+}
+.modal-content{
+    background: transparent;
+    border: none;
+}
+.modal-body img{
+    width: 100%;
+}
+.btn-close{
+    font-size: 5em;
+    color: #ffffff;
+    opacity: 1;
+    background: none;
+}
+.btn-close:hover {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 1;
+}
 @media screen and (max-width:1640px) {
     .logo {
         max-width: 320px;
@@ -676,6 +722,9 @@ select option{
     .datos1{
         display: block;
     }
+    .info-box .punto{        
+        margin: 1em 0 1em 0.8em;        
+    }
 }
 @media screen and (max-width:1399px) {
     .separador{
@@ -691,11 +740,24 @@ select option{
     .util-box.blue-bg{
         height: 320px;
     }
+    form{
+        width: 90%;        
+    }
 }
 @media screen and (max-width:1280px) {
     .info-box .punto{
         width: 60px;
         height: 60px;
+    }
+    .map{
+        max-height: 560px;        
+    }
+    .map svg{
+        max-height: 560px;        
+    }
+    .mapcontainer{        
+        max-height: 560px;
+        padding-top: 1em;
     }
 }
 @media screen and (max-width:1024px) {
@@ -782,7 +844,22 @@ select option{
         font-size: 20px;
     }
 }
-
+@media screen and (max-height:650px){
+    .logo {
+        max-width: 300px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .login h3 {        
+        margin-bottom: 0.3em;
+    }
+    .separador-25 {
+        height: 15px;
+    }
+    .form-control {
+        height: 50px;        
+    }
+}
 /*graficas*/
 /*the container must be positioned relative:*/
 .form-select{
@@ -809,7 +886,7 @@ select option{
 .select-selected {
     background-color: #022869;
     border-radius: 15px;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
   
   /*style the arrow inside the select element:*/
