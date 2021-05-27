@@ -5,8 +5,7 @@ const chartConfig = {
   datasetsBorderWidth: 0,  
   color:'#ffffff',
   fontColor:'#ffffff',  
-  
-  maintainAspectRatio:true,
+  maintainAspectRatio: false,
   options: {  
     fontColor:'#ffffff',      
     legend: {
@@ -14,7 +13,8 @@ const chartConfig = {
     },    
     borderRadius: 10,
     indexAxis: 'y',
-    responsive: true,    
+    responsive: true,
+    maintainAspectRatio: false,   
     plugins: {
       title: {
         display: true,
@@ -68,5 +68,77 @@ const chartConfig = {
       }
 
     }
+  }
+};
+
+const lowerChartConfig = {
+  series: [
+      {
+          name: 'Región 1',
+          data: [44, 55]
+      }, 
+      {
+          name: 'Región 2',
+          data: [76, 85]
+      }, 
+  ],
+  colors: ['#14DFFF','#022869'],
+  chart: {
+      toolbar:{
+              show:false
+      },
+      type: 'bar',
+      height: 350
+  },
+  plotOptions: {
+      bar: {
+          horizontal: false,
+          columnWidth: '20%',
+          endingShape: 'rounded',
+          dataLabels: {
+              position: 'top', // top, center, bottom
+          },
+          colors:{
+              ranges:{
+                  from: 0,
+                  to: 100,
+                  color:'#022869'
+              }
+              
+          }
+      },
+  },
+  dataLabels: {
+      enabled: true,
+      formatter: function (val) {
+          return val + "%";
+      },
+      offsetY: -20,
+      style: {
+          fontSize: '12px',
+          colors: ['#022869']
+      }
+  },
+  stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+  },
+  xaxis: {
+      categories: ['14 a 19 años', '20 a 24 años'],
+  },
+  yaxis: {
+      
+  }
+  ,
+  tooltip: {
+      y: {
+          formatter: function (val) {
+          return val + " %"
+          }
+      }
+  }
+  ,fill: {
+      colors: ['#14DFFF','#022869']
   }
 };

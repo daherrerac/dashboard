@@ -282,7 +282,7 @@
                                     <!-- <div id="chart"></div>
                                     <div id="chartalt" style="display:none"></div> -->
                                     <div class="chart">
-                                        <canvas id="myChart"  width="630" height="280"></canvas>
+                                        <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +290,7 @@
                                 <div class="util-box blue-bg">
                                     <h4 class="py-2">Mujeres</h4>                                    
                                     <div class="chart">
-                                        <canvas id="myChart2" width="630" height="280"></canvas>
+                                        <canvas id="myChart2"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -322,7 +322,7 @@
                                             <li><a class="dropdown-item" href="#" >SUR DE BOLIVAR</a></li>                                          
                                         </ul>
                                     </div> -->
-                                    <div class="custom-select mt-3 region">
+                                    <div class="region custom-select mt-3">
                                         <select id="region1">
                                             <option>REGIÓN PDET</option>
                                             <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
@@ -340,7 +340,7 @@
                                             <li><a class="dropdown-item" href="#" id="reg2">SUR DE BOLIVAR</a></li> 
                                         </ul>
                                     </div> -->
-                                    <div class="custom-select mt-3">
+                                    <div class="region custom-select mt-3">
                                         <select id="region2">
                                             <option>REGIÓN PDET</option>
                                             <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
@@ -384,91 +384,6 @@
         </div>
         
     </div>
-    
-    
-    <script>        
-        var options2 = {
-            series: [
-                {
-                    name: 'Región 1',
-                    data: [44, 55, 57, 56, 61]
-                }, 
-                {
-                    name: 'Región 2',
-                    data: [76, 85, 90, 98, 87]
-                }, 
-            ],
-            colors: ['#14DFFF','#022869'],
-            chart: {
-                toolbar:{
-                        show:false
-                },
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '20%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top', // top, center, bottom
-                    },
-                    colors:{
-                        ranges:{
-                            from: 0,
-                            to: 100,
-                            color:'#022869'
-                        }
-                        
-                    }
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val + "%";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#022869']
-                }
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-            },
-            yaxis: {
-                
-            }
-            ,
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                    return val + " %"
-                    }
-                }
-            }
-            ,fill: {
-                colors: ['#14DFFF','#022869']
-            }
-        };
-
-        
-
-       
-
-        var chartb      = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc      = new ApexCharts(document.querySelector("#chartc"), options2);        
-        chartb.render();
-        chartc.render();
-        
-    </script>
     
 
 

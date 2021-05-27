@@ -222,22 +222,16 @@ class HTMLbuilder {
     return liEl;
   }
 
-  static createSelectorLiElement(option, id = undefined, attrs){
-    let liEl = document.createElement('li');
-    let aEl = document.createElement('a');
-    aEl.href = "#";
-    aEl.classList.add("dropdown-item");
-    aEl.innerHTML = option;
-    if (id) {
-      aEl.id = id;
-    }
+  static createSelectorOptionElement(option, attrs = undefined){
+    let optionEl = document.createElement('option');
+    optionEl.text = option;
+    optionEl.value = option;
     if (attrs) {
       for (let key of Object.keys(attrs)){
-        aEl.setAttribute(key, attrs[key]);
+        optionEl.setAttribute(key, attrs[key]);
       }
     }
-    liEl.appendChild(aEl);
-    return liEl;
+    return optionEl;
   }
 }
 
@@ -262,8 +256,8 @@ class Dashboard {
     if (this.hasMap){
       this.mapClickCallback = (region) => {
         this.region = region;
-        this.updateGraph(this.menGraph, {Region:this.region, Sexo:"HOMBRE"});
-        this.updateGraph(this.womenGraph, {Region:this.region, Sexo:"MUJER"});
+        this.updateGraph1(this.menGraph, {Region:this.region, Sexo:"HOMBRE"});
+        this.updateGraph1(this.womenGraph, {Region:this.region, Sexo:"MUJER"});
       }
     }
     this.init();
@@ -280,14 +274,15 @@ class Dashboard {
     }
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
     
-    // inicializar graficas
-    this.initGraphs();
-    
     // cargar informacion de preguntas de preguntas por defecto
     this.loadQuestions();
 
     // cargar regiones en selectores inferiores
     this.loadRegions();
+
+    // inicializar graficas
+    this.initGraphs1();
+    this.initGraphs2();
 
     // incializar mapa
     if (this.hasMap){
@@ -297,7 +292,7 @@ class Dashboard {
     // TODO esconder loader
   }
 
-  initGraphs(){
+  initGraphs1(){
     let menGraphEl = document.getElementById('myChart').getContext('2d');
     let womenGraphEl = document.getElementById('myChart2').getContext('2d');
     let filter = {Sexo:"HOMBRE"};
@@ -350,7 +345,7 @@ class Dashboard {
     this.womenGraph.update();
   }
 
-  updateGraph(graph, filter){
+  updateGraph1(graph, filter){
     const labelColumn = "Grupo de edad";
     // cargar datos del grafico
     let newData = this.dr.getColumnData(this.survey, this.selectedQuestion, labelColumn, filter);
@@ -361,6 +356,81 @@ class Dashboard {
     graph.options.plugins.title.text = this.selectedQuestion;
     graph.update();
   }
+
+  initGraphs2(){
+    let config1 = JSON.parse(JSON.stringify(lowerChartConfig));
+    let config2 = JSON.parse(JSON.stringify(lowerChartConfig));
+    
+    config1.chart.id = 'menChart';
+    config2.chart.id = 'womenChart';
+    const labelColumn = "Grupo de edad";
+    
+    
+    let filter = {Sexo:"HOMBRE"};
+    if (this.hasMap){
+      filter.Region=this.graphRegionSelection1;
+    }
+    
+    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    if (this.hasMap){
+      filter.Region=this.graphRegionSelection2;
+    }
+    let womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    config1.series[0].name = this.graphRegionSelection1;
+    config1.series[0].data = menGraphDataSeries.data;
+    config1.series[1].name = this.graphRegionSelection2;
+    config1.series[1].data = womenGraphDataSeries.data;
+    config1.xaxis.categories = menGraphDataSeries.labels;
+
+    console.log("config", config1);
+
+    let filter2 = {Sexo:"MUJER"};
+    if (this.hasMap){
+      filter2.Region=this.graphRegionSelection1;
+    }
+    menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter2);
+    if (this.hasMap){
+      filter2.Region=this.graphRegionSelection2;
+    }
+    womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter2);
+    config2.series[0].name = this.graphRegionSelection1;
+    config2.series[0].data = menGraphDataSeries.data;
+    config2.series[1].name = this.graphRegionSelection2;
+    config2.series[1].data = womenGraphDataSeries.data;
+    config2.xaxis.categories = menGraphDataSeries.labels;
+
+    console.log("config2", config2);
+    
+    let chartb = new ApexCharts(document.querySelector("#chartb"), config1);
+    let chartc = new ApexCharts(document.querySelector("#chartc"), config2);        
+    chartb.render();
+    chartc.render();
+  }
+
+  updateGraph2(graphId, filter){
+    const labelColumn = "Grupo de edad";
+    // cargar datos del grafico
+    filter.Region=this.graphRegionSelection1;
+    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    filter.Region=this.graphRegionSelection2;
+    let womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    let series = [
+      {
+        name:this.graphRegionSelection1,
+        data: menGraphDataSeries.data,
+      },
+      {
+        name:this.graphRegionSelection2,
+        data:womenGraphDataSeries.data,
+      }
+    ];
+    //config2.xaxis.categories = menGraphDataSeries.labels;
+
+    //console.log("graphData1", graphData1);
+    ApexCharts.exec(graphId, 'updateSeries', series, true);
+  }
+
+  
 
   loadQuestions(){
     let self = this;
@@ -386,37 +456,44 @@ class Dashboard {
         // adicionar clase selected al elemento del evento
         this.classList.add('selected');
         console.log("Click question", self.selectedQuestion);
-        self.updateGraph(self.menGraph, {Region:self.region, Sexo:"HOMBRE"});
-        self.updateGraph(self.womenGraph, {Region:self.region, Sexo:"MUJER"});
+        self.updateGraph1(self.menGraph, {Region:self.region, Sexo:"HOMBRE"});
+        self.updateGraph1(self.womenGraph, {Region:self.region, Sexo:"MUJER"});
+        self.updateGraph2("menChart", {Region:'', Sexo:"HOMBRE"});
+        self.updateGraph2("womenChart", {Region:'', Sexo:"MUJER"});
       });
     });
   }
 
   loadRegions(){
     let self = this;
-    const regionsDropDown = document.querySelectorAll('.custom-select.region select');
+    const regionsDropDown = document.querySelectorAll('.region.custom-select select');
     const regionsList = this.dr.getFilters(this.survey, 'Region');
     self.graphRegionSelection1 = regionsList[0];
     self.graphRegionSelection2 = regionsList[1];
-    regionsDropDown.forEach((ul, i) => {
+    regionsDropDown.forEach((selector, i) => {
       // limpiar opciones
-      ul.innerHTML = '';
-      regionsList.forEach((q, i2) => {
-        ul.append(HTMLbuilder.createSelectorLiElement(q, "selRegion"+i+i2, {target: "selector"+i}));
+      selector.innerHTML = '';
+      // adicionar atributo de selector
+      regionsList.forEach((q) => {
+        selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
       });
-    });
-    // adicionar eventos a las regiones cargadas
-    const dropDownAction = document.querySelectorAll('.dropdown.region ul li a');
-    dropDownAction.forEach((a) => {
-      a.addEventListener('click', function(event) {
-        event.preventDefault();
-        if (a.getAttribute('target') == 'selector0'){
-          self.graphRegionSelection1 = a.innerHTML;
-        } else if (a.getAttribute('target') == 'selector1'){
-          self.graphRegionSelection2 = a.innerHTML;
+      let callback = (value) => {
+        if (selector.getAttribute('id') == "region1"){
+          self.graphRegionSelection1 = value;
+        } else if (selector.getAttribute('id') == 'region2'){
+          self.graphRegionSelection2 = value;
         }
-        console.log("Region seleccionada:", a.innerHTML, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
-      });
+        self.updateGraph2("menChart", {Region:'', Sexo:"HOMBRE"});
+        self.updateGraph2("womenChart", {Region:'', Sexo:"MUJER"});
+        console.log("Region seleccionada:", value, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
+      };
+      // definir selecciones por defecto de ambos selectores
+      if (selector.getAttribute('id') == "region1"){
+        selector.selectedIndex = 0;
+      } else if (selector.getAttribute('id') == 'region2'){
+        selector.selectedIndex = 1;
+      }
+      updateOption(selector, callback, regionsList[selector.selectedIndex]);
     });
   }
 }
@@ -486,6 +563,7 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
+
 var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -539,6 +617,49 @@ for (i = 0; i < l; i++) {
       this.nextSibling.classList.toggle("select-hide");
       this.classList.toggle("select-arrow-active");
     });
+}
+
+function updateOption(select, callback, selValue){
+  // get div next to selector
+  let parent = select.parentElement;
+  let selectorVisible = parent.querySelector('.select-items');
+  selectorVisible.innerHTML = '';
+  for (j = 0; j < select.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = select.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+        if (callback) {
+          callback(s.options[s.selectedIndex].innerHTML);
+        }
+    });
+    selectorVisible.appendChild(c);
+  }
+  if (selValue) {
+    let selectorVisibleSelected = parent.querySelector('.select-selected');
+    selectorVisibleSelected.innerHTML = selValue;
+  }
 }
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,

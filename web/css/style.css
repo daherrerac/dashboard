@@ -479,6 +479,7 @@ h2 span{
     max-width: 630px;
     margin: 0 auto;
     height: 312px;
+    padding-bottom: 20px;
 }
 .respuesta{
     font-family:'SourceBold';
@@ -737,9 +738,9 @@ select option{
         display: none;
     }
     
-    .util-box.blue-bg{
+    /*.util-box.blue-bg{
         height: 320px;
-    }
+    }*/
     form{
         width: 90%;        
     }
