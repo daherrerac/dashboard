@@ -5,7 +5,7 @@ const chartConfig = {
   datasetsBorderWidth: 0,  
   color:'#ffffff',
   fontColor:'#ffffff',  
-  responsive:true,
+  
   maintainAspectRatio:true,
   options: {  
     fontColor:'#ffffff',      

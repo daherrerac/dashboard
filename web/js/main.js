@@ -1,3 +1,6 @@
+// const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
+const siteurl = 'http://dashboard.local/';
+
 
 /** Funcion para leer archivos csv */
 function parseFile(url) {
@@ -23,22 +26,14 @@ function parseFile(url) {
 class DashboardDataReader {
 
   data;
-  //ubicacion de archivos csv
-  /* static urls = {
-    'hogaresGenerales':'http://dashboard.test/csv/hogares_general.csv',
-    'mujeresEtnicas':'http://dashboard.test/csv/hogares_mujeres_etnicas.csv',
-    'servidoresPublicos':'http://dashboard.test/csv/encuesta_servidores_publicos.csv',
-    'entornoInstitucionalPaz':'http://dashboard.test/csv/entorno_institucional_paz.csv',
-    'entornoInstitucionalMujeres':'http://dashboard.test/csv/entorno_institucional_mujeres.csv',
-    'entornoInstitucionalLGBTI':'http://dashboard.test/csv/entorno_institucional_lgbti.csv'
-  };  */
-  static urls ={
-    'hogaresGenerales':'http://pruebas.kugelelectronics.com.co/dashboard/csv/hogares_general.csv',
-    'mujeresEtnicas':'http://pruebas.kugelelectronics.com.co/dashboard//csv/hogares_mujeres_etnicas.csv',
-    'servidoresPublicos':'http://pruebas.kugelelectronics.com.co/dashboard/csv/encuesta_servidores_publicos.csv',
-    'entornoInstitucionalPaz':'http://pruebas.kugelelectronics.com.co/dashboard/csv/entorno_institucional_paz.csv',
-    'entornoInstitucionalMujeres':'http://pruebas.kugelelectronics.com.co/dashboard//csv/entorno_institucional_mujeres.csv',
-    'entornoInstitucionalLGBTI':'http://pruebas.kugelelectronics.com.co/dashboard/csv/entorno_institucional_lgbti.csv'
+  // ubicacion de archivos csv
+  static urls = {
+    'hogaresGenerales':siteurl + 'csv/hogares_general.csv',
+    'mujeresEtnicas':siteurl + 'csv/hogares_mujeres_etnicas.csv',
+    'servidoresPublicos':siteurl + 'csv/encuesta_servidores_publicos.csv',
+    'entornoInstitucionalPaz':siteurl + 'csv/entorno_institucional_paz.csv',
+    'entornoInstitucionalMujeres':siteurl + 'csv/entorno_institucional_mujeres.csv',
+    'entornoInstitucionalLGBTI':siteurl + 'csv/entorno_institucional_lgbti.csv'
   };
 
   // declaracion de filtros
@@ -49,6 +44,28 @@ class DashboardDataReader {
   async parseFile(url){
     const res = await parseFile(url);
     return res;
+  }
+
+  async parseDashboardFile(surveyKey){
+    let data={};
+    const lowercaseFilters = DashboardDataReader.filterFields.map((el) => el.toLowerCase());
+
+    let csvData = await this.parseFile(DashboardDataReader.urls[surveyKey]);
+    let questions = csvData[0].filter((value) => {
+      return !lowercaseFilters.includes(value.toLowerCase().trim());
+    });
+    let headers = csvData[0].map(el => el.trim());
+    // eliminar encabezado de tabla de datos
+    csvData.shift();
+    // crear objeto de resultado final
+    data[surveyKey] = {
+      questions,
+      headers,
+      data: csvData 
+    };
+    this.data = data;
+    this.getFiltersFromData();
+    console.log("data", this.data);
   }
 
   async parseFiles(){
@@ -116,6 +133,14 @@ class DashboardDataReader {
     return [];
   }
 
+  /**
+   * Retorna la lista de elementos de los campos de filros del survey dado. 
+   * Ej. Grupo de edad, Sexo, o region del survey  hogaresGenerales. 
+   * @param {string} survey un survey de la siguiente lista:  hogaresGenerales, mujeresEtnicas, 
+   * servidoresPublicos, entornoInstitucionalPaz, entornoInstitucionalMujeres, entornoInstitucionalLGBTI
+   * @param {string} filterKey uno de los campos de filtro del survey
+   * @returns array con valores unicos del filtro especificado para cada survey
+   */
   getFilters(survey, filterKey){
     if (this.data[survey] &&  this.data[survey].filters[filterKey]) {
       return this.data[survey].filters[filterKey];
@@ -146,7 +171,7 @@ class DashboardDataReader {
           evalData = evalData.filter((value) => {
             let conditionMet = true;
             for (let indexObj of indexes) {
-              conditionMet = conditionMet && value[indexObj.index].trim().toLowerCase() === indexObj.value;
+              conditionMet = conditionMet && value[indexObj.index] && value[indexObj.index].trim().toLowerCase() === indexObj.value;
             }
             return conditionMet;
           });
@@ -188,11 +213,29 @@ class DashboardDataReader {
 }
 
 class HTMLbuilder {
-  static createPreguntasUL(pregunta){
+  static createPreguntasLiElement(pregunta){
     let liEl = document.createElement('li');
     let aEl = document.createElement('a');
     aEl.href = "#";
     aEl.innerHTML = pregunta;
+    liEl.appendChild(aEl);
+    return liEl;
+  }
+
+  static createSelectorLiElement(option, id = undefined, attrs){
+    let liEl = document.createElement('li');
+    let aEl = document.createElement('a');
+    aEl.href = "#";
+    aEl.classList.add("dropdown-item");
+    aEl.innerHTML = option;
+    if (id) {
+      aEl.id = id;
+    }
+    if (attrs) {
+      for (let key of Object.keys(attrs)){
+        aEl.setAttribute(key, attrs[key]);
+      }
+    }
     liEl.appendChild(aEl);
     return liEl;
   }
@@ -206,15 +249,22 @@ class Dashboard {
   menGraph;
   womenGraph;
   selectedQuestion;
+  hasMap;
+
+  graphRegionSelection1;
+  graphRegionSelection2;
   
 
-  constructor(){
+  constructor(survey, hasMap = true){
     this.dr = new DashboardDataReader();
-    this.survey = Object.keys(DashboardDataReader.urls)[0];
-    this.mapClickCallback = (region) => {
-      this.region = region;
-      this.updateGraph(this.menGraph, this.selectedQuestion, {Region:this.region, Sexo:"HOMBRE"});
-      this.updateGraph(this.womenGraph, this.selectedQuestion, {Region:this.region, Sexo:"MUJER"});
+    this.survey = survey;
+    this.hasMap = hasMap;
+    if (this.hasMap){
+      this.mapClickCallback = (region) => {
+        this.region = region;
+        this.updateGraph(this.menGraph, {Region:this.region, Sexo:"HOMBRE"});
+        this.updateGraph(this.womenGraph, {Region:this.region, Sexo:"MUJER"});
+      }
     }
     this.init();
   }
@@ -222,12 +272,12 @@ class Dashboard {
   async init(){
     // TODO iniciar un loader o algo aca
   
-    await this.dr.parseFiles();
-
-    // esconder loader
+    await this.dr.parseDashboardFile(this.survey);
 
     // asignar parametros por defecto
-    this.region = this.dr.getFilters(this.survey, "Region")[0]; // seleccionar la primera region de la lista
+    if (this.hasMap){
+      this.region = this.dr.getFilters(this.survey, "Region")[0]; // seleccionar la primera region de la lista
+    }
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
     
     // inicializar graficas
@@ -236,23 +286,33 @@ class Dashboard {
     // cargar informacion de preguntas de preguntas por defecto
     this.loadQuestions();
 
+    // cargar regiones en selectores inferiores
+    this.loadRegions();
+
     // incializar mapa
-    initMapHandler(this.mapClickCallback);
+    if (this.hasMap){
+      initMapHandler(this.mapClickCallback);
+    }
+
+    // TODO esconder loader
   }
 
   initGraphs(){
     let menGraphEl = document.getElementById('myChart').getContext('2d');
     let womenGraphEl = document.getElementById('myChart2').getContext('2d');
-    const filter = {Region:this.region, Sexo:"HOMBRE"};
+    let filter = {Sexo:"HOMBRE"};
+    if (this.hasMap){
+      filter.Region=this.region;
+    }
     const labelColumn = "Grupo de edad";
     let graphData1 = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
-    // console.log("graphData1", graphData1);
+
     this.menGraph = new Chart(menGraphEl, {
       type: 'bar',
-      data: {        
+      data: {
         labels: graphData1.labels,
-        datasets: [{  
-          label:this.region,          
+        datasets: [{
+          label: this.region,
           data: graphData1.data,
           backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
           borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
@@ -262,17 +322,18 @@ class Dashboard {
       },
       options: chartConfig.options
     });
-    const filter2 = {Region:this.region, Sexo:"MUJER"};
+    let filter2 = {Region:this.region, Sexo:"MUJER"};
+    if (this.hasMap){
+      filter2.Region=this.region;
+    }
     let graphData2 = this.dr.getColumnData(this.survey, this.selectedQuestion, labelColumn, filter2);
-    // console.log("graphData2", graphData2);
-
 
     this.womenGraph = new Chart(womenGraphEl, {
       type: 'bar',
-      data: {        
+      data: {
         labels: graphData2.labels,
-        datasets: [{   
-          label:this.region,       
+        datasets: [{
+          label: this.region,
           data: graphData2.data,
           backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
           borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
@@ -289,16 +350,15 @@ class Dashboard {
     this.womenGraph.update();
   }
 
-  updateGraph(graph, title, filter){
+  updateGraph(graph, filter){
     const labelColumn = "Grupo de edad";
     // cargar datos del grafico
-    let newData = this.dr.getColumnData(this.survey, title, labelColumn, filter);
+    let newData = this.dr.getColumnData(this.survey, this.selectedQuestion, labelColumn, filter);
     //console.log("graphData1", graphData1);
-    this.selectedQuestion = title;
     graph.data.labels = newData.labels;
-    graph.data.datasets[0].label = filter.Region;
     graph.data.datasets[0].data = newData.data;
-    graph.options.plugins.title.text = title;
+    graph.data.datasets[0].label = this.region;
+    graph.options.plugins.title.text = this.selectedQuestion;
     graph.update();
   }
 
@@ -310,24 +370,57 @@ class Dashboard {
     pregUL.innerHTML = '';
     // insertar preguntas en DOM
     questions.forEach((q) => {
-      pregUL.append(HTMLbuilder.createPreguntasUL(q));
+      pregUL.append(HTMLbuilder.createPreguntasLiElement(q));
     });
     // inicializar eventos de clic en cada pregunta
     const aTags = document.querySelectorAll('.preguntas ul li a');
     aTags.forEach((a) => {
       a.addEventListener('click', function(event) {
         event.preventDefault();
-        console.log("Click question", event.target);
-        self.updateGraph(self.menGraph, event.target.innerHTML, {Region:self.region, Sexo:"HOMBRE"});
-        self.updateGraph(self.womenGraph, event.target.innerHTML, {Region:self.region, Sexo:"MUJER"});
+        self.selectedQuestion = event.target.innerHTML;
+        // Limpiar la clase selected en todos los elementos
+        const aTags2 = document.querySelectorAll('.preguntas ul li a');
+        aTags2.forEach((a) => {
+          a.classList.remove('selected');
+        });
+        // adicionar clase selected al elemento del evento
+        this.classList.add('selected');
+        console.log("Click question", self.selectedQuestion);
+        self.updateGraph(self.menGraph, {Region:self.region, Sexo:"HOMBRE"});
+        self.updateGraph(self.womenGraph, {Region:self.region, Sexo:"MUJER"});
+      });
+    });
+  }
+
+  loadRegions(){
+    let self = this;
+    const regionsDropDown = document.querySelectorAll('.custom-select.region select');
+    const regionsList = this.dr.getFilters(this.survey, 'Region');
+    self.graphRegionSelection1 = regionsList[0];
+    self.graphRegionSelection2 = regionsList[1];
+    regionsDropDown.forEach((ul, i) => {
+      // limpiar opciones
+      ul.innerHTML = '';
+      regionsList.forEach((q, i2) => {
+        ul.append(HTMLbuilder.createSelectorLiElement(q, "selRegion"+i+i2, {target: "selector"+i}));
+      });
+    });
+    // adicionar eventos a las regiones cargadas
+    const dropDownAction = document.querySelectorAll('.dropdown.region ul li a');
+    dropDownAction.forEach((a) => {
+      a.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (a.getAttribute('target') == 'selector0'){
+          self.graphRegionSelection1 = a.innerHTML;
+        } else if (a.getAttribute('target') == 'selector1'){
+          self.graphRegionSelection2 = a.innerHTML;
+        }
+        console.log("Region seleccionada:", a.innerHTML, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
       });
     });
   }
 }
 
-// iniciar funciones y carga de datos
-let dash = new Dashboard();
-dash.init();
 
 
 // cargar informacion de charts

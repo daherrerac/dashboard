@@ -322,7 +322,7 @@
                                             <li><a class="dropdown-item" href="#" >SUR DE BOLIVAR</a></li>                                          
                                         </ul>
                                     </div> -->
-                                    <div class="custom-select mt-3">
+                                    <div class="custom-select mt-3 region">
                                         <select id="region1">
                                             <option>REGIÓN PDET</option>
                                             <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
@@ -514,7 +514,11 @@
     <script src="js/charts-config.js"></script>
     <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>
-    
+    <script>
+        // iniciar dashboard
+        // iniciar funciones y carga de datos
+        let dash = new Dashboard('hogaresGenerales');
+    </script>
     
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
