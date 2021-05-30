@@ -310,7 +310,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">                                    
-                                    <div class="custom-select mt-3">
+                                    <div class="region custom-select mt-3">
                                         <select id="region1">
                                             <option>REGIÓN</option>
                                             <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
@@ -318,8 +318,8 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">                                    
-                                    <div class="custom-select mt-3">
+                                <div class="col-lg-3 col-md-6">                                   
+                                    <div class="region custom-select mt-3">
                                         <select id="region2">
                                             <option>REGIÓN</option>
                                             <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
@@ -331,7 +331,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -355,88 +354,7 @@
         
     </div>
 
-    <script>
-       var options2 = {
-            series: [
-                {
-                    name: 'Región 1',
-                    data: [44, 55, 57, 56, 61]
-                }, 
-                {
-                    name: 'Región 2',
-                    data: [76, 85, 90, 98, 87]
-                }, 
-            ],
-            colors: ['#14DFFF','#022869'],
-            chart: {
-                toolbar:{
-                        show:false
-                },
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '20%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top', // top, center, bottom
-                    },
-                    colors:{
-                        ranges:{
-                            from: 0,
-                            to: 100,
-                            color:'#022869'
-                        }
-                        
-                    }
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val + "%";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#022869']
-                }
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-            },
-            yaxis: {
-                
-            }
-            ,
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                    return val + " %"
-                    }
-                }
-            }
-            ,fill: {
-                colors: ['#14DFFF','#022869']
-            }
-        };
-
-        
-
-       
-
-        var chartb      = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc      = new ApexCharts(document.querySelector("#chartc"), options2);        
-        chartb.render();
-        chartc.render();
-    </script>
+    
     
     
     <!-- Optional JavaScript; choose one of the two! -->
@@ -444,11 +362,15 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/mapa/col.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
     <script src="js/charts-config.js"></script>
     <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // iniciar dashboard
+        // iniciar funciones y carga de datos
+        let dash = new Dashboard('hogaresGenerales');
+    </script>
     
     
 
