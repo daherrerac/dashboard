@@ -1,5 +1,7 @@
-// const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
-const siteurl = 'http://dashboard.local/';
+//const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
+const siteurl = 'http://webdash.test/';
+//const siteurl = 'http://dashboard.local/';
+
 
 
 /** Funcion para leer archivos csv */
@@ -280,6 +282,9 @@ class Dashboard {
     // cargar regiones en selectores inferiores
     this.loadRegions();
 
+    //Cargar región individual
+    this.loadSingleRegion();
+
     // inicializar graficas
     this.initGraphs1();
     this.initGraphs2();
@@ -496,64 +501,32 @@ class Dashboard {
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
     });
   }
+
+  loadSingleRegion(){
+    let self = this;
+    const regionsDropDown = document.querySelectorAll('.custom-select.ext select');
+    const regionsList = this.dr.getFilters(this.survey, 'Region');
+    self.graphRegionSelection1 = regionsList[0];
+    regionsDropDown.forEach((selector, i) => {
+      // limpiar opciones
+      selector.innerHTML = '';
+      // adicionar atributo de selector
+      regionsList.forEach((q) => {
+        selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
+      });
+      let callback = (value) => {
+        if (selector.getAttribute('id') == "regionA"){
+          self.graphRegionSelection1 = value;
+        } 
+        
+      };
+      
+    });
+  }
 }
 
 
 
-// cargar informacion de charts
-
-$( "#trigger-qb" ).click(function(event) {
-  event.preventDefault();
-  $( "#chart" ).toggle( function() {
-    // Animation complete.
-  });
-  $( "#chartalt" ).toggle(  function() {
-      // Animation complete.
-  });
-  $( "#chart-2" ).toggle(  function() {
-      // Animation complete.
-  });
-  $( "#chartalt2" ).toggle(  function() {
-      // Animation complete.
-  });
-});
-$( "#trigger-qc" ).click(function(event) {
-  event.preventDefault();
-  $( "#chart" ).toggle(  function() {
-    // Animation complete.
-  });
-  $( "#chartalt" ).toggle(  function() {
-      // Animation complete.
-  });
-  $( "#chart-2" ).toggle(  function() {
-      // Animation complete.
-  });
-  $( "#chartalt2" ).toggle(  function() {
-      // Animation complete.
-  });
-});
-
-$( "#reg1" ).click(function(event) {
-  event.preventDefault();
-  $( "#chartb" ).toggle(  function() {
-    // Animation complete.
-  });
-  $( "#chartbalt" ).toggle(  function() {
-      // Animation complete.
-  });
-  
-});
-
-$( "#reg2" ).click(function(event) {
-  event.preventDefault();
-  $( "#chartc" ).toggle(  function() {
-    // Animation complete.
-  });
-  $( "#chartcalt" ).toggle(  function() {
-      // Animation complete.
-  });
-  
-});
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "260px";
@@ -685,3 +658,8 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+
+$( ".hb-menu" ).click(function(){
+  $(".menu-mb .menu-lateral").toggle();
+  $("#overlay").toggle();
+});

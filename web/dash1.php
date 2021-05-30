@@ -42,11 +42,11 @@
     </style>
 
   </head>
-  <body style="overflow-y: auto;background: #fbfbfb;">
+  <body style="overflow-y: auto;">
       
     <div class="container-fluid">
         <div class="fila">
-            <div class="columna1">
+            <div class="columna1 d-none d-lg-block">
                 <div class="col-lg-12">
                     <div class="menu-lateral">
                         <div class="logo-left">
@@ -54,23 +54,23 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres
+                                La tolerancia social e institucional a las violencias contra las mujeres.
                             </h2>
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
-                                  <h2 class="accordion-header" id="flush-headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                      Encuesta General
-                                    </button>
+                                  <h2 class="accordion-header" id="flush-headingOne">                                    
+                                    <div class="menu-selector activo">
+                                        <a href="dash1.php">
+                                            <img src="img/icono-02.svg" alt="">
+                                            Encuesta general
+                                        </a>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                        </button>
+                                    </div>
                                   </h2>
                                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        <div class="box-buttons">
-                                            <a href="dash1.php" class="activo">
-                                                <img src="img/icono-02.svg" alt="">
-                                                Encuesta general
-                                            </a>
-                                        </div>
+											  
                                         <div class="box-message">
                                             <a href="dash2.php" class="activo">
                                                 Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
@@ -80,8 +80,7 @@
                                   </div>
                                 </div>                                                                
                             </div>
-                                                        
-                            
+                                                                                    
                             <div class="box-buttons">
                                 <a href="dash3.html" class="hblue">
                                     <img src="img/icono-03.svg" alt="" >
@@ -95,7 +94,7 @@
                         </div>
                         <div class="red-menu">
                             <h2>
-                                Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
+                                Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
                                 <a href="dash4.html" class="hred">
@@ -124,13 +123,111 @@
                                 </a>
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/chat.png" alt="">
-                                    Contácto
+                                    Contacto
                                 </a>                        
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="menu-mb d-lg-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="hb-menu">
+                                <svg viewBox="0 0 100 80" width="30" height="30">
+                                    <rect width="100" height="15" rx="8"></rect>
+                                    <rect y="30" width="100" height="15" rx="8"></rect>
+                                    <rect y="60" width="100" height="15" rx="8"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="logo">
+                                <img src="img/logo.svg" alt="">                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-lateral" style="display:none">                    
+                    <div class="blue-menu">
+                        <h2>
+                            La tolerancia social e institucional a las violencias contra las mujeres.
+                        </h2>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">                                    
+                                <div class="menu-selector activo">
+                                    <a href="dash1.php">
+                                        <img src="img/icono-02.svg" alt="">
+                                        Encuesta general
+                                    </a>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                    </button>
+                                </div>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                            
+                                    <div class="box-message">
+                                        <a href="dash2.php" class="activo">
+                                            Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                        </a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>                                                                
+                        </div>
+                                                                                
+                        <div class="box-buttons">
+                            <a href="dash3.html" class="hblue">
+                                <img src="img/icono-03.svg" alt="" >
+                                Encuesta servidores públicos
+                            </a>
+                            <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="img/info-blue.png" alt="" >    
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="red-menu">
+                        <h2>
+                            Retos del entorno institucional para el empoderamiento de género en Colombia
+                        </h2>
+                        <div class="box-buttons">
+                            <a href="dash4.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional Paz
+                            </a>
+                            <a href="dash5.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">
+                                Entorno Institucional Mujeres
+                            </a>
+                            <a href="#" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional LGBTIQ
+                            </a>
+                            <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                <img src="img/info.png" alt="">     
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gray-menu">
+                        <div class="box-buttons">
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/info-w.png" alt="">
+                                Sobre el proyecto
+                            </a>
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/chat.png" alt="">
+                                Contacto
+                            </a>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="overlay"></div>
             <div class="columna2">
                 <div class="row">
                     <div class="col-lg-12">
@@ -150,7 +247,7 @@
                     <div class="col-xxl-10 col-xl-9 col-md-12">
                         <div class="blue-info">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -167,7 +264,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -184,7 +281,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -208,12 +305,12 @@
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="#">
+                                <a href="fichas/PDF.pdf" class="hblue" target="_blank">
                                     <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
                                 </a>
-                                <a href="#">
+                                <a href="#exampleModal3" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                                     <img src="img/play.png" alt="">
                                     <span>|</span>
                                     VER VIDEO
@@ -227,7 +324,7 @@
                     <div class="col-xl-12">
                         <div class="util-box">
                             <div class="mapa">
-                                <h4>Preguntas</h4>
+                                <h4>Enunciados</h4>
                                 <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
                             </div>
                             <div class="preguntas">
@@ -261,10 +358,10 @@
 
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
-                        <div class="util-box">
+                        <div class="util-box" style="height:97%">
                             <div class="mapa">
-                                <h4>Regiones PDET</h4>
-                                <p>Seleccione en el mapa la región PDET que desee consultar</p>
+                                <h4>Regiones</h4>
+                                <p>Seleccione en el mapa la región que desee consultar</p>
                                 <div class="mapcontainer">
                                     <div class="map">
                                         
@@ -274,7 +371,25 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
-                    
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione la región que desee consultar</p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <div class="custom-select ext mx-1">
+                                        <select id="regionA">
+                                            <option>REGIÓN</option>
+                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
+                                            <option value="2">REGIÓN 2</option>                                       
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
                         <div class="row ">
                             <div class="col-xxl-12 col-xl-12 col-lg-12">
                                 <div class="util-box blue-bg">
@@ -282,7 +397,7 @@
                                     <!-- <div id="chart"></div>
                                     <div id="chartalt" style="display:none"></div> -->
                                     <div class="chart">
-                                        <canvas id="myChart"></canvas>
+                                        <canvas id="myChart"  width="630" height="280"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +405,7 @@
                                 <div class="util-box blue-bg">
                                     <h4 class="py-2">Mujeres</h4>                                    
                                     <div class="chart">
-                                        <canvas id="myChart2"></canvas>
+                                        <canvas id="myChart2" width="630" height="280"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -308,41 +423,23 @@
                                 <div class="col-lg-6">
                                     <div class="mapa mt-2">
                                         <h4>
-                                            SELECCIONE LAS REGIONES PDET QUE DESEE COMPARAR
+                                            SELECCIONE LAS REGIONES QUE DESEE COMPARAR
                                         </h4>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <!-- <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            REGIÓN PDET
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="#" id="reg1">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
-                                            <li><a class="dropdown-item" href="#" >SUR DE BOLIVAR</a></li>                                          
-                                        </ul>
-                                    </div> -->
+                                <div class="col-lg-3 col-md-6">                                    
                                     <div class="region custom-select mt-3">
                                         <select id="region1">
-                                            <option>REGIÓN PDET</option>
+                                            <option>REGIÓN</option>
                                             <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
                                             <option value="2">REGIÓN 2</option>                                       
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <!-- <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            REGIÓN PDET
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" href="#">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
-                                            <li><a class="dropdown-item" href="#" id="reg2">SUR DE BOLIVAR</a></li> 
-                                        </ul>
-                                    </div> -->
+                                <div class="col-lg-3 col-md-6">                                   
                                     <div class="region custom-select mt-3">
                                         <select id="region2">
-                                            <option>REGIÓN PDET</option>
+                                            <option>REGIÓN</option>
                                             <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
                                             <option value="2">REGIÓN 3</option>                                       
                                         </select>
@@ -380,12 +477,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="py-5"></div>
             </div>
         </div>
         
     </div>
     
-
+    
 
   
   <!-- Modal -->
@@ -419,6 +517,24 @@
         </div>
     </div>
     
+    <div class="video">
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <video controls>
+                        <source src="fichas/video.mp4" type="video/mp4">                        
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -435,11 +551,6 @@
         let dash = new Dashboard('hogaresGenerales');
     </script>
     
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
-    -->
+   
   </body>
 </html>

@@ -92,34 +92,35 @@ h2 span{
 .gray-menu{
     background: #dadada;
     padding: 0;
+    padding-top: 2em;
+}
+.gray-menu .box-buttons a{
+    margin: 0 auto 1em auto;
 }
 .blue-menu h2,.red-menu h2{
     font-size: 1.2em;
-    max-width: 240px;
+    max-width: 235px;
     margin: 0 auto;
     padding: 1em 0;
 }
 .blue-menu .accordion h2{
     padding: 0;
+    font-family: 'SourceRegular';
 }
 .blue-menu .accordion-item {
     background-color: #011e52;
     border: 1px solid rgba(0, 0, 0, 0.125);
 }
-.blue-menu .accordion-button{
-    background-color: #011e52;
-    color: #ffffff;
-}
-.blue-menu .accordion-button:focus{
-    border-color: #dedede;
-    box-shadow: 0 0 0 0.2rem #dedede50;
 
+.blue-menu .accordion-button:focus{
+    border: none;
+    box-shadow: none;
 }
 .blue-menu .accordion-body {
     padding: 0;
 }
 .blue-menu .accordion-button::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23022869'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");    
 }
 .box-select{
     background: #022869;
@@ -145,8 +146,77 @@ h2 span{
     text-decoration: none;
     display: block;
 }
+.box-message a.activo:hover{
+    font-weight: 600;
+    text-shadow: 2px 2px 2px black;
+    color: #ffffff;
+}
+.btn-group{
+    width: 100%;
+}
+.btn-group .box-buttons{
+    padding: 0;
+    width: 75%;
+}
+.menu-selector{
+    display: block;    
+    width: 100%;
+    height: 35px;
+    margin: 1em auto;
+    background: #ffffff;
+    color: #022869;
+    text-align: left;
+    padding: 0.5em 0;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 0.5em;
+    max-width: 245px;
+    box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
+    max-width: 225px;
+    position: relative;
+}
+.menu-selector.activo{
+    background: #0065BA;
+    color: #ffffff;
+}
+.menu-selector.activo .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");    
+}
+.menu-selector img{
+    width: 18px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.menu-selector button{
+    position: absolute;
+    display: inline-flex;
+    width: max-content;
+    padding: 0;
+    margin-left: 1em;
+    right: 10px;    
+    top: 7px;
+}
+.menu-selector .accordion-button:not(.collapsed) {
+    color: #0c63e4;
+    background-color: transparent;
+    box-shadow: none;
+}
+.menu-selector a{
+    position: absolute;
+    left: 0;
+    color: #022869;
+    text-decoration: none;
+    padding-bottom: 0.2em;
+    font-size: 0.8em;
+}
+.menu-selector.activo a{
+    color: #ffffff;
+}
+.menu-selector .accordion-button{
+    background: transparent;
+}
 .box-buttons{    
-    padding: 1.5em 0;    
+    padding: 0 0 1.5em 0;    
 }
 .box-buttons a{
     display: block;
@@ -162,10 +232,15 @@ h2 span{
     max-width: 245px;
     box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
 }
+.accordion-header .box-buttons a{
+    margin: 1em auto 0em 5px;
+    font-size: 1.1em;
+}
 .box-buttons a.blue-bg{
     background: #022869;
     color: #ffffff;
 }
+
 .box-buttons a.activo{
     background: #0065BA;
     color: #ffffff;
@@ -368,6 +443,7 @@ h2 span{
     border-radius: 0.8em;
     width: 100%;
     margin-top: 1.5em;
+    height: 170px;
 }
 .blue-info.red-bg{
     background: #C2113B;
@@ -415,6 +491,7 @@ h2 span{
     max-width: 260px;
     margin-right: 0;
     margin-left: auto;
+    height: 170px;
 }
 .adicional.red-bg{
     background: #C2113B;
@@ -449,6 +526,7 @@ h2 span{
     padding: 0 1.5em;    
     margin-right: 0;
     margin-left: auto;
+    height: 370px;
 }
 
 .util-box.red-bg{
@@ -479,7 +557,6 @@ h2 span{
     max-width: 630px;
     margin: 0 auto;
     height: 312px;
-    padding-bottom: 20px;
 }
 .respuesta{
     font-family:'SourceBold';
@@ -554,6 +631,7 @@ h2 span{
     border-radius: 0.5em;
 }
 .preguntas li a:active,
+.preguntas li a.selected,
 .preguntas li a:focus,
 .preguntas li a:hover{
     background: #022869;
@@ -632,18 +710,18 @@ select option{
 }
 
 .map{
-    max-height: 650px;
+    max-height: 710px;
     position: relative;
 }
 .map svg{
     display: block;
     margin: 0 auto; 
-    max-height: 650px;
-    width: 70%;
+    max-height: 690px;
+    width: 93%;
 }
 .mapcontainer{
     width: 100%;
-    max-height: 650px;
+    max-height: 710px;
     padding-top: 2em;
 }
 .red .zoomButton{
@@ -660,6 +738,7 @@ select option{
     width: 30px;
     text-align: center;
     border-radius: 5px;
+    background: #ffffff;
 }
 .zoomButton.zoomReset{
     top: 0;
@@ -682,23 +761,30 @@ select option{
     border: 1px solid #a6a6a6;
     text-align: center;
 }
-.modal-header{
+.video video{
+    width: 100%;
+}
+.ficha .modal-header,
+.video .modal-header{
     padding: 0;
 }
-.modal-content{
+.ficha .modal-content
+,.video .modal-content{
     background: transparent;
     border: none;
 }
-.modal-body img{
+.ficha .modal-body img{
     width: 100%;
 }
-.btn-close{
+.ficha .btn-close,
+.video .btn-close{
     font-size: 5em;
     color: #ffffff;
     opacity: 1;
     background: none;
 }
-.btn-close:hover {
+.ficha .btn-close:hover,
+.video .btn-close:hover {
     color: #ffffff;
     text-decoration: none;
     opacity: 1;
@@ -738,9 +824,6 @@ select option{
         display: none;
     }
     
-    /*.util-box.blue-bg{
-        height: 320px;
-    }*/
     form{
         width: 90%;        
     }
@@ -801,10 +884,7 @@ select option{
     .info-box .punto {
         height: 50px;
         width: 50px;
-    }
-    .adicional{
-        max-width: 100%;
-    }
+    }    
     .btn-secondary {
         margin: 0 auto;
         display: block;
@@ -812,12 +892,71 @@ select option{
     .info-box .punto {
         margin: 1em 0.1em 1em 0.2em;        
     }
+    
+}
+@media screen and (max-width:991px) {
+    .columna2 {
+        width: 100%;
+    }
+    .adicional{
+        max-width: 400px;
+        margin-left: 0;
+    }
+    .menu-mb{
+        position: relative;
+        height: 100px;
+        background: #ffffff;
+        width: 104%;
+        z-index: 10;
+    }
+    .menu-mb .logo{
+        width: 85%;
+        margin: 1em auto;
+        padding: 5px 0;
+    }
+    .menu-mb .logo img{
+        width: 80%;
+    }
+    .hb-menu{
+        margin: 3.3em auto;
+    }
+    .hb-menu svg{
+        display: block;
+        fill: #022869;
+        margin: 0 auto;
+    }
+    .menu-mb .menu-lateral{
+        position: absolute;
+        z-index: 10;
+        top: 100px;
+    }
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color:#253150e0;
+        z-index: 3;
+        cursor: pointer;
+        transition: 0.5s;
+    }
 }
 @media screen and (max-width:767px) { 
     .btn-dash {        
         margin: 0 auto;
         display: block;
     }
+    .blue-info{
+        height: auto;
+    }
+    .blue-info .col-8 {
+        border-right: none;
+    }
+    
 }
 
 @media screen and (max-width:480px) { 
@@ -843,6 +982,13 @@ select option{
     }
     .btn-dash{
         font-size: 20px;
+    }
+    .adicional{
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .menu-mb{        
+        width: 108%;        
     }
 }
 @media screen and (max-height:650px){
@@ -875,10 +1021,17 @@ select option{
     background-size: 1rem;
     padding-right: 5px;
 }
+.custom-select.ext{
+    margin-top: 2em;
+}
+.ext .select-selected{
+    width: 100%;
+}
+
 .custom-select {
     position: relative;
     font-family:'SourceBold';
-  }
+}
   
 .custom-select select {
     display: none; /*hide original SELECT element:*/
