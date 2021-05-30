@@ -62,19 +62,32 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres
+                                La tolerancia social e institucional a las violencias contra las mujeres.
                             </h2>
 
-                            <div class="box-buttons">
-                                <a href="dash1.php" class="hblue">
-                                    <img src="img/icono-03.svg" alt="">
-                                    Encuesta general
-                                </a>
-                            </div>                            
-                            <div class="box-message activo">
-                                <a href="dash2.php">
-                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                </a>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingOne">                                    
+                                    <div class="menu-selector activo">
+                                        <a href="dash1.php">
+                                            <img src="img/icono-02.svg" alt="">
+                                            Encuesta general
+                                        </a>
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                        </button>
+                                    </div>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        
+                                        <div class="box-message activo" >
+                                            <a href="dash2.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
+                                                Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                            </a>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>                                                                
                             </div>
                             <div class="box-buttons">
                                 <a href="dash3.html" class="hblue">
@@ -89,7 +102,7 @@
                         </div>
                         <div class="red-menu">
                             <h2>
-                                Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
+                                Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
                                 <a href="dash4.html" class="hred">
@@ -118,7 +131,7 @@
                                 </a>
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/chat.png" alt="">
-                                    Contácto
+                                    Contacto
                                 </a>                        
                             </div>
                         </div>
@@ -141,7 +154,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-xxl-10 col-xl-9 col-md-12">
                         <div class="blue-info">
                             <div class="row">
                                 <div class="col-4">
@@ -198,7 +211,7 @@
                             </div>                                                       
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-xxl-2 col-xl-3 col-md-12">
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
@@ -218,10 +231,10 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-5">
-                        <div class="util-box">
+                        <div class="util-box" style="height:97%">
                             <div class="mapa">
-                                <h4>Regiones PDET</h4>
-                                <p>Seleccione en el mapa la región PDET que desee consultar</p>
+                                <h4>Regiones</h4>
+                                <p>Seleccione en el mapa la región que desee consultar</p>
                                 <div class="mapcontainer">
                                     <div class="map">
                                         
@@ -231,7 +244,7 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        <div class="util-box">
+                        <div class="util-box" style="height:420px">
                             <div class="mapa">
                                 <h4>Preguntas</h4>
                                 <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
@@ -268,18 +281,23 @@
                                     <h4 class="py-2">Hombres</h4>
                                     <!-- <div id="chart"></div>
                                     <div id="chartalt" style="display:none"></div> -->
-                                    <canvas id="myChart" width="400" height="280" ></canvas>
+                                    <div class="chart">
+                                        <canvas id="myChart"  width="630" height="280"></canvas>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="util-box blue-bg">
                                     <h4 class="py-2">Mujeres</h4>                                    
-                                    <canvas id="myChart2" width="400" height="280" ></canvas>
+                                    <div class="chart">
+                                        <canvas id="myChart2"  width="630" height="280"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
@@ -287,36 +305,34 @@
                                 <div class="col-lg-6">
                                     <div class="mapa mt-2">
                                         <h4>
-                                            SELECCIONE LAS REGIONES PDET QUE DESEE COMPARAR
+                                            SELECCIONE LAS REGIONES QUE DESEE COMPARAR
                                         </h4>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            REGIÓN PDET
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="#" id="reg1">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
-                                            <li><a class="dropdown-item" href="#" >SUR DE BOLIVAR</a></li>                                          
-                                        </ul>
+                                <div class="col-lg-3 col-md-6">                                    
+                                    <div class="custom-select mt-3">
+                                        <select id="region1">
+                                            <option>REGIÓN</option>
+                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
+                                            <option value="2">REGIÓN 2</option>                                       
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            REGIÓN PDET
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                            <li><a class="dropdown-item" href="#">BAJO CAUCA Y NORDESTE ANTIOQUENO</a></li>
-                                            <li><a class="dropdown-item" href="#" id="reg2">SUR DE BOLIVAR</a></li> 
-                                        </ul>
+                                <div class="col-lg-3 col-md-6">                                    
+                                    <div class="custom-select mt-3">
+                                        <select id="region2">
+                                            <option>REGIÓN</option>
+                                            <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
+                                            <option value="2">REGIÓN 3</option>                                       
+                                        </select>
                                     </div>
                                 </div>
                             </div>                            
                         </div>
                     </div>
                 </div>
+
+
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="util-box">
@@ -333,113 +349,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="pb-5"></div>
             </div>
         </div>
         
     </div>
 
     <script>
-        var options = {
-            grid:{
-                show:false
-            },
-            series: [{
-                data: [37.46, 37.46, 37.46, 37.46, 37.46]
-            }],
-                chart: {
-                type: 'bar',
-                height: 280
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 4,
-                    horizontal: true,
-                }
-            },
-            dataLabels: {
-                enabled: true
-            },
-            yaxis:{
-                labels:{
-                    show:true, 
-                    style: {
-                        colors: ['#ffffff'],
-                        fontSize: '12px',                                        
-                        cssClass: 'apexcharts-xaxis-label',
-                    },
-                }
-            },        
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-                labels: {
-                    show:false,                    
-                }, 
-                axisBorder: {
-                    show: false,                    
-                }, 
-                axisTicks:{
-                    show: false,                    
-                },
-                forceNiceScale: true,              
-            },
-
-            tickAmount: 10
-            
-        };
-        var options3 = {
-            grid:{
-                show:false
-            },
-            series: [{
-                data: [7.46, 97.46, 37.46, 37.46, 67.46]
-            }],
-                chart: {
-                type: 'bar',
-                height: 280
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 4,
-                    horizontal: true,
-                }
-            },
-            dataLabels: {
-                enabled: true
-            },
-            yaxis:{
-                labels:{
-                    show:true, 
-                    style: {
-                        colors: ['#ffffff'],
-                        fontSize: '12px',                                        
-                        cssClass: 'apexcharts-xaxis-label',
-                    },
-                }
-            },        
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-                labels: {
-                    show:false,                    
-                }, 
-                axisBorder: {
-                    show: false,                    
-                }, 
-                axisTicks:{
-                    show: false,                    
-                },
-                forceNiceScale: true,              
-            },
-
-            tickAmount: 10
-            
-        };
-
-        var chart    = new ApexCharts(document.querySelector("#chart"), options);
-        var chartsub = new ApexCharts(document.querySelector("#chart-2"), options);
-        chart.render();
-        chartsub.render();
-
-        var options2 = {
+       var options2 = {
             series: [
                 {
                     name: 'Región 1',
@@ -450,18 +367,30 @@
                     data: [76, 85, 90, 98, 87]
                 }, 
             ],
+            colors: ['#14DFFF','#022869'],
             chart: {
+                toolbar:{
+                        show:false
+                },
                 type: 'bar',
                 height: 350
             },
             plotOptions: {
                 bar: {
                     horizontal: false,
-                    columnWidth: '25%',
+                    columnWidth: '20%',
                     endingShape: 'rounded',
                     dataLabels: {
                         position: 'top', // top, center, bottom
                     },
+                    colors:{
+                        ranges:{
+                            from: 0,
+                            to: 100,
+                            color:'#022869'
+                        }
+                        
+                    }
                 },
             },
             dataLabels: {
@@ -472,7 +401,7 @@
                 offsetY: -20,
                 style: {
                     fontSize: '12px',
-                    colors: ['#304758']
+                    colors: ['#022869']
                 }
             },
             stroke: {
@@ -485,10 +414,8 @@
             },
             yaxis: {
                 
-            },
-            fill: {
-                opacity: 0.8
-            },
+            }
+            ,
             tooltip: {
                 y: {
                     formatter: function (val) {
@@ -496,130 +423,19 @@
                     }
                 }
             }
-        };
-
-        var options4 = {
-            grid:{
-                show:false
-            },
-            series: [{
-                data: [1.46, 97.46, 17.46, 8.46, 67.46]
-            }],
-                chart: {
-                type: 'bar',
-                height: 280
-            },
-            plotOptions: {
-                bar: {
-                    borderRadius: 4,
-                    horizontal: true,
-                }
-            },
-            dataLabels: {
-                enabled: true
-            },
-            yaxis:{
-                labels:{
-                    show:true, 
-                    style: {
-                        colors: ['#ffffff'],
-                        fontSize: '12px',                                        
-                        cssClass: 'apexcharts-xaxis-label',
-                    },
-                }
-            },        
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-                labels: {
-                    show:false,                    
-                }, 
-                axisBorder: {
-                    show: false,                    
-                }, 
-                axisTicks:{
-                    show: false,                    
-                },
-                forceNiceScale: true,              
-            },
-
-            tickAmount: 10
-            
-        };
-
-
-        var options5 = {
-            series: [
-                {
-                    name: 'Región 1',
-                    data: [4, 75, 57, 56, 1]
-                }, 
-                {
-                    name: 'Región 2',
-                    data: [6, 85, 90, 98, 7]
-                }, 
-            ],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '25%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top', // top, center, bottom
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val + "%";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#304758']
-                }
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-            },
-            yaxis: {
-                
-            },
-            fill: {
-                opacity: 0.8
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                    return val + " %"
-                    }
-                }
+            ,fill: {
+                colors: ['#14DFFF','#022869']
             }
         };
 
+        
+
+       
 
         var chartb      = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc      = new ApexCharts(document.querySelector("#chartc"), options2);
-        var chartalt    = new ApexCharts(document.querySelector("#chartalt"), options3);
-        var chartalt2   = new ApexCharts(document.querySelector("#chartalt2"), options4);
-        var chartbalt   = new ApexCharts(document.querySelector("#chartbalt"), options5);
-        var chartcalt   = new ApexCharts(document.querySelector("#chartcalt"), options5);
+        var chartc      = new ApexCharts(document.querySelector("#chartc"), options2);        
         chartb.render();
         chartc.render();
-        chartbalt.render();
-        chartcalt.render();
-        chartalt.render();
-        chartalt2.render();
-        
     </script>
     
     
