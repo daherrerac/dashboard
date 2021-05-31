@@ -609,29 +609,31 @@ for (i = 0; i < l; i++) {
 }
 
 function selOption(select, value){
-  let parent = select.parentElement;
-  let selectorOptionsVisible = parent.querySelector('.select-items');
-  let selectorSelectedVisible = parent.querySelector('.select-selected');
-  // seleccionar opcion en select
-  let validOption=false;
-  for(let i=0; i < select.options.length; i++){
-    if(select.options[i].value === value) {
-      validOption=true;
-      select.selectedIndex = i;
-      break;
-    }
-  }
-  if (validOption){
-    // seleccionar opcion en custom element
-    selectorSelectedVisible.innerHTML = value;
-    let innerDivs = selectorOptionsVisible.querySelectorAll("div");
-    innerDivs.forEach((div) => {
-      // limpiar classes
-      div.classList.remove("same-as-selected");
-      if (div.innerHTML == value){
-        div.classList.add("same-as-selected");
+  if (select){
+    let parent = select.parentElement;
+    let selectorOptionsVisible = parent.querySelector('.select-items');
+    let selectorSelectedVisible = parent.querySelector('.select-selected');
+    // seleccionar opcion en select
+    let validOption=false;
+    for(let i=0; i < select.options.length; i++){
+      if(select.options[i].value === value) {
+        validOption=true;
+        select.selectedIndex = i;
+        break;
       }
-    });
+    }
+    if (validOption){
+      // seleccionar opcion en custom element
+      selectorSelectedVisible.innerHTML = value;
+      let innerDivs = selectorOptionsVisible.querySelectorAll("div");
+      innerDivs.forEach((div) => {
+        // limpiar classes
+        div.classList.remove("same-as-selected");
+        if (div.innerHTML == value){
+          div.classList.add("same-as-selected");
+        }
+      });
+    }
   }
 }
 
