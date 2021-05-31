@@ -362,7 +362,7 @@
                                     
                                 </div>
                                 <div class="col-6">
-                                    <div class="custom-select ext mx-1">
+                                    <div class="region custom-select ext mx-1">
                                         <select id="regionA">
                                             <option>REGIÓN</option>
                                             <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 

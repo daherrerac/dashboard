@@ -273,6 +273,7 @@ class Dashboard {
         this.region = region;
         this.updateGraph1(this.menGraph, {Region:this.region, [this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue});
         this.updateGraph1(this.womenGraph, {Region:this.region, [this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue});
+        selOption(document.getElementById("regionA"), region);
       }
     }
     this.init();
@@ -296,7 +297,7 @@ class Dashboard {
     this.loadRegions();
 
     //Cargar región individual
-    this.loadSingleRegion();
+    //this.loadSingleRegion();
 
     // inicializar graficas
     this.initGraphs1();
@@ -498,7 +499,11 @@ class Dashboard {
         selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
       });
       let callback = (value) => {
-        if (selector.getAttribute('id') == "region1"){
+        if (selector.getAttribute('id') == "regionA"){
+          self.region = value;
+          self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
+          self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+        } else if (selector.getAttribute('id') == "region1"){
           self.graphRegionSelection1 = value;
         } else if (selector.getAttribute('id') == 'region2'){
           self.graphRegionSelection2 = value;
@@ -508,34 +513,14 @@ class Dashboard {
         console.log("Region seleccionada:", value, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
       };
       // definir selecciones por defecto de ambos selectores
-      if (selector.getAttribute('id') == "region1"){
+      if (selector.getAttribute('id') == "regionA"){
+        selector.selectedIndex = 0;
+      } else if (selector.getAttribute('id') == 'region1'){
         selector.selectedIndex = 0;
       } else if (selector.getAttribute('id') == 'region2'){
         selector.selectedIndex = 1;
       }
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
-    });
-  }
-
-  loadSingleRegion(){
-    let self = this;
-    const regionsDropDown = document.querySelectorAll('.custom-select.ext select');
-    const regionsList = this.dr.getFilters(this.survey, 'Region');
-    self.graphRegionSelection1 = regionsList[0];
-    regionsDropDown.forEach((selector, i) => {
-      // limpiar opciones
-      selector.innerHTML = '';
-      // adicionar atributo de selector
-      regionsList.forEach((q) => {
-        selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
-      });
-      let callback = (value) => {
-        if (selector.getAttribute('id') == "regionA"){
-          self.graphRegionSelection1 = value;
-        } 
-        
-      };
-      
     });
   }
 
@@ -621,6 +606,33 @@ for (i = 0; i < l; i++) {
       this.nextSibling.classList.toggle("select-hide");
       this.classList.toggle("select-arrow-active");
     });
+}
+
+function selOption(select, value){
+  let parent = select.parentElement;
+  let selectorOptionsVisible = parent.querySelector('.select-items');
+  let selectorSelectedVisible = parent.querySelector('.select-selected');
+  // seleccionar opcion en select
+  let validOption=false;
+  for(let i=0; i < select.options.length; i++){
+    if(select.options[i].value === value) {
+      validOption=true;
+      select.selectedIndex = i;
+      break;
+    }
+  }
+  if (validOption){
+    // seleccionar opcion en custom element
+    selectorSelectedVisible.innerHTML = value;
+    let innerDivs = selectorOptionsVisible.querySelectorAll("div");
+    innerDivs.forEach((div) => {
+      // limpiar classes
+      div.classList.remove("same-as-selected");
+      if (div.innerHTML == value){
+        div.classList.add("same-as-selected");
+      }
+    });
+  }
 }
 
 function updateOption(select, callback, selValue){
