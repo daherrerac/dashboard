@@ -330,25 +330,7 @@
                             <div class="preguntas">
                                 <ul>
                                     <li>
-                                        <a href="#" >De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" >De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" >De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                        <a href="#" >Cargando preguntas...</a>
                                     </li>
                                 </ul>
                             </div>
@@ -548,7 +530,11 @@
     <script>
         // iniciar dashboard
         // iniciar funciones y carga de datos
-        let dash = new Dashboard('hogaresGenerales');
+        const mapGrahs = [
+            { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},
+            { title: 'MUJERES', filterKey: 'Sexo', filterValue: 'MUJER'}
+        ];
+        let dash = new Dashboard('hogaresGenerales', true, mapGrahs);
     </script>
     
    

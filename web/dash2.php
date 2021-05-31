@@ -252,25 +252,7 @@
                             <div class="preguntas">
                                 <ul>
                                     <li>
-                                        <a href="#" >De acuerdo y totalmente de acuerdo con que "Los hombres son la cabeza del hogar"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" >De acuerdo y totalmente de acuerdo con que "Cuando las mujeres dicenNo, quieren decir Sí"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" >De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">De acuerdo y totalmente de acuerdo: "A veces está bien que los hombres golpeen a sus parejas"</a>
+                                        <a href="#" >Cargando preguntas...</a>
                                     </li>
                                 </ul>
                             </div>
@@ -278,7 +260,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="util-box blue-bg">
-                                    <h4 class="py-2">Hombres</h4>
+                                    <h4 class="py-2">Indigena</h4>
                                     <!-- <div id="chart"></div>
                                     <div id="chartalt" style="display:none"></div> -->
                                     <div class="chart">
@@ -288,7 +270,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="util-box blue-bg">
-                                    <h4 class="py-2">Mujeres</h4>                                    
+                                    <h4 class="py-2">Afrodescendiente</h4>                                    
                                     <div class="chart">
                                         <canvas id="myChart2"  width="630" height="280"></canvas>
                                     </div>
@@ -369,7 +351,11 @@
     <script>
         // iniciar dashboard
         // iniciar funciones y carga de datos
-        let dash = new Dashboard('hogaresGenerales');
+        const mapGrahs = [
+            { title: 'Indigena', filterKey: 'Pertenencia étnica', filterValue: 'Indigena'},
+            { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'}
+        ];
+        let dash = new Dashboard('mujeresEtnicas', true, mapGrahs);
     </script>
     
     

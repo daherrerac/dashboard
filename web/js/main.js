@@ -1,6 +1,6 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
-const siteurl = 'http://webdash.test/';
-//const siteurl = 'http://dashboard.local/';
+//const siteurl = 'http://webdash.test/';
+const siteurl = 'http://dashboard.local/';
 
 
 
@@ -40,7 +40,7 @@ class DashboardDataReader {
 
   // declaracion de filtros
   static filterFields = ['Region','Region PDET', 'Departamento', 'Municipio PDET', 'Grupo de edad', 'Sexo',
-  'Tiempo que lleva trabajando en la institución'];
+  'Tiempo que lleva trabajando en la institución', 'Pertenencia étnica'];
 
 
   async parseFile(url){
@@ -186,7 +186,7 @@ class DashboardDataReader {
           });
         }
         res.data = evalData.map((el) => {
-          return DashboardDataReader.clearValue(el[i]);
+          return DashboardDataReader.clearValue(el[i], true);
         });
         return res;
       } else {
@@ -198,19 +198,30 @@ class DashboardDataReader {
     return {};
   }
 
-  static clearValue(value, emptyValue = ''){
+  /**
+   * Limpia los valores recibidos como string y convierte a flotante si puede
+   * @param {string} value 
+   * @param {*} emptyValue 
+   * @returns 
+   */
+  static clearValue(value, numeric=false, emptyValue = ''){
     if (value){
-      // limpiar los datos debido a que vienenen forma de string y con el simbolo porcentaje
-      let matches = value.match(/^(\d+,\d+)%$/);
+      // limpiar los datos debido a que vienen forma de string y con el simbolo porcentaje
+      let matches = value.match(/^(\d*,\d+)%$/);
       let newValue = value;
       if (matches) {
         value = matches[1].replace(",",".");
         newValue = parseFloat(value);
       }
-      return newValue;
-    } else {
-      return emptyValue;
+      if (newValue && newValue!==NaN)
+        return newValue;
+
+      if (numeric){
+        return 0;
+      }
     }
+    return emptyValue;
+    
   }
 }
 
@@ -245,21 +256,23 @@ class Dashboard {
   menGraph;
   womenGraph;
   selectedQuestion;
+  upGraphs;
   hasMap;
 
   graphRegionSelection1;
   graphRegionSelection2;
   
 
-  constructor(survey, hasMap = true){
+  constructor(survey, hasMap = true, mapGraphs){
     this.dr = new DashboardDataReader();
     this.survey = survey;
     this.hasMap = hasMap;
-    if (this.hasMap){
+    this.mapGraphs = mapGraphs;
+    if (this.hasMap && this.mapGraphs){
       this.mapClickCallback = (region) => {
         this.region = region;
-        this.updateGraph1(this.menGraph, {Region:this.region, Sexo:"HOMBRE"});
-        this.updateGraph1(this.womenGraph, {Region:this.region, Sexo:"MUJER"});
+        this.updateGraph1(this.menGraph, {Region:this.region, [this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue});
+        this.updateGraph1(this.womenGraph, {Region:this.region, [this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue});
       }
     }
     this.init();
@@ -300,7 +313,7 @@ class Dashboard {
   initGraphs1(){
     let menGraphEl = document.getElementById('myChart').getContext('2d');
     let womenGraphEl = document.getElementById('myChart2').getContext('2d');
-    let filter = {Sexo:"HOMBRE"};
+    let filter = {[this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue};
     if (this.hasMap){
       filter.Region=this.region;
     }
@@ -322,7 +335,7 @@ class Dashboard {
       },
       options: chartConfig.options
     });
-    let filter2 = {Region:this.region, Sexo:"MUJER"};
+    let filter2 = {[this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue};
     if (this.hasMap){
       filter2.Region=this.region;
     }
@@ -344,9 +357,9 @@ class Dashboard {
       options: chartConfig.options
     });
     // fix graphs default title
-    this.menGraph.options.plugins.title.text = this.selectedQuestion;
+    this.menGraph.options.plugins.title.text = Dashboard.splitText(this.selectedQuestion);
     this.menGraph.update();
-    this.womenGraph.options.plugins.title.text = this.selectedQuestion;
+    this.womenGraph.options.plugins.title.text = Dashboard.splitText(this.selectedQuestion);
     this.womenGraph.update();
   }
 
@@ -354,11 +367,13 @@ class Dashboard {
     const labelColumn = "Grupo de edad";
     // cargar datos del grafico
     let newData = this.dr.getColumnData(this.survey, this.selectedQuestion, labelColumn, filter);
-    //console.log("graphData1", graphData1);
-    graph.data.labels = newData.labels;
+    //console.log("graphData1", newData);
+    
+    graph.data.labels =newData.labels;
     graph.data.datasets[0].data = newData.data;
-    graph.data.datasets[0].label = this.region;
-    graph.options.plugins.title.text = this.selectedQuestion;
+    //dividir texto (pregunta) en 2 para ajustar mejor el label en la grafica
+    graph.data.datasets[0].label =  this.region;
+    graph.options.plugins.title.text = Dashboard.splitText(this.selectedQuestion);
     graph.update();
   }
 
@@ -461,10 +476,10 @@ class Dashboard {
         // adicionar clase selected al elemento del evento
         this.classList.add('selected');
         console.log("Click question", self.selectedQuestion);
-        self.updateGraph1(self.menGraph, {Region:self.region, Sexo:"HOMBRE"});
-        self.updateGraph1(self.womenGraph, {Region:self.region, Sexo:"MUJER"});
-        self.updateGraph2("menChart", {Region:'', Sexo:"HOMBRE"});
-        self.updateGraph2("womenChart", {Region:'', Sexo:"MUJER"});
+        self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
+        self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+        self.updateGraph2("menChart", {Region:'', [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
+        self.updateGraph2("womenChart", {Region:'', [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
       });
     });
   }
@@ -488,8 +503,8 @@ class Dashboard {
         } else if (selector.getAttribute('id') == 'region2'){
           self.graphRegionSelection2 = value;
         }
-        self.updateGraph2("menChart", {Region:'', Sexo:"HOMBRE"});
-        self.updateGraph2("womenChart", {Region:'', Sexo:"MUJER"});
+        self.updateGraph2("menChart", {Region:'', [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
+        self.updateGraph2("womenChart", {Region:'', [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
         console.log("Region seleccionada:", value, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
       };
       // definir selecciones por defecto de ambos selectores
@@ -522,6 +537,22 @@ class Dashboard {
       };
       
     });
+  }
+
+  /**
+   * Funcion que divide el texto por uno de los espacios si supera un maximo dado.
+   * Si el texto no supera la cantidad retorna el mismo texto.
+   * @param {string} text texto a dividir
+   * @param {numeric} Optional maxLength 
+   * @returns arreglo de textos segun las lineas divididas
+   */
+  static splitText(text, maxLength=60){
+    const lines = text.match(new RegExp(`.{1,${maxLength}}(\\s|$)`, 'g'));
+    if (lines){
+      return lines.map(line => line.trim());
+    }
+    
+    return text;
   }
 }
 
