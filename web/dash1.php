@@ -42,7 +42,7 @@
     </style>
 
   </head>
-  <body style="overflow-y: auto;">
+  <body>
       
     <div class="container-fluid">
         <div class="fila">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                La tolerancia social e institucional a las violencias contra las mujeres.
+                                La Tolerancia Social e Institucional a las Violencias contra las Mujeres
                             </h2>
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
@@ -62,7 +62,7 @@
                                     <div class="menu-selector activo">
                                         <a href="dash1.php">
                                             <img src="img/icono-02.svg" alt="">
-                                            Encuesta general
+                                            Encuesta Tolerancia Social
                                         </a>
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
                                         </button>
@@ -72,9 +72,13 @@
                                     <div class="accordion-body">
 											  
                                         <div class="box-message">
-                                            <a href="dash2.php" class="activo">
-                                                Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="dash2.php" class="activo">
+                                                        Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                    </a>
+                                                </li>
+                                            </ul>                                            
                                         </div>
                                     </div>
                                   </div>
@@ -82,9 +86,9 @@
                             </div>
                                                                                     
                             <div class="box-buttons">
-                                <a href="dash3.html" class="hblue">
-                                    <img src="img/icono-03.svg" alt="" >
-                                    Encuesta servidores públicos
+                                <a href="dash3.html" class="hblue">                                    
+                                    <img src="img/icono-03.svg" alt="" >                                                                                
+                                    Encuesta Tolerancia Institucional                                                                                                                
                                 </a>
                                 <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img src="img/info-blue.png" alt="" >    
@@ -107,7 +111,7 @@
                                 </a>
                                 <a href="#" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
-                                    Entorno Institucional LGBTIQ
+                                    Entorno Institucional LGBTI
                                 </a>
                                 <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     <img src="img/info.png" alt="">     
@@ -152,7 +156,7 @@
                 <div class="menu-lateral" style="display:none">                    
                     <div class="blue-menu">
                         <h2>
-                            La tolerancia social e institucional a las violencias contra las mujeres.
+                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres
                         </h2>
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -160,19 +164,22 @@
                                 <div class="menu-selector activo">
                                     <a href="dash1.php">
                                         <img src="img/icono-02.svg" alt="">
-                                        Encuesta general
+                                        Encuesta Tolerancia Social 
                                     </a>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
                                     </button>
                                 </div>
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                            
+                                <div class="accordion-body">                                            
                                     <div class="box-message">
-                                        <a href="dash2.php" class="activo">
-                                            Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                        </a>
+                                        <ul>
+                                            <li>
+                                                <a href="dash2.php" class="activo">
+                                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                                 </div>
@@ -182,7 +189,7 @@
                         <div class="box-buttons">
                             <a href="dash3.html" class="hblue">
                                 <img src="img/icono-03.svg" alt="" >
-                                Encuesta servidores públicos
+                                Encuesta Tolerancia Institucional
                             </a>
                             <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <img src="img/info-blue.png" alt="" >    
@@ -205,7 +212,7 @@
                             </a>
                             <a href="#" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
-                                Entorno Institucional LGBTIQ
+                                Entorno Institucional LGBTI
                             </a>
                             <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                 <img src="img/info.png" alt="">     
@@ -233,12 +240,12 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                ENCUESTA GENERAL DE TOLERANCIA SOCIAL E INSTITUCIONAL CONTRA LAS MUJERES
+                                Encuesta de Tolerancia Social e Institucional a las Violencias contra las Mujeres
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional contra las
-                                MujeresTolerancia Social e Institucional contra las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
+                            En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional de 
+                            las Violencias contra las Mujeres en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
                             </h2>
                         </div>
                     </div>
@@ -324,7 +331,7 @@
                     <div class="col-xl-12">
                         <div class="util-box">
                             <div class="mapa">
-                                <h4>Enunciados</h4>
+                                <h4>Respuestas</h4>
                                 <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
                             </div>
                             <div class="preguntas">
@@ -355,14 +362,14 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="util-box">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mapa">
                                         <p class="mt-4">Seleccione la región que desee consultar</p>
                                     </div>
                                     
                                 </div>
-                                <div class="col-6">
-                                    <div class="region custom-select ext mx-1">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="region custom-select ext">
                                         <select id="regionA">
                                             <option>REGIÓN</option>
                                             <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
@@ -441,8 +448,7 @@
                                 Hombres
                             </h4>
                         </div>
-                        <div id="chartb"></div>
-                        <div id="chartbalt" style="display: none;"></div>
+                        <div id="chartb"></div>                        
                     </div>
                     </div>
                 </div>
@@ -454,8 +460,7 @@
                                     Mujeres
                                 </h4>
                             </div>                           
-                            <div id="chartc"></div>
-                            <div id="chartcalt" style="display: none;"></div>
+                            <div id="chartc"></div>                            
                         </div>
                     </div>
                 </div>
@@ -469,33 +474,37 @@
 
   
   <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">            
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+    <div class="ficha">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-01.jpg" alt="">
+                    </div>
+                
                 </div>
-                <div class="modal-body">
-                    <img src="fichas/Fichas Tecnicas-01.jpg" alt="">
-                </div>
-            
             </div>
-        </div>
+            </div>
         </div>
     </div>
 
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">            
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+    <div class="ficha">
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-02.jpg" alt="">
+                    </div>
+                
                 </div>
-                <div class="modal-body">
-                    <img src="fichas/Fichas Tecnicas-02.jpg" alt="">
-                </div>
-            
             </div>
-        </div>
+            </div>
         </div>
     </div>
     
@@ -522,8 +531,7 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/mapa/col.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
     <script src="js/charts-config.js"></script>
     <script src="js/mapa/pdet.js"></script>
     <script src="js/main.js"></script>

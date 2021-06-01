@@ -6,11 +6,7 @@ const chartConfig = {
   color:'#ffffff',
   fontColor:'#ffffff',  
   maintainAspectRatio: false,
-  options: {  
-    fontColor:'#ffffff',      
-    legend: {
-      display: false,     
-    },    
+  options: {                      
     borderRadius: 10,
     indexAxis: 'y',
     responsive: true,
@@ -21,7 +17,7 @@ const chartConfig = {
         fullSize:true,
         fontColor:'#ffffff',      
         font:{
-          size:20
+          size:18
         },
         padding:{
           top: 0,
@@ -29,14 +25,33 @@ const chartConfig = {
         },
         text: '',
         color: '#ffffff', 
-        align :'center',       
+        align :'start',       
         fontColor:'#ffffff',      
       },
       legend:{
         display:true,
         labels: {
           color: '#ffffff'
-      }
+        },
+        onClick: null
+      },
+      tooltip: {
+        backgroundColor:'#ffffff',
+        titleColor:'#000',
+        bodyColor:'#000',
+        callbacks: {
+            label: function(context) {
+                var label = context.dataset.label || '';
+
+                if (label) {
+                    label += ': ';
+                }
+                if (context.parsed.x !== null) {
+                    label = label + context.parsed.x + '%';
+                }
+                return label;
+            }
+        }
       }
     },
     scales: {
@@ -46,14 +61,14 @@ const chartConfig = {
           min: 0,
           max: 100,
           stepSize: 10,
-          color:'#ffffff',
+          color:'#022869',
           callback: function(value, index, values) {
               return value + '%';
           }
         },
-        fontColor:'#ffffff',      
+        fontColor:'#022869',      
         grid: {
-          display: false,
+          display: true,
         },
         suggestedMin: 0,
         suggestedMax: 100     
@@ -67,7 +82,8 @@ const chartConfig = {
         }      
       }
 
-    }
+    },
+    
   }
 };
 
@@ -85,7 +101,7 @@ const lowerChartConfig = {
   colors: ['#14DFFF','#022869'],
   chart: {
       toolbar:{
-              show:false
+        show:false
       },
       type: 'bar',
       height: 350
@@ -93,10 +109,11 @@ const lowerChartConfig = {
   plotOptions: {
       bar: {
           horizontal: false,
-          columnWidth: '20%',
+          columnWidth: '80%',
           endingShape: 'rounded',
           dataLabels: {
-              position: 'top', // top, center, bottom
+              position: 'top', // top, center, bottom  
+                        
           },
           colors:{
               ranges:{
@@ -108,37 +125,30 @@ const lowerChartConfig = {
           }
       },
   },
-  dataLabels: {
-      enabled: true,
-      formatter: function (val) {
-          return val + "%";
-      },
-      offsetY: -20,
+  dataLabels: {      
+      offsetY: 10,
       style: {
-          fontSize: '12px',
-          colors: ['#022869']
+          fontSize: '12px'          
       }
-  },
-  stroke: {
-      show: true,
-      width: 2,
-      colors: ['transparent']
-  },
+  },  
   xaxis: {
       categories: ['14 a 19 años', '20 a 24 años'],
+      labels:{
+        style:{
+          fontFamily: 'SourceBold',
+          fontSize: '14px'
+        },        
+      }      
   },
-  yaxis: {
-      
-  }
-  ,
-  tooltip: {
-      y: {
-          formatter: function (val) {
-          return val + " %"
-          }
-      }
-  }
-  ,fill: {
-      colors: ['#14DFFF','#022869']
+  yaxis:{
+    labels:{
+      style:{
+        fontFamily: 'SourceBold',
+        fontSize: '14px'
+      }      
+    }    
+  },
+  fill: {
+    colors: ['#14DFFF','#022869']
   }
 };

@@ -274,7 +274,10 @@
                 }
             },
             dataLabels: {
-                enabled: true
+                enabled: true,
+                formatter: function (val) {
+                    return val + " %"
+                }
             },
             yaxis:{
                 labels:{
@@ -291,6 +294,7 @@
                 labels: {
                     show:false,                    
                 }, 
+                
                 axisBorder: {
                     show: false,                    
                 }, 
@@ -300,7 +304,14 @@
                 forceNiceScale: true,              
             },
 
-            tickAmount: 10
+            tickAmount: 10,
+            tooltip:{
+                y:{
+                    formatter: function (val) {
+                        return val + " %"
+                    }
+                }
+            }
             
         };
         var options2 = {
@@ -359,72 +370,7 @@
         chart.render();
         chartsub.render();
 
-        var options2 = {
-            series: [
-                {
-                    name: 'Región 1',
-                    data: [44, 55, 57, 56, 61]
-                }, 
-                {
-                    name: 'Región 2',
-                    data: [76, 85, 90, 98, 87]
-                }, 
-            ],
-            chart: {
-                toolbar:{
-                        show:false
-                    },
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '25%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top', // top, center, bottom
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val + "%";
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ['#304758']
-                }
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
-            },
-            yaxis: {
-                
-            },
-            fill: {
-                opacity: 0.8
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                    return val + " %"
-                    }
-                }
-            }
-        };
-
-        var chartb = new ApexCharts(document.querySelector("#chartb"), options2);
-        var chartc = new ApexCharts(document.querySelector("#chartc"), options2);
-        chartb.render();
-        chartc.render();
+        
     </script>
     
     

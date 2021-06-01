@@ -379,7 +379,7 @@ function initMapHandler(clickCallbak){
                                 'areas': {}
                             };
                             
-                            if (previousSelectedElementId !== null && previousSelectedElementId !== 'path266' ) {
+                            if (previousSelectedElementId !== null ) {
                                 newData.areas[previousSelectedElementId] = {
                                     attrs: {
                                         fill: "#767676" //original
@@ -391,12 +391,7 @@ function initMapHandler(clickCallbak){
                                     attrs: {
                                         fill: "#022869"
                                     }
-                                }; 
-                                newData.areas['path266'] = {
-                                    attrs: {
-                                        fill: "#022869"
-                                    }
-                                };                                                               
+                                };                                                                                               
                                 previousSelectedElementId = id;
                             } else {
                                 newData.areas[id] = {
@@ -404,11 +399,7 @@ function initMapHandler(clickCallbak){
                                         fill: "#767676"
                                     }
                                 }; 
-                                newData.areas['path266'] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };                               
+                                                               
                                 previousSelectedElementId = null;
                             }
                             
@@ -417,58 +408,7 @@ function initMapHandler(clickCallbak){
                         }
                     },
                     tooltip: {content: "CHOCO"}
-                },
-                "path266": {
-                    attrs: {
-                        fill: "#767676"
-                    },
-                    attrsHover: {
-                        fill: "#022869"
-                    },
-                    eventHandlers: {                        
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null && previousSelectedElementId !== 'CHOCO') {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: "#767676" //original
-                                    }
-                                };                                                              
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#022869"
-                                    }
-                                }; 
-                                newData.areas['CHOCO'] = {
-                                    attrs: {
-                                        fill: "#022869"
-                                    }
-                                };                                
-                                previousSelectedElementId = id;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };    
-                                newData.areas['CHOCO'] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };                            
-                                previousSelectedElementId = null;
-                            }
-                             
-                            $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("CHOCO");
-                        }
-                    },
-                    tooltip: {content: "CHOCO"}
-                },
+                },                
                 "PACIFICO Y FRONTERA NARINENSE": {
                     attrs: {
                         fill: "#767676"

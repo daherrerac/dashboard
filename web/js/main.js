@@ -1,6 +1,6 @@
-//const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
+const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
 //const siteurl = 'http://webdash.test/';
-const siteurl = 'http://dashboard.local/';
+//const siteurl = 'http://dashboard.local/';
 
 
 
@@ -322,8 +322,8 @@ class Dashboard {
     let graphData1 = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
 
     this.menGraph = new Chart(menGraphEl, {
-      type: 'bar',
-      data: {
+      type: 'bar',      
+      data: {        
         labels: graphData1.labels,
         datasets: [{
           label: this.region,
@@ -400,7 +400,7 @@ class Dashboard {
     config1.series[0].name = this.graphRegionSelection1;
     config1.series[0].data = menGraphDataSeries.data;
     config1.series[1].name = this.graphRegionSelection2;
-    config1.series[1].data = womenGraphDataSeries.data;
+    config1.series[1].data = womenGraphDataSeries.data;    
     config1.xaxis.categories = menGraphDataSeries.labels;
 
     console.log("config", config1);
@@ -417,13 +417,13 @@ class Dashboard {
     config2.series[0].name = this.graphRegionSelection1;
     config2.series[0].data = menGraphDataSeries.data;
     config2.series[1].name = this.graphRegionSelection2;
-    config2.series[1].data = womenGraphDataSeries.data;
+    config2.series[1].data = womenGraphDataSeries.data;    
     config2.xaxis.categories = menGraphDataSeries.labels;
 
     console.log("config2", config2);
     
     let chartb = new ApexCharts(document.querySelector("#chartb"), config1);
-    let chartc = new ApexCharts(document.querySelector("#chartc"), config2);        
+    let chartc = new ApexCharts(document.querySelector("#chartc"), config2);            
     chartb.render();
     chartc.render();
   }
