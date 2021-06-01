@@ -397,11 +397,15 @@ class Dashboard {
       filter.Region=this.graphRegionSelection2;
     }
     let womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+   
     config1.series[0].name = this.graphRegionSelection1;
     config1.series[0].data = menGraphDataSeries.data;
     config1.series[1].name = this.graphRegionSelection2;
-    config1.series[1].data = womenGraphDataSeries.data;    
+    config1.series[1].data = womenGraphDataSeries.data;   
     config1.xaxis.categories = menGraphDataSeries.labels;
+    config1.yaxis.labels.formatter = function (val) {return val + "%"};    
+    config1.dataLabels.formatter = function (val) {return val + "%"};
+    
 
     console.log("config", config1);
 
@@ -419,6 +423,8 @@ class Dashboard {
     config2.series[1].name = this.graphRegionSelection2;
     config2.series[1].data = womenGraphDataSeries.data;    
     config2.xaxis.categories = menGraphDataSeries.labels;
+    config2.yaxis.labels.formatter = function (val) {return val + "%"};
+    config2.dataLabels.formatter = function (val) {return val + "%"};
 
     console.log("config2", config2);
     

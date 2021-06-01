@@ -145,10 +145,17 @@ const lowerChartConfig = {
       style:{
         fontFamily: 'SourceBold',
         fontSize: '14px'
-      }      
+      },           
     }    
   },
   fill: {
     colors: ['#14DFFF','#022869']
+  },
+  tooltip:{
+    y:{
+      formatter: function (val) { 
+        return val + "%" 
+      }
+    }
   }
 };
