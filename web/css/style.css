@@ -477,6 +477,10 @@ h2 span{
 .blue-info .col-8.last{
     border-right: none;
 }
+.blue-info.comparacion{
+    height: auto;
+    min-height: 210px;
+}
 
 .info-box .punto{
     height: 75px;
@@ -526,7 +530,7 @@ h2 span{
     margin-right: 0.5em;
 }
 .adicional .box-buttons{
-    padding: 0em 0;
+    padding: 0.2em 0;
 }
 .adicional .box-buttons a {	
 	color: #474747;
@@ -570,6 +574,10 @@ h2 span{
     font-size: 1.2em;
     width: 90%;
     margin: 0 auto;
+}
+.util-box.columnas{
+    height: 100%;
+    max-height: 830px;
 }
 .chart{
     max-width: 630px;
@@ -625,6 +633,142 @@ h2 span{
     width: 70%;
     margin: 0 auto;
 }
+.red-bg .mapa h4{
+    color: #ffffff;
+}
+.red-bg .mapa p{
+    color: #ffffff;
+}
+.respuestas{
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #C2113B #DADADA;
+    max-height: 80%;
+}
+.respuestas.full{
+    margin: 1em;
+    max-height: 100%;
+    padding: 1.5em 1em 1em;
+    overflow-y: auto;
+}
+/* Works on Chrome, Edge, and Safari */
+.respuestas::-webkit-scrollbar {
+    width: 15px;
+}
+  
+.respuestas::-webkit-scrollbar-track {
+    background: #DADADA;
+}
+  
+.respuestas::-webkit-scrollbar-thumb {
+    background-color: #C2113B;
+    border-radius: 20px;
+    border: 3px solid #DADADA;
+    height: 30px;
+}
+.respuestas .row{
+    display: flex;
+}
+
+.respuestas .preguntas {
+    min-height: 70px;
+    overflow-y: hidden;
+    height: fit-content;
+    padding: 0;
+}
+.respuestas .preguntas ul{
+    margin-bottom: 0;
+}
+.respuestas .preguntas.resultado li{    
+    margin-right: 20px;
+    display: inline-flex;
+}
+.respuestas .preguntas li a{
+    font-family:'SourceRegular';
+    display: inline-flex;
+}
+.respuestas .preguntas a.resultado{
+    font-family:'SourceBold';
+    text-align: center;
+    width: 20%; 
+    display: block;     
+    float: right;   
+    margin-right: 10px;   
+}
+.respuestas.full .preguntas a.resultado{
+    font-family:'SourceBold';
+    text-align: center;
+    width: 15%; 
+    display: block;     
+    float: right;   
+    margin-right: 10px;   
+}
+.respuestas.full .preguntas a.resultado2{
+    font-family:'SourceBold';
+    text-align: center;
+    width: 15%; 
+    display: block;     
+    float: right;   
+    margin-right: 10px;   
+    border-right: 10px solid #ffffff;
+}
+.respuestas li{
+    background: #f9f9f9;
+    text-decoration: none;
+    color: #464646;
+    display: block;
+    margin: 0.5em 1em 0;
+    border-radius:0.5em ;
+}
+.respuestas .preguntas li a{
+    background: transparent;
+    text-decoration: none;
+    color: #464646;
+    display: inline-flex;            
+    border-radius: 0;
+    padding: 0.7em 0.5em;
+    margin: 0;
+}
+.respuestas .preguntas li:hover{
+    background: #C2113B;    
+}
+.respuestas .preguntas li:hover a{
+    color: #ffffff;
+}
+.respuestas.full .preguntas li:hover a{
+    color: #ffffff;
+    background: #C2113B;
+}
+.respuestas .preguntas a.question{
+    width: calc(80% - 20px);
+    border-right: 5px solid #ffffff;
+}
+.respuestas.full .preguntas a.question{
+    width: calc(70% - 20px);
+    border-right: 10px solid #ffffff; 
+    border-radius: 0.5em 0  0 0.5em;   
+}
+.respuestas.full li a {
+    background: #f9f9f9;
+    text-decoration: none;
+    color: #464646;            
+}
+.respuestas .preguntas li a:active,
+.respuestas .preguntas li a.selected,
+.respuestas .preguntas li a:focus{
+    background: transparent;    
+    box-shadow: none;
+}
+.respuestas.full .preguntas li a:active,
+.respuestas.full .preguntas li a.selected,
+.respuestas.full .preguntas li a:focus{
+    background: #C2113B;    
+    box-shadow: none;
+}
+.respuestas .preguntas li a:hover{
+    background: transparent;    
+    box-shadow: none;
+}
 .preguntas{
     height: 240px;
     overflow-y: scroll;
@@ -643,8 +787,7 @@ h2 span{
     color: #464646;
     display: block;
     font-size: 1.5em;
-    padding: 0.7em 1em;
-    border-radius: 0.2em;
+    padding: 0.7em 1em;    
     margin: 0.5em 0.2em;
     border-radius: 0.5em;
 }
@@ -819,6 +962,9 @@ select option{
     .olvido{
         font-size: 1.5em;
     }
+    .respuestas {
+        max-height: 75%;
+    }
 }
 @media screen and (min-width:1400px){
     .encuesta{
@@ -844,6 +990,9 @@ select option{
     
     form{
         width: 90%;        
+    }
+    .respuestas.full .preguntas a.resultado2{
+        border: none;
     }
 }
 @media screen and (max-width:1280px) {
@@ -1029,8 +1178,7 @@ select option{
 }
 /*graficas*/
 /*the container must be positioned relative:*/
-.form-select{
-    
+.form-select{    
     width: 95%;
     background: #022869;
     color: #ffffff;
@@ -1044,6 +1192,10 @@ select option{
 .custom-select.ext{
     margin-top: 1.5em;
     margin-right: 20px;
+}
+.custom-select.extr{
+    margin-top: 1.5em;
+    margin-left: 1em;
 }
 .ext .select-selected{
     width: 100%;
@@ -1064,7 +1216,15 @@ select option{
     border-radius: 10px;
     font-size: 1.3em;
 }
-  
+
+.extr .select-selected {
+    background-color: #C2113B;
+    border-radius: 10px;
+    font-size: 1.3em;
+}
+.red-bg .extr .select-selected {
+    background-color: #EF184B;
+}
   /*style the arrow inside the select element:*/
 .select-selected:after {
     position: absolute;
@@ -1115,7 +1275,14 @@ select option{
     z-index: 99;
     border-bottom: 1px dotted #022869;
 }
-  
+.extr .select-items div{
+    font-size: 1.3em;
+}
+.extr .select-items {
+    border-bottom: 1px dotted #B20E35;
+    width: 95%;
+    margin: 0 auto;
+}  
   /*hide the items when the select box is closed:*/
 .select-hide {
     display: none;

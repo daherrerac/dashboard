@@ -42,7 +42,6 @@ const chartConfig = {
         callbacks: {
           label: function (context) {
             var label = context.dataset.label || '';
-
             if (label) {
               label += ': ';
             }
@@ -61,9 +60,9 @@ const chartConfig = {
           min: 0,
           max: 100,
           stepSize: 10,
-          color: '#022869',
-          callback: function (value, index, values) {
-            return value + '%';
+          color:'#022869',
+          callback: function(value) {
+              return value + '%';
           }
         },
         fontColor: '#022869',
@@ -81,9 +80,27 @@ const chartConfig = {
           color: '#ffffff',
         }
       }
-
     },
+    "animation": {
+      "duration": 0,
+      "onComplete": function(context) {
+        var chartInstance = context,
+          ctx = chartInstance.chart.ctx;
 
+        ctx.font = Chart.helpers.fontString(13, 13, 'SourceBold');
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillStyle ='#ffffff';
+
+        this.data.datasets.forEach(function(dataset, i) {
+          var meta = chartInstance.chart.getDatasetMeta(i);
+          meta.data.forEach(function(bar, index) {
+            var data = dataset.data[index];
+            ctx.fillText(data + "%", 120, bar.y + 8);
+          });
+        });
+      }
+    },
   }
 };
 

@@ -1,4 +1,5 @@
 $(function () {
+    var previousSelectedElementId = null;
     $(".mapcontainer").mapael({
         map: {
             // Set the name of the map to display
@@ -56,18 +57,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         // alert("Hola, hizo clic a ALTO PATIA Y NORTE DEL CAUCA");
@@ -87,18 +97,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("Hola, hizo clic a PACIFICO MEDIO");
@@ -118,18 +137,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("SIERRA NEVADA-PERIJA-ZONA BANANERA");
@@ -149,18 +177,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("CATATUMBO");
@@ -180,18 +217,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("SUR DE BOLIVAR");
@@ -211,24 +257,33 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("SUR DE CORDOBA");
                     }
                 },
-                tooltip: {content: "SUR DE CÓRDOVA"}
+                tooltip: {content: "SUR DE CÓRDOBA"}
             },
             "BAJO CAUCA Y NORDESTE ANTIOQUENO": {
                 attrs: {
@@ -242,18 +297,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("BAJO CAUCA Y NORDESTE ANTIOQUENO");
@@ -273,18 +337,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("URABA ANTIOQUENO");
@@ -304,18 +377,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("CHOCO");
@@ -335,18 +417,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("PACIFICO Y FRONTERA NARINENSE");
@@ -366,18 +457,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("SUR DE TOLIMA");
@@ -397,18 +497,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("MACARENA GUAVIARE");
@@ -428,18 +537,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("PUTUMAYO");
@@ -459,18 +577,27 @@ $(function () {
                         var newData = {
                             'areas': {}
                         };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: "#767676" //original
+                                }
+                            };                                
+                        }
                         if (mapElem.originalAttrs.fill == "#767676") {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#C2113B"
                                 }
                             };
+                            previousSelectedElementId = id;
                         } else {
                             newData.areas[id] = {
                                 attrs: {
                                     fill: "#767676"
                                 }
                             };
+                            previousSelectedElementId = null;
                         }
                         $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
                         //alert("CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO");
