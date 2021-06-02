@@ -477,6 +477,10 @@ h2 span{
 .blue-info .col-8.last{
     border-right: none;
 }
+.blue-info.comparacion{
+    height: auto;
+    min-height: 210px;
+}
 
 .info-box .punto{
     height: 75px;
@@ -629,11 +633,23 @@ h2 span{
     width: 70%;
     margin: 0 auto;
 }
+.red-bg .mapa h4{
+    color: #ffffff;
+}
+.red-bg .mapa p{
+    color: #ffffff;
+}
 .respuestas{
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: #C2113B #DADADA;
     max-height: 80%;
+}
+.respuestas.full{
+    margin: 1em;
+    max-height: 100%;
+    padding: 1.5em 1em 1em;
+    overflow-y: auto;
 }
 /* Works on Chrome, Edge, and Safari */
 .respuestas::-webkit-scrollbar {
@@ -679,6 +695,23 @@ h2 span{
     float: right;   
     margin-right: 10px;   
 }
+.respuestas.full .preguntas a.resultado{
+    font-family:'SourceBold';
+    text-align: center;
+    width: 15%; 
+    display: block;     
+    float: right;   
+    margin-right: 10px;   
+}
+.respuestas.full .preguntas a.resultado2{
+    font-family:'SourceBold';
+    text-align: center;
+    width: 15%; 
+    display: block;     
+    float: right;   
+    margin-right: 10px;   
+    border-right: 10px solid #ffffff;
+}
 .respuestas li{
     background: #f9f9f9;
     text-decoration: none;
@@ -702,14 +735,34 @@ h2 span{
 .respuestas .preguntas li:hover a{
     color: #ffffff;
 }
+.respuestas.full .preguntas li:hover a{
+    color: #ffffff;
+    background: #C2113B;
+}
 .respuestas .preguntas a.question{
     width: calc(80% - 20px);
     border-right: 5px solid #ffffff;
+}
+.respuestas.full .preguntas a.question{
+    width: calc(70% - 20px);
+    border-right: 10px solid #ffffff; 
+    border-radius: 0.5em 0  0 0.5em;   
+}
+.respuestas.full li a {
+    background: #f9f9f9;
+    text-decoration: none;
+    color: #464646;            
 }
 .respuestas .preguntas li a:active,
 .respuestas .preguntas li a.selected,
 .respuestas .preguntas li a:focus{
     background: transparent;    
+    box-shadow: none;
+}
+.respuestas.full .preguntas li a:active,
+.respuestas.full .preguntas li a.selected,
+.respuestas.full .preguntas li a:focus{
+    background: #C2113B;    
     box-shadow: none;
 }
 .respuestas .preguntas li a:hover{
@@ -909,6 +962,9 @@ select option{
     .olvido{
         font-size: 1.5em;
     }
+    .respuestas {
+        max-height: 75%;
+    }
 }
 @media screen and (min-width:1400px){
     .encuesta{
@@ -934,6 +990,9 @@ select option{
     
     form{
         width: 90%;        
+    }
+    .respuestas.full .preguntas a.resultado2{
+        border: none;
     }
 }
 @media screen and (max-width:1280px) {
@@ -1162,6 +1221,9 @@ select option{
     background-color: #C2113B;
     border-radius: 10px;
     font-size: 1.3em;
+}
+.red-bg .extr .select-selected {
+    background-color: #EF184B;
 }
   /*style the arrow inside the select element:*/
 .select-selected:after {

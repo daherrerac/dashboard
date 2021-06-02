@@ -283,7 +283,7 @@ $(function () {
                         //alert("SUR DE CORDOBA");
                     }
                 },
-                tooltip: {content: "SUR DE CÓRDOVA"}
+                tooltip: {content: "SUR DE CÓRDOBA"}
             },
             "BAJO CAUCA Y NORDESTE ANTIOQUENO": {
                 attrs: {
