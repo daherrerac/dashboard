@@ -62,7 +62,7 @@ const chartConfig = {
           max: 100,
           stepSize: 10,
           color:'#022869',
-          callback: function(value, index, values) {
+          callback: function(value) {
               return value + '%';
           }
         },
@@ -83,7 +83,26 @@ const chartConfig = {
       }
 
     },
-    
+    "animation": {
+      "duration": 0,
+      "onComplete": function(context) {
+        var chartInstance = context,
+          ctx = chartInstance.chart.ctx;
+
+        ctx.font = Chart.helpers.fontString(13, 13, 'SourceBold');
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillStyle ='#ffffff';
+
+        this.data.datasets.forEach(function(dataset, i) {
+          var meta = chartInstance.chart.getDatasetMeta(i);
+          meta.data.forEach(function(bar, index) {
+            var data = dataset.data[index];
+            ctx.fillText(data + "%", 120, bar.y + 8);
+          });
+        });
+      }
+    },
   }
 };
 
