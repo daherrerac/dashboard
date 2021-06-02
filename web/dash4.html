@@ -40,7 +40,7 @@
       
     <div class="container-fluid">
         <div class="fila">
-            <div class="columna1">
+            <div class="columna1 d-none d-lg-block">
                 <div class="col-lg-12">
                     <div class="menu-lateral">
                         <div class="logo-left">
@@ -48,26 +48,43 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres
+                                La Tolerancia Social e Institucional a las Violencias contra las Mujeres
                             </h2>
-
-                            <div class="box-buttons">
-                                <a href="dash1.php" class="hblue">
-                                    <img src="img/icono-03.svg" alt="">
-                                    Encuesta general
-                                </a>
-                            </div>                            
-                            <div class="box-message">
-                                <a href="dash2.php" >
-                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                </a>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingOne">                                    
+                                    <div class="menu-selector">
+                                        <a href="dash1.php">
+                                            <img src="img/icono-03.svg" alt="">
+                                            Encuesta Tolerancia Social
+                                        </a>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                        </button>
+                                    </div>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+											  
+                                        <div class="box-message">
+                                            <ul>
+                                                <li>
+                                                    <a href="dash2.php">
+                                                        Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                    </a>
+                                                </li>
+                                            </ul>                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>                                                                
                             </div>
+                                                                                    
                             <div class="box-buttons">
-                                <a href="dash3.html" class="hblue">
-                                    <img src="img/icono-03.svg" alt="" >
-                                    Encuesta servidores públicos
+                                <a href="dash3.html" class="hblue">                                    
+                                    <img src="img/icono-03.svg" alt="" >                                                                                
+                                    Encuesta Tolerancia Institucional                                                                                                                
                                 </a>
-                                <a href="#" class="hblue">
+                                <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img src="img/info-blue.png" alt="" >    
                                     Ficha técnica
                                 </a>
@@ -75,22 +92,22 @@
                         </div>
                         <div class="red-menu">
                             <h2>
-                                Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
+                                Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html" class="activo-red">
-                                    <img src="img/icono-05-w.png" alt="">    
+                                <a href="dash4.html" class="hred">
+                                    <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
                                 <a href="dash5.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="dash6.html" class="hred">
-                                    <img src="img/icono-05.svg" alt="">    
-                                    Entorno Institucional LGBTIQ
-                                </a>
                                 <a href="#" class="hred">
+                                    <img src="img/icono-05.svg" alt="">    
+                                    Entorno Institucional LGBTI
+                                </a>
+                                <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
@@ -104,13 +121,114 @@
                                 </a>
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/chat.png" alt="">
-                                    Contácto
+                                    Contacto
                                 </a>                        
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="menu-mb d-lg-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="hb-menu">
+                                <svg viewBox="0 0 100 80" width="30" height="30">
+                                    <rect width="100" height="15" rx="8"></rect>
+                                    <rect y="30" width="100" height="15" rx="8"></rect>
+                                    <rect y="60" width="100" height="15" rx="8"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="logo">
+                                <img src="img/logo.svg" alt="">                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-lateral" style="display:none">                    
+                    <div class="blue-menu">
+                        <h2>
+                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres
+                        </h2>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">                                    
+                                <div class="menu-selector">
+                                    <a href="dash1.php">
+                                        <img src="img/icono-03.svg" alt="">
+                                        Encuesta Tolerancia Social 
+                                    </a>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                    </button>
+                                </div>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">                                            
+                                    <div class="box-message">
+                                        <ul>
+                                            <li>
+                                                <a href="dash2.php" class="activo">
+                                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>                                                                
+                        </div>
+                                                                                
+                        <div class="box-buttons">
+                            <a href="dash3.html" class="hblue">
+                                <img src="img/icono-03.svg" alt="" >
+                                Encuesta Tolerancia Institucional
+                            </a>
+                            <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="img/info-blue.png" alt="" >    
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="red-menu">
+                        <h2>
+                            Retos del entorno institucional para el empoderamiento de género en Colombia
+                        </h2>
+                        <div class="box-buttons">
+                            <a href="dash4.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional Paz
+                            </a>
+                            <a href="dash5.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">
+                                Entorno Institucional Mujeres
+                            </a>
+                            <a href="#" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional LGBTI
+                            </a>
+                            <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                <img src="img/info.png" alt="">     
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gray-menu">
+                        <div class="box-buttons">
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/info-w.png" alt="">
+                                Sobre el proyecto
+                            </a>
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/chat.png" alt="">
+                                Contacto
+                            </a>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="overlay"></div>
             <div class="columna2">
                 <div class="row">
                     <div class="col-lg-12">
@@ -127,10 +245,10 @@
                     </div>
                 </div>                
                 <div class="row">
-                    <div class="col-lg-9">
-                        <div class="blue-info red-bg">
+                    <div class="col-xxl-10 col-xl-9 col-md-12">
+                        <div class="blue-info">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -147,7 +265,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -164,7 +282,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -184,18 +302,18 @@
                             </div>                                                       
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="adicional red-bg">
+                    <div class="col-xxl-2 col-xl-3 col-md-12">
+                        <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="#" class="hred">
-                                    <img src="img/down-red.png" alt="">
-                                    <span class="red">|</span>
+                                <a href="fichas/PDF.pdf" class="hblue" target="_blank">
+                                    <img src="img/down.png" alt="">
+                                    <span>|</span>
                                     VER INFOGRAFÍA
                                 </a>
-                                <a href="#" class="hred">
-                                    <img src="img/play-red.png" alt="">
-                                    <span class="red">|</span>
+                                <a href="#exampleModal3" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                    <img src="img/play.png" alt="">
+                                    <span>|</span>
                                     VER VIDEO
                                 </a>                        
                             </div>
@@ -204,7 +322,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-5">
-                        <div class="util-box">
+                        <div class="util-box columnas">
                             <div class="mapa">
                                 <h4 class="red">Municipios donde se llevó a cabo el estudio</h4>
                                 <p>Seleccione en el mapa el municipio que sesee consultar</p>
@@ -217,108 +335,157 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        <div class="util-box">
+                        <div class="util-box columnas">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-6 col-sm-12">
+                                    <div class="region custom-select extr">
+                                        <select id="regionA">
+                                            <option>MUNICIPIO</option>
+                                            <option value="1">Anorí</option>                                             
+                                        </select>
+                                    </div>                                                                      
+                                </div>
+                                <div class="col-lg-7 col-md-6 col-sm-12">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione en el mapa el municipio que desee consultar</p>
+                                    </div>  
+                                </div>
+                            </div>
                             <div class="mapa">
                                 <h4 class="red">
                                     Preguntas
                                 </h4>
                                 <p>
-                                    Seleccione una pregunta del Estudio de entorno institucional habilitante para el empoderamiento de género en Colombia para ver
-                                    los resultados
-                                </p>
+                                    Seleccione una pregunta del estudio para ver los resultados.
+                                </p>                                
                             </div>
-                            <div class="preguntas red-bg">
-                                <ul>
-                                    <li>
-                                        <a href="#">¿Hay presencia de políticas públicas para las victimas del conflicto armado?</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">¿Se planea formulación de política públicas en el tema?</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">¿Se plantea implementación de política?</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">¿Se planean ambas? </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">¿Cuentan con mecanismos de victimas o paz?</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">¿Se busca implementar?</a>
-                                    </li>                                    
-                                </ul>
-                            </div>                            
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="util-box red-bg pb-4">
-                                    <h4 class="text-center py-3 border-aux-w">
-                                        <div id="municipio">
-                                            Anorí
+                            <div class="respuestas">
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Hay presencia de politicas públicas para las victimas del conflicto armado?</a> <a href="#" class="resultado">SI</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </h4>
-                                    <p class="text-center">A la pregunta <span>¿Se plantea implementación de política?</span> la respuesta es: </p>
-                                    <div class="respuesta red py-4">
-                                        <div id="mun-res">
-                                            SI
-                                        </div>
-                                    </div>
+                                    </div>                                    
                                 </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="util-box">
-                                    <div class="mapa">
-                                        <h4 class="red text-center px-0 adj-width border-aux">
-                                            SELECCIONE LOS MUNICIPIOS PARA HACER
-                                            UN COMPARATIVO
-                                        </h4>
-                                    </div>
-                                    <div class="px-3 pb-4">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="util-box px-2">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-lateral red-bg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                           Municipio
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                            <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-                                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                                                        </ul>
-                                                    </div>
-                                                    <div class="respuesta red empty py-4">
-                                                        SI
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="util-box px-2">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-lateral red-bg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                           Municipio
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                            <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-                                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                                                        </ul>
-                                                    </div>
-                                                    <div class="respuesta red empty py-4">
-                                                        SI
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se planea formulación de política públicas en el tema?</a> <a href="#" class="resultado"> NO</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
+                                    </div>                                    
+                                </div>  
+                                
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se plantea implementación de política?</a> <a href="#" class="resultado"> NO APLICA</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se planean ambas?</a> <a href="#" class="resultado"> NO</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se planean ambas?</a> <a href="#" class="resultado"> NO</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se planean ambas?</a> <a href="#" class="resultado"> NO</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se planean ambas?</a> <a href="#" class="resultado"> NO</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+
+
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se planean ambas?</a> <a href="#" class="resultado"> NO</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+
+
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">¿Se planean ambas?</a> <a href="#" class="resultado"> NO</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </div> 
+
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="preguntas">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="question">Existe articulación intersectorial para la incorporación del enfoque de género con los AF</a> <a href="#" class="resultado"> SI</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
                                 </div>
-                            </div>
-                        </div>
+                            </div>                                                       
+                        </div>                        
                     </div>
                 </div>
                 
-                <div style="height: 2em;display: block;"></div>
+                <div class="py-5"></div>
             </div>
         </div>
     </div>
