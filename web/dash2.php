@@ -355,7 +355,19 @@
             { title: 'Indigena', filterKey: 'Pertenencia étnica', filterValue: 'Indigena'},
             { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'}
         ];
-        let dash = new Dashboard('mujeresEtnicas', true, mapGrahs);
+        const secondChartConfig = {
+            config: lowerChartConfig,
+            labelColumn: 'Grupo de edad',
+            graph1: { 
+                id: 'chartb',
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
+            },
+            graph2: { 
+                id: 'chartc',
+                filter: { title: 'Indigena', filterKey: 'Pertenencia étnica', filterValue: 'Indigena'},
+            }
+        };
+        let dash = new Dashboard('mujeresEtnicas', true, mapGrahs, secondChartConfig);
     </script>
     
     

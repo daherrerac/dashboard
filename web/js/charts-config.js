@@ -2,55 +2,55 @@ const chartConfig = {
   datasetsBackgroundColor: '#14DFFF',
   datasetsBorderColor: '#14DFFF',
   datasetsColor: '#ffffff',
-  datasetsBorderWidth: 0,  
-  color:'#ffffff',
-  fontColor:'#ffffff',  
+  datasetsBorderWidth: 0,
+  color: '#ffffff',
+  fontColor: '#ffffff',
   maintainAspectRatio: false,
-  options: {                      
+  options: {
     borderRadius: 10,
     indexAxis: 'y',
     responsive: true,
-    maintainAspectRatio: false,   
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
-        fullSize:true,
-        fontColor:'#ffffff',      
-        font:{
-          size:18
+        fullSize: true,
+        fontColor: '#ffffff',
+        font: {
+          size: 18
         },
-        padding:{
+        padding: {
           top: 0,
           bottom: 10
         },
         text: '',
-        color: '#ffffff', 
-        align :'start',       
-        fontColor:'#ffffff',      
+        color: '#ffffff',
+        align: 'start',
+        fontColor: '#ffffff',
       },
-      legend:{
-        display:true,
+      legend: {
+        display: true,
         labels: {
           color: '#ffffff'
         },
         onClick: null
       },
       tooltip: {
-        backgroundColor:'#ffffff',
-        titleColor:'#000',
-        bodyColor:'#000',
+        backgroundColor: '#ffffff',
+        titleColor: '#000',
+        bodyColor: '#000',
         callbacks: {
-            label: function(context) {
-                var label = context.dataset.label || '';
+          label: function (context) {
+            var label = context.dataset.label || '';
 
-                if (label) {
-                    label += ': ';
-                }
-                if (context.parsed.x !== null) {
-                    label = label + context.parsed.x + '%';
-                }
-                return label;
+            if (label) {
+              label += ': ';
             }
+            if (context.parsed.x !== null) {
+              label = label + context.parsed.x + '%';
+            }
+            return label;
+          }
         }
       }
     },
@@ -61,101 +61,151 @@ const chartConfig = {
           min: 0,
           max: 100,
           stepSize: 10,
-          color:'#022869',
-          callback: function(value, index, values) {
-              return value + '%';
+          color: '#022869',
+          callback: function (value, index, values) {
+            return value + '%';
           }
         },
-        fontColor:'#022869',      
+        fontColor: '#022869',
         grid: {
           display: true,
         },
         suggestedMin: 0,
-        suggestedMax: 100     
+        suggestedMax: 100
       },
       y: {
         grid: {
           display: false,
         },
-        ticks:{
-          color:'#ffffff',
-        }      
+        ticks: {
+          color: '#ffffff',
+        }
       }
 
     },
-    
+
   }
 };
 
 const lowerChartConfig = {
-  series: [
-      {
-          name: 'Región 1',
-          data: [44, 55]
-      }, 
-      {
-          name: 'Región 2',
-          data: [76, 85]
-      }, 
+  series: [{
+      name: 'Región 1',
+      data: [44, 55]
+    },
+    {
+      name: 'Región 2',
+      data: [76, 85]
+    },
   ],
-  colors: ['#14DFFF','#022869'],
+  colors: ['#14DFFF', '#022869'],
   chart: {
-      toolbar:{
-        show:false
-      },
-      type: 'bar',
-      height: 350
+    toolbar: {
+      show: false
+    },
+    type: 'bar',
+    height: 350
   },
   plotOptions: {
-      bar: {
-          horizontal: false,
-          columnWidth: '80%',
-          endingShape: 'rounded',
-          dataLabels: {
-              position: 'top', // top, center, bottom  
-                        
-          },
-          colors:{
-              ranges:{
-                  from: 0,
-                  to: 100,
-                  color:'#022869'
-              }
-              
-          }
+    bar: {
+      horizontal: false,
+      columnWidth: '80%',
+      endingShape: 'rounded',
+      dataLabels: {
+        position: 'top', // top, center, bottom  
+
       },
-  },
-  dataLabels: {      
-      offsetY: 10,
-      style: {
-          fontSize: '12px'          
+      colors: {
+        ranges: {
+          from: 0,
+          to: 100,
+          color: '#022869'
+        }
+
       }
-  },  
-  xaxis: {
-      categories: ['14 a 19 años', '20 a 24 años'],
-      labels:{
-        style:{
-          fontFamily: 'SourceBold',
-          fontSize: '14px'
-        },        
-      }      
+    },
   },
-  yaxis:{
-    labels:{
-      style:{
+  dataLabels: {
+    offsetY: 10,
+    style: {
+      fontSize: '12px'
+    }
+  },
+  xaxis: {
+    categories: ['14 a 19 años', '20 a 24 años'],
+    labels: {
+      style: {
         fontFamily: 'SourceBold',
         fontSize: '14px'
-      },           
-    }    
+      },
+    }
+  },
+  yaxis: {
+    labels: {
+      style: {
+        fontFamily: 'SourceBold',
+        fontSize: '14px'
+      },
+    }
   },
   fill: {
-    colors: ['#14DFFF','#022869']
+    colors: ['#14DFFF', '#022869']
   },
-  tooltip:{
-    y:{
-      formatter: function (val) { 
-        return val + "%" 
+  tooltip: {
+    y: {
+      formatter: function (val) {
+        return val + "%"
       }
     }
   }
+};
+
+const lowerChartConfig2 = {
+  grid: {
+    show: false
+  },
+  series: [{
+    name: 'Región 1',
+    data: [44, 55]
+  }],
+  chart: {
+    toolbar: {
+      show: false
+    },
+    type: 'bar',
+    height: 280
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 4,
+      horizontal: false,
+    }
+  },
+  dataLabels: {
+    enabled: true
+  },
+  yaxis: {
+    labels: {
+      show: true,
+      style: {
+        colors: ['#ffffff'],
+        fontSize: '12px',
+        cssClass: 'apexcharts-xaxis-label',
+      },
+    }
+  },
+  xaxis: {
+    categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+    forceNiceScale: true,
+  },
+
+  tickAmount: 10
 };

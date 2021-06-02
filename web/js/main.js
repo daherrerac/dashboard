@@ -258,16 +258,18 @@ class Dashboard {
   selectedQuestion;
   upGraphs;
   hasMap;
+  lowerGraphs;
 
   graphRegionSelection1;
   graphRegionSelection2;
   
 
-  constructor(survey, hasMap = true, mapGraphs){
+  constructor(survey, hasMap = true, mapGraphs, lowerGraphs){
     this.dr = new DashboardDataReader();
     this.survey = survey;
     this.hasMap = hasMap;
     this.mapGraphs = mapGraphs;
+    this.lowerGraphs = lowerGraphs;
     if (this.hasMap && this.mapGraphs){
       this.mapClickCallback = (region) => {
         this.region = region;
@@ -296,12 +298,13 @@ class Dashboard {
     // cargar regiones en selectores inferiores
     this.loadRegions();
 
-    //Cargar región individual
-    //this.loadSingleRegion();
-
     // inicializar graficas
-    this.initGraphs1();
-    this.initGraphs2();
+    if (this.mapGraphs){
+      this.initGraphs1();
+    }
+    if (this.lowerGraphs){
+      this.initGraphs2();
+    }
 
     // incializar mapa
     if (this.hasMap){
@@ -379,15 +382,15 @@ class Dashboard {
   }
 
   initGraphs2(){
-    let config1 = JSON.parse(JSON.stringify(lowerChartConfig));
-    let config2 = JSON.parse(JSON.stringify(lowerChartConfig));
+    let config1 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
+    let config2 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
     
-    config1.chart.id = 'menChart';
-    config2.chart.id = 'womenChart';
-    const labelColumn = "Grupo de edad";
+    config1.chart.id = this.lowerGraphs.graph1.id;
+    config2.chart.id = this.lowerGraphs.graph2.id;
+    const labelColumn = this.lowerGraphs.labelColumn;
     
     
-    let filter = {[this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue};
+    let filter = {[this.lowerGraphs.graph1.filter.filterKey]:this.lowerGraphs.graph1.filter.filterValue};
     if (this.hasMap){
       filter.Region=this.graphRegionSelection1;
     }
@@ -400,16 +403,17 @@ class Dashboard {
    
     config1.series[0].name = this.graphRegionSelection1;
     config1.series[0].data = menGraphDataSeries.data;
-    config1.series[1].name = this.graphRegionSelection2;
-    config1.series[1].data = womenGraphDataSeries.data;   
+    if (this.hasMap){
+      config1.series[1].name = this.graphRegionSelection2;
+      config1.series[1].data = womenGraphDataSeries.data; 
+    }  
     config1.xaxis.categories = menGraphDataSeries.labels;
     config1.yaxis.labels.formatter = function (val) {return val + "%"};    
     config1.dataLabels.formatter = function (val) {return val + "%"};
     
+    // console.log("config", config1);
 
-    console.log("config", config1);
-
-    let filter2 = {[this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue};
+    let filter2 = {[this.lowerGraphs.graph1.filter.filterKey]:this.lowerGraphs.graph1.filter.filterValue};
     if (this.hasMap){
       filter2.Region=this.graphRegionSelection1;
     }
@@ -420,16 +424,18 @@ class Dashboard {
     womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter2);
     config2.series[0].name = this.graphRegionSelection1;
     config2.series[0].data = menGraphDataSeries.data;
-    config2.series[1].name = this.graphRegionSelection2;
-    config2.series[1].data = womenGraphDataSeries.data;    
+    if (this.hasMap){
+      config2.series[1].name = this.graphRegionSelection2;
+      config2.series[1].data = womenGraphDataSeries.data;
+    }
     config2.xaxis.categories = menGraphDataSeries.labels;
     config2.yaxis.labels.formatter = function (val) {return val + "%"};
     config2.dataLabels.formatter = function (val) {return val + "%"};
 
     console.log("config2", config2);
     
-    let chartb = new ApexCharts(document.querySelector("#chartb"), config1);
-    let chartc = new ApexCharts(document.querySelector("#chartc"), config2);            
+    let chartb = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph1.id), config1);
+    let chartc = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph2.id), config2);            
     chartb.render();
     chartc.render();
   }
@@ -446,11 +452,13 @@ class Dashboard {
         name:this.graphRegionSelection1,
         data: menGraphDataSeries.data,
       },
-      {
+    ];
+    if (this.hasMap){
+      series.push({
         name:this.graphRegionSelection2,
         data:womenGraphDataSeries.data,
-      }
-    ];
+      });
+    }
     //config2.xaxis.categories = menGraphDataSeries.labels;
 
     //console.log("graphData1", graphData1);
@@ -489,10 +497,12 @@ class Dashboard {
         // adicionar clase selected al elemento del evento
         this.classList.add('selected');
         console.log("Click question", self.selectedQuestion);
-        self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
-        self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
-        self.updateGraph2("menChart", {Region:'', [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
-        self.updateGraph2("womenChart", {Region:'', [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+        if (self.hasMap){
+          self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
+          self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+        }
+        self.updateGraph2(self.lowerGraphs.graph1.id, {Region:'', [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue});
+        self.updateGraph2(self.lowerGraphs.graph2.id, {Region:'', [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue});
       });
     });
   }
@@ -520,8 +530,8 @@ class Dashboard {
         } else if (selector.getAttribute('id') == 'region2'){
           self.graphRegionSelection2 = value;
         }
-        self.updateGraph2("menChart", {Region:'', [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
-        self.updateGraph2("womenChart", {Region:'', [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+        self.updateGraph2(self.lowerGraphs.graph1.id, {Region:'', [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue});
+        self.updateGraph2(self.lowerGraphs.graph2.id, {Region:'', [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue});
         console.log("Region seleccionada:", value, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
       };
       // definir selecciones por defecto de ambos selectores

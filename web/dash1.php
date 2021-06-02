@@ -542,7 +542,19 @@
             { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},
             { title: 'MUJERES', filterKey: 'Sexo', filterValue: 'MUJER'}
         ];
-        let dash = new Dashboard('hogaresGenerales', true, mapGrahs);
+        const secondChartConfig = {
+            config: lowerChartConfig,
+            labelColumn: 'Grupo de edad',
+            graph1: { 
+                id: 'chartb',
+                filter: { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},
+            },
+            graph2: { 
+                id: 'chartc',
+                filter: { title: 'MUJERES', filterKey: 'Sexo', filterValue: 'MUJER'},
+            }
+        };
+        let dash = new Dashboard('hogaresGenerales', true, mapGrahs, secondChartConfig);
     </script>
     
    
