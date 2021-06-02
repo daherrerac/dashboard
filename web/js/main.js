@@ -387,7 +387,7 @@ class Dashboard {
     const labelColumn = "Grupo de edad";
     
     
-    let filter = {Sexo:"HOMBRE"};
+    let filter = {[this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue};
     if (this.hasMap){
       filter.Region=this.graphRegionSelection1;
     }
@@ -409,7 +409,7 @@ class Dashboard {
 
     console.log("config", config1);
 
-    let filter2 = {Sexo:"MUJER"};
+    let filter2 = {[this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue};
     if (this.hasMap){
       filter2.Region=this.graphRegionSelection1;
     }
@@ -469,9 +469,15 @@ class Dashboard {
     questions.forEach((q) => {
       pregUL.append(HTMLbuilder.createPreguntasLiElement(q));
     });
-    // inicializar eventos de clic en cada pregunta
+    
+
+    // inicializar eventos de clic en cada pregunta y pregunta seleccionada por defecto
     const aTags = document.querySelectorAll('.preguntas ul li a');
-    aTags.forEach((a) => {
+    aTags.forEach((a, index) => {
+      // seleccionar pregunta por defecto
+      if (index==0){
+        a.classList.add('selected');
+      }
       a.addEventListener('click', function(event) {
         event.preventDefault();
         self.selectedQuestion = event.target.innerHTML;
