@@ -109,7 +109,7 @@
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#" class="hred">
+                                <a href="dash6.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
@@ -130,6 +130,14 @@
                                     Contacto
                                 </a>                        
                             </div>
+                        </div>
+                        <div class="cerrar">
+                            <img src="img/user.png" alt="">
+                            <p>
+                                Bienvenido/a
+                                <a href="#">Correo@dominio.com</a>
+                            </p>
+                            <a href="#"> Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -210,7 +218,7 @@
                                 <img src="img/icono-05.svg" alt="">
                                 Entorno Institucional Mujeres
                             </a>
-                            <a href="#" class="hred">
+                            <a href="dash6.html" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional LGBTI
                             </a>
@@ -232,6 +240,14 @@
                             </a>                        
                         </div>
                     </div>
+                    <div class="cerrar">
+                        <img src="img/user.png" alt="">
+                        <p>
+                            Bienvenido/a
+                            <a href="#">Correo@dominio.com</a>
+                        </p>
+                        <a href="#"> Cerrar sesión</a>
+                    </div>
                 </div>
             </div>
             <div id="overlay"></div>
@@ -244,8 +260,8 @@
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                            En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional de 
-                            las Violencias contra las Mujeres en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
+                            En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional a las Violencias contra las Mujeres 
+                            en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
                             </h2>
                         </div>
                     </div>

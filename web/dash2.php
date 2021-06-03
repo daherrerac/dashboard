@@ -54,7 +54,7 @@
       
     <div class="container-fluid">
         <div class="fila">
-            <div class="columna1">
+            <div class="columna1 d-none d-lg-block">
                 <div class="col-lg-12">
                     <div class="menu-lateral">
                         <div class="logo-left">
@@ -113,7 +113,7 @@
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#" class="hred">
+                                <a href="dash6.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTIQ
                                 </a>
@@ -135,9 +135,126 @@
                                 </a>                        
                             </div>
                         </div>
+                        <div class="cerrar">
+                            <img src="img/user.png" alt="">
+                            <p>
+                                Bienvenido/a
+                                <a href="#">Correo@dominio.com</a>
+                            </p>
+                            <a href="#"> Cerrar sesión</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="menu-mb d-lg-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="hb-menu">
+                                <svg viewBox="0 0 100 80" width="30" height="30">
+                                    <rect width="100" height="15" rx="8"></rect>
+                                    <rect y="30" width="100" height="15" rx="8"></rect>
+                                    <rect y="60" width="100" height="15" rx="8"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="logo">
+                                <img src="img/logo.svg" alt="">                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-lateral" style="display:none">                    
+                    <div class="blue-menu">
+                        <h2>
+                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres
+                        </h2>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">                                    
+                                <div class="menu-selector activo">
+                                    <a href="dash1.php">
+                                        <img src="img/icono-02.svg" alt="">
+                                        Encuesta Tolerancia Social 
+                                    </a>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                    </button>
+                                </div>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">                                            
+                                    <div class="box-message">
+                                        <ul>
+                                            <li>
+                                                <a href="dash2.php" class="activo">
+                                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>                                                                
+                        </div>
+                                                                                
+                        <div class="box-buttons">
+                            <a href="dash3.html" class="hblue">
+                                <img src="img/icono-03.svg" alt="" >
+                                Encuesta Tolerancia Institucional
+                            </a>
+                            <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="img/info-blue.png" alt="" >    
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="red-menu">
+                        <h2>
+                            Retos del entorno institucional para el empoderamiento de género en Colombia
+                        </h2>
+                        <div class="box-buttons">
+                            <a href="dash4.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional Paz
+                            </a>
+                            <a href="dash5.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">
+                                Entorno Institucional Mujeres
+                            </a>
+                            <a href="dash6.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional LGBTI
+                            </a>
+                            <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                <img src="img/info.png" alt="">     
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gray-menu">
+                        <div class="box-buttons">
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/info-w.png" alt="">
+                                Sobre el proyecto
+                            </a>
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/chat.png" alt="">
+                                Contacto
+                            </a>                        
+                        </div>
+                    </div>
+                    <div class="cerrar">
+                        <img src="img/user.png" alt="">
+                        <p>
+                            Bienvenido/a
+                            <a href="#">Correo@dominio.com</a>
+                        </p>
+                        <a href="#"> Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+            <div id="overlay"></div>
             <div class="columna2">
                 <div class="row">
                     <div class="col-lg-12">

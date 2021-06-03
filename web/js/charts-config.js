@@ -96,7 +96,7 @@ const chartConfig = {
           var meta = chartInstance.chart.getDatasetMeta(i);
           meta.data.forEach(function(bar, index) {
             var data = dataset.data[index];
-            ctx.fillText(data + "%", 120, bar.y + 8);
+            ctx.fillText(data + "%", bar.x + 25, bar.y + 8);
           });
         });
       }
@@ -142,9 +142,10 @@ const lowerChartConfig = {
     },
   },
   dataLabels: {
-    offsetY: 10,
+    offsetY: -20,
     style: {
-      fontSize: '12px'
+      fontSize: '12px',
+      colors: ['#022869']
     }
   },
   xaxis: {

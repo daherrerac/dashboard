@@ -87,8 +87,54 @@ h2 span{
     padding: 0;
 }
 .red-menu{
-    background: #B20E35;
+    background: #651D32;
     padding: 0;
+}
+.cerrar{
+    font-family:'SourceRegular';
+    background: #0065BA;
+    padding: 0 0 1em;
+    text-align: center;
+    color: #ffffff;
+}
+.cerrar img{
+    padding-top: 1.5em;
+}
+.cerrar a{
+    font-family:'SourceSemiBold';
+    background: #ffffff;
+    text-transform: uppercase;
+    color: #022869;
+    padding: 3px 0px 3px 10px;
+    display: block;
+    max-width: 140px;
+    margin: 1em auto;
+    text-decoration: none;
+    border-radius: 5px  ;
+    font-size: 1.1em;
+    background-image: url(../img/cerrar.png);
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-position-y: 5px;
+}
+.cerrar a:hover{
+    color: #14DFFF;
+    background-image: url(../img/cerrar-claro.png);
+}
+.cerrar p a{
+    background: transparent;
+    color: #ffffff;
+    padding: 0;
+    margin: 0 auto;
+    text-transform: none;
+}
+.cerrar p a:hover{
+    color: #ffffff;
+    background-image: none;
+}
+.cerrar a img{
+    padding: 0;
+    margin-right: 5px;
 }
 .gray-menu{
     background: #dadada;
@@ -271,6 +317,9 @@ h2 span{
     background: #EF184B;
     color: #ffffff;
 }
+.box-buttons a.hred:hover span{
+    color: #ffffff;
+}
 .box-buttons a.hblue:hover img,.box-buttons a.hred:hover img{
     filter:brightness(0) invert(1);    
 }
@@ -297,7 +346,7 @@ h2 span{
     color: #464646;
 }
 .red-menu .box-buttons{
-    background: #C2113B;
+    background: #651D32;
 }
 .imagen{
     background: #e8f0f9;
@@ -464,8 +513,9 @@ h2 span{
     height: 170px;
 }
 .blue-info.red-bg{
-    background: #C2113B;
+    background: #651D32;
 }
+
 .blue-info .col-8{
     border-right: 1px solid #ffffff;
 }
@@ -527,6 +577,10 @@ h2 span{
 }
 .adicional span{
     color: #0065ba;
+    margin-right: 0.5em;
+}
+.adicional.red-bg span {
+    color: #C2113B;
     margin-right: 0.5em;
 }
 .adicional .box-buttons{
@@ -640,16 +694,79 @@ h2 span{
     color: #ffffff;
 }
 .respuestas{
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #C2113B #DADADA;
-    max-height: 80%;
+    max-height: 600px;
+    overflow-x: hidden;
+    margin-left: 20px;
+}
+.fila-cajon{
+    display: table;
+    width: 98%;
+    margin: 1.2em auto;
+}
+.fila-cajon:hover .cajon{
+    background: #C2113B;
+    color: #ffffff;
+}
+.fila-cajon:hover .cajon.white{
+    background: #ffffff;
+}
+.cajon{
+    background:#F9F9F9 ;
+    font-size: 20px;
+    padding: 0.5em 0.3em 0.5em 1em;
+    border-radius: 0.5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+.cajon.ask{
+    font-family:'SourceRegular';
+    width: calc(70% - 20px);      
+}
+.cajon.ask.mini{
+    width: calc(50% - 20px);
+}
+.cajon.white{
+    background: #ffffff;
+    width: 3%;
+}
+.cajon.ans{
+    font-family:'SourceSemiBold';
+    text-align: center;
+    font-size: 17px;
+    width: 20%;
+    padding-left: 10px;
+    margin-right: 20px;  
+    padding-right: 20px;
+}
+.cajon.ans.maxi{
+    width: 40%;
 }
 .respuestas.full{
     margin: 1em;
     max-height: 100%;
     padding: 1.5em 1em 1em;
     overflow-y: auto;
+}
+
+.respuestas.full .cajon.ask{
+    font-family:'SourceRegular';
+    width: calc(70% - 20px);
+}
+.respuestas.full .cajon.white{
+    width: 2%;
+}
+.respuestas.full .cajon.ans{
+    width: 13%;    
+}
+.respuestas.full .cajon.ans2{
+    font-family:'SourceSemiBold';
+    text-align: center;
+    font-size: 17px;
+    width: 13%;
+    padding-left: 10px;
 }
 /* Works on Chrome, Edge, and Safari */
 .respuestas::-webkit-scrollbar {
@@ -1159,6 +1276,9 @@ select option{
     .menu-mb{        
         width: 108%;        
     }
+    .menu-lateral {
+        width: 100%;
+    }
 }
 @media screen and (max-height:650px){
     .logo {
@@ -1223,7 +1343,12 @@ select option{
     font-size: 1.3em;
 }
 .red-bg .extr .select-selected {
-    background-color: #EF184B;
+    background-color: #ffffff;
+    color: #BA0C2F;
+}
+.red-bg .extr .select-selected:after {
+    border: 6px solid #BA0C2F;
+    border-color: #BA0C2F transparent transparent transparent;
 }
   /*style the arrow inside the select element:*/
 .select-selected:after {
