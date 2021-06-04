@@ -1,16 +1,15 @@
-<!-- <?php
+<?php
   session_start();
    
   // Controlo si el usuario ya está logueado en el sistema.
-  if(isset($_SESSION['email'])){
-    // Le doy la bienvenida al usuario.
-    echo 'Bienvenido <strong>' . $_SESSION['email'] . '</strong>, <a href="cerrar.php">cerrar sesión</a>';
+  if(isset($_SESSION['email'])){    
+    
   }else{
     // Si no está logueado lo redireccion a la página de login.
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
   }
-?>  -->
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -132,12 +131,22 @@
                             </div>
                         </div>
                         <div class="cerrar">
-                            <img src="img/user.png" alt="">
+                        <?php
+                        if(isset($_SESSION['email'])){    
+                            echo '<img src="img/user.png" alt="">
+                            
                             <p>
                                 Bienvenido/a
                                 <a href="#">Correo@dominio.com</a>
                             </p>
                             <a href="#"> Cerrar sesión</a>
+                            
+                            ';
+                        }
+
+                        echo 'Bienvenido <strong>' . $_SESSION['email'] . '</strong>, <a href="cerrar.php">cerrar sesión</a>';
+                        ?>                            
+                            
                         </div>
                     </div>
                 </div>
