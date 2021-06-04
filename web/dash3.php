@@ -1,16 +1,15 @@
-<!-- <?php
+<?php
   session_start();
    
   // Controlo si el usuario ya está logueado en el sistema.
   if(isset($_SESSION['email'])){
-    // Le doy la bienvenida al usuario.
-    echo 'Bienvenido <strong>' . $_SESSION['email'] . '</strong>, <a href="cerrar.php">cerrar sesión</a>';
+    // Le doy la bienvenida al usuario.    
   }else{
     // Si no está logueado lo redireccion a la página de login.
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
   }
-?>  --> 
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -31,7 +30,7 @@
       
     <div class="container-fluid">
         <div class="fila">
-            <div class="columna1">
+            <div class="columna1 d-none d-lg-block">
                 <div class="col-lg-12">
                     <div class="menu-lateral">
                         <div class="logo-left">
@@ -39,34 +38,52 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres
+                                La tolerancia social e institucional a las violencias contra las mujeres.
                             </h2>
 
-                            <div class="box-buttons">
-                                <a href="dash1.php" class="hblue">
-                                    <img src="img/icono-03.svg" alt="">
-                                    Encuesta general
-                                </a>
-                            </div>                            
-                            <div class="box-message">
-                                <a href="dash2.php" >
-                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                </a>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingOne">                                    
+                                    <div class="menu-selector">
+                                        <a href="dash1.php">
+                                            <img src="img/icono-03.svg" alt="">
+                                            Encuesta general
+                                        </a>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                        </button>
+                                    </div>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        
+                                        <div class="box-message activo" >
+                                            <ul>
+                                                <li>
+                                                    <a href="dash2.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
+                                                        Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>                                                                
                             </div>
                             <div class="box-buttons">
-                                <a href="dash3.html"  class="activo">
-                                    <img src="img/icono-02.svg" alt="" >
+                                <a href="dash3.html" class="hblue">
+                                    <img src="img/icono-03.svg" alt="">
                                     Encuesta servidores públicos
                                 </a>
-                                <a href="#" class="hblue">
-                                    <img src="img/info-blue.png" alt="" >    
+                                <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <img src="img/info-blue.png" alt="" >  
                                     Ficha técnica
                                 </a>
                             </div>
                         </div>
                         <div class="red-menu">
                             <h2>
-                                Estudio de Entorno Institucional Habilitante para el Empoderamiento de Género en Colombia
+                                Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
                                 <a href="dash4.html" class="hred">
@@ -77,9 +94,9 @@
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="#" class="hred">
+                                <a href="dash6.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
-                                    Entorno Institucional LGBTIQ
+                                    Entorno Institucional LGBTI
                                 </a>
                                 <a href="#" class="hred">
                                     <img src="img/info.png" alt="">     
@@ -95,13 +112,144 @@
                                 </a>
                                 <a href="#" class="blue-bg hblue">
                                     <img src="img/chat.png" alt="">
-                                    Contácto
+                                    Contacto
                                 </a>                        
                             </div>
+                        </div>
+                        <div class="cerrar">
+                            <?php
+                                if(isset($_SESSION['email'])){    
+                                    echo '<img src="img/user.png" alt="">
+                                    
+                                    <p>
+                                        Bienvenido/a
+                                        <a href="#">'.$_SESSION['email'].'</a>
+                                    </p>
+                                    <a href="cerrar.php"> Cerrar sesión</a>
+                                    
+                                    ';
+                                }
+                            ?>                                                        
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="menu-mb d-lg-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="hb-menu">
+                                <svg viewBox="0 0 100 80" width="30" height="30">
+                                    <rect width="100" height="15" rx="8"></rect>
+                                    <rect y="30" width="100" height="15" rx="8"></rect>
+                                    <rect y="60" width="100" height="15" rx="8"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="logo">
+                                <img src="img/logo.svg" alt="">                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-lateral" style="display:none">                    
+                    <div class="blue-menu">
+                        <h2>
+                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres
+                        </h2>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">                                    
+                                <div class="menu-selector activo">
+                                    <a href="dash1.php">
+                                        <img src="img/icono-02.svg" alt="">
+                                        Encuesta Tolerancia Social 
+                                    </a>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                    </button>
+                                </div>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">                                            
+                                    <div class="box-message">
+                                        <ul>
+                                            <li>
+                                                <a href="dash2.php" class="activo">
+                                                    Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>                                                                
+                        </div>
+                                                                                
+                        <div class="box-buttons">
+                            <a href="dash3.html" class="hblue">
+                                <img src="img/icono-03.svg" alt="" >
+                                Encuesta Tolerancia Institucional
+                            </a>
+                            <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="img/info-blue.png" alt="" >    
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="red-menu">
+                        <h2>
+                            Retos del entorno institucional para el empoderamiento de género en Colombia
+                        </h2>
+                        <div class="box-buttons">
+                            <a href="dash4.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional Paz
+                            </a>
+                            <a href="dash5.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">
+                                Entorno Institucional Mujeres
+                            </a>
+                            <a href="dash6.html" class="hred">
+                                <img src="img/icono-05.svg" alt="">    
+                                Entorno Institucional LGBTI
+                            </a>
+                            <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                <img src="img/info.png" alt="">     
+                                Ficha técnica
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gray-menu">
+                        <div class="box-buttons">
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/info-w.png" alt="">
+                                Sobre el proyecto
+                            </a>
+                            <a href="#" class="blue-bg hblue">
+                                <img src="img/chat.png" alt="">
+                                Contacto
+                            </a>                        
+                        </div>
+                    </div>
+                    <div class="cerrar">
+                        <?php
+                            if(isset($_SESSION['email'])){    
+                                echo '<img src="img/user.png" alt="">
+                                
+                                <p>
+                                    Bienvenido/a
+                                    <a href="#">'.$_SESSION['email'].'</a>
+                                </p>
+                                <a href="cerrar.php"> Cerrar sesión</a>
+                                
+                                ';
+                            }
+                        ?>                                                        
+                    </div>
+                </div>
+            </div>
+            <div id="overlay"></div>
             <div class="columna2">
                 <div class="row">
                     <div class="col-lg-12">
@@ -118,7 +266,7 @@
                     </div>
                 </div>                
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-xxl-10 col-xl-9 col-md-12">
                         <div class="blue-info">
                             <div class="row">
                                 <div class="col-4">
@@ -175,16 +323,16 @@
                             </div>                                                       
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-xxl-2 col-xl-3 col-md-12">
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="#">
+                                <a href="fichas/PDF.pdf" target="_blank">
                                     <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
                                 </a>
-                                <a href="#">
+                                <a href="#exampleModal3" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                                     <img src="img/play.png" alt="">
                                     <span>|</span>
                                     VER VIDEO
@@ -228,7 +376,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="height: 2em;display: block;"></div>
+                <div class="py-5"></div>
             </div>
         </div>
     </div>
@@ -249,6 +397,7 @@
         const secondChartConfig = {
             config: lowerChartConfig2,
             labelColumn: 'Tiempo que lleva trabajando en la institución',
+                        
             graph1: { 
                 id: 'chart',
                 filter: { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},

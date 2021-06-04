@@ -131,22 +131,19 @@
                             </div>
                         </div>
                         <div class="cerrar">
-                        <?php
-                        if(isset($_SESSION['email'])){    
-                            echo '<img src="img/user.png" alt="">
-                            
-                            <p>
-                                Bienvenido/a
-                                <a href="#">Correo@dominio.com</a>
-                            </p>
-                            <a href="#"> Cerrar sesión</a>
-                            
-                            ';
-                        }
-
-                        echo 'Bienvenido <strong>' . $_SESSION['email'] . '</strong>, <a href="cerrar.php">cerrar sesión</a>';
-                        ?>                            
-                            
+                            <?php
+                                if(isset($_SESSION['email'])){    
+                                    echo '<img src="img/user.png" alt="">
+                                    
+                                    <p>
+                                        Bienvenido/a
+                                        <a href="#">'.$_SESSION['email'].'</a>
+                                    </p>
+                                    <a href="cerrar.php"> Cerrar sesión</a>
+                                    
+                                    ';
+                                }
+                            ?>                                                        
                         </div>
                     </div>
                 </div>
@@ -250,12 +247,19 @@
                         </div>
                     </div>
                     <div class="cerrar">
-                        <img src="img/user.png" alt="">
-                        <p>
-                            Bienvenido/a
-                            <a href="#">Correo@dominio.com</a>
-                        </p>
-                        <a href="#"> Cerrar sesión</a>
+                        <?php
+                            if(isset($_SESSION['email'])){    
+                                echo '<img src="img/user.png" alt="">
+                                
+                                <p>
+                                    Bienvenido/a
+                                    <a href="#">'.$_SESSION['email'].'</a>
+                                </p>
+                                <a href="cerrar.php"> Cerrar sesión</a>
+                                
+                                ';
+                            }
+                        ?>                                                        
                     </div>
                 </div>
             </div>
@@ -347,6 +351,28 @@
                                     <span>|</span>
                                     VER VIDEO
                                 </a>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione el filtro de la pregunta</p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="preg custom-select ext">
+                                        <select id="filtro">
+                                            <option>GRUPO DE PREGUNTA</option>                                                                                 
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

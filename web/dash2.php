@@ -1,16 +1,15 @@
-<!-- <?php
+<?php
   session_start();
    
   // Controlo si el usuario ya está logueado en el sistema.
-  if(isset($_SESSION['email'])){
-    // Le doy la bienvenida al usuario.
-    echo 'Bienvenido <strong>' . $_SESSION['email'] . '</strong>, <a href="cerrar.php">cerrar sesión</a>';
+  if(isset($_SESSION['email'])){    
+    
   }else{
     // Si no está logueado lo redireccion a la página de login.
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
   }
-?>   -->
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -68,9 +67,9 @@
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingOne">                                    
-                                    <div class="menu-selector activo">
+                                    <div class="menu-selector">
                                         <a href="dash1.php">
-                                            <img src="img/icono-02.svg" alt="">
+                                            <img src="img/icono-03.svg" alt="">
                                             Encuesta general
                                         </a>
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
@@ -81,9 +80,14 @@
                                     <div class="accordion-body">
                                         
                                         <div class="box-message activo" >
-                                            <a href="dash2.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
-                                                Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
-                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="dash2.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
+                                                        Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            
                                         </div>
                                     </div>
                                   </div>
@@ -94,7 +98,7 @@
                                     <img src="img/icono-03.svg" alt="">
                                     Encuesta servidores públicos
                                 </a>
-                                <a href="#" class="hblue">
+                                <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img src="img/info-blue.png" alt="" >  
                                     Ficha técnica
                                 </a>
@@ -115,7 +119,7 @@
                                 </a>
                                 <a href="dash6.html" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
-                                    Entorno Institucional LGBTIQ
+                                    Entorno Institucional LGBTI
                                 </a>
                                 <a href="#" class="hred">
                                     <img src="img/info.png" alt="">     
@@ -136,12 +140,19 @@
                             </div>
                         </div>
                         <div class="cerrar">
-                            <img src="img/user.png" alt="">
-                            <p>
-                                Bienvenido/a
-                                <a href="#">Correo@dominio.com</a>
-                            </p>
-                            <a href="#"> Cerrar sesión</a>
+                            <?php
+                                if(isset($_SESSION['email'])){    
+                                    echo '<img src="img/user.png" alt="">
+                                    
+                                    <p>
+                                        Bienvenido/a
+                                        <a href="#">'.$_SESSION['email'].'</a>
+                                    </p>
+                                    <a href="cerrar.php"> Cerrar sesión</a>
+                                    
+                                    ';
+                                }
+                            ?>                                                        
                         </div>
                     </div>
                 </div>
@@ -245,12 +256,19 @@
                         </div>
                     </div>
                     <div class="cerrar">
-                        <img src="img/user.png" alt="">
-                        <p>
-                            Bienvenido/a
-                            <a href="#">Correo@dominio.com</a>
-                        </p>
-                        <a href="#"> Cerrar sesión</a>
+                        <?php
+                            if(isset($_SESSION['email'])){    
+                                echo '<img src="img/user.png" alt="">
+                                
+                                <p>
+                                    Bienvenido/a
+                                    <a href="#">'.$_SESSION['email'].'</a>
+                                </p>
+                                <a href="cerrar.php"> Cerrar sesión</a>
+                                
+                                ';
+                            }
+                        ?>                                                        
                     </div>
                 </div>
             </div>
@@ -332,12 +350,12 @@
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="#">
+                                <a href="fichas/PDF.pdf" target="_blank">
                                     <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
                                 </a>
-                                <a href="#">
+                                <a href="#exampleModal3" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                                     <img src="img/play.png" alt="">
                                     <span>|</span>
                                     VER VIDEO
@@ -453,7 +471,59 @@
         
     </div>
 
+    <!-- Modal -->
+    <div class="ficha">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-01.jpg" alt="">
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ficha">
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-02.jpg" alt="">
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
     
+    <div class="video">
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <video controls>
+                        <source src="fichas/video.mp4" type="video/mp4">                        
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
     
     
     <!-- Optional JavaScript; choose one of the two! -->

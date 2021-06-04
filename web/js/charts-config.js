@@ -129,7 +129,6 @@ const lowerChartConfig = {
       endingShape: 'rounded',
       dataLabels: {
         position: 'top', // top, center, bottom  
-
       },
       colors: {
         ranges: {
@@ -194,27 +193,51 @@ const lowerChartConfig2 = {
   },
   plotOptions: {
     bar: {
-      borderRadius: 4,
+      borderRadius: 6,
       horizontal: false,
+      columnWidth: '20%',
+      colors: {
+        ranges: [
+          {
+            from: 0,
+            to: 5,
+            color: "#FFFFFF"
+        },
+          {
+            from: 5,
+            to: 20,
+            color: "#14DFFF"
+        },
+          {
+            from: 20,
+            to: 100,
+            color: "#35E4FF"
+        }],
+      },
     }
   },
   dataLabels: {
-    enabled: true
+    offsetY: 110,
+    style: {
+      fontSize: '12px',
+      colors: ['#FFFFFF']
+    }
   },
   yaxis: {
-    labels: {
-      show: true,
+    labels: {      
       style: {
         colors: ['#ffffff'],
-        fontSize: '12px',
-        cssClass: 'apexcharts-xaxis-label',
+        fontSize: '12px',        
       },
     }
   },
   xaxis: {
     categories: ['14 a 19 años', '20 a 24 años', '25 a 29 años', '30 a 34 años', '35 a 39 años'],
     labels: {
-      show: false,
+      show: true,
+      style:{
+          colors:"#ffffff"
+      }
     },
     axisBorder: {
       show: false,
@@ -222,7 +245,7 @@ const lowerChartConfig2 = {
     axisTicks: {
       show: false,
     },
-    forceNiceScale: true,
+    forceNiceScale: true,                
   },
 
   tickAmount: 10
