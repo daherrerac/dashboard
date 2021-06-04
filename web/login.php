@@ -9,6 +9,11 @@
   $passwordBaseDeDatos = "";
   $nombreBaseDeDatos = "usaid";
 
+  // $nombreServidor = "localhost";
+  // $nombreUsuario = "kugelele_usaid";
+  // $passwordBaseDeDatos = "USA.202I";
+  // $nombreBaseDeDatos = "kugelele_usaid";
+
 
   $conn = mysqli_connect($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos)  or die ($conn);
 

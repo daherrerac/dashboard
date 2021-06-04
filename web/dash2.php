@@ -94,7 +94,7 @@
                                 </div>                                                                
                             </div>
                             <div class="box-buttons">
-                                <a href="dash3.html" class="hblue">
+                                <a href="dash3.php" class="hblue">
                                     <img src="img/icono-03.svg" alt="">
                                     Encuesta servidores públicos
                                 </a>
@@ -210,7 +210,7 @@
                         </div>
                                                                                 
                         <div class="box-buttons">
-                            <a href="dash3.html" class="hblue">
+                            <a href="dash3.php" class="hblue">
                                 <img src="img/icono-03.svg" alt="" >
                                 Encuesta Tolerancia Institucional
                             </a>
