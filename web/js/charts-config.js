@@ -176,10 +176,7 @@ const lowerChartConfig = {
   }
 };
 
-const lowerChartConfig2 = {
-  grid: {
-    show: false
-  },
+const lowerChartConfig2 = {  
   series: [{
     name: 'Región 1',
     data: [44, 55]
@@ -189,7 +186,7 @@ const lowerChartConfig2 = {
       show: false
     },
     type: 'bar',
-    height: 280
+    height: 400
   },
   plotOptions: {
     bar: {
@@ -217,7 +214,7 @@ const lowerChartConfig2 = {
     }
   },
   dataLabels: {
-    offsetY: 110,
+    offsetY: 0,
     style: {
       fontSize: '12px',
       colors: ['#FFFFFF']
@@ -239,13 +236,11 @@ const lowerChartConfig2 = {
           colors:"#ffffff"
       }
     },
-    axisBorder: {
-      show: false,
-    },
+    
     axisTicks: {
       show: false,
     },
-    forceNiceScale: true,                
+    forceNiceScale: false,                
   },
 
   tickAmount: 10

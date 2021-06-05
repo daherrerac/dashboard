@@ -20,6 +20,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
@@ -47,7 +48,7 @@
                                     <div class="menu-selector">
                                         <a href="toleranciasocial.php">
                                             <img src="img/icono-03.svg" alt="">
-                                            Encuesta general
+                                            Encuesta Tolerancia Social
                                         </a>
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
                                         </button>
@@ -56,7 +57,7 @@
                                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         
-                                        <div class="box-message activo" >
+                                        <div class="box-message" >
                                             <ul>
                                                 <li>
                                                     <a href="experienciaalaviolencia.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
@@ -71,9 +72,9 @@
                                 </div>                                                                
                             </div>
                             <div class="box-buttons">
-                                <a href="toleranciainstitucional.php" class="hblue">
-                                    <img src="img/icono-03.svg" alt="">
-                                    Encuesta servidores públicos
+                                <a href="toleranciainstitucional.php" class="hblue activo">
+                                    <img src="img/icono-02.svg" alt="">
+                                    Encuesta Tolerancia Institucional
                                 </a>
                                 <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <img src="img/info-blue.png" alt="" >  
@@ -98,7 +99,7 @@
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
-                                <a href="#" class="hred">
+                                <a href="#exampleModal2" class="hred" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
@@ -137,19 +138,15 @@
             <div class="menu-mb d-lg-none">
                 <div class="container">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-12">
                             <div class="hb-menu">
                                 <svg viewBox="0 0 100 80" width="30" height="30">
                                     <rect width="100" height="15" rx="8"></rect>
                                     <rect y="30" width="100" height="15" rx="8"></rect>
                                     <rect y="60" width="100" height="15" rx="8"></rect>
                                 </svg>
-                            </div>
-                        </div>
-                        <div class="col-9">
-                            <div class="logo">
-                                <img src="img/logo.svg" alt="">                            
-                            </div>
+                                <img src="img/logo.svg" alt=""> 
+                            </div>                                                                                                                                                                   
                         </div>
                     </div>
                 </div>
@@ -161,9 +158,9 @@
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">                                    
-                                <div class="menu-selector activo">
+                                <div class="menu-selector">
                                     <a href="toleranciasocial.php">
-                                        <img src="img/icono-02.svg" alt="">
+                                        <img src="img/icono-03.svg" alt="">
                                         Encuesta Tolerancia Social 
                                     </a>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
@@ -187,8 +184,8 @@
                         </div>
                                                                                 
                         <div class="box-buttons">
-                            <a href="toleranciainstitucional.php" class="hblue">
-                                <img src="img/icono-03.svg" alt="" >
+                            <a href="toleranciainstitucional.php" class="hblue activo">
+                                <img src="img/icono-02.svg" alt="" >
                                 Encuesta Tolerancia Institucional
                             </a>
                             <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -341,6 +338,29 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione el filtro de la pregunta</p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="preg custom-select ext">
+                                        <select id="filtro">
+                                            <option>GRUPO DE PREGUNTA</option>                                                                                 
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
@@ -364,19 +384,73 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="util-box blue-bg">
+                        <div class="util-box blue-bg hg">
                             <h4 class="text-center py-2 border-aux">Hombres</h4>
                             <div id="chart"></div>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="util-box blue-bg">
+                        <div class="util-box blue-bg hg">
                             <h4 class="text-center py-2 border-aux">Mujeres</h4>
                             <div id="chart-2"></div>
                         </div>
                     </div>
                 </div>
                 <div class="py-5"></div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal -->
+     <div class="ficha">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-01.jpg" alt="" class="img-fluid">
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ficha">
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-02.jpg" alt="" class="img-fluid">
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="video">
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <video controls>
+                        <source src="fichas/video.mp4" type="video/mp4">                        
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                
+                </div>
             </div>
         </div>
     </div>

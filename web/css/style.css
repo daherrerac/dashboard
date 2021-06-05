@@ -232,8 +232,7 @@ h2 span{
     padding: 0.5em 0;
     text-decoration: none;
     font-size: 1.2em;
-    border-radius: 0.5em;
-    max-width: 245px;
+    border-radius: 0.5em;    
     box-shadow: 1px 1px 5px rgba(19, 19, 19, 0.863);
     max-width: 225px;
     position: relative;
@@ -241,6 +240,18 @@ h2 span{
 .menu-selector.activo{
     background: #0065BA;
     color: #ffffff;
+}
+.menu-selector:hover{
+    background: #0065BA;    
+}
+.menu-selector:hover a{
+    color: #ffffff;
+}
+.menu-selector:hover img{
+    filter:brightness(0) invert(1);    
+}
+.blue-menu .menu-selector:hover .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 .menu-selector.activo .accordion-button::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");    
@@ -270,7 +281,7 @@ h2 span{
     color: #022869;
     text-decoration: none;
     padding-bottom: 0.2em;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 .menu-selector.activo a{
     color: #ffffff;
@@ -602,7 +613,7 @@ h2 span{
     padding: 0 1.5em;    
     margin-right: 0;
     margin-left: auto;
-    height: 370px;
+    height: 500px;
 }
 
 .util-box.red-bg{
@@ -1051,8 +1062,10 @@ select option{
     background: transparent;
     border: none;
 }
-.ficha .modal-body img{
-    width: 100%;
+.ficha .modal-body img {
+    width: auto;
+    margin: 0 auto;
+    display: block;
 }
 .ficha .btn-close,
 .video .btn-close{
@@ -1083,6 +1096,11 @@ select option{
         max-height: 75%;
     }
 }
+@media screen and (max-width:1595px){
+    .adicional p{
+        margin-bottom: 0;
+    }
+}
 @media screen and (min-width:1400px){
     .encuesta{
         display: none;
@@ -1093,6 +1111,7 @@ select option{
     .info-box .punto{        
         margin: 1em 0 1em 0.8em;        
     }
+    
 }
 @media screen and (max-width:1399px) {
     .separador{
@@ -1110,6 +1129,9 @@ select option{
     }
     .respuestas.full .preguntas a.resultado2{
         border: none;
+    }
+    .adicional p{
+        margin-bottom: 1rem;
     }
 }
 @media screen and (max-width:1280px) {
@@ -1178,9 +1200,11 @@ select option{
     }
     
 }
-@media screen and (max-width:991px) {
-    .columna2 {
-        width: 100%;
+@media screen and (max-width:991px) {    
+    .columna2 {        
+        width: 100%;        
+        padding: 30px 10px;
+        overflow-x: hidden;
     }
     .adicional{
         max-width: 400px;
@@ -1188,13 +1212,13 @@ select option{
     }
     .menu-mb{
         position: relative;
-        height: 100px;
+        height: 125px;
         background: #ffffff;
         width: 104%;
         z-index: 10;
     }
     .menu-mb .logo{
-        width: 85%;
+        width: 50%;
         margin: 1em auto;
         padding: 5px 0;
     }
@@ -1202,17 +1226,27 @@ select option{
         width: 80%;
     }
     .hb-menu{
+        position: relative;
+        display: inline-block;
         margin: 3.3em auto;
+        width: 100%;
     }
-    .hb-menu svg{
-        display: block;
+    .hb-menu svg{        
         fill: #022869;
-        margin: 0 auto;
+        margin: 1em auto 1em 2em;
+        width: 50px;        
+    }
+    .hb-menu img{
+        position: absolute;
+        width: 200px;
+        left: 50%;
+        top: 2.5em;
+        transform: translate(-50%,-50%);        
     }
     .menu-mb .menu-lateral{
         position: absolute;
         z-index: 10;
-        top: 100px;
+        top: 125px;
     }
     #overlay {
         position: fixed;
@@ -1242,6 +1276,11 @@ select option{
     }
     .custom-select.ext {
         margin-top: 0em;
+    }
+    .menu-mb .logo {
+        width: 80%;
+        margin: 1em auto;
+        padding: 5px 0;
     }
 }
 
@@ -1279,6 +1318,12 @@ select option{
     .menu-lateral {
         width: 100%;
     }
+    .menu-selector{
+        max-width: 245px;
+    }
+    .blue-menu h2{
+        max-width: 245px;
+    }
 }
 @media screen and (max-height:650px){
     .logo {
@@ -1309,9 +1354,10 @@ select option{
     background-size: 1rem;
     padding-right: 5px;
 }
-.custom-select.ext{
+.custom-select.ext {
     margin-top: 1.5em;
     margin-right: 20px;
+    margin-left: 20px;
 }
 .custom-select.extr{
     margin-top: 1.5em;
@@ -1382,8 +1428,8 @@ select option{
 .select-items div{
     color: #474747;
     padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    border: 1px dotted #022869;
+    border-color: transparent transparent rgb(0, 0, 0) transparent;
     cursor: pointer;
     user-select: none;
     font-size: 1.1em;
@@ -1397,8 +1443,7 @@ select option{
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 99;
-    border-bottom: 1px dotted #022869;
+    z-index: 99;    
 }
 .extr .select-items div{
     font-size: 1.3em;

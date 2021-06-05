@@ -28,14 +28,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
-    <script src="js/papaparse.min.js"></script>
-
-    
+    <script src="js/papaparse.min.js"></script>    
     <script src="js/mapahandler.js"></script>    
     
-
-
     <title>Tolerancia Social</title>
+
     <style>
         .mapael .mapTooltip {
             color: #022869;
@@ -153,19 +150,15 @@
             <div class="menu-mb d-lg-none">
                 <div class="container">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-12">
                             <div class="hb-menu">
                                 <svg viewBox="0 0 100 80" width="30" height="30">
                                     <rect width="100" height="15" rx="8"></rect>
                                     <rect y="30" width="100" height="15" rx="8"></rect>
                                     <rect y="60" width="100" height="15" rx="8"></rect>
                                 </svg>
-                            </div>
-                        </div>
-                        <div class="col-9">
-                            <div class="logo">
-                                <img src="img/logo.svg" alt="">                            
-                            </div>
+                                <img src="img/logo.svg" alt=""> 
+                            </div>                                                                                                                                                                   
                         </div>
                     </div>
                 </div>
@@ -535,7 +528,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <img src="fichas/Fichas Tecnicas-01.jpg" alt="">
+                        <img src="fichas/Fichas Tecnicas-01.jpg" alt="" class="img-fluid">
                     </div>
                 
                 </div>
@@ -552,7 +545,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <img src="fichas/Fichas Tecnicas-02.jpg" alt="">
+                        <img src="fichas/Fichas Tecnicas-02.jpg" alt="" class="img-fluid">
                     </div>
                 
                 </div>

@@ -610,7 +610,7 @@ $(function () {
             'ANORI': {
                 type: "circle",
                 color:"#ffffff",
-                size: 20,
+                size: 10,
                 x: 300,
                 y: 300,
                 tooltip: {content: "Anorí"},
