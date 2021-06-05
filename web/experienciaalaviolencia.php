@@ -17,7 +17,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">       
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
@@ -32,16 +31,25 @@
     <script src="js/mapahandler.js"></script>    
     
 
-
-    <title>Dashboard - Page 1</title>
+    
+    <title>Dashboard - Page 2</title>
     <style>
         .mapael .mapTooltip {
+            font-family:'SourceBold';
+            position: absolute;
+            background-color: #ffffff;            
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            max-width: 200px;
+            display: none;
             color: #022869;
+            border: 1px solid #a6a6a6;
+            text-align: center;
         }
     </style>
-
   </head>
-  <body>
+  <body style="overflow-y: auto;background: #fbfbfb;">
       
     <div class="container-fluid">
         <div class="fila">
@@ -53,44 +61,45 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                La Tolerancia Social e Institucional a las Violencias contra las Mujeres
+                                La tolerancia social e institucional a las violencias contra las mujeres.
                             </h2>
+
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingOne">                                    
-                                    <div class="menu-selector activo">
-                                        <a href="dash1.php">
-                                            <img src="img/icono-02.svg" alt="">
-                                            Encuesta Tolerancia Social
+                                    <div class="menu-selector">
+                                        <a href="toleranciasocial.php">
+                                            <img src="img/icono-03.svg" alt="">
+                                            Encuesta general
                                         </a>
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
                                         </button>
                                     </div>
                                   </h2>
-                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                  <div id="flush-collapseOne" class="accordion-collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-											  
-                                        <div class="box-message">
+                                        
+                                        <div class="box-message activo" >
                                             <ul>
                                                 <li>
-                                                    <a href="dash2.php" class="activo">
+                                                    <a href="experienciaalaviolencia.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
                                                         Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                                     </a>
                                                 </li>
-                                            </ul>                                            
+                                            </ul>
+                                            
                                         </div>
                                     </div>
                                   </div>
                                 </div>                                                                
                             </div>
-                                                                                    
                             <div class="box-buttons">
-                                <a href="dash3.php" class="hblue">                                    
-                                    <img src="img/icono-03.svg" alt="" >                                                                                
-                                    Encuesta Tolerancia Institucional                                                                                                                
+                                <a href="toleranciainstitucional.php" class="hblue">
+                                    <img src="img/icono-03.svg" alt="">
+                                    Encuesta servidores públicos
                                 </a>
                                 <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <img src="img/info-blue.png" alt="" >    
+                                    <img src="img/info-blue.png" alt="" >  
                                     Ficha técnica
                                 </a>
                             </div>
@@ -112,7 +121,7 @@
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
-                                <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                <a href="#" class="hred">
                                     <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
@@ -176,7 +185,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">                                    
                                 <div class="menu-selector activo">
-                                    <a href="dash1.php">
+                                    <a href="toleranciasocial.php">
                                         <img src="img/icono-02.svg" alt="">
                                         Encuesta Tolerancia Social 
                                     </a>
@@ -189,7 +198,7 @@
                                     <div class="box-message">
                                         <ul>
                                             <li>
-                                                <a href="dash2.php" class="activo">
+                                                <a href="experienciaalaviolencia.php" class="activo">
                                                     Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                                 </a>
                                             </li>
@@ -201,7 +210,7 @@
                         </div>
                                                                                 
                         <div class="box-buttons">
-                            <a href="dash3.php" class="hblue">
+                            <a href="toleranciainstitucional.php" class="hblue">
                                 <img src="img/icono-03.svg" alt="" >
                                 Encuesta Tolerancia Institucional
                             </a>
@@ -269,12 +278,12 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                Encuesta de Tolerancia Social e Institucional a las Violencias contra las Mujeres
+                                ENCUESTA GENERAL DE TOLERANCIA SOCIAL E INSTITUCIONAL CONTRA LAS MUJERES
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                            En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional a las Violencias contra las Mujeres 
-                            en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
+                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional contra las
+                                MujeresTolerancia Social e Institucional contra las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
                             </h2>
                         </div>
                     </div>
@@ -283,7 +292,7 @@
                     <div class="col-xxl-10 col-xl-9 col-md-12">
                         <div class="blue-info">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="col-4">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -300,7 +309,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="col-4">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -317,7 +326,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="col-4">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
@@ -341,7 +350,7 @@
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="fichas/PDF.pdf" class="hblue" target="_blank">
+                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" target="_blank">
                                     <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
@@ -355,49 +364,8 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col-xl-12">
-                        <div class="util-box">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mapa">
-                                        <p class="mt-4">Seleccione el filtro de la pregunta</p>
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="preg custom-select ext">
-                                        <select id="filtro">
-                                            <option>GRUPO DE PREGUNTA</option>                                                                                 
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">                
-                    <div class="col-xl-12">
-                        <div class="util-box">
-                            <div class="mapa">
-                                <h4>Respuestas</h4>
-                                <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
-                            </div>
-                            <div class="preguntas">
-                                <ul>
-                                    <li>
-                                        <a href="#" >Cargando preguntas...</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
+                    <div class="col-lg-5">
                         <div class="util-box" style="height:97%">
                             <div class="mapa">
                                 <h4>Regiones</h4>
@@ -410,30 +378,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="util-box">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mapa">
-                                        <p class="mt-4">Seleccione la región que desee consultar</p>
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="region custom-select ext">
-                                        <select id="regionA">
-                                            <option>REGIÓN</option>
-                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
-                                            <option value="2">REGIÓN 2</option>                                       
-                                        </select>
-                                    </div>
-                                </div>
+                    <div class="col-lg-7">
+                        <div class="util-box" style="height:420px">
+                            <div class="mapa">
+                                <h4>Preguntas</h4>
+                                <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
                             </div>
-                        </div> 
-                        <div class="row ">
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                            <div class="preguntas">
+                                <ul>
+                                    <li>
+                                        <a href="#" >Cargando preguntas...</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
                                 <div class="util-box blue-bg">
-                                    <h4 class="py-2">Hombres</h4>
+                                    <h4 class="py-2">Indigena</h4>
                                     <!-- <div id="chart"></div>
                                     <div id="chartalt" style="display:none"></div> -->
                                     <div class="chart">
@@ -441,21 +403,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                            <div class="col-lg-6">
                                 <div class="util-box blue-bg">
-                                    <h4 class="py-2">Mujeres</h4>                                    
+                                    <h4 class="py-2">Afrodescendiente</h4>                                    
                                     <div class="chart">
-                                        <canvas id="myChart2" width="630" height="280"></canvas>
+                                        <canvas id="myChart2"  width="630" height="280"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
 
-                
-                
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
@@ -490,41 +449,29 @@
                     </div>
                 </div>
 
-
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="util-box">
-                        <div class="mapa">
-                            <h4 class="text-center">
-                                Hombres
-                            </h4>
-                        </div>
-                        <div id="chartb"></div>                        
+                        <div id="chartb"></div>
+                        <div id="chartbalt" style="display: none;"></div>
                     </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
-                            <div class="mapa">
-                                <h4 class="text-center">
-                                    Mujeres
-                                </h4>
-                            </div>                           
-                            <div id="chartc"></div>                            
+                            <div id="chartc"></div>
+                            <div id="chartcalt" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
-                <div class="py-5"></div>
+                <div class="pb-5"></div>
             </div>
         </div>
         
     </div>
-    
-    
 
-  
-  <!-- Modal -->
+    <!-- Modal -->
     <div class="ficha">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
@@ -577,6 +524,8 @@
             </div>
         </div>
     </div>
+    
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -590,24 +539,30 @@
         // iniciar dashboard
         // iniciar funciones y carga de datos
         const mapGrahs = [
-            { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},
-            { title: 'MUJERES', filterKey: 'Sexo', filterValue: 'MUJER'}
+            { title: 'Indigena', filterKey: 'Pertenencia étnica', filterValue: 'Indigena'},
+            { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'}
         ];
         const secondChartConfig = {
             config: lowerChartConfig,
             labelColumn: 'Grupo de edad',
             graph1: { 
                 id: 'chartb',
-                filter: { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
             },
             graph2: { 
                 id: 'chartc',
-                filter: { title: 'MUJERES', filterKey: 'Sexo', filterValue: 'MUJER'},
+                filter: { title: 'Indigena', filterKey: 'Pertenencia étnica', filterValue: 'Indigena'},
             }
         };
-        let dash = new Dashboard('hogaresGenerales', true, mapGrahs, secondChartConfig);
+        let dash = new Dashboard('mujeresEtnicas', true, mapGrahs, secondChartConfig);
     </script>
     
-   
+    
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
   </body>
 </html>

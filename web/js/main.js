@@ -30,17 +30,19 @@ class DashboardDataReader {
   data;
   // ubicacion de archivos csv
   static urls = {
-    'hogaresGenerales':siteurl + 'csv/hogares_general.csv',
+    'hogaresGenerales':siteurl + 'csv/hogares_generaltest.csv', //archivo prueba
     'mujeresEtnicas':siteurl + 'csv/hogares_mujeres_etnicas.csv',
     'servidoresPublicos':siteurl + 'csv/encuesta_servidores_publicos.csv',
     'entornoInstitucionalPaz':siteurl + 'csv/entorno_institucional_paz.csv',
     'entornoInstitucionalMujeres':siteurl + 'csv/entorno_institucional_mujeres.csv',
-    'entornoInstitucionalLGBTI':siteurl + 'csv/entorno_institucional_lgbti.csv'
+    'entornoInstitucionalLGBTI':siteurl + 'csv/entorno_institucional_lgbti.csv',
+    //filtro preguntas
+    'filtroPreguntas':siteurl + 'csv/filtro_preguntas.csv'
   };
 
   // declaracion de filtros
   static filterFields = ['Region','Region PDET', 'Departamento', 'Municipio PDET', 'Grupo de edad', 'Sexo',
-  'Tiempo que lleva trabajando en la institución', 'Pertenencia étnica'];
+  'Tiempo que lleva trabajando en la institución', 'Pertenencia étnica','Filtro','Pregunta'];
 
 
   async parseFile(url){
@@ -253,6 +255,7 @@ class Dashboard {
   dr;
   survey;
   region;
+  filtro; //filtro preguntas
   menGraph;
   womenGraph;
   selectedQuestion;
@@ -262,6 +265,9 @@ class Dashboard {
 
   graphRegionSelection1;
   graphRegionSelection2;
+
+  filterQuestionSelection1;
+  filterQuestionSelection2;
   
 
   constructor(survey, hasMap = true, mapGraphs, lowerGraphs){
@@ -292,11 +298,15 @@ class Dashboard {
     }
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
     
+    //Cargar filtros de preguntas
+    this.loadFilterQuestion();
+
     // cargar informacion de preguntas de preguntas por defecto
     this.loadQuestions();
 
     // cargar regiones en selectores inferiores
     this.loadRegions();
+
 
     // inicializar graficas
     if (this.mapGraphs){
@@ -543,6 +553,46 @@ class Dashboard {
         selector.selectedIndex = 1;
       }
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
+    });
+  }
+
+  //parte para cargar filtros de preguntas
+  loadFilterQuestion(){
+    let self = this;
+    const filtrosDropDown = document.querySelectorAll('.preg.custom-select select');
+    const filtrosList = this.dr.getFilters(this.survey, 'Filtro');
+    self.filterQuestionSelection1 = filtrosList[0];
+    self.filterQuestionSelection2 = filtrosList[1];
+
+    filtrosDropDown.forEach((selector, i) => {
+      // limpiar opciones
+      selector.innerHTML = '';
+      // adicionar atributo de selector
+      filtrosList.forEach((q) => {
+        selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
+      });
+      let callback = (value) => {
+        // if (selector.getAttribute('id') == "regionA"){
+        //   self.region = value;
+        //   self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
+        //   self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+        // } else if (selector.getAttribute('id') == "region1"){
+        //   self.filterQuestionSelection1 = value;
+        // } else if (selector.getAttribute('id') == 'region2'){
+        //   self.filterQuestionSelection2 = value;
+        // }
+        
+        console.log("Pregunta seleccionada:", value, "sel1:", self.filterQuestionSelection1, "sel2:",self.filterQuestionSelection2);
+      };
+      // definir selecciones por defecto de ambos selectores
+      // if (selector.getAttribute('id') == "regionA"){
+      //   selector.selectedIndex = 0;
+      // } else if (selector.getAttribute('id') == 'region1'){
+      //   selector.selectedIndex = 0;
+      // } else if (selector.getAttribute('id') == 'region2'){
+      //   selector.selectedIndex = 1;
+      // }
+      updateOption(selector, callback, filtrosList[selector.selectedIndex]);
     });
   }
 
