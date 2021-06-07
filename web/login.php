@@ -4,15 +4,20 @@
   
 
   //datos DB
-  $nombreServidor = "localhost";
-  $nombreUsuario = "root";
-  $passwordBaseDeDatos = "";
-  $nombreBaseDeDatos = "usaid";
+  // $nombreServidor = "localhost";
+  // $nombreUsuario = "root";
+  // $passwordBaseDeDatos = "";
+  // $nombreBaseDeDatos = "usaid";
 
   // $nombreServidor = "localhost";
   // $nombreUsuario = "kugelele_usaid";
   // $passwordBaseDeDatos = "USA.202I";
   // $nombreBaseDeDatos = "kugelele_usaid";
+
+    $nombreServidor = "localhost";
+    $nombreUsuario = "u57bk8y6qcokj";
+    $passwordBaseDeDatos = "xcfplozqo7im";
+    $nombreBaseDeDatos = "dbqvqtmjyemoxx";
 
 
   $conn = mysqli_connect($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos)  or die ($conn);

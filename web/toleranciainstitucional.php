@@ -19,13 +19,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">    
     <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 
-    <title>Dashboard - Page 1</title>
+    <title>Tolerancia Institucional</title>
   </head>
   <body style="overflow-y: auto;background: #fbfbfb;">
       
@@ -87,15 +87,15 @@
                                 Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html" class="hred">
+                                <a href="entornopaz.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html" class="hred">
+                                <a href="entornomujeres.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="dash6.html" class="hred">
+                                <a href="entornolgbti.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
@@ -199,15 +199,15 @@
                             Retos del entorno institucional para el empoderamiento de género en Colombia
                         </h2>
                         <div class="box-buttons">
-                            <a href="dash4.html" class="hred">
+                            <a href="entornopaz.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional Paz
                             </a>
-                            <a href="dash5.html" class="hred">
+                            <a href="entornomujeres.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">
                                 Entorno Institucional Mujeres
                             </a>
-                            <a href="dash6.html" class="hred">
+                            <a href="entornolgbti.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional LGBTI
                             </a>

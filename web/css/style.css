@@ -541,6 +541,7 @@ h2 span{
 .blue-info.comparacion{
     height: auto;
     min-height: 210px;
+    padding-bottom: 1em;
 }
 
 .info-box .punto{
@@ -613,9 +614,11 @@ h2 span{
     padding: 0 1.5em;    
     margin-right: 0;
     margin-left: auto;
+    height: 400px;
+}
+.util-box.blue-bg.hg{
     height: 500px;
 }
-
 .util-box.red-bg{
     background: #C2113B;
 }
@@ -708,7 +711,7 @@ h2 span{
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #C2113B #DADADA;
-    max-height: 600px;
+    max-height: 450px;
     overflow-x: hidden;
     margin-left: 20px;
 }
@@ -764,19 +767,19 @@ h2 span{
 
 .respuestas.full .cajon.ask{
     font-family:'SourceRegular';
-    width: calc(70% - 20px);
+    width: calc(50% - 20px);
 }
 .respuestas.full .cajon.white{
     width: 2%;
 }
 .respuestas.full .cajon.ans{
-    width: 13%;    
+    width: 23%;    
 }
 .respuestas.full .cajon.ans2{
     font-family:'SourceSemiBold';
     text-align: center;
     font-size: 17px;
-    width: 13%;
+    width: 23%;
     padding-left: 10px;
 }
 /* Works on Chrome, Edge, and Safari */
@@ -998,20 +1001,33 @@ select option{
     font-family:'SourceBold';
 }
 
-.map{
-    max-height: 710px;
-    position: relative;
+.mapcontainer{
+    width: 100%;    
+    padding-top: 2em;        
+    max-height: 760px;
+    height: auto;
 }
-.map svg{
+.mapael .map{    
+    position: relative;
+    max-height: 760px;
+    width: 100%;
+}
+.map svg{    
     display: block;
     margin: 0 auto; 
-    max-height: 690px;
-    width: 93%;
+    width: 93%;  
+    max-height: 770px;  
 }
-.mapcontainer{
+.mapael.red .map{    
+    position: relative;
+    max-height: 650px;
     width: 100%;
-    max-height: 710px;
-    padding-top: 2em;
+}
+.mapcontainer.red{
+    max-height: 660px;
+}
+.map.red svg{
+    max-height: 540px;
 }
 .red .zoomButton{
     color:#C2113B;
@@ -1080,6 +1096,12 @@ select option{
     text-decoration: none;
     opacity: 1;
 }
+.adp-hg{
+    height: 100%;
+}
+.adp-hg2{
+    height: 98%;
+}
 @media screen and (max-width:1640px) {
     .logo {
         max-width: 320px;
@@ -1094,6 +1116,9 @@ select option{
     }
     .respuestas {
         max-height: 75%;
+    }
+    .adp-hg{
+        height: 98%;
     }
 }
 @media screen and (max-width:1595px){
@@ -1111,6 +1136,7 @@ select option{
     .info-box .punto{        
         margin: 1em 0 1em 0.8em;        
     }
+    
     
 }
 @media screen and (max-width:1399px) {
@@ -1132,6 +1158,9 @@ select option{
     }
     .adicional p{
         margin-bottom: 1rem;
+    }
+    .adp-hg{
+        height: 97%;
     }
 }
 @media screen and (max-width:1280px) {
@@ -1262,6 +1291,10 @@ select option{
         cursor: pointer;
         transition: 0.5s;
     }
+    .red-bg .mapa p {
+        margin: 0;
+        text-align: center;
+    }
 }
 @media screen and (max-width:767px) { 
     .btn-dash {        
@@ -1281,6 +1314,16 @@ select option{
         width: 80%;
         margin: 1em auto;
         padding: 5px 0;
+    }
+    .respuestas.full .cajon.ask {        
+        width: calc(45% - 0px);
+    }
+    .respuestas.full .cajon.ans {
+        width: 20%;
+    }
+    .respuestas.full .cajon.ans2 {        
+        width: 20%;
+        padding-left: 5px;
     }
 }
 
@@ -1339,6 +1382,9 @@ select option{
     }
     .form-control {
         height: 50px;        
+    }
+    .adp-hg{
+        height: 97%;
     }
 }
 /*graficas*/
@@ -1443,13 +1489,15 @@ select option{
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 99;    
+    z-index: 99;   
+    border-left: 1px solid #dadada; 
+    border-right: 1px solid #dadada;
 }
 .extr .select-items div{
     font-size: 1.3em;
-}
-.extr .select-items {
     border-bottom: 1px dotted #B20E35;
+}
+.extr .select-items {    
     width: 95%;
     margin: 0 auto;
 }  

@@ -99,15 +99,15 @@
                                 Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html" class="hred">
+                                <a href="entornopaz.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html" class="hred">
+                                <a href="entornomujeres.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="dash6.html" class="hred">
+                                <a href="entornolgbti.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
@@ -138,8 +138,7 @@
                                         Bienvenido/a
                                         <a href="#">'.$_SESSION['email'].'</a>
                                     </p>
-                                    <a href="cerrar.php"> Cerrar sesión</a>
-                                    
+                                    <a href="cerrar.php"> Cerrar sesión</a>                                    
                                     ';
                                 }
                             ?>                                                        
@@ -211,15 +210,15 @@
                             Retos del entorno institucional para el empoderamiento de género en Colombia
                         </h2>
                         <div class="box-buttons">
-                            <a href="dash4.html" class="hred">
+                            <a href="entornopaz.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional Paz
                             </a>
-                            <a href="dash5.html" class="hred">
+                            <a href="entornomujeres.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">
                                 Entorno Institucional Mujeres
                             </a>
-                            <a href="dash6.html" class="hred">
+                            <a href="entornolgbti.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional LGBTI
                             </a>

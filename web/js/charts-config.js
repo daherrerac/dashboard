@@ -96,7 +96,12 @@ const chartConfig = {
           var meta = chartInstance.chart.getDatasetMeta(i);
           meta.data.forEach(function(bar, index) {
             var data = dataset.data[index];
-            ctx.fillText(data + "%", bar.x + 25, bar.y + 8);
+            if(data < 95){
+              ctx.fillText(data + "%", bar.x + 20, bar.y + 8);
+            }            
+            if(94 < data){
+              ctx.fillText(data + "%", bar.x - 20, bar.y + 8);
+            }
           });
         });
       }

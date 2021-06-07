@@ -110,15 +110,15 @@
                                 Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html" class="hred">
+                                <a href="entornopaz.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html" class="hred">
+                                <a href="entornomujeres.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="dash6.html" class="hred">
+                                <a href="entornolgbti.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
@@ -222,15 +222,15 @@
                             Retos del entorno institucional para el empoderamiento de género en Colombia
                         </h2>
                         <div class="box-buttons">
-                            <a href="dash4.html" class="hred">
+                            <a href="entornopaz.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional Paz
                             </a>
-                            <a href="dash5.html" class="hred">
+                            <a href="entornomujeres.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">
                                 Entorno Institucional Mujeres
                             </a>
-                            <a href="dash6.html" class="hred">
+                            <a href="entornolgbti.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional LGBTI
                             </a>
@@ -385,21 +385,8 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-lg-5">
-                        <div class="util-box" style="height:97%">
-                            <div class="mapa">
-                                <h4>Regiones</h4>
-                                <p>Seleccione en el mapa la región que desee consultar</p>
-                                <div class="mapcontainer">
-                                    <div class="map">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="util-box" style="height:420px">
+                    <div class="col-xl-12">
+                        <div class="util-box">
                             <div class="mapa">
                                 <h4>Preguntas</h4>
                                 <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
@@ -412,28 +399,67 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="util-box blue-bg">
-                                    <h4 class="py-2">Indigena</h4>
-                                    <!-- <div id="chart"></div>
-                                    <div id="chartalt" style="display:none"></div> -->
-                                    <div class="chart">
-                                        <canvas id="myChart"  width="630" height="280"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="util-box blue-bg">
-                                    <h4 class="py-2">Afrodescendiente</h4>                                    
-                                    <div class="chart">
-                                        <canvas id="myChart2"  width="630" height="280"></canvas>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="util-box" style="height:97%">
+                            <div class="mapa">
+                                <h4>Regiones</h4>
+                                <p>Seleccione en el mapa la región que desee consultar</p>
+                                <div class="mapcontainer">
+                                    <div class="map">
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione la región que desee consultar</p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="region custom-select ext">
+                                        <select id="regionA">
+                                            <option>REGIÓN</option>
+                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
+                                            <option value="2">REGIÓN 2</option>                                       
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row ">
+                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                <div class="util-box blue-bg">
+                                    <h4 class="py-2">Indigena</h4>
+                                    
+                                    <div class="chart">
+                                        <canvas id="myChart"  ></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                <div class="util-box blue-bg">
+                                    <h4 class="py-2">Afrodescendiente</h4>                                      
+                                    <div class="chart">
+                                        <canvas id="myChart2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
                 </div>
+
+
+                
 
                 <div class="row">
                     <div class="col-lg-12">

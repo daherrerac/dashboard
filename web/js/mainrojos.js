@@ -1,6 +1,7 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
 //const siteurl = 'http://webdash.test/';
-const siteurl = 'http://dashboard.local/';
+//const siteurl = 'http://dashboard.local/';
+const siteurl = 'http://pruebadevelopment.com';
 
 
 

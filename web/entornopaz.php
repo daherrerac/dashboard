@@ -1,16 +1,15 @@
-<!-- <?php
+<?php
   session_start();
    
   // Controlo si el usuario ya está logueado en el sistema.
-  if(isset($_SESSION['email'])){
-    // Le doy la bienvenida al usuario.
-    echo 'Bienvenido <strong>' . $_SESSION['email'] . '</strong>, <a href="cerrar.php">cerrar sesión</a>';
+  if(isset($_SESSION['email'])){    
+    
   }else{
     // Si no está logueado lo redireccion a la página de login.
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
   }
-?>  --> 
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -20,7 +19,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">      
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
@@ -30,7 +30,7 @@
 
     
 
-    <title>Dashboard - Page 4</title>
+    <title>Entorno Paz</title>
     <style>
         .mapael .mapTooltip {
             color:#C2113B;
@@ -55,7 +55,7 @@
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingOne">                                    
                                     <div class="menu-selector">
-                                        <a href="dash1.php">
+                                        <a href="toleranciasocial.php">
                                             <img src="img/icono-03.svg" alt="">
                                             Encuesta Tolerancia Social
                                         </a>
@@ -69,7 +69,7 @@
                                         <div class="box-message">
                                             <ul>
                                                 <li>
-                                                    <a href="dash2.php">
+                                                    <a href="experienciaalaviolencia.php" class="activo">
                                                         Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                                     </a>
                                                 </li>
@@ -81,7 +81,7 @@
                             </div>
                                                                                     
                             <div class="box-buttons">
-                                <a href="dash3.php" class="hblue">                                    
+                                <a href="toleranciainstitucional.php" class="hblue">                                    
                                     <img src="img/icono-03.svg" alt="" >                                                                                
                                     Encuesta Tolerancia Institucional                                                                                                                
                                 </a>
@@ -96,15 +96,15 @@
                                 Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="dash4.html" class="hred activo-red">
+                                <a href="entornopaz.php" class="hred activo-red">
                                     <img src="img/icono-05-w.png" alt="">    
                                     Entorno Institucional Paz
                                 </a>
-                                <a href="dash5.html" class="hred">
+                                <a href="entornomujeres.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">
                                     Entorno Institucional Mujeres
                                 </a>
-                                <a href="dash6.html" class="hred">
+                                <a href="entornolgbti.php" class="hred">
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
@@ -127,12 +127,19 @@
                             </div>
                         </div>
                         <div class="cerrar">
-                            <img src="img/user.png" alt="">
-                            <p>
-                                Bienvenido/a
-                                <a href="#">Correo@dominio.com</a>
-                            </p>
-                            <a href="#"> Cerrar sesión</a>
+                            <?php
+                                if(isset($_SESSION['email'])){    
+                                    echo '<img src="img/user.png" alt="">
+                                    
+                                    <p>
+                                        Bienvenido/a
+                                        <a href="#">'.$_SESSION['email'].'</a>
+                                    </p>
+                                    <a href="cerrar.php"> Cerrar sesión</a>
+                                    
+                                    ';
+                                }
+                            ?>                                                        
                         </div>
                     </div>
                 </div>
@@ -140,19 +147,15 @@
             <div class="menu-mb d-lg-none">
                 <div class="container">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-12">
                             <div class="hb-menu">
                                 <svg viewBox="0 0 100 80" width="30" height="30">
                                     <rect width="100" height="15" rx="8"></rect>
                                     <rect y="30" width="100" height="15" rx="8"></rect>
                                     <rect y="60" width="100" height="15" rx="8"></rect>
                                 </svg>
-                            </div>
-                        </div>
-                        <div class="col-9">
-                            <div class="logo">
-                                <img src="img/logo.svg" alt="">                            
-                            </div>
+                                <img src="img/logo.svg" alt=""> 
+                            </div>                                                                                                                                                                   
                         </div>
                     </div>
                 </div>
@@ -165,7 +168,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">                                    
                                 <div class="menu-selector">
-                                    <a href="dash1.php">
+                                    <a href="toleranciasocial.php">
                                         <img src="img/icono-03.svg" alt="">
                                         Encuesta Tolerancia Social 
                                     </a>
@@ -178,7 +181,7 @@
                                     <div class="box-message">
                                         <ul>
                                             <li>
-                                                <a href="dash2.php" class="activo">
+                                                <a href="toleranciainstitucional.php" class="activo">
                                                     Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                                 </a>
                                             </li>
@@ -190,7 +193,7 @@
                         </div>
                                                                                 
                         <div class="box-buttons">
-                            <a href="dash3.php" class="hblue">
+                            <a href="toleranciainstitucional.php" class="hblue">
                                 <img src="img/icono-03.svg" alt="" >
                                 Encuesta Tolerancia Institucional
                             </a>
@@ -205,15 +208,15 @@
                             Retos del entorno institucional para el empoderamiento de género en Colombia
                         </h2>
                         <div class="box-buttons">
-                            <a href="dash4.html" class="hred">
+                            <a href="entornopaz.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional Paz
                             </a>
-                            <a href="dash5.html" class="hred">
+                            <a href="entornomujeres.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">
                                 Entorno Institucional Mujeres
                             </a>
-                            <a href="dash6.html" class="hred">
+                            <a href="entornolgbti.php" class="hred">
                                 <img src="img/icono-05.svg" alt="">    
                                 Entorno Institucional LGBTI
                             </a>
@@ -236,12 +239,19 @@
                         </div>
                     </div>
                     <div class="cerrar">
-                        <img src="img/user.png" alt="">
-                        <p>
-                            Bienvenido/a
-                            <a href="#">Correo@dominio.com</a>
-                        </p>
-                        <a href="#"> Cerrar sesión</a>
+                            <?php
+                                if(isset($_SESSION['email'])){    
+                                echo '<img src="img/user.png" alt="">
+                                
+                                <p>
+                                    Bienvenido/a
+                                    <a href="#">'.$_SESSION['email'].'</a>
+                                </p>
+                                <a href="cerrar.php"> Cerrar sesión</a>
+                                
+                                ';
+                            }
+                        ?>                                                        
                     </div>
                 </div>
             </div>
@@ -339,11 +349,11 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-5">
-                        <div class="util-box" style="height: 97%;">
+                        <div class="util-box adp-hg">
                             <div class="mapa">
                                 <h4 class="red">Municipios donde se llevó a cabo el estudio</h4>
                                 <p>Seleccione en el mapa el municipio que sesee consultar</p>
-                                <div class="mapcontainer">
+                                <div class="mapcontainer red">
                                     <div class="map red">
                                         
                                     </div>
@@ -354,12 +364,12 @@
                     <div class="col-lg-7">
                         <div class="util-box">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-3">
                                     <div class="mapa">
                                         <p class="mt-4">Seleccione región y municipio</p>
                                     </div>                                    
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-9">
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="region custom-select extr">
@@ -381,7 +391,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="util-box" style="max-height: 715px;height: 100%;">                            
+                        <div class="util-box" style="max-height: 575px;height: 100%;">                            
                             <div class="mapa">
                                 <h4 class="red">
                                     PANORAMA MUNICIPAL
@@ -406,18 +416,19 @@
                         </div>                        
                     </div>
                 </div>
+                <div class="py-2"></div>
 
                 <div class="row">
                     <div class="col-12">
                         <div class="blue-info red-bg comparacion">
                             <div class="row">
-                                <div class="col-lg-7">
+                                <div class="col-lg-6">
                                     <div class="mapa">
                                         <h4 class="mt-5">COMPARACIÓN ENTRE MUNICIPIOS</h4>
                                         <p>Planeación y gestión de políticas en planes de desarrollo.</p>                                        
                                     </div>
                                 </div>
-                                <div class="col-lg-5">
+                                <div class="col-lg-6">
                                     <div class="mapa">                                        
                                         <p class="mt-4 text-center">Seleccione dos municipios para hacer un comparativo</p>                                        
                                     </div>
@@ -620,6 +631,59 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="ficha">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-01.jpg" alt="" class="img-fluid">
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ficha">
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="fichas/Fichas Tecnicas-02.jpg" alt="" class="img-fluid">
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="video">
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">            
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <video controls>
+                        <source src="fichas/video.mp4" type="video/mp4">                        
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
     
     
     
@@ -629,7 +693,7 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/mapa/pdet.js"></script>
+    <script src="js/mapa/municipios.js"></script>
     <script src="js/mainrojos.js"></script>
     <script>
     // iniciar dashboard
