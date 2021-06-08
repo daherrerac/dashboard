@@ -280,12 +280,12 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="pin">
                                                     <img src="img/pin.png" alt="" class=img-fluid>
                                                 </div>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-9">
                                                 <p>Agentes de cambio frente a las 
                                                     Violencias contra las Mujeres
                                                  </p>
@@ -299,12 +299,12 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                             <div class="pin">
                                                     <img src="img/pin.png" alt="" class=img-fluid>
                                                 </div>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-9">
                                                 <p>En camino de cambio
                                                  </p>
                                                  <div class="numero">
@@ -317,12 +317,12 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                             <div class="pin">
                                                 <img src="img/pin.png" alt="" class=img-fluid>
                                                 </div>
                                             </div>
-                                            <div class="col-8 last">
+                                            <div class="col-9 last">
                                                 <p>Tolerantes a las Violencias
                                                  </p>
                                                  <div class="numero">

@@ -43,7 +43,7 @@ class DashboardDataReader {
 
   // declaracion de filtros
   static filterFields = ['Region','Region PDET', 'Departamento', 'Municipio PDET', 'Grupo de edad', 'Sexo',
-  'Tiempo que lleva trabajando en la institución', 'Pertenencia étnica','Filtro','Pregunta'];
+  'Tiempo que lleva trabajando en la institución', 'Pertenencia étnica','Filtro','Pregunta','Agente1','Agente2','Agente3'];
 
 
   async parseFile(url){

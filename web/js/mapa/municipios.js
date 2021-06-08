@@ -26,8 +26,8 @@
         {
             maps :  {
                 municipios : {
-                    width : 769,
-                    height : 1053,
+                    width : 1000,
+                    height : 1100,
                     getCoords : function (lat, lon) {
                         // todo
                         return {"x" : lon, "y" : lat};

@@ -337,7 +337,7 @@
                         <div class="adicional red-bg">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" class="hblue" target="_blank">
+                                <a href="fichas/Retos del entorno institucional para el empoderamiento de genero en Colombia.pdf" class="hred" target="_blank">
                                     <img src="img/down-red.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA

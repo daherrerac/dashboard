@@ -62,7 +62,7 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                La Tolerancia Social e Institucional a las Violencias contra las Mujeres.
+                                La Tolerancia Social e Institucional a las Violencias contra las Mujeres
                             </h2>
 
                             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -176,7 +176,7 @@
                 <div class="menu-lateral" style="display:none">                    
                     <div class="blue-menu">
                         <h2>
-                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres.
+                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres
                         </h2>
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -351,7 +351,7 @@
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" target="_blank">
+                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" target="_blank" class="hblue">
                                     <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA

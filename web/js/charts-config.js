@@ -97,9 +97,9 @@ const chartConfig = {
           meta.data.forEach(function(bar, index) {
             var data = dataset.data[index];
             if(data < 95){
-              ctx.fillText(data + "%", bar.x + 20, bar.y + 8);
+              ctx.fillText(data + "%", bar.x + 25, bar.y + 8);
             }            
-            if(94 < data){
+            else{
               ctx.fillText(data + "%", bar.x - 20, bar.y + 8);
             }
           });
@@ -199,19 +199,9 @@ const lowerChartConfig2 = {
       horizontal: false,
       columnWidth: '20%',
       colors: {
-        ranges: [
+        ranges: [          
           {
             from: 0,
-            to: 5,
-            color: "#FFFFFF"
-        },
-          {
-            from: 5,
-            to: 20,
-            color: "#14DFFF"
-        },
-          {
-            from: 20,
             to: 100,
             color: "#35E4FF"
         }],
@@ -247,6 +237,9 @@ const lowerChartConfig2 = {
     },
     forceNiceScale: false,                
   },
-
+  grid:{
+    show:true,
+    borderColor:'#002159',
+  },
   tickAmount: 10
 };

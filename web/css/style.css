@@ -530,12 +530,19 @@ h2 span{
 .blue-info .col-8{
     border-right: 1px solid #ffffff;
 }
+.blue-info .col-9{
+    border-right: 1px solid #ffffff;
+}
 .blue-info .info-box{    
     padding: 1em 0;
     margin: 1em auto;
-    max-width: 350px;
+    max-width: 330px;   
+    position: relative; 
 }
 .blue-info .col-8.last{
+    border-right: none;
+}
+.blue-info .col-9.last{
     border-right: none;
 }
 .blue-info.comparacion{
@@ -543,10 +550,16 @@ h2 span{
     min-height: 210px;
     padding-bottom: 1em;
 }
-
-.info-box .pin{
-    display: block;  
-    margin: 1em auto;  
+.info-box .row:first-of-type{
+    margin-left: 5px;
+}
+.info-box .pin{    
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+.info-box .pin img{
+    width: 70px;
 }
 .info-box p{
     color: #ffffff;
@@ -555,13 +568,14 @@ h2 span{
     font-size: 1.2em;
     text-align: center;
     height: 46px;
+    font-weight: 700;
 }
 .info-box .numero{
     font-family:'SourceBold';
     font-size: 3.8em;
     color: #ffffff;    
     text-align: center;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 .adicional{
     font-family:'SourceSemiBold';
@@ -709,7 +723,7 @@ h2 span{
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #C2113B #DADADA;
-    max-height: 450px;
+    max-height: 320px;
     overflow-x: hidden;
     margin-left: 20px;
 }
@@ -771,13 +785,13 @@ h2 span{
     width: 2%;
 }
 .respuestas.full .cajon.ans{
-    width: 23%;    
+    width: 26%;    
 }
 .respuestas.full .cajon.ans2{
     font-family:'SourceSemiBold';
     text-align: center;
     font-size: 17px;
-    width: 23%;
+    width: 20%;
     padding-left: 10px;
 }
 /* Works on Chrome, Edge, and Safari */
@@ -1022,10 +1036,10 @@ select option{
     width: 100%;
 }
 .mapcontainer.red{
-    max-height: 660px;
+    max-height: 450px;
 }
 .map.red svg{
-    max-height: 520px;
+    max-height: 430px;
 }
 .red .zoomButton{
     color:#C2113B;
@@ -1123,11 +1137,7 @@ select option{
 @media screen and (max-width:1595px){
     .adicional p{
         margin-bottom: 0;
-    }
-    .red-bg .mapa p {
-        margin: 0;
-        text-align: center;
-    }
+    }    
     .adp-hg2 {
         height: 96%;
     }
@@ -1139,13 +1149,17 @@ select option{
     .datos1{
         display: block;
     }
-    .info-box .pin{
-        width: 60px;
-    }        
+           
 }
 @media screen and (max-width:1440px) {
     .blue-info.red-bg.comparacion {
         margin-top: 0;
+    }
+    .info-box .pin{
+        width: 60px;
+    } 
+    .info-box p {        
+        width: 95%;
     }
 }
 @media screen and (max-width:1399px) {
@@ -1169,7 +1183,7 @@ select option{
         margin-bottom: 1rem;
     }
     .adp-hg{
-        height: 97%;
+        height: 96%;
     }
     .info-box p{
         height: 60px;
@@ -1404,7 +1418,7 @@ select option{
         height: 50px;        
     }
     .adp-hg{
-        height: 97%;
+        height: 96%;
     }
 }
 /*graficas*/
@@ -1493,8 +1507,11 @@ select option{
 }
 .select-items div{
     color: #474747;
-    padding: 8px 16px;
-    border: 1px dotted #022869;
+    padding: 8px 16px;    
+    background-image: linear-gradient(to right, #c1c1c1 40%, rgba(255, 255, 255, 0) 20%);
+    background-position: top;
+    background-size: 3px 1px;
+    background-repeat: repeat-x;
     border-color: transparent transparent rgb(0, 0, 0) transparent;
     cursor: pointer;
     user-select: none;
@@ -1510,8 +1527,7 @@ select option{
     left: 0;
     right: 0;
     z-index: 99;   
-    border-left: 1px solid #dadada; 
-    border-right: 1px solid #dadada;
+    box-shadow: 1px 1px 5px #c5c5c5;
 }
 .extr .select-items div{
     font-size: 1.3em;
