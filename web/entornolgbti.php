@@ -277,11 +277,13 @@
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                                <div class="pin">
+                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>
+                                                    Municipios que cuentan con mecanismos de víctimas o paz
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -294,11 +296,13 @@
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                                <div class="pin">
+                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>
+                                                    Municipios que cuentan con mecanismos de genero
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -311,11 +315,13 @@
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                                <div class="pin">
+                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8 last">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>
+                                                    Municipios en los que se plantea la formulación de política para los sectores LGBTI
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -331,7 +337,7 @@
                         <div class="adicional red-bg">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="fichas/PDF.pdf" class="hred" target="_blank">
+                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" class="hblue" target="_blank">
                                     <img src="img/down-red.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA

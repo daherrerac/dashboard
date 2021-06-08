@@ -39,7 +39,7 @@
                         </div>
                         <div class="blue-menu">
                             <h2>
-                                La tolerancia social e institucional a las violencias contra las mujeres.
+                                La Tolerancia Social e Institucional a las Violencias contra las Mujeres.
                             </h2>
 
                             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -153,7 +153,7 @@
                 <div class="menu-lateral" style="display:none">                    
                     <div class="blue-menu">
                         <h2>
-                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres
+                            La Tolerancia Social e Institucional a las Violencias contra las Mujeres.
                         </h2>
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -266,15 +266,17 @@
                     <div class="col-xxl-10 col-xl-9 col-md-12">
                         <div class="blue-info">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                                <div class="pin">
+                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>Agentes de cambio frente a las 
+                                                    Violencias contra las Mujeres
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -283,15 +285,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                            <div class="pin">
+                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>En camino de cambio
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -300,15 +303,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                            <div class="pin">
+                                                <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8 last">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>Tolerantes a las Violencias
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -383,13 +387,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="util-box blue-bg hg">
                             <h4 class="text-center py-2 border-aux">Hombres</h4>
                             <div id="chart"></div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="util-box blue-bg hg">
                             <h4 class="text-center py-2 border-aux">Mujeres</h4>
                             <div id="chart-2"></div>

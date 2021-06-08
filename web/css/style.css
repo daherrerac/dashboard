@@ -533,7 +533,7 @@ h2 span{
 .blue-info .info-box{    
     padding: 1em 0;
     margin: 1em auto;
-    max-width: 250px;
+    max-width: 350px;
 }
 .blue-info .col-8.last{
     border-right: none;
@@ -544,26 +544,24 @@ h2 span{
     padding-bottom: 1em;
 }
 
-.info-box .punto{
-    height: 75px;
-    width: 75px;
-    border-radius: 50%;
-    background: #ffffff;
-    margin: 1em 0 1em 0em;
-    display: block;
+.info-box .pin{
+    display: block;  
+    margin: 1em auto;  
 }
 .info-box p{
     color: #ffffff;
     padding: 0;
     margin: 0;
-    font-size: 1.3em;
-    max-width: 120px;
+    font-size: 1.2em;
+    text-align: center;
+    height: 46px;
 }
 .info-box .numero{
     font-family:'SourceBold';
     font-size: 3.8em;
-    color: #ffffff;
-    margin: 0;
+    color: #ffffff;    
+    text-align: center;
+    margin-top: 5px;
 }
 .adicional{
     font-family:'SourceSemiBold';
@@ -760,7 +758,7 @@ h2 span{
 }
 .respuestas.full{
     margin: 1em;
-    max-height: 100%;
+    max-height: 450px;
     padding: 1.5em 1em 1em;
     overflow-y: auto;
 }
@@ -1027,7 +1025,7 @@ select option{
     max-height: 660px;
 }
 .map.red svg{
-    max-height: 540px;
+    max-height: 520px;
 }
 .red .zoomButton{
     color:#C2113B;
@@ -1100,7 +1098,7 @@ select option{
     height: 100%;
 }
 .adp-hg2{
-    height: 98%;
+    height: 100%;
 }
 @media screen and (max-width:1640px) {
     .logo {
@@ -1120,24 +1118,35 @@ select option{
     .adp-hg{
         height: 98%;
     }
+    
 }
 @media screen and (max-width:1595px){
     .adicional p{
         margin-bottom: 0;
     }
+    .red-bg .mapa p {
+        margin: 0;
+        text-align: center;
+    }
+    .adp-hg2 {
+        height: 96%;
+    }
 }
-@media screen and (min-width:1400px){
+@media screen and (min-width:1440px){
     .encuesta{
         display: none;
     }
     .datos1{
         display: block;
     }
-    .info-box .punto{        
-        margin: 1em 0 1em 0.8em;        
+    .info-box .pin{
+        width: 60px;
+    }        
+}
+@media screen and (max-width:1440px) {
+    .blue-info.red-bg.comparacion {
+        margin-top: 0;
     }
-    
-    
 }
 @media screen and (max-width:1399px) {
     .separador{
@@ -1162,6 +1171,10 @@ select option{
     .adp-hg{
         height: 97%;
     }
+    .info-box p{
+        height: 60px;
+    }
+    
 }
 @media screen and (max-width:1280px) {
     .info-box .punto{
@@ -1295,6 +1308,10 @@ select option{
         margin: 0;
         text-align: center;
     }
+    .info-box .pin{
+        width: 50px;
+    }
+    
 }
 @media screen and (max-width:767px) { 
     .btn-dash {        
@@ -1324,6 +1341,9 @@ select option{
     .respuestas.full .cajon.ans2 {        
         width: 20%;
         padding-left: 5px;
+    }
+    .adicional p {        
+        text-align: center;
     }
 }
 

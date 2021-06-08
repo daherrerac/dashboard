@@ -281,11 +281,13 @@
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                                <div class="pin">
+                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>Agentes de cambio frente a las 
+                                                    Violencias contra las Mujeres
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -298,11 +300,12 @@
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                            <div class="pin">
+                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>En camino de cambio
                                                  </p>
                                                  <div class="numero">
                                                      123
@@ -315,11 +318,12 @@
                                     <div class="info-box">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="punto"></div>
+                                            <div class="pin">
+                                                <img src="img/pin.png" alt="" class=img-fluid>
+                                                </div>
                                             </div>
                                             <div class="col-8 last">
-                                                <p>Lorem ipsum
-                                                    Etiam a ligula non
+                                                <p>Tolerantes a las Violencias
                                                  </p>
                                                  <div class="numero">
                                                      123
