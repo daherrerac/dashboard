@@ -1,7 +1,7 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
 //const siteurl = 'http://pruebadevelopment.com/';
-const siteurl = 'http://webdash.test/';
-//const siteurl = 'http://dashboard.local/';
+//const siteurl = 'http://webdash.test/';
+const siteurl = 'http://dashboard.local/';
 
 
 
@@ -139,6 +139,32 @@ class DashboardDataReader {
   }
 
   /**
+   * Retorna un array con la lista de preguntas filtradas por los parametros dados
+   * @param {string} survey un survey de la siguiente lista:  hogaresGenerales, mujeresEtnicas, 
+   * servidoresPublicos, entornoInstitucionalPaz, entornoInstitucionalMujeres, entornoInstitucionalLGBTI
+   * @returns Array
+   */
+  getQuestionsFiltered(survey, selectedFilter){
+    if (this.data[survey]) {
+      let filterPreguntas = this.getColumnData(survey, 'Filtro', undefined, undefined, false).data;
+      let preguntas = this.getColumnData(survey, 'Pregunta', undefined, undefined, false).data;
+      //console.log("pregutnas", preguntas, filterPreguntas);
+      let uniqueQuestions = [];
+      let preguntasFiltradas =  preguntas.filter((val, index) => {
+        if (val && filterPreguntas[index]){
+          //console.log("comparing ", selectedFilter, filterPreguntas[index]);
+          if(!uniqueQuestions.includes(val) && selectedFilter.trim().toLowerCase() === filterPreguntas[index].trim().toLowerCase()){
+            return true;
+          }
+        }
+        return false;
+      });
+      return preguntasFiltradas;
+    }
+    return [];
+  }
+
+  /**
    * Retorna la lista de elementos de los campos de filros del survey dado. 
    * Ej. Grupo de edad, Sexo, o region del survey  hogaresGenerales. 
    * @param {string} survey un survey de la siguiente lista:  hogaresGenerales, mujeresEtnicas, 
@@ -153,7 +179,7 @@ class DashboardDataReader {
     return [];
   }
 
-  getColumnData(survey, column, labelsHeader= undefined, categories=undefined){
+  getColumnData(survey, column, labelsHeader= undefined, categories=undefined, numbers = true){
     if (this.data[survey]) {
       let lowerCaseHeaders = this.data[survey].headers.map((el) => el.toLowerCase().trim());
       let i = lowerCaseHeaders.indexOf(column.toLowerCase().trim());
@@ -189,7 +215,7 @@ class DashboardDataReader {
           });
         }
         res.data = evalData.map((el) => {
-          return DashboardDataReader.clearValue(el[i], true);
+          return DashboardDataReader.clearValue(el[i], numbers);
         });
         return res;
       } else {
@@ -312,7 +338,8 @@ class Dashboard {
       this.region = this.dr.getFilters(this.survey, "Region")[0]; // seleccionar la primera region de la lista
     }
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
-    
+    this.filtro = this.dr.getFilters(this.survey,'Filtro')[0];
+
     //Cargar Agentes
     this.loadAgente();
 
@@ -508,7 +535,8 @@ class Dashboard {
 
   loadQuestions(){
     let self = this;
-    let questions = this.dr.getQuestions(this.survey);
+    let questions = this.dr.getQuestionsFiltered(this.survey, this.filtro);
+    // console.log("questions", questions);
     let pregUL = document.querySelector('.preguntas ul');
     // limpiar preguntas
     pregUL.innerHTML = '';
@@ -604,8 +632,7 @@ class Dashboard {
     let self = this;
     const filtrosDropDown = document.querySelectorAll('.preg.custom-select select');
     const filtrosList = this.dr.getFilters(this.survey, 'Filtro');
-    self.filterQuestionSelection1 = filtrosList[0];
-    self.filterQuestionSelection2 = filtrosList[1];
+    self.filtro = filtrosList[0];
 
     filtrosDropDown.forEach((selector, i) => {
       // limpiar opciones
@@ -615,7 +642,9 @@ class Dashboard {
         selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
       });
       let callback = (value) => {                
-        console.log("Pregunta seleccionada:", value, "sel1:", self.filterQuestionSelection1, "sel2:",self.filterQuestionSelection2);
+        console.log("Pregunta seleccionada:", value);
+        self.filtro = value;
+        self.loadQuestions();
       };
       
       updateOption(selector, callback, filtrosList[selector.selectedIndex]);
