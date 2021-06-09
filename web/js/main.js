@@ -1,6 +1,6 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
-const siteurl = 'http://pruebadevelopment.com/';
-//const siteurl = 'http://webdash.test/';
+//const siteurl = 'http://pruebadevelopment.com/';
+const siteurl = 'http://webdash.test/';
 //const siteurl = 'http://dashboard.local/';
 
 
@@ -287,6 +287,16 @@ class Dashboard {
         this.updateGraph1(this.menGraph, {Region:this.region, [this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue});
         this.updateGraph1(this.womenGraph, {Region:this.region, [this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue});
         selOption(document.getElementById("regionA"), region);
+        // let updatedOptions = {'areas': {}};
+        // for (let index = 0; index < updatedOptions.areas.length; index++) {
+        //   updatedOptions.areas[region] ={
+        //     attrs: {fill: "#767676", opacity: 1}
+        //   }          
+        // }        
+        // $(".mapcontainer").trigger('update', [{
+        //   mapOptions: updatedOptions, 
+        //   animDuration: 100
+        // }]);
       }
     }
     this.init();
@@ -538,6 +548,7 @@ class Dashboard {
 
   loadRegions(){
     let self = this;
+    let previousRegionSelected;
     const regionsDropDown = document.querySelectorAll('.region.custom-select select');
     const regionsList = this.dr.getFilters(this.survey, 'Region');
     self.graphRegionSelection1 = regionsList[0];
@@ -548,8 +559,9 @@ class Dashboard {
       // adicionar atributo de selector
       regionsList.forEach((q) => {
         selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
-      });
+      });      
       let callback = (value) => {
+        previousRegionSelected = self.region;
         if (selector.getAttribute('id') == "regionA"){
           self.region = value;
           self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
@@ -562,6 +574,17 @@ class Dashboard {
         self.updateGraph2(self.lowerGraphs.graph1.id, {Region:'', [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue});
         self.updateGraph2(self.lowerGraphs.graph2.id, {Region:'', [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue});
         console.log("Region seleccionada:", value, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
+        let updatedOptions = {'areas': {}};
+        updatedOptions.areas[value] ={
+          attrs: {fill: "#022869", opacity: 1}
+        },
+        updatedOptions.areas[previousRegionSelected] ={
+          attrs: {fill: "#767676", opacity: 1}
+        }
+        $(".mapcontainer").trigger('update', [{
+          mapOptions: updatedOptions, 
+          animDuration: 100
+        }]);
       };
       // definir selecciones por defecto de ambos selectores
       if (selector.getAttribute('id') == "regionA"){
@@ -572,6 +595,7 @@ class Dashboard {
         selector.selectedIndex = 1;
       }
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
+      
     });
   }
 
