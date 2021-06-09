@@ -269,6 +269,10 @@ class Dashboard {
 
   filterQuestionSelection1;
   filterQuestionSelection2;
+
+  filterAgente1;
+  filterAgente2;
+  filterAgente3;
   
 
   constructor(survey, hasMap = true, mapGraphs, lowerGraphs){
@@ -299,6 +303,9 @@ class Dashboard {
     }
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
     
+    //Cargar Agentes
+    this.loadAgente();
+
     //Cargar filtros de preguntas
     this.loadFilterQuestion();
 
@@ -388,8 +395,19 @@ class Dashboard {
     graph.data.datasets[0].data = newData.data;
     //dividir texto (pregunta) en 2 para ajustar mejor el label en la grafica
     graph.data.datasets[0].label =  this.region;
+    let indexArray;
+    if(this.dr.data.hogaresGenerales){
+      indexArray = this.dr.data.hogaresGenerales.filters.Region.indexOf(this.region);
+    }
+    if(this.dr.data.mujeresEtnicas){
+      indexArray = this.dr.data.mujeresEtnicas.filters.Region.indexOf(this.region);
+    } 
+    if(this.dr.data.servidoresPublicos){
+      indexArray = this.dr.data.servidoresPublicos.filters.Region.indexOf(this.region);
+    }    
     graph.options.plugins.title.text = Dashboard.splitText(this.selectedQuestion);
     graph.update();
+    this.updateAgente(indexArray);
   }
 
   initGraphs2(){
@@ -572,28 +590,73 @@ class Dashboard {
       filtrosList.forEach((q) => {
         selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
       });
-      let callback = (value) => {
-        // if (selector.getAttribute('id') == "regionA"){
-        //   self.region = value;
-        //   self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
-        //   self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
-        // } else if (selector.getAttribute('id') == "region1"){
-        //   self.filterQuestionSelection1 = value;
-        // } else if (selector.getAttribute('id') == 'region2'){
-        //   self.filterQuestionSelection2 = value;
-        // }
-        
+      let callback = (value) => {                
         console.log("Pregunta seleccionada:", value, "sel1:", self.filterQuestionSelection1, "sel2:",self.filterQuestionSelection2);
       };
-      // definir selecciones por defecto de ambos selectores
-      // if (selector.getAttribute('id') == "regionA"){
-      //   selector.selectedIndex = 0;
-      // } else if (selector.getAttribute('id') == 'region1'){
-      //   selector.selectedIndex = 0;
-      // } else if (selector.getAttribute('id') == 'region2'){
-      //   selector.selectedIndex = 1;
-      // }
+      
       updateOption(selector, callback, filtrosList[selector.selectedIndex]);
+    });
+  }
+
+  loadAgente(){
+    let self = this;
+    const agente1Items = document.querySelectorAll('.agente1');
+    const agente2Items = document.querySelectorAll('.agente2');
+    const agente3Items = document.querySelectorAll('.agente3');
+    
+    const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
+    const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
+    const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
+
+    self.filterAgente1 = agente1List[0];
+    self.filterAgente2 = agente2List[0];
+    self.filterAgente3 = agente3List[0];
+    
+    agente1Items.forEach((selector, i) => {      
+      agente1List.forEach((q) => {
+        selector.innerHTML = this.filterAgente1 + "%";
+      });                        
+    });
+    agente2Items.forEach((selector, i) => {      
+      agente2List.forEach((q) => {
+        selector.innerHTML = this.filterAgente2 + "%";
+      });                        
+    });
+    agente3Items.forEach((selector, i) => {      
+      agente3List.forEach((q) => {
+        selector.innerHTML = this.filterAgente3 + "%";
+      });                  
+    });
+  }
+
+  updateAgente(id){
+    let self = this;
+    const agente1Items = document.querySelectorAll('.agente1');
+    const agente2Items = document.querySelectorAll('.agente2');
+    const agente3Items = document.querySelectorAll('.agente3');
+    
+    const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
+    const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
+    const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
+
+    self.filterAgente1 = agente1List[id];
+    self.filterAgente2 = agente2List[id];
+    self.filterAgente3 = agente3List[id];
+    
+    agente1Items.forEach((selector, i) => {      
+      agente1List.forEach((q) => {
+        selector.innerHTML = this.filterAgente1 + "%";
+      });                        
+    });
+    agente2Items.forEach((selector, i) => {      
+      agente2List.forEach((q) => {
+        selector.innerHTML = this.filterAgente2 + "%";
+      });                        
+    });
+    agente3Items.forEach((selector, i) => {      
+      agente3List.forEach((q) => {
+        selector.innerHTML = this.filterAgente3 + "%";
+      });                  
     });
   }
 
@@ -715,6 +778,48 @@ function updateOption(select, callback, selValue){
   let parent = select.parentElement;
   let selectorVisible = parent.querySelector('.select-items');
   selectorVisible.innerHTML = '';
+  for (j = 0; j < select.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = select.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+        if (callback) {
+          callback(s.options[s.selectedIndex].innerHTML);
+        }
+    });
+    selectorVisible.appendChild(c);
+  }
+  if (selValue) {
+    let selectorVisibleSelected = parent.querySelector('.select-selected');
+    selectorVisibleSelected.innerHTML = selValue;
+  }
+}
+
+function updateOption2(select, callback, selValue){
+  // get div next to selector
+  let parent = select.parentElement;
+  let selectorVisible = parent.querySelector('.select-items');  
   for (j = 0; j < select.length; j++) {
     /*for each option in the original select element,
     create a new DIV that will act as an option item:*/

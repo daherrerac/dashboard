@@ -289,8 +289,8 @@
                                                 <p>Agentes de cambio frente a las 
                                                     Violencias contra las Mujeres
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente1">
+                                                    48.3%
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -307,8 +307,8 @@
                                             <div class="col-9">
                                                 <p>En camino de cambio
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente2">
+                                                    20.8%
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -325,8 +325,8 @@
                                             <div class="col-9 last">
                                                 <p>Tolerantes a las Violencias
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente3">
+                                                    30.9%
                                                  </div>
                                             </div>                                                                    
                                         </div>

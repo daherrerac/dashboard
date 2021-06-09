@@ -286,23 +286,23 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xxl-10 col-xl-9 col-md-12">
+                <div class="col-xxl-10 col-xl-9 col-md-12">
                         <div class="blue-info">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="pin">
                                                     <img src="img/pin.png" alt="" class=img-fluid>
                                                 </div>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-9">
                                                 <p>Agentes de cambio frente a las 
                                                     Violencias contra las Mujeres
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente1">
+                                                    48.3%
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -311,16 +311,16 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                             <div class="pin">
                                                     <img src="img/pin.png" alt="" class=img-fluid>
                                                 </div>
                                             </div>
-                                            <div class="col-8">
+                                            <div class="col-9">
                                                 <p>En camino de cambio
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente2">
+                                                    20.8%
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -329,16 +329,16 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                             <div class="pin">
                                                 <img src="img/pin.png" alt="" class=img-fluid>
                                                 </div>
                                             </div>
-                                            <div class="col-8 last">
+                                            <div class="col-9 last">
                                                 <p>Tolerantes a las Violencias
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente3">
+                                                    30.9%
                                                  </div>
                                             </div>                                                                    
                                         </div>
