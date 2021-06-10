@@ -153,7 +153,7 @@ class DashboardDataReader {
 
   getColumnData(survey, column, labelsHeader= undefined, categories=undefined){
     if (this.data[survey]) {
-      console.log("getting data", labelsHeader, categories);
+      // console.log("getting data", labelsHeader, categories);
       let lowerCaseHeaders = this.data[survey].headers.map((el) => el.toLowerCase().trim());
       let i = lowerCaseHeaders.indexOf(column.toLowerCase().trim());
       if (i!=-1){
@@ -367,29 +367,42 @@ class Dashboard {
     this.loadRegions();
 
     this.loadMunicipios();
+    
 
     // cargar informacion de preguntas de preguntas por defecto
     this.loadQuestions();
+    this.loadQuestions(true);
 
   
     // TODO esconder loader
   }
 
-  loadQuestions(){
+  loadQuestions(comparePart){
     let self = this;
     let questions = this.dr.getQuestions(this.survey);
-    let pregUL = document.querySelector('.respuestas');
     
+    let pregUL = document.querySelector('.respuestas');
+    if (comparePart){
+      pregUL = document.querySelector('.compare.respuestas');
+    }
     // limpiar preguntas
     pregUL.innerHTML = '';
     // insertar preguntas en DOM
     questions.forEach((q, i) => {
-      let filter = {'Región PDET':self.region, 'MUNICIPIO': this.municipio};
-      let graphData1 = this.dr.getRowData(this.survey,questions, filter);
-      if (graphData1)
-        pregUL.append(HTMLbuilder.createPreguntasLiElement(q, graphData1[i]));
+      if (comparePart){
+        let filter1 = {'Región PDET':self.compareRegionSelection1, 'MUNICIPIO': this.compareMunicipioSelection1};
+        let filter2 = {'Región PDET':self.compareRegionSelection2, 'MUNICIPIO': this.compareMunicipioSelection2};
+        let graphData1 = this.dr.getRowData(this.survey,questions, filter1);
+        let graphData2 = this.dr.getRowData(this.survey,questions, filter2);
+        if (graphData1 && graphData2)
+          pregUL.append(HTMLbuilder.createPreguntasLiElement(q, graphData1[i],graphData2[i]));
+      } else {
+        let filter = {'Región PDET':self.region, 'MUNICIPIO': this.municipio};
+        let graphData1 = this.dr.getRowData(this.survey,questions, filter);
+        if (graphData1)
+          pregUL.append(HTMLbuilder.createPreguntasLiElement(q, graphData1[i]));
+      }
     });
-    
   }
 
   loadRegions(){
@@ -399,7 +412,7 @@ class Dashboard {
 
     self.region = regionsList[0];
     self.compareRegionSelection1 = regionsList[0];
-    self.compareRegionSelection2 = regionsList[1];
+    self.compareRegionSelection2 = regionsList[0];
     regionsDropDown.forEach((selector, i) => {
       // limpiar opciones
       selector.innerHTML = '';
@@ -410,12 +423,18 @@ class Dashboard {
       let callback = (value) => {
         if (selector.getAttribute('id') == "regionA"){
           self.region = value;
+          self.loadMunicipios('regionA');
+          self.loadQuestions();
         } else if (selector.getAttribute('id') == "region1"){
           self.compareRegionSelection1 = value;
+          self.loadMunicipios('region1');
+          self.loadQuestions(true);
         } else if (selector.getAttribute('id') == 'region2'){
           self.compareRegionSelection2 = value;
+          self.loadMunicipios('region2');
+          self.loadQuestions(true);
         }
-        self.loadQuestions();
+        
         //console.log("Region seleccionada:", value, "sel1:", self.compareRegionSelection1, "sel2:",self.compareRegionSelection2);
       };
       // definir selecciones por defecto de ambos selectores
@@ -424,47 +443,76 @@ class Dashboard {
       } else if (selector.getAttribute('id') == 'region1'){
         selector.selectedIndex = 0;
       } else if (selector.getAttribute('id') == 'region2'){
-        selector.selectedIndex = 1;
+        selector.selectedIndex = 0;
       }
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
     });
   }
 
-  loadMunicipios(){
+  loadMunicipios(region){
     let self = this;
     const regionsDropDown = document.querySelectorAll('.municipio.custom-select select');
-    const regionsList = this.dr.getFilters(this.survey, 'MUNICIPIO');
 
-    self.municipio = regionsList[0];
-    self.compareMunicipioSelection1 = regionsList[0];
-    self.compareMunicipioSelection2 = regionsList[1];
+    //console.log(regionsList);
+    let regionList = [];
+    if (region && region == 'regionA'){
+      regionList = this.dr.getColumnData(this.survey, 'MUNICIPIO',undefined, {'Región PDET':self.region}).data;
+      self.municipio = regionList[0];
+    } else if(region && region == 'region1'){
+      regionList = this.dr.getColumnData(this.survey, 'MUNICIPIO',undefined, {'Región PDET':self.compareRegionSelection1}).data;
+      self.compareMunicipioSelection1 = regionList[0];
+    } else if(region && region == 'region2'){
+      regionList = this.dr.getColumnData(this.survey, 'MUNICIPIO',undefined, {'Región PDET':self.compareRegionSelection2}).data;
+      self.compareMunicipioSelection2 = regionList[0];
+    }else{
+      regionList = this.dr.getColumnData(this.survey, 'MUNICIPIO',undefined, {'Región PDET':self.region}).data;
+      self.municipio = regionList[0];
+      self.compareMunicipioSelection1 = regionList[0];
+      self.compareMunicipioSelection2 = regionList[0];
+    }
     regionsDropDown.forEach((selector, i) => {
-      // limpiar opciones
-      selector.innerHTML = '';
-      // adicionar atributo de selector
-      regionsList.forEach((q) => {
-        selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
-      });
-      let callback = (value) => {
-        if (selector.getAttribute('id') == "municipioA"){
-          self.municipio = value;
-        } else if (selector.getAttribute('id') == "municipio1"){
-          self.compareMunicipioSelection1 = value;
-        } else if (selector.getAttribute('id') == 'municipio2'){
-          self.compareMunicipioSelection2 = value;
+      let addData = false;
+      if (region){
+        if(region == 'regionA' && selector.getAttribute('id') == "municipioA"){
+          addData = true;
+        } else if(region == 'region1' && selector.getAttribute('id') == "municipio1"){
+          addData = true;
+        } else if(region == 'region2' && selector.getAttribute('id') == "municipio2"){
+          addData = true;
         }
-        self.loadQuestions();
-        // console.log("Region seleccionada:", value, "sel1:", self.compareMunicipioSelection1, "sel2:",self.compareMunicipioSelection2);
-      };
-      // definir selecciones por defecto de ambos selectores
-      if (selector.getAttribute('id') == "municipioA"){
-        selector.selectedIndex = 0;
-      } else if (selector.getAttribute('id') == 'municipio1'){
-        selector.selectedIndex = 0;
-      } else if (selector.getAttribute('id') == 'municipio2'){
-        selector.selectedIndex = 1;
+      } else {
+        addData = true;
       }
-      updateOption(selector, callback, regionsList[selector.selectedIndex]);
+      if(addData) {
+        // limpiar opciones
+        selector.innerHTML = '';
+        // adicionar atributo de selector
+        regionList.forEach((q) => {
+          selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
+        });
+        let callback = (value) => {
+          if (selector.getAttribute('id') == "municipioA"){
+            self.municipio = value;
+            self.loadQuestions();
+          } else if (selector.getAttribute('id') == "municipio1"){
+            self.compareMunicipioSelection1 = value;
+            self.loadQuestions(true);
+          } else if (selector.getAttribute('id') == 'municipio2'){
+            self.compareMunicipioSelection2 = value;
+            self.loadQuestions(true);
+          }
+          // console.log("Region seleccionada:", value, "sel1:", self.compareMunicipioSelection1, "sel2:",self.compareMunicipioSelection2);
+        };
+        // definir selecciones por defecto de ambos selectores
+        if (selector.getAttribute('id') == "municipioA"){
+          selector.selectedIndex = 0;
+        } else if (selector.getAttribute('id') == 'municipio1'){
+          selector.selectedIndex = 0;
+        } else if (selector.getAttribute('id') == 'municipio2'){
+          selector.selectedIndex = 0;
+        }
+        updateOption(selector, callback, regionList[selector.selectedIndex]);
+      }
     });
   }
 

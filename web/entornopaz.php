@@ -6,8 +6,8 @@
     
   }else{
     // Si no está logueado lo redireccion a la página de login.
-    header("HTTP/1.1 302 Moved Temporarily"); 
-    header("Location: index.html"); 
+    //header("HTTP/1.1 302 Moved Temporarily"); 
+    //header("Location: index.html"); 
   }
 ?>
 <!doctype html>
@@ -458,7 +458,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="municipo custom-select extr">
+                                            <div class="municipio custom-select extr">
                                                 <select id="municipio1">
                                                     <option>MUNICIPIO</option>
                                                     <option value="1">Anorí</option>                                             
@@ -482,150 +482,23 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="util-box">
-                            <div class="respuestas full">
+                            <div class="compare respuestas full">
 
                                 <div class="fila-cajon">
                                     <div class="cajon ask">
-                                        ¿Hay vinculación de los programas de gobierno construcción de paz y la implementación del AF con enfoque de género?
+                                        Cargando respuestas...
                                     </div>                                    
                                     <div class="cajon white"></div>
                                     <div class="cajon ans">
-                                        SI
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        SI
-                                    </div>
-                                </div>
-
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Hay presencia de politicas públicas para las victimas del conflicto armado?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        NO
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        NO
-                                    </div>
-                                </div>
-
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Se planea formulación de política públicas en el tema?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        SI
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        SI
-                                    </div>
-                                </div>
-
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Se plantea implementación de política?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        NO
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        NO
-                                    </div>
-                                </div>
-
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Se planean ambas?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        NO APLICA
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        NO APLICA
-                                    </div>
-                                </div>
-
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Cuentan con mecanismos de victimas o paz?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        SI
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        SI
-                                    </div>
-                                </div>
                                         
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Se busca implementar?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        NO
                                     </div>
                                     <div class="cajon white"></div>
                                     <div class="cajon ans2">
-                                        NO
+                                        
                                     </div>
                                 </div>
-    
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Se nombran los consejos territoriales de paz o los consejos municipales de paz?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        SI
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        SI
-                                    </div>
-                                </div>
-                                 
 
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        ¿Se planea la creación o implementación de los consejos territoriales de paz?
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        NO
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        NO
-                                    </div>
-                                </div>
-                                    
-    
-    
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        Inclusión del enfoque de género en el ambito de la implementación de los AF
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        SI
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        SI
-                                    </div>
-                                </div>
+                                
                                     
                             </div>
                         </div>

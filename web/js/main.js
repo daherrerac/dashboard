@@ -31,7 +31,7 @@ class DashboardDataReader {
   data;
   // ubicacion de archivos csv
   static urls = {
-    'hogaresGenerales':siteurl + 'csv/hogares_generaltest.csv', //archivo prueba
+    'hogaresGenerales':siteurl + 'csv/hogares_generaltest2.csv', //archivo prueba
     'mujeresEtnicas':siteurl + 'csv/hogares_mujeres_etnicas.csv',
     'servidoresPublicos':siteurl + 'csv/encuesta_servidores_publicos.csv',
     'entornoInstitucionalPaz':siteurl + 'csv/entorno_institucional_paz.csv',
@@ -219,7 +219,7 @@ class DashboardDataReader {
         });
         return res;
       } else {
-        console.log("Column not found ", column, this.data[survey]);
+        console.log("Column not found ", column);
       }
     } else {
       console.log("Survey not found in data: ", survey );
@@ -309,20 +309,24 @@ class Dashboard {
     this.lowerGraphs = lowerGraphs;
     if (this.hasMap && this.mapGraphs){
       this.mapClickCallback = (region) => {
+        let previousRegionSelected = this.region;
         this.region = region;
         this.updateGraph1(this.menGraph, {Region:this.region, [this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue});
         this.updateGraph1(this.womenGraph, {Region:this.region, [this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue});
         selOption(document.getElementById("regionA"), region);
-        // let updatedOptions = {'areas': {}};
-        // for (let index = 0; index < updatedOptions.areas.length; index++) {
-        //   updatedOptions.areas[region] ={
-        //     attrs: {fill: "#767676", opacity: 1}
-        //   }          
-        // }        
-        // $(".mapcontainer").trigger('update', [{
-        //   mapOptions: updatedOptions, 
-        //   animDuration: 100
-        // }]);
+        let updatedOptions = {
+          areas:{}
+        };
+        updatedOptions.areas[region] = {
+          attrs: {fill: "#022869", opacity: 1}
+        };
+        updatedOptions.areas[previousRegionSelected] ={
+          attrs: {fill: "#767676", opacity: 1}
+        };
+        $(".mapcontainer").trigger('update', [{
+          mapOptions: updatedOptions, 
+          animDuration: 100
+        }]);
       }
     }
     this.init();
