@@ -25,8 +25,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
-    <script src="js/mapahandler-red.js"></script>    
-
+    <script src="js/papaparse.min.js"></script>
+    <script src="js/mapahandler-red.js"></script> 
     
 
     <title>Entorno Mujeres</title>
@@ -287,8 +287,8 @@
                                                 <p>
                                                     Municipios que cuentan con mecanismos de víctimas o paz
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente1">
+                                                    21
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -306,8 +306,8 @@
                                                 <p>
                                                     Municipios que cuentan con mecanismos de genero
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente2">
+                                                    19
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -325,8 +325,8 @@
                                                 <p>
                                                     Municipios en los que se plantea la formulación de política para los sectores LGBTI
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente 3">
+                                                    17
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -370,12 +370,12 @@
                     <div class="col-lg-7">
                         <div class="util-box">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="mapa">
                                         <p class="mt-4">Seleccione región y municipio</p>
                                     </div>                                    
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-8">
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="region custom-select extr">
@@ -386,8 +386,8 @@
                                             </div> 
                                         </div>
                                         <div class="col-6">
-                                            <div class="region custom-select extr">
-                                                <select id="regionA">
+                                            <div class="municipio custom-select extr">
+                                                <select id="municipioA">
                                                     <option>MUNICIPIO</option>
                                                     <option value="1">Anorí</option>                                             
                                                 </select>
@@ -397,7 +397,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="util-box" style="max-height: 575px;height: 100%;">                            
+                        <div class="util-box" style="max-height: 465px;height: 100%;">                            
                             <div class="mapa">
                                 <h4 class="red">
                                     PREGUNTAS
@@ -504,7 +504,7 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="region custom-select extr">
-                                                <select id="regionA">
+                                                <select id="region1">
                                                     <option>REGIÓN</option>
                                                     <option value="1">Chocó</option>                                             
                                                 </select>
@@ -512,7 +512,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="region custom-select extr">
-                                                <select id="regionA">
+                                                <select id="region2">
                                                     <option>REGIÓN</option>
                                                     <option value="1">Putumayo</option>                                             
                                                 </select>
@@ -521,16 +521,16 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="region custom-select extr">
-                                                <select id="regionA">
+                                            <div class="municipio custom-select extr">
+                                                <select id="municipio1">
                                                     <option>MUNICIPIO</option>
                                                     <option value="1">Anorí</option>                                             
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="region custom-select extr">
-                                                <select id="regionA">
+                                            <div class="municipio custom-select extr">
+                                                <select id="municipio2">
                                                     <option>MUNICIPIO</option>
                                                     <option value="1">Mesetas</option>                                             
                                                 </select>
@@ -545,7 +545,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="util-box">
-                            <div class="respuestas full">
+                            <div class="compare respuestas full">
 
                                 <div class="fila-cajon">
                                     <div class="cajon ask">
@@ -763,8 +763,14 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/mapa/municipios.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/mainrojos.js"></script>
     
+    <script>
+    // iniciar dashboard
+        // iniciar funciones y carga de datos
+        
+        let dash = new Dashboard('entornoInstitucionalMujeres');
+    </script>
     
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

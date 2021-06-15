@@ -1,6 +1,6 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
-//const siteurl = 'http://webdash.test/';
-const siteurl = 'http://dashboard.local/';
+const siteurl = 'http://webdash.test/';
+//const siteurl = 'http://dashboard.local/';
 //const siteurl = 'http://pruebadevelopment.com/';
 
 
@@ -54,9 +54,11 @@ class DashboardDataReader {
     const lowercaseFilters = DashboardDataReader.filterFields.map((el) => el.toLowerCase());
 
     let csvData = await this.parseFile(DashboardDataReader.urls[surveyKey]);
-    let questions = csvData[0].filter((value) => {
+    let prequestions = csvData[0].filter((value) => {
       return !lowercaseFilters.includes(value.toLowerCase().trim());
     });
+    let agentes   = prequestions.splice(0,3);
+    let questions = prequestions;
     let headers = csvData[0].map(el => el.trim());
     // eliminar encabezado de tabla de datos
     csvData.shift();
@@ -64,6 +66,7 @@ class DashboardDataReader {
     data[surveyKey] = {
       questions,
       headers,
+      agentes,
       data: csvData 
     };
     this.data = data;
@@ -343,6 +346,9 @@ class Dashboard {
   compareMunicipioSelection1;
   compareMunicipioSelection2;
   
+  filterAgente1;
+  filterAgente2;
+  filterAgente3;
   
 
   constructor(survey){
@@ -363,6 +369,11 @@ class Dashboard {
 
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
     
+
+    //Cargar Agentes
+    this.loadAgente();
+
+
     // cargar regiones en selectores inferiores
     this.loadRegions();
 
@@ -446,6 +457,68 @@ class Dashboard {
         selector.selectedIndex = 0;
       }
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
+    });
+  }
+
+  loadAgente(){
+    let self = this;
+    const agente1Items = document.querySelectorAll('.agente1');
+    const agente2Items = document.querySelectorAll('.agente2');
+    const agente3Items = document.querySelectorAll('.agente3');
+    
+    const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
+    const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
+    const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
+
+    self.filterAgente1 = agente1List[0];
+    self.filterAgente2 = agente2List[0];
+    self.filterAgente3 = agente3List[0];
+    
+    agente1Items.forEach((selector, i) => {      
+      agente1List.forEach((q) => {
+        selector.innerHTML = this.filterAgente1 + "%";
+      });                        
+    });
+    agente2Items.forEach((selector, i) => {      
+      agente2List.forEach((q) => {
+        selector.innerHTML = this.filterAgente2 + "%";
+      });                        
+    });
+    agente3Items.forEach((selector, i) => {      
+      agente3List.forEach((q) => {
+        selector.innerHTML = this.filterAgente3 + "%";
+      });                  
+    });
+  }
+
+  updateAgente(id){
+    let self = this;
+    const agente1Items = document.querySelectorAll('.agente1');
+    const agente2Items = document.querySelectorAll('.agente2');
+    const agente3Items = document.querySelectorAll('.agente3');
+    
+    const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
+    const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
+    const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
+
+    self.filterAgente1 = agente1List[id];
+    self.filterAgente2 = agente2List[id];
+    self.filterAgente3 = agente3List[id];
+    
+    agente1Items.forEach((selector, i) => {      
+      agente1List.forEach((q) => {
+        selector.innerHTML = this.filterAgente1 + "%";
+      });                        
+    });
+    agente2Items.forEach((selector, i) => {      
+      agente2List.forEach((q) => {
+        selector.innerHTML = this.filterAgente2 + "%";
+      });                        
+    });
+    agente3Items.forEach((selector, i) => {      
+      agente3List.forEach((q) => {
+        selector.innerHTML = this.filterAgente3 + "%";
+      });                  
     });
   }
 

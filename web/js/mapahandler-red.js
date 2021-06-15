@@ -864,7 +864,7 @@ $(function () {
                 },
                 //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
             },
-            "path481": {
+            "Sardinata": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -907,7 +907,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                tooltip: {content: "SARDINATA"}
             },
             "path483": {
                 attrs: {
@@ -999,7 +999,7 @@ $(function () {
                 },
                 //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
             },
-            "path487": {
+            "Teorama": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -1042,9 +1042,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                tooltip: {content: "TEORAMA"}
             },
-            "path489": {
+            "Tibu": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -1087,9 +1087,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                tooltip: {content: "TIBÚ"}
             },
-            "path491": {
+            "El Tarra": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -1132,7 +1132,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                tooltip: {content: "EL TARRA"}
             },
 
             //region
@@ -1270,7 +1270,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Riosucio"}
+                tooltip: {content: "RIOSUCIO"}
             },
             "path409": {
                 attrs: {
@@ -1360,7 +1360,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Bojayá"}
+                tooltip: {content: "BOJAYÁ"}
             },
             "path413": {
                 attrs: {
@@ -1450,7 +1450,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Quibdó"}
+                tooltip: {content: "QUIBDÓ"}
             },
             "path417": {
                 attrs: {

@@ -1,7 +1,7 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
 //const siteurl = 'http://pruebadevelopment.com/';
-//const siteurl = 'http://webdash.test/';
-const siteurl = 'http://dashboard.local/';
+const siteurl = 'http://webdash.test/';
+//const siteurl = 'http://dashboard.local/';
 
 
 
@@ -31,14 +31,12 @@ class DashboardDataReader {
   data;
   // ubicacion de archivos csv
   static urls = {
-    'hogaresGenerales':siteurl + 'csv/hogares_generaltest2.csv', //archivo prueba
+    'hogaresGenerales':siteurl + 'csv/hogares_general.csv', //archivo prueba
     'mujeresEtnicas':siteurl + 'csv/hogares_mujeres_etnicas.csv',
     'servidoresPublicos':siteurl + 'csv/encuesta_servidores_publicos.csv',
     'entornoInstitucionalPaz':siteurl + 'csv/entorno_institucional_paz.csv',
     'entornoInstitucionalMujeres':siteurl + 'csv/entorno_institucional_mujeres.csv',
     'entornoInstitucionalLGBTI':siteurl + 'csv/entorno_institucional_lgbti.csv',
-    //filtro preguntas
-    'filtroPreguntas':siteurl + 'csv/filtro_preguntas.csv'
   };
 
   // declaracion de filtros

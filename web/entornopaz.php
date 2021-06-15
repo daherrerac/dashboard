@@ -287,8 +287,8 @@
                                                 <p>
                                                     Municipios que cuentan con mecanismos de víctimas o paz
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente1">
+                                                    21
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -306,8 +306,8 @@
                                                 <p>
                                                     Municipios que cuentan con mecanismos de genero
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente2">
+                                                    19
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -325,8 +325,8 @@
                                                 <p>
                                                     Municipios en los que se plantea la formulación de política para los sectores LGBTI
                                                  </p>
-                                                 <div class="numero">
-                                                     123
+                                                 <div class="numero agente 3">
+                                                    17
                                                  </div>
                                             </div>                                                                    
                                         </div>
