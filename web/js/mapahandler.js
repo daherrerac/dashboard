@@ -609,6 +609,46 @@ function initMapHandler(clickCallbak){
                     },
                     tooltip: {content: "CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETEÑO"}
                 },
+                "Cali": {
+                    attrs: {
+                        fill: "#767676"
+                    }
+                    , attrsHover: {
+                        fill: "#022869"
+                    },
+                    eventHandlers: {
+                        click: function (e, id, mapElem, textElem) {
+                            var newData = {
+                                'areas': {}
+                            };
+                            if (previousSelectedElementId !== null) {
+                                newData.areas[previousSelectedElementId] = {
+                                    attrs: {
+                                        fill: "#767676" //original
+                                    }
+                                };                                
+                            }
+                            if (mapElem.originalAttrs.fill == "#767676") {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#022869"
+                                    }
+                                };
+                                previousSelectedElementId = id;
+                            } else {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#767676"
+                                    }
+                                };
+                                previousSelectedElementId = null;
+                            }
+                            $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
+                            clickCallbak("CIUDADES CALI-QUIBDO");
+                        }
+                    },
+                    tooltip: {content: "CIUDADES CALI-QUIBDÓ"}
+                }
             },
         });
     });

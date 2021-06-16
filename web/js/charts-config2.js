@@ -8,13 +8,13 @@ const lowerChartConfig2 = {
       show: false
     },
     type: 'bar',
-    height: 400
+    height: 420
   },
   plotOptions: {
     bar: {
       borderRadius: 6,
       horizontal: false,
-      columnWidth: '20%',
+      columnWidth: '40%',
       colors: {
         ranges: [          
           {
@@ -57,5 +57,14 @@ const lowerChartConfig2 = {
     show:true,
     borderColor:'#002159',
   },
-  tickAmount: 10
+  tickAmount: 10,
+  title: {
+    text: 'Tiempo que lleva trabajando en la institución',
+    floating: true,
+    offsetY: 0,
+    align: 'center',
+    style: {
+      color: '#14DFFF'
+    }
+  }
 };

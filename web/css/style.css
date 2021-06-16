@@ -525,6 +525,7 @@ h2 span{
 }
 .blue-info.red-bg{
     background: #651D32;
+    height: 200px;
 }
 
 .blue-info .col-8{
@@ -570,6 +571,10 @@ h2 span{
     height: 46px;
     font-weight: 700;
 }
+.red-bg .info-box p{    
+    margin: 1em 0 0 0;    
+    height: 65px;    
+}
 .info-box .numero{
     font-family:'SourceBold';
     font-size: 3.8em;
@@ -591,6 +596,7 @@ h2 span{
 }
 .adicional.red-bg{
     background: #C2113B;
+    height: 200px;
 }
 .adicional p{
     font-family:'SourceBold';
@@ -1038,8 +1044,8 @@ select option{
 .mapcontainer.red{
     max-height: 450px;
 }
-.map.red svg{
-    max-height: 430px;
+.map.red svg{    
+    max-height: 430px;    
 }
 .red .zoomButton{
     color:#C2113B;
@@ -1066,6 +1072,11 @@ select option{
 .zoomButton.zoomOut{
     top:90px;
 }
+.red .zoomButton{
+    right: 0;
+    left: 90%;
+}
+
 .mapael .mapTooltip {
     font-family:'SourceBold';
     position: absolute;
@@ -1114,6 +1125,162 @@ select option{
 .adp-hg2{
     height: 100%;
 }
+/*graficas*/
+/*the container must be positioned relative:*/
+.form-select{    
+    width: 95%;
+    background: #022869;
+    color: #ffffff;
+    border-radius: 15px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position:98% center;
+    background-size: 1rem;
+    padding-right: 5px;
+}
+.custom-select.ext {
+    margin-top: 1.5em;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.custom-select.extr{
+    margin-top: 1.5em;
+    margin-left: 1em;
+}
+.ext .select-selected{
+    width: 100%;
+}
+
+.custom-select {
+    position: relative;
+    font-family:'SourceBold';
+    margin-right: 15px;
+}
+  
+.custom-select select {
+    display: none; /*hide original SELECT element:*/
+}
+  
+.select-selected {
+    background-color: #022869;
+    border-radius: 10px;
+    font-size: 1.3em;
+}
+
+.extr .select-selected {
+    background-color: #C2113B;
+    border-radius: 10px;
+    font-size: 1.3em;
+}
+.red-bg .extr .select-selected {
+    background-color: #ffffff;
+    color: #BA0C2F;
+}
+.red-bg .extr .select-selected:after {
+    border: 6px solid #BA0C2F;
+    border-color: #BA0C2F transparent transparent transparent;
+}
+  /*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 16px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+
+  
+  /*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+  
+  /*style the items (options), including the selected item:*/
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+    width: 95%;
+    margin: 0 auto;
+}
+.select-items div{
+    color: #474747;
+    padding: 8px 16px;    
+    background-image: linear-gradient(to right, #c1c1c1 40%, rgba(255, 255, 255, 0) 20%);
+    background-position: top;
+    background-size: 3px 1px;
+    background-repeat: repeat-x;
+    border-color: transparent transparent rgb(0, 0, 0) transparent;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.1em;
+}
+  
+  /*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: #ffffff;
+    color:#474747;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;   
+    box-shadow: 1px 1px 5px #c5c5c5;
+}
+.extr .select-items div{
+    font-size: 1.3em;
+    border-bottom: 1px dotted #B20E35;
+}
+.extr .select-items {    
+    width: 95%;
+    margin: 0 auto;
+}  
+  /*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+  
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;    
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-color: #ffffff;
+  }
+  
+  
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.apexcharts-legend-text{
+    font-family:'SourceBold' !important;
+}
+
+
+
 @media screen and (max-width:1640px) {
     .logo {
         max-width: 320px;
@@ -1161,6 +1328,13 @@ select option{
     .info-box p {        
         width: 95%;
     }
+    .red-bg .info-box p{
+        margin: 0;
+        height: 85px;
+    }
+    .extr .select-selected:after {
+        right: 12px;
+    }
 }
 @media screen and (max-width:1399px) {
     .separador{
@@ -1187,6 +1361,7 @@ select option{
     }
     .info-box p{
         height: 60px;
+        padding: 0 0.6em;
     }
     
 }
@@ -1420,155 +1595,4 @@ select option{
     .adp-hg{
         height: 96%;
     }
-}
-/*graficas*/
-/*the container must be positioned relative:*/
-.form-select{    
-    width: 95%;
-    background: #022869;
-    color: #ffffff;
-    border-radius: 15px;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position:98% center;
-    background-size: 1rem;
-    padding-right: 5px;
-}
-.custom-select.ext {
-    margin-top: 1.5em;
-    margin-right: 20px;
-    margin-left: 20px;
-}
-.custom-select.extr{
-    margin-top: 1.5em;
-    margin-left: 1em;
-}
-.ext .select-selected{
-    width: 100%;
-}
-
-.custom-select {
-    position: relative;
-    font-family:'SourceBold';
-    margin-right: 15px;
-}
-  
-.custom-select select {
-    display: none; /*hide original SELECT element:*/
-}
-  
-.select-selected {
-    background-color: #022869;
-    border-radius: 10px;
-    font-size: 1.3em;
-}
-
-.extr .select-selected {
-    background-color: #C2113B;
-    border-radius: 10px;
-    font-size: 1.3em;
-}
-.red-bg .extr .select-selected {
-    background-color: #ffffff;
-    color: #BA0C2F;
-}
-.red-bg .extr .select-selected:after {
-    border: 6px solid #BA0C2F;
-    border-color: #BA0C2F transparent transparent transparent;
-}
-  /*style the arrow inside the select element:*/
-.select-selected:after {
-    position: absolute;
-    content: "";
-    top: 16px;
-    right: 20px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-}
-  
-  /*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
-    top: 7px;
-}
-  
-  /*style the items (options), including the selected item:*/
-.select-selected {
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-    user-select: none;
-    width: 95%;
-    margin: 0 auto;
-}
-.select-items div{
-    color: #474747;
-    padding: 8px 16px;    
-    background-image: linear-gradient(to right, #c1c1c1 40%, rgba(255, 255, 255, 0) 20%);
-    background-position: top;
-    background-size: 3px 1px;
-    background-repeat: repeat-x;
-    border-color: transparent transparent rgb(0, 0, 0) transparent;
-    cursor: pointer;
-    user-select: none;
-    font-size: 1.1em;
-}
-  
-  /*style items (options):*/
-.select-items {
-    position: absolute;
-    background-color: #ffffff;
-    color:#474747;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;   
-    box-shadow: 1px 1px 5px #c5c5c5;
-}
-.extr .select-items div{
-    font-size: 1.3em;
-    border-bottom: 1px dotted #B20E35;
-}
-.extr .select-items {    
-    width: 95%;
-    margin: 0 auto;
-}  
-  /*hide the items when the select box is closed:*/
-.select-hide {
-    display: none;
-}
-  
-.select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;    
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    background-color: #ffffff;
-  }
-  
-  
-  
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.apexcharts-legend-text{
-    font-family:'SourceBold' !important;
 }

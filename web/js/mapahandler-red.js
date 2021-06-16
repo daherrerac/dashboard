@@ -8,7 +8,7 @@ $(function () {
             
             zoom: {
                 enabled: true,
-                maxLevel: 10
+                maxLevel: 20
             }
             , defaultPlot: {
                 attrs: {
@@ -681,7 +681,7 @@ $(function () {
                 //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
             },
 
-            "path523": {
+            "Santa Marta": {
                 attrs: {
                     fill: "#767676"
                 }
@@ -724,7 +724,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                tooltip: {content: "SANTA MARTA"}
             },
 
             //Region
@@ -2037,7 +2037,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Turbo"}
+                tooltip: {content: "TURBO"}
             },
             "path759": {
                 attrs: {
@@ -2352,7 +2352,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Apartadó"}
+                tooltip: {content: "APARTADÓ"}
             },
             "Valencia": {
                 attrs: {
@@ -2397,7 +2397,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Valencia"}
+                tooltip: {content: "VALENCIA"}
             },
 
             //Region
@@ -2491,7 +2491,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Montelibano"}
+                tooltip: {content: "MONTELÍBANO"}
             },
 
             "Puerto Libertador": {
@@ -2537,7 +2537,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Puerto Libertador"}
+                tooltip: {content: "PUERTO LIBERTADOR"}
             },
 
             "Tierralta": {
@@ -2583,11 +2583,11 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Tierralta"}
+                tooltip: {content: "TIERRALTA"}
             },
             
             //Region
-            "path421": {
+            "Briceno": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -2630,9 +2630,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "BRICEÑO"}
             },
-            "path423": {
+            "Caceres": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -2675,7 +2675,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "CÁCERES"}
             },
             "Anori": {
                 attrs: {
@@ -2720,7 +2720,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Anorí"}
+                tooltip: {content: "ANORÍ"}
             },
             "path427": {
                 attrs: {
@@ -2767,7 +2767,7 @@ $(function () {
                 },
                 //tooltip: {content: "Tierralta"}
             },
-            "path429": {
+            "Zaragoza": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -2810,9 +2810,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "ZARAGOZA"}
             },
-            "path431": {
+            "Valdivia": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -2855,9 +2855,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "VALDIVIA"}
             },
-            "path433": {
+            "Taraza": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -2900,7 +2900,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "TARAZÁ"}
             },
             "path435": {
                 attrs: {
@@ -2947,7 +2947,7 @@ $(function () {
                 },
                 //tooltip: {content: "Tierralta"}
             },
-            "path437": {
+            "El Bagre": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -2990,9 +2990,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "EL BAGRE"}
             },
-            "path439": {
+            "Caucasia": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -3035,7 +3035,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "CAUCASIA"}
             },
             "path441": {
                 attrs: {
@@ -3082,7 +3082,7 @@ $(function () {
                 },
                 //tooltip: {content: "Tierralta"}
             },
-            "path443": {
+            "Nechi": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -3125,9 +3125,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "NECHÍ"}
             },
-            "path445": {
+            "Iuango": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -3170,7 +3170,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "ITUANGO"}
             },
 
             //Region
@@ -3265,6 +3265,52 @@ $(function () {
                 //tooltip: {content: "Tierralta"}
             },
 
+            "path246": {
+                attrs: {
+                    fill: "#a09999"
+                }
+                , attrsHover: {
+                    fill: "#C2113B"
+                },                
+                eventHandlers: {
+                    click: function (e, id, mapElem, textElem) {
+                        var newData = {
+                            'areas': {}
+                        };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: previousSelectedBackground
+                                }
+                            };                                
+                        }
+                        if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            newData.areas[id] = {
+                                attrs: {
+                                    fill: "#C2113B"
+                                }
+                            };
+                            previousSelectedElementId = id;
+                            previousSelectedBackground  = mapElem.originalAttrs.fill;
+                        } else {
+                            newData.areas[id] = {
+                                attrs: {
+                                    fill: "#a09999"
+                                }
+                            };
+                            previousSelectedElementId  = null;
+                            previousSelectedBackground = null;
+                        }
+                        $(".mapcontainer").trigger('update', [{mapOptions: newData}]);  
+                        $(".mapcontainer").trigger('zoom', {
+                            area: id,
+                            areaMargin: 30
+                        });                       
+                    }
+                },
+                //tooltip: {content: "Tierralta"}
+            },
+
             "path455": {
                 attrs: {
                     fill: "#a09999"
@@ -3310,7 +3356,7 @@ $(function () {
                 },
                 //tooltip: {content: "Tierralta"}
             },
-            "path457": {
+            "San Pablo": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -3353,9 +3399,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "SAN PABLO"}
             },
-            "path459": {
+            "Santa Rosa del Sur": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -3398,7 +3444,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "SANTA ROSA DEL SUR"}
             },
             "path461": {
                 attrs: {
@@ -3488,11 +3534,11 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "San Pablo"}
+                tooltip: {content: "SAN PABLO"}
             },
 
             //region
-            "path355": {
+            "Buenaventura": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -3535,9 +3581,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "BUENAVENTURA"}
             },
-            "path357": {
+            "Timbiqui": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -3580,9 +3626,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "TIMBIQUÍ"}
             },
-            "path359": {
+            "Lopez de Micay": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -3625,9 +3671,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "LÓPEZ DE MICAY"}
             },
-            "path361": {
+            "El Charco": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -3670,7 +3716,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "EL CHARCO"}
             },
 
             //Region
@@ -3719,7 +3765,7 @@ $(function () {
                 },
                 //tooltip: {content: "Tierralta"}
             },
-            "path215": {
+            "Barbacoas": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -3762,7 +3808,52 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "BARBACOAS"}
+            },
+            "Payan": {
+                attrs: {
+                    fill: "#a09999"
+                }
+                , attrsHover: {
+                    fill: "#C2113B"
+                },                
+                eventHandlers: {
+                    click: function (e, id, mapElem, textElem) {
+                        var newData = {
+                            'areas': {}
+                        };
+                        if (previousSelectedElementId !== null) {
+                            newData.areas[previousSelectedElementId] = {
+                                attrs: {
+                                    fill: previousSelectedBackground
+                                }
+                            };                                
+                        }
+                        if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            newData.areas[id] = {
+                                attrs: {
+                                    fill: "#C2113B"
+                                }
+                            };
+                            previousSelectedElementId = id;
+                            previousSelectedBackground  = mapElem.originalAttrs.fill;
+                        } else {
+                            newData.areas[id] = {
+                                attrs: {
+                                    fill: "#a09999"
+                                }
+                            };
+                            previousSelectedElementId  = null;
+                            previousSelectedBackground = null;
+                        }
+                        $(".mapcontainer").trigger('update', [{mapOptions: newData}]);  
+                        $(".mapcontainer").trigger('zoom', {
+                            area: id,
+                            areaMargin: 30
+                        });                       
+                    }
+                },
+                tooltip: {content: "PAYÁN"}
             },
 
             "path217": {
@@ -3811,7 +3902,7 @@ $(function () {
                 //tooltip: {content: "Tierralta"}
             },
 
-            "path219": {
+            "Magui": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -3854,7 +3945,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "MAGUI"}
             },
 
             "path221": {
@@ -3902,7 +3993,7 @@ $(function () {
                 },
                 //tooltip: {content: "Tierralta"}
             },
-            "path223": {
+            "Olaya Herrera": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -3945,9 +4036,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "OLAYA HERRERA"}
             },
-            "path225": {
+            "Roberto": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -3990,53 +4081,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "ROBERTO"}
             },
-            "path227": {
-                attrs: {
-                    fill: "#a09999"
-                }
-                , attrsHover: {
-                    fill: "#C2113B"
-                },                
-                eventHandlers: {
-                    click: function (e, id, mapElem, textElem) {
-                        var newData = {
-                            'areas': {}
-                        };
-                        if (previousSelectedElementId !== null) {
-                            newData.areas[previousSelectedElementId] = {
-                                attrs: {
-                                    fill: previousSelectedBackground
-                                }
-                            };                                
-                        }
-                        if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                            newData.areas[id] = {
-                                attrs: {
-                                    fill: "#C2113B"
-                                }
-                            };
-                            previousSelectedElementId = id;
-                            previousSelectedBackground  = mapElem.originalAttrs.fill;
-                        } else {
-                            newData.areas[id] = {
-                                attrs: {
-                                    fill: "#a09999"
-                                }
-                            };
-                            previousSelectedElementId  = null;
-                            previousSelectedBackground = null;
-                        }
-                        $(".mapcontainer").trigger('update', [{mapOptions: newData}]);  
-                        $(".mapcontainer").trigger('zoom', {
-                            area: id,
-                            areaMargin: 30
-                        });                       
-                    }
-                },
-                //tooltip: {content: "Tierralta"}
-            },
+            
             "path229": {
                 attrs: {
                     fill: "#a09999"
@@ -4128,7 +4175,7 @@ $(function () {
                 //tooltip: {content: "Tierralta"}
             },
 
-            "path233": {
+            "Tumaco": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -4171,10 +4218,10 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Tierralta"}
+                tooltip: {content: "TUMACO"}
             },
 
-            "path235": {
+            "path248": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -4307,7 +4354,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Barbacoas"}
+                tooltip: {content: "BARBACOAS"}
             },
 
             //region
@@ -5076,7 +5123,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path283": {
+            "Caloto": {
                 attrs: {
                     fill: "#767676"
                 }
@@ -5119,9 +5166,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "CALOTO"}
             },
-            "path285": {
+            "Corinto": {
                 attrs: {
                     fill: "#767676"
                 }
@@ -5164,7 +5211,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "CORINTO"}
             },
             "path287": {
                 attrs: {
@@ -5256,7 +5303,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path291": {
+            "Miranda": {
                 attrs: {
                     fill: "#767676"
                 }
@@ -5299,7 +5346,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "MIRANDA"}
             },
             "path293": {
                 attrs: {
@@ -5436,7 +5483,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path299": {
+            "Santander de Quilichao": {
                 attrs: {
                     fill: "#767676"
                 }
@@ -5479,7 +5526,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "SANTANDER DE QUILICHAO"}
             },
             "path301": {
                 attrs: {
@@ -5526,7 +5573,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path303": {
+            "Toribio": {
                 attrs: {
                     fill: "#767676"
                 }
@@ -5569,7 +5616,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "TORIBÍO"}
             },
             "path305": {
                 attrs: {
@@ -5842,7 +5889,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path317": {
+            "El Tambo": {
                 attrs: {
                     fill: "#767676"
                 }
@@ -5885,7 +5932,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "EL TAMBO"}
             },
             "path319": {
                 attrs: {
@@ -6023,7 +6070,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path337": {
+            "Orito": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -6066,9 +6113,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "ORITO"}
             },
-            "path339": {
+            "San Miguel": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -6111,9 +6158,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "SAN MIGUEL"}
             },
-            "path341": {
+            "Valle del Guamuez": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -6156,7 +6203,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "VALLE DEL GAMUEZ"}
             },
             "path343": {
                 attrs: {
@@ -6203,7 +6250,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path345": {
+            "Caicedo": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -6246,9 +6293,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "CAICEDO"}
             },   
-            "path347": {
+            "Puerto Asis": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -6291,9 +6338,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "PUERTO ASIS"}
             }, 
-            "path349": {
+            "Puerto Guzman": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -6336,9 +6383,9 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "PUERTO GUZMÁN"}
             },    
-            "path351": {
+            "Puerto Leguizamo": {
                 attrs: {
                     fill: "#3f3f3f"
                 }
@@ -6381,7 +6428,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "PUERTO LEGUIZAMO"}
             }, 
             
             //region
@@ -6430,7 +6477,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path529": {
+            "Pto Rico": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -6473,7 +6520,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "PUERTO RICO"}
             },
 
             "path531": {
@@ -6656,7 +6703,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path539": {
+            "La montanita": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -6699,7 +6746,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "LA MONTAÑITA"}
             },
             "path541": {
                 attrs: {
@@ -6746,7 +6793,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path543": {
+            "San Jose del Fragua": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -6789,7 +6836,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "SAN JOSÉ DE FRAGUA"}
             },
             "path545": {
                 attrs: {
@@ -7016,7 +7063,7 @@ $(function () {
                 },
                 //tooltip: {content: "Turbo"}
             },
-            "path555": {
+            "Solano": {
                 attrs: {
                     fill: "#a09999"
                 }
@@ -7059,7 +7106,7 @@ $(function () {
                         });                       
                     }
                 },
-                //tooltip: {content: "Turbo"}
+                tooltip: {content: "SOLANO"}
             },
             "path557": {
                 attrs: {
@@ -7149,7 +7196,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Cartagena del Chaira"}
+                tooltip: {content: "CARTAGENA DEL CHAIRÁ"}
             },
 
             //region
@@ -7603,7 +7650,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "El Retorno"}
+                tooltip: {content: "EL RETORNO"}
             },
             "Mesetas": {
                 attrs: {
@@ -7648,7 +7695,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Mesetas"}
+                tooltip: {content: "MESETAS"}
             },
             "Uribe": {
                 attrs: {
@@ -7693,7 +7740,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Uribe"}
+                tooltip: {content: "URIBE"}
             },
             "La Macarena": {
                 attrs: {
@@ -7738,7 +7785,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "La Macarena"}
+                tooltip: {content: "LA MACARENA"}
             },
             "Vista Hermosa": {
                 attrs: {
@@ -7783,7 +7830,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Vista Hermosa"}
+                tooltip: {content: "VISTA HERMOSA"}
             },
             "Puerto Rico": {
                 attrs: {
@@ -7828,7 +7875,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "Puerto Rico"}
+                tooltip: {content: "PUERTO RICO"}
             },
             "San Jose del Guaviare": {
                 attrs: {
@@ -7873,7 +7920,7 @@ $(function () {
                         });                       
                     }
                 },
-                tooltip: {content: "San Jose del Guaviare"}
+                tooltip: {content: "SAN JOSÉ DEL GUAVIARE"}
             },
         },        
     });
