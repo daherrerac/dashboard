@@ -609,7 +609,7 @@ function initMapHandler(clickCallbak){
                     },
                     tooltip: {content: "CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETEÑO"}
                 },
-                "Cali": {
+                "CIUDADES CALI-QUIBDO": {
                     attrs: {
                         fill: "#767676"
                     }
