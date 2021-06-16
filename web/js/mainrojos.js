@@ -1,7 +1,7 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
 //const siteurl = 'http://webdash.test/';
-//const siteurl = 'http://dashboard.local/';
-const siteurl = 'http://pruebadevelopment.com/';
+const siteurl = 'http://dashboard.local/';
+//const siteurl = 'http://pruebadevelopment.com/';
 
 
 
@@ -354,9 +354,21 @@ class Dashboard {
   constructor(survey){
     this.dr = new DashboardDataReader();
     this.survey = survey;
-    this.mapClickCallback = (region) => {
-      this.region = region;
-      selOption(document.getElementById("regionA"), region);
+    this.mapClickCallback = (municipio) => {
+      if (municipio){
+        let filter1 = {'MUNICIPIO': municipio};
+        let rowData = this.dr.getRowData(this.survey,['Región PDET'], filter1);
+        if (rowData && rowData.length){
+          this.region = rowData[0];
+          selOption(document.getElementById("regionA"), this.region);
+          this.loadMunicipios('regionA');
+          this.municipio = municipio;
+          selOption(document.getElementById("municipioA"), this.municipio);
+          this.loadQuestions();
+        }else {
+          console.log("Municipio ", municipio, "No encontrado en base de datos");
+        }
+      }
     }
     
     this.init();
@@ -383,6 +395,8 @@ class Dashboard {
     // cargar informacion de preguntas de preguntas por defecto
     this.loadQuestions();
     this.loadQuestions(true);
+
+    initMapHandler(this.mapClickCallback);
 
   
     // TODO esconder loader
@@ -681,7 +695,7 @@ function selOption(select, value){
     // seleccionar opcion en select
     let validOption=false;
     for(let i=0; i < select.options.length; i++){
-      if(select.options[i].value === value) {
+      if(select.options[i].value.trim().toLowerCase() === value.trim().toLowerCase()) {
         validOption=true;
         select.selectedIndex = i;
         break;

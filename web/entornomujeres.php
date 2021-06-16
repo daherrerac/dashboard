@@ -6,8 +6,8 @@
     
   }else{
     // Si no está logueado lo redireccion a la página de login.
-    header("HTTP/1.1 302 Moved Temporarily"); 
-    header("Location: index.html"); 
+    //header("HTTP/1.1 302 Moved Temporarily"); 
+    //header("Location: index.html"); 
   }
 ?>
 <!doctype html>
