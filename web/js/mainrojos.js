@@ -349,6 +349,8 @@ class Dashboard {
   filterAgente1;
   filterAgente2;
   filterAgente3;
+
+  previousSelectedBackground;
   
 
   constructor(survey){
@@ -449,7 +451,6 @@ class Dashboard {
           self.region = value;
           self.loadMunicipios('regionA');
           self.loadQuestions();
-          self.updateAgente();
         } else if (selector.getAttribute('id') == "region1"){
           self.compareRegionSelection1 = value;
           self.loadMunicipios('region1');
@@ -471,6 +472,38 @@ class Dashboard {
       }
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
     });
+  }
+
+  updateMapColor(previuosMunicipio, newMunicipio){
+    let updatedOptions = {'areas': {}};
+    if(this.region.toLowerCase() === 'CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO'.toLowerCase()){
+      if (newMunicipio.toLowerCase() === 'PUERTO RICO'.toLowerCase()){
+        newMunicipio = 'Pto Rico';
+      }
+      if (previuosMunicipio.toLowerCase() === 'PUERTO RICO'.toLowerCase()){
+        previuosMunicipio = 'Pto Rico';
+      }
+    }
+    
+    
+    updatedOptions.areas[newMunicipio] = {
+      attrs: {fill: "#C2113B", opacity: 1}
+    };
+    updatedOptions.areas[previuosMunicipio] = {
+      attrs: {fill: '#767676', opacity: 1}
+    };
+    /*
+    let pBack = $(".mapcontainer").data('mapael').areas[previuosMunicipio].mapElem.attrs.fill;
+    updatedOptions.areas[previuosMunicipio] = {
+      attrs: {fill: this.previousSelectedBackground, opacity: 1}
+    };
+    */
+    this.previousSelectedBackground = pBack;
+    //console.log($(".mapcontainer").data('mapael'));
+    $(".mapcontainer").trigger('update', [{
+      mapOptions: updatedOptions, 
+      animDuration: 100
+    }]);
   }
 
   updateAgente(){
@@ -495,7 +528,9 @@ class Dashboard {
     let regionList = [];
     if (region && region == 'regionA'){
       regionList = this.dr.getColumnData(this.survey, 'MUNICIPIO',undefined, {'Región PDET':self.region}).data;
+      let previousMunicipioSelected = self.municipio;
       self.municipio = regionList[0];
+      self.updateMapColor(previousMunicipioSelected, self.municipio);
     } else if(region && region == 'region1'){
       regionList = this.dr.getColumnData(this.survey, 'MUNICIPIO',undefined, {'Región PDET':self.compareRegionSelection1}).data;
       self.compareMunicipioSelection1 = regionList[0];
@@ -530,9 +565,11 @@ class Dashboard {
         });
         let callback = (value) => {
           if (selector.getAttribute('id') == "municipioA"){
+            let previousMunicipioSelected = self.municipio;
             self.municipio = value;
             self.loadQuestions();
             self.updateAgente();
+            self.updateMapColor(previousMunicipioSelected, value);
           } else if (selector.getAttribute('id') == "municipio1"){
             self.compareMunicipioSelection1 = value;
             self.loadQuestions(true);
