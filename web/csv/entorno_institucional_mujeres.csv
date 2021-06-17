@@ -1,70 +1,70 @@
-Región PDET;Departamento ;MUNICIPIO;Política pública mujer;Política pública mujer (estado);Existencia de programa o subprograma  exclusivo a mujeres;Existencia programas o que incluyen a mujeres en su población objetivo;"Mecanismo de género
+Agente1;Agente2;Agente3;Región PDET;Departamento ;MUNICIPIO;Política pública mujer;Política pública mujer (estado);Existencia de programa o subprograma  exclusivo a mujeres;Existencia programas o que incluyen a mujeres en su población objetivo;"Mecanismo de género
 existencia";Nombre del mecanismo de género ;Tipo de mecanismo de género;Nivel de jerarquía del mecanismo;Promete crear mecanismo ;Nombre del mecanismo que se promete crear;Tipo de mecanismo de género que promete crear;Nivel de jerarquía del nuevo mecanismo;Mecanismo de dialogo formal género (MDF) - existencia;Mecanismo de dialogo formal género (MDF) - Nombre;Mecanismo de diálogo formal de género (estado)
-ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;CALOTO;Existente;Retoma;Sí;Sí;Sí;Secretaría de la Mujer y la Juventud;Secretaría;Alto;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
-ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;CORINTO;Existente;Retoma;Sí;Sí;Sí;Profesional universitario con funciones de gobierNo aplica;Enlace;Bajo;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
-ALTO PATÍA Y NORTE DEL CAUCA;NARIÑO;EL TAMBO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
-ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;MIRANDA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;SANTANDER DE QUILICHAO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Comunitario de Mujeres;Retoma
-ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;TORIBÍO;Proyectada;Nueva;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Municipal de Mujeres;No aplica retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;ANORÍ;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Erradicación de la Violencia Contra la Mujer;Retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;BRICEÑO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Dirección de Equidad de Género;Dirección;Medio;Sí;Mesa Municipal para Erradicar las violencias en contra de las mujeres;Retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;CÁCERES;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de violencia contra la mujer y comunidad LGTBI ;No aplica retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;CAUCASIA;Existente;No retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa municipal de seguridad pública para las mujeres ;Retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;EL BAGRE;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de erradicación de violencia en contra de la mujer y Consejo Consultivo de Mujeres;Retoma y crea
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;ITUANGO;Existente;No retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de la Mujer;Oficina;Medio;Sí;Mesa Municipal para la Erradicación de la violencias contra las mujeres;Retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;NECHÍ;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Erradicación de Violencia de Género;No aplica retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;TARAZÁ;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;VALDIVIA;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Erradicación de la Violencia en Contra de la Mujer;Retoma
-BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;ZARAGOZA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Enlace de Mujer y Género en la Secretaría de Desarrollo Social y Económico ;Enlace;Bajo;No;No aplica;No aplica
-CATATUMBO;NORTE DE SANTANDER;EL TARRA;Proyectada;Nueva;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-CATATUMBO;NORTE DE SANTANDER;SARDINATA;No proyectada;Inexistente;No;Sí;Sí;Enlace de equidad de género;Enlace;Bajo;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-CATATUMBO;NORTE DE SANTANDER;TEORAMA;Existente;No retoma;No;Sí;Sí;Secretaría de la Mujer y Equidad de Género;Secretaría;Alto;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-CATATUMBO;NORTE DE SANTANDER;TIBÚ;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Dirección de la política de la mujer y los programas de equidad de género;Dirección;Medio;No;No aplica;No aplica
-CHOCÓ;CHOCÓ;BOJAYÁ (Bellavista);No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-CHOCÓ;CHOCÓ;RIOSUCIO;Proyectada;Nueva;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;CARTAGENA DEL CHAIRÁ;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;FLORENCIA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la Mujer y Género del municipio ;Secretaría;Alto;No;No aplica;No aplica
-CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;LA MONTAÑITA;Existente;Retoma;Sí;Sí;Sí;Oficina de la Mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujer y Género, Mesa de Erradicación de Violencia Basada en Género VBG;No aplica retoma
-CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;PUERTO RICO;Proyectada;Nueva;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;SAN JOSÉ DEL FRAGUA;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Comunitario de Mujeres;No aplica retoma
-CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;SAN VICENTE DEL CAGUÁN;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujer y Género;Retoma
-CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;SOLANO;No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-MACARENA;GUAVIARE;EL RETORNO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
-MACARENA;META;LA MACARENA;No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-MACARENA;META;MESETAS;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Enlace o un cargo administrativo o enlace para temas de género;Enlace;Bajo;Sí;Mesa municipal de mujeres con equidad de género;No aplica
-MACARENA;META;PUERTO RICO;Existente;Retoma;No;Sí;Sí;Secretaría Social y de la Mujer;Secretaría;Alto;No;No aplica;No aplica;No aplica;Sí;Comité de prevención de la violencia de género con enfoque de derechos;No aplica
-MACARENA;GUAVIARE;SAN JOSÉ DEL GUAVIARE;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la Mujer;Secretaría;Alto;Sí;Comité Municipal de Inclusión, Equidad y Género, Consejo Consultivo Municipal de Mujeres;Retoma
-MACARENA;META;URIBE;No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-MACARENA;META;VISTA HERMOSA;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Mujeres;Retoma
-PACÍFICO MEDIO;VALLE DEL CAUCA;BUENAVENTURA;Existente;Retoma;Sí;Sí;Sí;Secretaría de las Mujeres, Equidad de Género e Igualdad de Derecho;Secretaría;Alto;No;No aplica;No aplica;No aplica;Sí;Mecanismo Intersectorial de Abordaje de Violencias de Género;Crea
-PACÍFICO MEDIO;CAUCA;LÓPEZ DE MYCAY;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujeres;Retoma
-PACÍFICO MEDIO;CAUCA;TIMBIQUÍ;Proyectada;Nueva;Sí;Sí;Sí;Enlace de Mujer y Equidad de Género;Enlace;Bajo;Sí;Oficina de la mujer y equidad de géneros;Oficina;Medio;Sí;Consejo Consultivo de Mujeres;Retoma
-PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;BARBACOAS;Existente;Retoma;No;Sí;Sí;Oficina de la Mujer y Género;Oficina;Medio;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujeres;No aplica retoma
-PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;EL CHARCO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de equidad y género e inclusión social ;Oficina;Medio;No;No aplica;No aplica
-PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;MAGÜÍ (Payán);Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de mujer y género;Oficina;Medio;Sí;Mesa Municipal de Mujer y Género;Retoma
-PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;OLAYA HERRERA (Bocas de Satinga);Ambigua;Ambiguo;Sí;Sí;Sí;Enlace Mujer y Género;Enlace;Bajo;Sí;Secretaría de la Mujer;Secretaría;Alto;No;No aplica;No aplica
-PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;ROBERTO PAYÁN (San José);Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de la Mujer y Género;Oficina;Medio;Sí;Mesa Municipal de Mujeres;Retoma
-PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;TUMACO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la Mujer;Secretaría;Alto;Sí;Mesa de equidad de la mujer;Retoma
-PUTUMAYO;PUTUMAYO;ORITO;Proyectada;Nueva;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-PUTUMAYO;PUTUMAYO;PUERTO ASÍS;Proyectada;Nueva;Sí;Sí;Sí;Secretaría de la Mujer;Secretaría;Alto;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-PUTUMAYO;PUTUMAYO;PUERTO CAICEDO;No proyectada;Inexistente;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-PUTUMAYO;PUTUMAYO;PUERTO GUZMÁN;Existente;Retoma;Sí;Sí;Sí;Enlace municipal para la atención con enfoque diferencial;Enlace;Bajo;Sí;Oficina de Atención de la Mujer y Género;Oficina;Medio;No;No aplica;No aplica
-PUTUMAYO;PUTUMAYO;PUERTO LEGUÍZAMO;Proyectada;Nueva;Sí;Sí;Sí;Oficina de la mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-PUTUMAYO;PUTUMAYO;SAN MIGUEL;Proyectada;Nueva;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-PUTUMAYO;PUTUMAYO;VALLE DEL GUAMUEZ;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-QUIBDÓ-CARTAGENA-CALI;VALLE DEL CAUCA;CALI;Retoma;Existente;Sí;Sí;Sí;Subsecretaría de Género;Subsecretaría;Medio;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-QUIBDÓ-CARTAGENA-CALI;BOLÍVAR;CARTAGENA DE INDIAS;Existente;Retoma;Sí;Sí;Sí;Grupo Asuntos para la Mujer;Grupo;Medio;Sí;Sí;No aplica aplicaespefifica;No reporta;No;Sí;Crea
-QUIBDÓ-CARTAGENA-CALI;CHOCÓ;QUIBDÓ;Existente;Retoma;No;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-SIERRA NEVADA-PERIJÁ-ZONA BANANERA;MAGDALENA;SANTA MARTA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la mujer;Secretaría;Alto;No;No aplica;No aplica
-SUR DE BOLÍVAR;BOLÍVAR;SAN PABLO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-SUR DE BOLÍVAR;BOLÍVAR;SANTA ROSA DEL SUR;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No espefifica;No aplica aplicaespefifica;No aplica aplicaespefifica;No aplica aplicaespefifica;No;No aplica;No aplica
-SUR DE CÓRDOBA;CÓRDOBA;MONTELÍBANO;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Red de Mujeres de MontelívaNo aplica;Retoma
-SUR DE CÓRDOBA;CÓRDOBA;PUERTO LIBERTADOR;Existente;No retoma;Sí;Sí;Sí;Enlace de Mujer y género;Enlace;Bajo;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-SUR DE CÓRDOBA;CÓRDOBA;TIERRALTA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mecanismo intersectorial de abordaje de violencias ;Crea
-SUR DE CÓRDOBA;CÓRDOBA;VALENCIA;No proyectada;No retoma;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-SUR DE TOLIMA;TOLIMA;ATACO;Existente;Retoma;Sí;Sí;Sí;Oficina de la Mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Crea
-SUR DE TOLIMA;TOLIMA;CHAPARRAL;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de la mujer;Oficina;Medio;No;No aplica;No aplica
-SUR DE TOLIMA;TOLIMA;PLANADAS;Existente;Retoma;Sí;Sí;Sí;Enlace de mujeres;Enlace;Bajo;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-SUR DE TOLIMA;TOLIMA;RIOBLANCO;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo comunitario de mujeres, comité municipal de la mujer;No aplica retoma
-URABÁ ANTIOQUEÑO;ANTIOQUIA;APARTADÓ;Existente;Retoma;Sí;Sí;Sí;Oficina de la Mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
-URABÁ ANTIOQUEÑO;ANTIOQUIA;TURBO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;2;2;ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;CALOTO;Existente;Retoma;Sí;Sí;Sí;Secretaría de la Mujer y la Juventud;Secretaría;Alto;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
+2;2;2;ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;CORINTO;Existente;Retoma;Sí;Sí;Sí;Profesional universitario con funciones de gobierNo aplica;Enlace;Bajo;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
+2;2;2;ALTO PATÍA Y NORTE DEL CAUCA;NARIÑO;EL TAMBO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
+2;2;2;ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;MIRANDA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;2;2;ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;SANTANDER DE QUILICHAO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Comunitario de Mujeres;Retoma
+2;2;2;ALTO PATÍA Y NORTE DEL CAUCA;CAUCA;TORIBÍO;Proyectada;Nueva;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Municipal de Mujeres;No aplica retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;ANORÍ;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Erradicación de la Violencia Contra la Mujer;Retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;BRICEÑO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Dirección de Equidad de Género;Dirección;Medio;Sí;Mesa Municipal para Erradicar las violencias en contra de las mujeres;Retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;CÁCERES;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de violencia contra la mujer y comunidad LGTBI ;No aplica retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;CAUCASIA;Existente;No retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa municipal de seguridad pública para las mujeres ;Retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;EL BAGRE;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de erradicación de violencia en contra de la mujer y Consejo Consultivo de Mujeres;Retoma y crea
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;ITUANGO;Existente;No retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de la Mujer;Oficina;Medio;Sí;Mesa Municipal para la Erradicación de la violencias contra las mujeres;Retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;NECHÍ;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Erradicación de Violencia de Género;No aplica retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;TARAZÁ;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;VALDIVIA;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Erradicación de la Violencia en Contra de la Mujer;Retoma
+6;-;5;BAJO CAUCA Y NORDESTE ANTIOQUEÑO;ANTIOQUIA;ZARAGOZA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Enlace de Mujer y Género en la Secretaría de Desarrollo Social y Económico ;Enlace;Bajo;No;No aplica;No aplica
+0;2;;CATATUMBO;NORTE DE SANTANDER;EL TARRA;Proyectada;Nueva;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;2;;CATATUMBO;NORTE DE SANTANDER;SARDINATA;No proyectada;Inexistente;No;Sí;Sí;Enlace de equidad de género;Enlace;Bajo;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;2;;CATATUMBO;NORTE DE SANTANDER;TEORAMA;Existente;No retoma;No;Sí;Sí;Secretaría de la Mujer y Equidad de Género;Secretaría;Alto;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;2;;CATATUMBO;NORTE DE SANTANDER;TIBÚ;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Dirección de la política de la mujer y los programas de equidad de género;Dirección;Medio;No;No aplica;No aplica
+0;-;-;CHOCÓ;CHOCÓ;BOJAYÁ (Bellavista);No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;-;-;CHOCÓ;CHOCÓ;RIOSUCIO;Proyectada;Nueva;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;1;-;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;CARTAGENA DEL CHAIRÁ;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;1;-;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;FLORENCIA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la Mujer y Género del municipio ;Secretaría;Alto;No;No aplica;No aplica
+2;1;-;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;LA MONTAÑITA;Existente;Retoma;Sí;Sí;Sí;Oficina de la Mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujer y Género, Mesa de Erradicación de Violencia Basada en Género VBG;No aplica retoma
+2;1;-;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;PUERTO RICO;Proyectada;Nueva;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;1;-;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;SAN JOSÉ DEL FRAGUA;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Comunitario de Mujeres;No aplica retoma
+2;1;-;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;SAN VICENTE DEL CAGUÁN;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujer y Género;Retoma
+2;1;-;CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO;CAQUETÁ;SOLANO;No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;1;1;MACARENA;GUAVIARE;EL RETORNO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Retoma
+0;1;1;MACARENA;META;LA MACARENA;No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;1;1;MACARENA;META;MESETAS;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Enlace o un cargo administrativo o enlace para temas de género;Enlace;Bajo;Sí;Mesa municipal de mujeres con equidad de género;No aplica
+0;1;1;MACARENA;META;PUERTO RICO;Existente;Retoma;No;Sí;Sí;Secretaría Social y de la Mujer;Secretaría;Alto;No;No aplica;No aplica;No aplica;Sí;Comité de prevención de la violencia de género con enfoque de derechos;No aplica
+0;1;1;MACARENA;GUAVIARE;SAN JOSÉ DEL GUAVIARE;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la Mujer;Secretaría;Alto;Sí;Comité Municipal de Inclusión, Equidad y Género, Consejo Consultivo Municipal de Mujeres;Retoma
+0;1;1;MACARENA;META;URIBE;No proyectada;Inexistente;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;1;1;MACARENA;META;VISTA HERMOSA;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa de Mujeres;Retoma
+1;2;3;PACÍFICO MEDIO;VALLE DEL CAUCA;BUENAVENTURA;Existente;Retoma;Sí;Sí;Sí;Secretaría de las Mujeres, Equidad de Género e Igualdad de Derecho;Secretaría;Alto;No;No aplica;No aplica;No aplica;Sí;Mecanismo Intersectorial de Abordaje de Violencias de Género;Crea
+1;2;3;PACÍFICO MEDIO;CAUCA;LÓPEZ DE MYCAY;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujeres;Retoma
+1;2;3;PACÍFICO MEDIO;CAUCA;TIMBIQUÍ;Proyectada;Nueva;Sí;Sí;Sí;Enlace de Mujer y Equidad de Género;Enlace;Bajo;Sí;Oficina de la mujer y equidad de géneros;Oficina;Medio;Sí;Consejo Consultivo de Mujeres;Retoma
+1;2;3;PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;BARBACOAS;Existente;Retoma;No;Sí;Sí;Oficina de la Mujer y Género;Oficina;Medio;No;No aplica;No aplica;No aplica;Sí;Mesa Municipal de Mujeres;No aplica retoma
+1;2;3;PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;EL CHARCO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de equidad y género e inclusión social ;Oficina;Medio;No;No aplica;No aplica
+1;2;3;PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;MAGÜÍ (Payán);Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de mujer y género;Oficina;Medio;Sí;Mesa Municipal de Mujer y Género;Retoma
+1;2;3;PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;OLAYA HERRERA (Bocas de Satinga);Ambigua;Ambiguo;Sí;Sí;Sí;Enlace Mujer y Género;Enlace;Bajo;Sí;Secretaría de la Mujer;Secretaría;Alto;No;No aplica;No aplica
+1;2;3;PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;ROBERTO PAYÁN (San José);Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de la Mujer y Género;Oficina;Medio;Sí;Mesa Municipal de Mujeres;Retoma
+1;2;3;PACÍFICO Y FRONTERA NARIÑENSE;NARIÑO;TUMACO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la Mujer;Secretaría;Alto;Sí;Mesa de equidad de la mujer;Retoma
+1;3;;PUTUMAYO;PUTUMAYO;ORITO;Proyectada;Nueva;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+1;3;;PUTUMAYO;PUTUMAYO;PUERTO ASÍS;Proyectada;Nueva;Sí;Sí;Sí;Secretaría de la Mujer;Secretaría;Alto;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+1;3;;PUTUMAYO;PUTUMAYO;PUERTO CAICEDO;No proyectada;Inexistente;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+1;3;;PUTUMAYO;PUTUMAYO;PUERTO GUZMÁN;Existente;Retoma;Sí;Sí;Sí;Enlace municipal para la atención con enfoque diferencial;Enlace;Bajo;Sí;Oficina de Atención de la Mujer y Género;Oficina;Medio;No;No aplica;No aplica
+1;3;;PUTUMAYO;PUTUMAYO;PUERTO LEGUÍZAMO;Proyectada;Nueva;Sí;Sí;Sí;Oficina de la mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+1;3;;PUTUMAYO;PUTUMAYO;SAN MIGUEL;Proyectada;Nueva;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+1;3;;PUTUMAYO;PUTUMAYO;VALLE DEL GUAMUEZ;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;2;1;QUIBDÓ-CARTAGENA-CALI;VALLE DEL CAUCA;CALI;Retoma;Existente;Sí;Sí;Sí;Subsecretaría de Género;Subsecretaría;Medio;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+0;2;1;QUIBDÓ-CARTAGENA-CALI;BOLÍVAR;CARTAGENA DE INDIAS;Existente;Retoma;Sí;Sí;Sí;Grupo Asuntos para la Mujer;Grupo;Medio;Sí;Sí;No aplica aplicaespefifica;No reporta;No;Sí;Crea
+0;2;1;QUIBDÓ-CARTAGENA-CALI;CHOCÓ;QUIBDÓ;Existente;Retoma;No;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+-;-;-;SIERRA NEVADA-PERIJÁ-ZONA BANANERA;MAGDALENA;SANTA MARTA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;Sí;Secretaría de la mujer;Secretaría;Alto;No;No aplica;No aplica
+2;;1;SUR DE BOLÍVAR;BOLÍVAR;SAN PABLO;Proyectada;Nueva;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;;1;SUR DE BOLÍVAR;BOLÍVAR;SANTA ROSA DEL SUR;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No espefifica;No aplica aplicaespefifica;No aplica aplicaespefifica;No aplica aplicaespefifica;No;No aplica;No aplica
+3;1;-;SUR DE CÓRDOBA;CÓRDOBA;MONTELÍBANO;Existente;Retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Red de Mujeres de MontelívaNo aplica;Retoma
+3;1;-;SUR DE CÓRDOBA;CÓRDOBA;PUERTO LIBERTADOR;Existente;No retoma;Sí;Sí;Sí;Enlace de Mujer y género;Enlace;Bajo;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+3;1;-;SUR DE CÓRDOBA;CÓRDOBA;TIERRALTA;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Mecanismo intersectorial de abordaje de violencias ;Crea
+3;1;-;SUR DE CÓRDOBA;CÓRDOBA;VALENCIA;No proyectada;No retoma;Sí;No;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;2;-;SUR DE TOLIMA;TOLIMA;ATACO;Existente;Retoma;Sí;Sí;Sí;Oficina de la Mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;Sí;Consejo Consultivo de Mujeres;Crea
+2;2;-;SUR DE TOLIMA;TOLIMA;CHAPARRAL;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;Sí;Oficina de la mujer;Oficina;Medio;No;No aplica;No aplica
+2;2;-;SUR DE TOLIMA;TOLIMA;PLANADAS;Existente;Retoma;Sí;Sí;Sí;Enlace de mujeres;Enlace;Bajo;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+2;2;-;SUR DE TOLIMA;TOLIMA;RIOBLANCO;Existente;No retoma;No;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;Sí;Consejo comunitario de mujeres, comité municipal de la mujer;No aplica retoma
+-;1;1;URABÁ ANTIOQUEÑO;ANTIOQUIA;APARTADÓ;Existente;Retoma;Sí;Sí;Sí;Oficina de la Mujer;Oficina;Medio;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
+-;1;1;URABÁ ANTIOQUEÑO;ANTIOQUIA;TURBO;Existente;Retoma;Sí;Sí;No;No aplica;No aplica;No aplica;No;No aplica;No aplica;No aplica;No;No aplica;No aplica
