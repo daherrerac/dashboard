@@ -365,7 +365,8 @@ class Dashboard {
           this.municipio = municipio;
           selOption(document.getElementById("municipioA"), this.municipio);
           this.loadQuestions();
-        }else {
+          this.updateAgente();
+        } else {
           console.log("Municipio ", municipio, "No encontrado en base de datos");
         }
       }
@@ -380,16 +381,14 @@ class Dashboard {
     await this.dr.parseDashboardFile(this.survey);
 
     this.selectedQuestion = this.dr.getQuestions(this.survey)[0]; // seleccionar la primera pregunta de la lista
-    
-
-    //Cargar Agentes
-    this.loadAgente();
-
 
     // cargar regiones en selectores inferiores
     this.loadRegions();
 
     this.loadMunicipios();
+
+    //Cargar Agentes
+    this.updateAgente();
     
 
     // cargar informacion de preguntas de preguntas por defecto
@@ -450,6 +449,7 @@ class Dashboard {
           self.region = value;
           self.loadMunicipios('regionA');
           self.loadQuestions();
+          self.updateAgente();
         } else if (selector.getAttribute('id') == "region1"){
           self.compareRegionSelection1 = value;
           self.loadMunicipios('region1');
@@ -459,7 +459,6 @@ class Dashboard {
           self.loadMunicipios('region2');
           self.loadQuestions(true);
         }
-        
         //console.log("Region seleccionada:", value, "sel1:", self.compareRegionSelection1, "sel2:",self.compareRegionSelection2);
       };
       // definir selecciones por defecto de ambos selectores
@@ -474,67 +473,19 @@ class Dashboard {
     });
   }
 
-  loadAgente(){
-    let self = this;
-    const agente1Items = document.querySelectorAll('.agente1');
-    const agente2Items = document.querySelectorAll('.agente2');
-    const agente3Items = document.querySelectorAll('.agente3');
-    
-    const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
-    const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
-    const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
+  updateAgente(){
+    const agente1Item = document.querySelector('.agente1');
+    const agente2Item = document.querySelector('.agente2');
+    const agente3Item = document.querySelector('.agente3');
 
-    self.filterAgente1 = agente1List[0];
-    self.filterAgente2 = agente2List[0];
-    self.filterAgente3 = agente3List[0];
+    let filter = {'Región PDET':this.region, 'MUNICIPIO': this.municipio};
+    let [agente1,agente2,agente3] = this.dr.getRowData(this.survey,['Agente1','Agente2','Agente3'], filter);
     
-    agente1Items.forEach((selector, i) => {      
-      agente1List.forEach((q) => {
-        selector.innerHTML = this.filterAgente1 + "%";
-      });                        
-    });
-    agente2Items.forEach((selector, i) => {      
-      agente2List.forEach((q) => {
-        selector.innerHTML = this.filterAgente2 + "%";
-      });                        
-    });
-    agente3Items.forEach((selector, i) => {      
-      agente3List.forEach((q) => {
-        selector.innerHTML = this.filterAgente3 + "%";
-      });                  
-    });
+    agente1Item.innerHTML = agente1;
+    agente2Item.innerHTML = agente2;
+    agente3Item.innerHTML = agente3;
   }
 
-  updateAgente(id){
-    let self = this;
-    const agente1Items = document.querySelectorAll('.agente1');
-    const agente2Items = document.querySelectorAll('.agente2');
-    const agente3Items = document.querySelectorAll('.agente3');
-    
-    const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
-    const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
-    const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
-
-    self.filterAgente1 = agente1List[id];
-    self.filterAgente2 = agente2List[id];
-    self.filterAgente3 = agente3List[id];
-    
-    agente1Items.forEach((selector, i) => {      
-      agente1List.forEach((q) => {
-        selector.innerHTML = this.filterAgente1 + "%";
-      });                        
-    });
-    agente2Items.forEach((selector, i) => {      
-      agente2List.forEach((q) => {
-        selector.innerHTML = this.filterAgente2 + "%";
-      });                        
-    });
-    agente3Items.forEach((selector, i) => {      
-      agente3List.forEach((q) => {
-        selector.innerHTML = this.filterAgente3 + "%";
-      });                  
-    });
-  }
 
   loadMunicipios(region){
     let self = this;
@@ -581,6 +532,7 @@ class Dashboard {
           if (selector.getAttribute('id') == "municipioA"){
             self.municipio = value;
             self.loadQuestions();
+            self.updateAgente();
           } else if (selector.getAttribute('id') == "municipio1"){
             self.compareMunicipioSelection1 = value;
             self.loadQuestions(true);

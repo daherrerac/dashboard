@@ -1,7 +1,7 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
-const siteurl = 'http://pruebadevelopment.com/';
+//const siteurl = 'http://pruebadevelopment.com/';
 //const siteurl = 'http://webdash.test/';
-//const siteurl = 'http://dashboard.local/';
+const siteurl = 'http://dashboard.local/';
 
 
 
@@ -655,9 +655,9 @@ class Dashboard {
 
   loadAgente(){
     let self = this;
-    const agente1Items = document.querySelectorAll('.agente1');
-    const agente2Items = document.querySelectorAll('.agente2');
-    const agente3Items = document.querySelectorAll('.agente3');
+    const agente1Items = document.querySelector('.agente1');
+    const agente2Items = document.querySelector('.agente2');
+    const agente3Items = document.querySelector('.agente3');
     
     const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
     const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
@@ -667,28 +667,16 @@ class Dashboard {
     self.filterAgente2 = agente2List[0];
     self.filterAgente3 = agente3List[0];
     
-    agente1Items.forEach((selector, i) => {      
-      agente1List.forEach((q) => {
-        selector.innerHTML = this.filterAgente1 + "%";
-      });                        
-    });
-    agente2Items.forEach((selector, i) => {      
-      agente2List.forEach((q) => {
-        selector.innerHTML = this.filterAgente2 + "%";
-      });                        
-    });
-    agente3Items.forEach((selector, i) => {      
-      agente3List.forEach((q) => {
-        selector.innerHTML = this.filterAgente3 + "%";
-      });                  
-    });
+    agente1Items.innerHTML = this.filterAgente1 + "%";
+    agente2Items.innerHTML = this.filterAgente2 + "%";
+    agente3Items.innerHTML = this.filterAgente3 + "%";
   }
 
   updateAgente(id){
     let self = this;
-    const agente1Items = document.querySelectorAll('.agente1');
-    const agente2Items = document.querySelectorAll('.agente2');
-    const agente3Items = document.querySelectorAll('.agente3');
+    const agente1Items = document.querySelector('.agente1');
+    const agente2Items = document.querySelector('.agente2');
+    const agente3Items = document.querySelector('.agente3');
     
     const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
     const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
@@ -698,21 +686,9 @@ class Dashboard {
     self.filterAgente2 = agente2List[id];
     self.filterAgente3 = agente3List[id];
     
-    agente1Items.forEach((selector, i) => {      
-      agente1List.forEach((q) => {
-        selector.innerHTML = this.filterAgente1 + "%";
-      });                        
-    });
-    agente2Items.forEach((selector, i) => {      
-      agente2List.forEach((q) => {
-        selector.innerHTML = this.filterAgente2 + "%";
-      });                        
-    });
-    agente3Items.forEach((selector, i) => {      
-      agente3List.forEach((q) => {
-        selector.innerHTML = this.filterAgente3 + "%";
-      });                  
-    });
+    agente1Items.innerHTML = this.filterAgente1 + "%";
+    agente2Items.innerHTML = this.filterAgente2 + "%";
+    agente3Items.innerHTML = this.filterAgente3 + "%";
   }
 
   /**
