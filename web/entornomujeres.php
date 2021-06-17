@@ -325,7 +325,7 @@
                                                 <p>
                                                     Municipios en los que se plantea la formulación de política para los sectores LGBTI
                                                  </p>
-                                                 <div class="numero agente 3">
+                                                 <div class="numero agente3">
                                                     17
                                                  </div>
                                             </div>                                                                    
