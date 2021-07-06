@@ -45,7 +45,7 @@ function initMapHandler(clickCallbak){
                     }
                 }
             },areas: {                    
-                "ALTO PATIA Y NORTE DEL CAUCA": {
+                "ALTO PATÍA Y NORTE DEL CAUCA": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -80,13 +80,13 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("ALTO PATIA Y NORTE DEL CAUCA");
+                            clickCallbak("ALTO PATÍA Y NORTE DEL CAUCA");
                             // alert("Hola, hizo clic a ALTO PATIA Y NORTE DEL CAUCA");
                         }
                     },
                     tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
-                "PACIFICO MEDIO": {
+                "PACÍFICO MEDIO": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -121,12 +121,12 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("PACIFICO MEDIO");
+                            clickCallbak("PACÍFICO MEDIO");
                         }
                     },
-                    tooltip: {content: "PACIFICO MEDIO"}
+                    tooltip: {content: "PACÍFICO MEDIO"}
                 },
-                "SIERRA NEVADA-PERIJA-ZONA BANANERA": {
+                "SIERRA NEVADA-PERIJÁ-ZONA BANANERA": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -161,10 +161,10 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("SIERRA NEVADA-PERIJA-ZONA BANANERA");
+                            clickCallbak("SIERRA NEVADA-PERIJÁ-ZONA BANANERA");
                         }
                     },
-                    tooltip: {content: "SIERRA NEVADA <br /> PERIJA-ZONA BANANERA "}
+                    tooltip: {content: "SIERRA NEVADA <br /> PERIJÁ-ZONA BANANERA "}
                 },
                 "CATATUMBO": {
                     attrs: {
@@ -206,7 +206,7 @@ function initMapHandler(clickCallbak){
                     },
                     tooltip: {content: "CATATUMBO"}
                 },
-                "SUR DE BOLIVAR": {
+                "SUR DE BOLÍVAR": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -241,12 +241,12 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("SUR DE BOLIVAR");
+                            clickCallbak("SUR DE BOLÍVAR");
                         }
                     },
-                    tooltip: {content: "SUR DE BOLIVAR"}
+                    tooltip: {content: "SUR DE BOLÍVAR"}
                 },
-                "SUR DE CORDOBA": {
+                "SUR DE CÓRDOBA": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -281,12 +281,12 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("SUR DE CORDOBA");
+                            clickCallbak("SUR DE CÓRDOBA");
                         }
                     },
                     tooltip: {content: "SUR DE CÓRDOBA"}
                 },
-                "BAJO CAUCA Y NORDESTE ANTIOQUENO": {
+                "BAJO CAUCA Y NORDESTE ANTIOQUEÑO": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -321,12 +321,12 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("BAJO CAUCA Y NORDESTE ANTIOQUENO");
+                            clickCallbak("BAJO CAUCA Y NORDESTE ANTIOQUEÑO");
                         }
                     },
                     tooltip: {content: "BAJO CAUCA Y NORDESTE ANTIOQUEÑO"}
                 },
-                "URABA ANTIOQUENO": {
+                "URABÁ ANTIOQUEÑO": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -361,12 +361,12 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("URABA ANTIOQUENO");
+                            clickCallbak("URABÁ ANTIOQUEÑO");
                         }
                     },
-                    tooltip: {content: "URABA ANTIOQUEÑO"}
+                    tooltip: {content: "URABÁ ANTIOQUEÑO"}
                 },
-                "CHOCO": {
+                "CHOCÓ": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -404,12 +404,12 @@ function initMapHandler(clickCallbak){
                             }
                             
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("CHOCO");
+                            clickCallbak("CHOCÓ");
                         }
                     },
-                    tooltip: {content: "CHOCO"}
+                    tooltip: {content: "CHOCÓ"}
                 },                
-                "PACIFICO Y FRONTERA NARINENSE": {
+                "PACÍFICO Y FRONTERA NARIÑENSE": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -444,10 +444,10 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("PACIFICO Y FRONTERA NARINENSE");
+                            clickCallbak("PACÍFICO Y FRONTERA NARIÑENSE");
                         }
                     },
-                    tooltip: {content: "PACIFICO Y FRONTERA NARINENSE"}
+                    tooltip: {content: "PACÍFICO Y FRONTERA NARIÑENSE"}
                 },
                 "SUR DE TOLIMA": {
                     attrs: {
@@ -569,7 +569,7 @@ function initMapHandler(clickCallbak){
                     },
                     tooltip: {content: "PUTUMAYO"}
                 },
-                "CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO": {
+                "CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -604,12 +604,12 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO");
+                            clickCallbak("CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO");
                         }
                     },
-                    tooltip: {content: "CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETEÑO"}
+                    tooltip: {content: "CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO"}
                 },
-                "CIUDADES CALI-QUIBDO": {
+                "CIUDADES CALI-QUIBDÓ": {
                     attrs: {
                         fill: "#767676"
                     }
@@ -644,7 +644,7 @@ function initMapHandler(clickCallbak){
                                 previousSelectedElementId = null;
                             }
                             $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            clickCallbak("CIUDADES CALI-QUIBDO");
+                            clickCallbak("CIUDADES CALI-QUIBDÓ");
                         }
                     },
                     tooltip: {content: "CIUDADES CALI-QUIBDÓ"}

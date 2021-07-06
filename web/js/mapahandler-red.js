@@ -55,46 +55,7 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("ALTO PATIA Y NORTE DEL CAUCA");
-                        }
+                        fill: "#767676"
                     },
                     //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
@@ -103,529 +64,137 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
                 "path499": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
+                // "Cartagena": {
+                //     attrs: {
+                //         fill: "#767676"
+                //     },
+                //     attrsHover: {
+                //         fill: "#C2113B"
+                //     },
+                //     eventHandlers: {
+                //         click: function (e, id, mapElem, textElem) {
+                //             var newData = {
+                //                 'areas': {}
+                //             };
+                //             if (previousSelectedElementId !== null) {
+                //                 newData.areas[previousSelectedElementId] = {
+                //                     attrs: {
+                //                         fill: previousSelectedBackground
+                //                     }
+                //                 };
+                //             }
+                //             if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
+                //                 newData.areas[id] = {
+                //                     attrs: {
+                //                         fill: "#C2113B"
+                //                     }
+                //                 };
+                //                 previousSelectedElementId = id;
+                //                 previousSelectedBackground = mapElem.originalAttrs.fill;
+                //             } else {
+                //                 newData.areas[id] = {
+                //                     attrs: {
+                //                         fill: "#767676"
+                //                     }
+                //                 };
+                //                 previousSelectedElementId = null;
+                //                 previousSelectedBackground = null;
+                //             }
+                //             $(".mapcontainer").trigger('update', [{
+                //                 mapOptions: newData
+                //             }]);
+                //             $(".mapcontainer").trigger('zoom', {
+                //                 area: id,
+                //                 areaMargin: 30
+                //             });
+                //             clickCallbak("Cartagena");
+                //         }
+                //     },
+                //     tooltip: {content: "Cartagena"}
+                // },
                 "path501": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
                 "path503": {
                     attrs: {
                         fill: "#767676"
-                    },
+                    },  
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                  
                 },
                 "path505": {
                     attrs: {
                         fill: "#767676"
-                    },
+                    },  
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                  
                 },
                 "path507": {
                     attrs: {
                         fill: "#767676"
-                    },
+                    },   
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                 
                 },
                 "path509": {
                     attrs: {
                         fill: "#767676"
-                    },
+                    },  
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                  
                 },
                 "path511": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                    
                 },
 
                 "path513": {
                     attrs: {
                         fill: "#767676"
-                    },
+                    },   
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                 
                 },
                 "path515": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                    
                 },
                 "path517": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
-                    },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                        fill: "#767676"
+                    },                    
                 },
 
                 "path519": {
@@ -633,48 +202,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
 
                 "path521": {
@@ -682,48 +211,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
 
                 "Santa Marta": {
@@ -745,7 +234,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -769,11 +258,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SANTA MARTA");
+                            clickCallbak("Santa Marta");
                         }
                     },
                     tooltip: {
-                        content: "SANTA MARTA"
+                        content: "Santa Marta"
                     }
                 },
 
@@ -783,50 +272,10 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
-                "path477": {
+                "San Miguel (NS)": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -845,7 +294,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -869,10 +318,10 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("");
+                            clickCallbak("San Miguel (NS)");
                         }
                     },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
+                    tooltip: {content: "San Miguel"}
                 },
 
                 "path479": {
@@ -880,48 +329,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
                 "Sardinata": {
                     attrs: {
@@ -942,7 +351,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -966,11 +375,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SARDINATA");
+                            clickCallbak("Sardinata");
                         }
                     },
                     tooltip: {
-                        content: "SARDINATA"
+                        content: "Sardinata"
                     }
                 },
                 "path483": {
@@ -978,96 +387,16 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
                 "path485": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
                 "Teorama": {
                     attrs: {
@@ -1088,7 +417,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -1112,14 +441,14 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TEORAMA");
+                            clickCallbak("Teorama");
                         }
                     },
                     tooltip: {
-                        content: "TEORAMA"
+                        content: "Teorama"
                     }
                 },
-                "Tibu": {
+                "Tibú": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -1138,7 +467,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -1162,14 +491,14 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TIBÚ");
+                            clickCallbak("Tibú");
                         }
                     },
                     tooltip: {
-                        content: "TIBÚ"
+                        content: "Tibú"
                     }
                 },
-                "El Tarra": {
+                "Tarra": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -1188,7 +517,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -1212,11 +541,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("EL TARRA");
+                            clickCallbak("Tarra");
                         }
                     },
                     tooltip: {
-                        content: "EL TARRA"
+                        content: "Tarra"
                     }
                 },
 
@@ -1227,96 +556,16 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
                 "path401": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "ALTO PATÍA Y <br /> NORTE DEL CAUCA"}
                 },
                 "Riosucio": {
                     attrs: {
@@ -1337,7 +586,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -1361,11 +610,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("RIOSUCIO");
+                            clickCallbak("Riosucio");
                         }
                     },
                     tooltip: {
-                        content: "RIOSUCIO"
+                        content: "Riosucio"
                     }
                 },
                 "path409": {
@@ -1373,50 +622,10 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
-                "Bojaya": {
+                "Bojayá": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -1435,7 +644,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -1459,11 +668,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("BOJAYÁ");
+                            clickCallbak("Bojayá");
                         }
                     },
                     tooltip: {
-                        content: "BOJAYÁ"
+                        content: "Bojayá"
                     }
                 },
                 "path413": {
@@ -1471,50 +680,10 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
-                "Quibdo": {
+                "Quibdó": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -1533,7 +702,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -1557,11 +726,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("QUIBDÓ");
+                            clickCallbak("Quibdó");
                         }
                     },
                     tooltip: {
-                        content: "QUIBDÓ"
+                        content: "Quibdó"
                     }
                 },
                 "path417": {
@@ -1569,576 +738,96 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path375": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path377": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path379": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path381": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path383": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path385": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path387": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path389": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path391": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path393": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
                 "path395": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Riosucio"}
                 },
 
                 //Region
@@ -2161,7 +850,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2185,11 +874,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TURBO");
+                            clickCallbak("Turbo");
                         }
                     },
                     tooltip: {
-                        content: "TURBO"
+                        content: "Turbo"
                     }
                 },
                 "path759": {
@@ -2197,290 +886,50 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path761": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path763": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path765": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path767": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path769": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "Apartado": {
+                "Apartadó": {
                     attrs: {
                         fill: "#767676"
                     },
@@ -2499,7 +948,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2523,11 +972,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("APARTADÓ");
+                            clickCallbak("Apartadó");
                         }
                     },
                     tooltip: {
-                        content: "APARTADÓ"
+                        content: "Apartadó"
                     }
                 },
                 "Valencia": {
@@ -2549,7 +998,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2573,11 +1022,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("VALENCIA");
+                            clickCallbak("Valencia");
                         }
                     },
                     tooltip: {
-                        content: "VALENCIA"
+                        content: "Valencia"
                     }
                 },
 
@@ -2588,51 +1037,11 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Valencia"}
                 },
 
-                "Montelibano": {
+                "Montelíbano": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -2651,7 +1060,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2675,11 +1084,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("MONTELÍBANO");
+                            clickCallbak("Montelíbano");
                         }
                     },
                     tooltip: {
-                        content: "MONTELÍBANO"
+                        content: "Montelíbano"
                     }
                 },
 
@@ -2702,7 +1111,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2726,11 +1135,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("PUERTO LIBERTADOR");
+                            clickCallbak("Puerto Libertador");
                         }
                     },
                     tooltip: {
-                        content: "PUERTO LIBERTADOR"
+                        content: "Puerto Libertador"
                     }
                 },
 
@@ -2753,7 +1162,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2777,18 +1186,18 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TIERRALTA");
+                            clickCallbak("Tierralta");
                         }
                     },
                     tooltip: {
-                        content: "TIERRALTA"
+                        content: "Tierralta"
                     }
                 },
 
                 //Region
-                "Briceno": {
+                "Briceño": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -2805,7 +1214,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2816,7 +1225,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -2829,16 +1238,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("BRICEÑO");
+                            clickCallbak("Briceño");
                         }
                     },
                     tooltip: {
-                        content: "BRICEÑO"
+                        content: "Briceño"
                     }
                 },
-                "Caceres": {
+                "Cáceres": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -2855,7 +1264,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2866,7 +1275,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -2879,16 +1288,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("CÁCERES");
+                            clickCallbak("Cáceres");
                         }
                     },
                     tooltip: {
-                        content: "CÁCERES"
+                        content: "Cáceres"
                     }
                 },
-                "Anori": {
+                "Anorí": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -2905,7 +1314,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -2916,7 +1325,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -2929,64 +1338,24 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("ANORÍ");
+                            clickCallbak("Anorí");
                         }
                     },
                     tooltip: {
-                        content: "ANORÍ"
+                        content: "Anorí"
                     }
                 },
                 "path427": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "Zaragoza": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3003,7 +1372,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3014,7 +1383,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3027,16 +1396,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("ZARAGOZA");
+                            clickCallbak("Zaragoza");
                         }
                     },
                     tooltip: {
-                        content: "ZARAGOZA"
+                        content: "Zaragoza"
                     }
                 },
                 "Valdivia": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3053,7 +1422,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3064,7 +1433,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3077,16 +1446,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("VALDIVIA");
+                            clickCallbak("Valdivia");
                         }
                     },
                     tooltip: {
-                        content: "VALDIVIA"
+                        content: "Valdivia"
                     }
                 },
-                "Taraza": {
+                "Tarazá": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3103,7 +1472,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3114,7 +1483,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3127,64 +1496,24 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TARAZÁ");
+                            clickCallbak("Tarazá");
                         }
                     },
                     tooltip: {
-                        content: "TARAZÁ"
+                        content: "Tarazá"
                     }
                 },
                 "path435": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
-                "El Bagre": {
+                "Bagre": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3201,7 +1530,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3212,7 +1541,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3225,16 +1554,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("EL BAGRE");
+                            clickCallbak("Bagre");
                         }
                     },
                     tooltip: {
-                        content: "EL BAGRE"
+                        content: "Bagre"
                     }
                 },
                 "Caucasia": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3251,7 +1580,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3262,7 +1591,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3275,64 +1604,24 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("CAUCASIA");
+                            clickCallbak("Caucasia");
                         }
                     },
                     tooltip: {
-                        content: "CAUCASIA"
+                        content: "Caucasia"
                     }
                 },
                 "path441": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
-                "Nechi": {
+                "Nechí": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3349,7 +1638,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3360,7 +1649,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3373,16 +1662,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("NECHÍ");
+                            clickCallbak("Nechí");
                         }
                     },
                     tooltip: {
-                        content: "NECHÍ"
+                        content: "Nechí"
                     }
                 },
-                "Iuango": {
+                "Ituango": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3399,7 +1688,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3410,7 +1699,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3423,11 +1712,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("ITUANGO");
+                            clickCallbak("Ituango");
                         }
                     },
                     tooltip: {
-                        content: "ITUANGO"
+                        content: "Ituango"
                     }
                 },
 
@@ -3437,96 +1726,16 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path451": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
 
                 "path246": {
@@ -3534,48 +1743,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
 
                 "path455": {
@@ -3583,48 +1752,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "San Pablo": {
                     attrs: {
@@ -3645,7 +1774,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3669,11 +1798,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SAN PABLO");
+                            clickCallbak("San Pablo");
                         }
                     },
                     tooltip: {
-                        content: "SAN PABLO"
+                        content: "San Pablo"
                     }
                 },
                 "Santa Rosa del Sur": {
@@ -3695,7 +1824,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3719,11 +1848,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SANTA ROSA DEL SUR");
+                            clickCallbak("Santa Rosa del Sur");
                         }
                     },
                     tooltip: {
-                        content: "SANTA ROSA DEL SUR"
+                        content: "Santa Rosa del Sur"
                     }
                 },
                 "path461": {
@@ -3731,48 +1860,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "San Pablo": {
                     attrs: {
@@ -3793,7 +1882,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3817,18 +1906,18 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SAN PABLO");
+                            clickCallbak("San Pablo");
                         }
                     },
                     tooltip: {
-                        content: "SAN PABLO"
+                        content: "San Pablo"
                     }
                 },
 
                 //region
                 "Buenaventura": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3845,7 +1934,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3856,7 +1945,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3869,16 +1958,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("BUENAVENTURA");
+                            clickCallbak("Buenaventura");
                         }
                     },
                     tooltip: {
-                        content: "BUENAVENTURA"
+                        content: "Buenaventura"
                     }
                 },
-                "Timbiqui": {
+                "Timbiquí": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3895,7 +1984,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3906,7 +1995,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3919,16 +2008,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TIMBIQUÍ");
+                            clickCallbak("Timbiquí");
                         }
                     },
                     tooltip: {
-                        content: "TIMBIQUÍ"
+                        content: "Timbiquí"
                     }
                 },
-                "Lopez de Micay": {
+                "López de Micay": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3945,7 +2034,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -3956,7 +2045,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -3969,16 +2058,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("LÓPEZ DE MICAY");
+                            clickCallbak("López de Micay");
                         }
                     },
                     tooltip: {
-                        content: "LÓPEZ DE MICAY"
+                        content: "López de Micay"
                     }
                 },
                 "El Charco": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -3995,7 +2084,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4006,7 +2095,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -4019,11 +2108,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("EL CHARCO");
+                            clickCallbak("El Charco");
                         }
                     },
                     tooltip: {
-                        content: "EL CHARCO"
+                        content: "El Charco"
                     }
                 },
 
@@ -4033,48 +2122,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "Barbacoas": {
                     attrs: {
@@ -4095,7 +2144,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4119,14 +2168,14 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("BARBACOAS");
+                            clickCallbak("Barbacoas");
                         }
                     },
                     tooltip: {
-                        content: "BARBACOAS"
+                        content: "Barbacoas"
                     }
                 },
-                "Payan": {
+                "Maguí Payán": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -4145,7 +2194,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4169,11 +2218,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("PAYÁN");
+                            clickCallbak("Maguí Payán");
                         }
                     },
                     tooltip: {
-                        content: "PAYÁN"
+                        content: "Maguí Payán"
                     }
                 },
 
@@ -4182,48 +2231,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
 
                 "Magui": {
@@ -4245,7 +2254,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4282,48 +2291,8 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "Olaya Herrera": {
                     attrs: {
@@ -4344,7 +2313,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4368,14 +2337,14 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("OLAYA HERRERA");
+                            clickCallbak("Olaya Herrera");
                         }
                     },
                     tooltip: {
-                        content: "OLAYA HERRERA"
+                        content: "Olaya Herrera"
                     }
                 },
-                "Roberto": {
+                "Roberto Payán": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -4394,7 +2363,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4418,11 +2387,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("ROBERTO");
+                            clickCallbak("Roberto Payán");
                         }
                     },
                     tooltip: {
-                        content: "ROBERTO"
+                        content: "Roberto Payán"
                     }
                 },
 
@@ -4431,96 +2400,16 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path231": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
 
                 "Tumaco": {
@@ -4542,7 +2431,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4566,11 +2455,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TUMACO");
+                            clickCallbak("Tumaco");
                         }
                     },
                     tooltip: {
-                        content: "TUMACO"
+                        content: "Tumaco"
                     }
                 },
 
@@ -4579,96 +2468,16 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path237": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "Barbacoas": {
                     attrs: {
@@ -4689,7 +2498,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -4727,816 +2536,136 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path251": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path253": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path255": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path257": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path259": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path261": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path263": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path265": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path267": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path269": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path271": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path273": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path275": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path277": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path279": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path281": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "Caloto": {
                     attrs: {
@@ -5557,7 +2686,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -5581,11 +2710,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("CALOTO");
+                            clickCallbak("Caloto");
                         }
                     },
                     tooltip: {
-                        content: "CALOTO"
+                        content: "Caloto"
                     }
                 },
                 "Corinto": {
@@ -5607,7 +2736,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -5631,11 +2760,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("CORINTO");
+                            clickCallbak("Corinto");
                         }
                     },
                     tooltip: {
-                        content: "CORINTO"
+                        content: "Corinto"
                     }
                 },
                 "path287": {
@@ -5643,96 +2772,16 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path289": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "Miranda": {
                     attrs: {
@@ -5753,7 +2802,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -5777,156 +2826,36 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("MIRANDA");
+                            clickCallbak("Miranda");
                         }
                     },
                     tooltip: {
-                        content: "MIRANDA"
+                        content: "Miranda"
                     }
-                },
+                },                
                 "path293": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path295": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path297": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "Santander de Quilichao": {
                     attrs: {
@@ -5947,7 +2876,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -5971,11 +2900,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SANTANDER DE QULICHAO");
+                            clickCallbak("Santander de Quilichao");
                         }
                     },
                     tooltip: {
-                        content: "SANTANDER DE QUILICHAO"
+                        content: "Santander de Quilichao"
                     }
                 },
                 "path301": {
@@ -5983,50 +2912,10 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "Toribio": {
+                "Toribío": {
                     attrs: {
                         fill: "#767676"
                     },
@@ -6045,7 +2934,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6069,11 +2958,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("TORIBÍO");
+                            clickCallbak("Toribío");
                         }
                     },
                     tooltip: {
-                        content: "TORIBÍO"
+                        content: "Toribío"
                     }
                 },
                 "path305": {
@@ -6081,192 +2970,32 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path307": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path309": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path311": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
 
                 "path313": {
@@ -6274,98 +3003,18 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path315": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "El Tambo": {
+                "Tambo": {
                     attrs: {
                         fill: "#767676"
                     },
@@ -6384,7 +3033,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6408,11 +3057,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("EL TAMBO");
+                            clickCallbak("Tambo");
                         }
                     },
                     tooltip: {
-                        content: "EL TAMBO"
+                        content: "Tambo"
                     }
                 },
                 "path319": {
@@ -6420,149 +3069,29 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path327": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 //region
                 "path335": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "Orito": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -6579,7 +3108,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6590,7 +3119,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -6603,16 +3132,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("ORITO");
+                            clickCallbak("Orito");
                         }
                     },
                     tooltip: {
-                        content: "ORITO"
+                        content: "Orito"
                     }
                 },
                 "San Miguel": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -6629,7 +3158,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6640,7 +3169,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -6653,16 +3182,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SAN MIGUEL");
+                            clickCallbak("San Miguel");
                         }
                     },
                     tooltip: {
-                        content: "SAN MIGUEL"
+                        content: "San Miguel"
                     }
                 },
                 "Valle del Guamuez": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -6679,7 +3208,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6690,7 +3219,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -6712,55 +3241,15 @@ function initMapHandler(clickCallbak) {
                 },
                 "path343": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "Caicedo": {
+                "Puerto Caicedo": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -6777,7 +3266,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6788,7 +3277,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -6801,16 +3290,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("CAICEDO");
+                            clickCallbak("Puerto Caicedo");
                         }
                     },
                     tooltip: {
-                        content: "CAICEDO"
+                        content: "Puerto Caicedo"
                     }
                 },
-                "Puerto Asis": {
+                "Puerto Asís": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -6827,7 +3316,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6838,7 +3327,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -6851,16 +3340,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("PUERTO ASIS");
+                            clickCallbak("Puerto Asís");
                         }
                     },
                     tooltip: {
-                        content: "PUERTO ASIS"
+                        content: "Puerto Asís"
                     }
                 },
-                "Puerto Guzman": {
+                "Puerto Guzmán": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -6877,7 +3366,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6888,7 +3377,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -6901,16 +3390,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("PUERTO GUZMÁN");
+                            clickCallbak("Puerto Guzmán");
                         }
                     },
                     tooltip: {
-                        content: "PUERTO GUZMÁN"
+                        content: "Puerto Guzmán"
                     }
                 },
-                "Puerto Leguizamo": {
+                "Puerto Leguízamo": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
                         fill: "#C2113B"
@@ -6927,7 +3416,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -6938,7 +3427,7 @@ function initMapHandler(clickCallbak) {
                             } else {
                                 newData.areas[id] = {
                                     attrs: {
-                                        fill: "#3f3f3f"
+                                        fill: "#6C6463"
                                     }
                                 };
                                 previousSelectedElementId = null;
@@ -6951,16 +3440,16 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("PUERTO LEGUIZAMO");
+                            clickCallbak("Puerto Leguízamo");
                         }
                     },
                     tooltip: {
-                        content: "PUERTO LEGUIZAMO"
+                        content: "Puerto Leguízamo"
                     }
                 },
 
                 //region
-                "path527": {
+                "San Vicente del Caguán": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -6979,7 +3468,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -7003,10 +3492,10 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("");
+                            clickCallbak("San Vicente del Caguán");
                         }
                     },
-                    //tooltip: {content: "Turbo"}
+                    tooltip: {content: "San Vicente del Caguán"}
                 },
                 "Pto Rico": {
                     attrs: {
@@ -7027,7 +3516,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -7064,98 +3553,18 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path533": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "path535": {
+                "Florencia": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -7174,7 +3583,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -7198,60 +3607,20 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("");
+                            clickCallbak("Florencia");
                         }
                     },
-                    //tooltip: {content: "Turbo"}
+                    tooltip: {content: "Florencia"}
                 },
                 "path537": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "La montanita": {
+                "Montañita": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -7270,7 +3639,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -7294,11 +3663,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("LA MONTAÑITA");
+                            clickCallbak("Montañita");
                         }
                     },
                     tooltip: {
-                        content: "LA MONTAÑITA"
+                        content: "Montañita"
                     }
                 },
                 "path541": {
@@ -7306,50 +3675,10 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "San Jose del Fragua": {
+                "San José del Fragua": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -7368,7 +3697,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -7392,11 +3721,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SAN JOSÉ DE FRAGUA");
+                            clickCallbak("San José del Fragua");
                         }
                     },
                     tooltip: {
-                        content: "SAN JOSÉ DE FRAGUA"
+                        content: "San José del Fragua"
                     }
                 },
                 "path545": {
@@ -7404,240 +3733,40 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path547": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path549": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path551": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "path553": {
                     attrs: {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
                 "Solano": {
                     attrs: {
@@ -7658,7 +3787,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -7682,11 +3811,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SOLANO");
+                            clickCallbak("Solano");
                         }
                     },
                     tooltip: {
-                        content: "SOLANO"
+                        content: "Solano"
                     }
                 },
                 "path557": {
@@ -7694,50 +3823,10 @@ function initMapHandler(clickCallbak) {
                         fill: "#a09999"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#a09999"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#a09999"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Turbo"}
                 },
-                "Cartagena del Chaira": {
+                "Cartagena del Chairá": {
                     attrs: {
                         fill: "#a09999"
                     },
@@ -7756,7 +3845,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -7780,206 +3869,46 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("CARTAGENA DEL CHAIRÁ");
+                            clickCallbak("Cartagena del Chairá");
                         }
                     },
                     tooltip: {
-                        content: "CARTAGENA DEL CHAIRÁ"
+                        content: "Cartagena del Chairá"
                     }
                 },
 
                 //region
                 "path365": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path367": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path369": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path371": {
                     attrs: {
-                        fill: "#3f3f3f"
+                        fill: "#6C6463"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#6C6463"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#3f3f3f"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
 
                 //Region
@@ -7988,240 +3917,40 @@ function initMapHandler(clickCallbak) {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path683": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path697": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path709": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "path713": {
                     attrs: {
                         fill: "#767676"
                     },
                     attrsHover: {
-                        fill: "#C2113B"
+                        fill: "#767676"
                     },
-                    eventHandlers: {
-                        click: function (e, id, mapElem, textElem) {
-                            var newData = {
-                                'areas': {}
-                            };
-                            if (previousSelectedElementId !== null) {
-                                newData.areas[previousSelectedElementId] = {
-                                    attrs: {
-                                        fill: previousSelectedBackground
-                                    }
-                                };
-                            }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#C2113B"
-                                    }
-                                };
-                                previousSelectedElementId = id;
-                                previousSelectedBackground = mapElem.originalAttrs.fill;
-                            } else {
-                                newData.areas[id] = {
-                                    attrs: {
-                                        fill: "#767676"
-                                    }
-                                };
-                                previousSelectedElementId = null;
-                                previousSelectedBackground = null;
-                            }
-                            $(".mapcontainer").trigger('update', [{
-                                mapOptions: newData
-                            }]);
-                            $(".mapcontainer").trigger('zoom', {
-                                area: id,
-                                areaMargin: 30
-                            });
-                            clickCallbak("");
-                        }
-                    },
-                    //tooltip: {content: "Tierralta"}
                 },
                 "El Retorno": {
                     attrs: {
@@ -8242,7 +3971,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -8266,11 +3995,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("EL RETORNO");
+                            clickCallbak("El Retorno");
                         }
                     },
                     tooltip: {
-                        content: "EL RETORNO"
+                        content: "El Retorno"
                     }
                 },
                 "Mesetas": {
@@ -8292,7 +4021,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -8316,11 +4045,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("MESETAS");
+                            clickCallbak("Mesetas");
                         }
                     },
                     tooltip: {
-                        content: "MESETAS"
+                        content: "Mesetas"
                     }
                 },
                 "Uribe": {
@@ -8342,7 +4071,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -8366,11 +4095,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("URIBE");
+                            clickCallbak("Uribe");
                         }
                     },
                     tooltip: {
-                        content: "URIBE"
+                        content: "Uribe"
                     }
                 },
                 "La Macarena": {
@@ -8392,7 +4121,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -8416,11 +4145,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("LA MACARENA");
+                            clickCallbak("La Macarena");
                         }
                     },
                     tooltip: {
-                        content: "LA MACARENA"
+                        content: "La Macarena"
                     }
                 },
                 "Vista Hermosa": {
@@ -8442,7 +4171,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -8466,11 +4195,11 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("VISTA HERMOSA");
+                            clickCallbak("Vista Hermosa");
                         }
                     },
                     tooltip: {
-                        content: "VISTA HERMOSA"
+                        content: "Vista Hermosa"
                     }
                 },
                 "Puerto Rico": {
@@ -8492,7 +4221,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -8516,14 +4245,14 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("PUERTO RICO");
+                            clickCallbak("Puerto Rico");
                         }
                     },
                     tooltip: {
-                        content: "PUERTO RICO"
+                        content: "Puerto Rico"
                     }
                 },
-                "San Jose del Guaviare": {
+                "San José del Guaviare": {
                     attrs: {
                         fill: "#767676"
                     },
@@ -8542,7 +4271,7 @@ function initMapHandler(clickCallbak) {
                                     }
                                 };
                             }
-                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#3f3f3f") {
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
                                 newData.areas[id] = {
                                     attrs: {
                                         fill: "#C2113B"
@@ -8566,11 +4295,212 @@ function initMapHandler(clickCallbak) {
                                 area: id,
                                 areaMargin: 30
                             });
-                            clickCallbak("SAN JOSÉ DEL GUAVIARE");
+                            clickCallbak("San José del Guaviare");
                         }
                     },
                     tooltip: {
-                        content: "SAN JOSÉ DEL GUAVIARE"
+                        content: "San José del Guaviare"
+                    }
+                },
+                //Region
+                "Ataco": {
+                    attrs: {
+                        fill: "#a09999"
+                    },
+                    attrsHover: {
+                        fill: "#C2113B"
+                    },
+                    eventHandlers: {
+                        click: function (e, id, mapElem, textElem) {
+                            var newData = {
+                                'areas': {}
+                            };
+                            if (previousSelectedElementId !== null) {
+                                newData.areas[previousSelectedElementId] = {
+                                    attrs: {
+                                        fill: previousSelectedBackground
+                                    }
+                                };
+                            }
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#C2113B"
+                                    }
+                                };
+                                previousSelectedElementId = id;
+                                previousSelectedBackground = mapElem.originalAttrs.fill;
+                            } else {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#a09999"
+                                    }
+                                };
+                                previousSelectedElementId = null;
+                                previousSelectedBackground = null;
+                            }
+                            $(".mapcontainer").trigger('update', [{
+                                mapOptions: newData
+                            }]);
+                            $(".mapcontainer").trigger('zoom', {
+                                area: id,
+                                areaMargin: 30
+                            });
+                            clickCallbak("Ataco");
+                        }
+                    },
+                    tooltip: {
+                        content: "Ataco"
+                    }
+                },
+                "Chaparral": {
+                    attrs: {
+                        fill: "#a09999"
+                    },
+                    attrsHover: {
+                        fill: "#C2113B"
+                    },
+                    eventHandlers: {
+                        click: function (e, id, mapElem, textElem) {
+                            var newData = {
+                                'areas': {}
+                            };
+                            if (previousSelectedElementId !== null) {
+                                newData.areas[previousSelectedElementId] = {
+                                    attrs: {
+                                        fill: previousSelectedBackground
+                                    }
+                                };
+                            }
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#C2113B"
+                                    }
+                                };
+                                previousSelectedElementId = id;
+                                previousSelectedBackground = mapElem.originalAttrs.fill;
+                            } else {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#a09999"
+                                    }
+                                };
+                                previousSelectedElementId = null;
+                                previousSelectedBackground = null;
+                            }
+                            $(".mapcontainer").trigger('update', [{
+                                mapOptions: newData
+                            }]);
+                            $(".mapcontainer").trigger('zoom', {
+                                area: id,
+                                areaMargin: 30
+                            });
+                            clickCallbak("Chaparral");
+                        }
+                    },
+                    tooltip: {
+                        content: "Chaparral"
+                    }
+                },
+                "Planadas": {
+                    attrs: {
+                        fill: "#a09999"
+                    },
+                    attrsHover: {
+                        fill: "#C2113B"
+                    },
+                    eventHandlers: {
+                        click: function (e, id, mapElem, textElem) {
+                            var newData = {
+                                'areas': {}
+                            };
+                            if (previousSelectedElementId !== null) {
+                                newData.areas[previousSelectedElementId] = {
+                                    attrs: {
+                                        fill: previousSelectedBackground
+                                    }
+                                };
+                            }
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#C2113B"
+                                    }
+                                };
+                                previousSelectedElementId = id;
+                                previousSelectedBackground = mapElem.originalAttrs.fill;
+                            } else {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#a09999"
+                                    }
+                                };
+                                previousSelectedElementId = null;
+                                previousSelectedBackground = null;
+                            }
+                            $(".mapcontainer").trigger('update', [{
+                                mapOptions: newData
+                            }]);
+                            $(".mapcontainer").trigger('zoom', {
+                                area: id,
+                                areaMargin: 30
+                            });
+                            clickCallbak("Planadas");
+                        }
+                    },
+                    tooltip: {
+                        content: "Planadas"
+                    }
+                },
+                "Rioblanco": {
+                    attrs: {
+                        fill: "#a09999"
+                    },
+                    attrsHover: {
+                        fill: "#C2113B"
+                    },
+                    eventHandlers: {
+                        click: function (e, id, mapElem, textElem) {
+                            var newData = {
+                                'areas': {}
+                            };
+                            if (previousSelectedElementId !== null) {
+                                newData.areas[previousSelectedElementId] = {
+                                    attrs: {
+                                        fill: previousSelectedBackground
+                                    }
+                                };
+                            }
+                            if (mapElem.originalAttrs.fill == "#767676" || mapElem.originalAttrs.fill == "#a09999" || mapElem.originalAttrs.fill == "#6C6463") {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#C2113B"
+                                    }
+                                };
+                                previousSelectedElementId = id;
+                                previousSelectedBackground = mapElem.originalAttrs.fill;
+                            } else {
+                                newData.areas[id] = {
+                                    attrs: {
+                                        fill: "#a09999"
+                                    }
+                                };
+                                previousSelectedElementId = null;
+                                previousSelectedBackground = null;
+                            }
+                            $(".mapcontainer").trigger('update', [{
+                                mapOptions: newData
+                            }]);
+                            $(".mapcontainer").trigger('zoom', {
+                                area: id,
+                                areaMargin: 30
+                            });
+                            clickCallbak("Rioblanco");
+                        }
+                    },
+                    tooltip: {
+                        content: "Rioblanco"
                     }
                 },
             },

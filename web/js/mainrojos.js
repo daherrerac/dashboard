@@ -1,7 +1,7 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
-const siteurl = 'http://webdash.test/';
+//const siteurl = 'http://webdash.test/';
 //const siteurl = 'http://dashboard.local/';
-//const siteurl = 'http://pruebadevelopment.com/';
+const siteurl = 'http://pruebadevelopment.com/';
 
 
 
@@ -34,9 +34,9 @@ class DashboardDataReader {
     'hogaresGenerales':siteurl + 'csv/hogares_general.csv',
     'mujeresEtnicas':siteurl + 'csv/hogares_mujeres_etnicas.csv',
     'servidoresPublicos':siteurl + 'csv/encuesta_servidores_publicos.csv',
-    'entornoInstitucionalPaz':siteurl + 'csv/entorno_institucional_paz.csv',
-    'entornoInstitucionalMujeres':siteurl + 'csv/entorno_institucional_mujeres.csv',
-    'entornoInstitucionalLGBTI':siteurl + 'csv/entorno_institucional_lgbti.csv'
+    'entornoInstitucionalPaz':siteurl + 'csv/EntornoInstitucional_Paz.csv',
+    'entornoInstitucionalMujeres':siteurl + 'csv/EntornoInstitucional_Mujeres.csv',
+    'entornoInstitucionalLGBTI':siteurl + 'csv/EntornoInstitucional_LGBTI.csv'
   };
 
   // declaracion de filtros
@@ -476,7 +476,7 @@ class Dashboard {
 
   updateMapColor(previuosMunicipio, newMunicipio){
     let updatedOptions = {'areas': {}};
-    if(this.region.toLowerCase() === 'CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO'.toLowerCase()){
+    if(this.region.toLowerCase() === 'CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO'.toLowerCase()){
       if (newMunicipio.toLowerCase() === 'PUERTO RICO'.toLowerCase()){
         newMunicipio = 'Pto Rico';
       }
@@ -498,12 +498,55 @@ class Dashboard {
       attrs: {fill: this.previousSelectedBackground, opacity: 1}
     };
     */
-    this.previousSelectedBackground = pBack;
+    //this.previousSelectedBackground = pBack;
     //console.log($(".mapcontainer").data('mapael'));
     $(".mapcontainer").trigger('update', [{
       mapOptions: updatedOptions, 
       animDuration: 100
     }]);
+  }
+
+  updateMapColorSelector(previuosMunicipio, previousRegionSelected, newMunicipio){
+    let updatedOptions = {'areas': {}};
+    if(this.region.toLowerCase() === 'CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO'.toLowerCase()){
+      if (newMunicipio.toLowerCase() === 'PUERTO RICO'.toLowerCase()){
+        newMunicipio = 'Pto Rico';
+      }
+      if (previuosMunicipio.toLowerCase() === 'PUERTO RICO'.toLowerCase()){
+        previuosMunicipio = 'Pto Rico';
+      }
+    }
+    let oldColor;
+    
+    
+    if(previousRegionSelected == "ALTO PATÍA Y NORTE DEL CAUCA" || previousRegionSelected == "SIERRA NEVADA-PERIJÁ-ZONA BANANERA" || previousRegionSelected =="MACARENA GUAVIARE" || previousRegionSelected =="META-GUAVIARE" || previousRegionSelected =="MACARENA" || previousRegionSelected =="URABÁ ANTIOQUEÑO")
+      oldColor = "#767676";
+    if(previousRegionSelected == "BAJO CAUCA Y NORDESTE ANTIOQUEÑO" || previousRegionSelected == "PACÍFICO MEDIO" || previousRegionSelected == "PUTUMAYO")
+      oldColor = "#6C6463";
+    if(previousRegionSelected == "CATATUMBO" || previousRegionSelected == "CHOCÓ" || previousRegionSelected == "CUENCA DEL CAGUÁN Y PIEDEMONTE CAQUETEÑO" || previousRegionSelected == "PACÍFICO Y FRONTERA NARIÑENSE" || previousRegionSelected == "SUR DE CÓRDOBA" || previousRegionSelected == "SUR DEL BOLÍVAR" || previousRegionSelected == "SUR DEL TOLIMA")
+      oldColor = "#a09999";
+    if(previuosMunicipio == newMunicipio)
+      oldColor = "#C2113B";
+    
+    updatedOptions.areas[newMunicipio] = {
+        attrs: {fill: "#C2113B", opacity: 1}
+    };
+    updatedOptions.areas[previuosMunicipio] = {
+      attrs: {fill: oldColor, opacity: 1}
+    };
+    /*
+    let pBack = $(".mapcontainer").data('mapael').areas[previuosMunicipio].mapElem.attrs.fill;
+    updatedOptions.areas[previuosMunicipio] = {
+      attrs: {fill: this.previousSelectedBackground, opacity: 1}
+    };
+    */
+    //this.previousSelectedBackground = pBack;
+    //console.log($(".mapcontainer").data('mapael'));
+    $(".mapcontainer").trigger('update', [{
+      mapOptions: updatedOptions, 
+      animDuration: 100
+    }]);
+    $(".mapcontainer").trigger('zoom', {area: newMunicipio});
   }
 
   updateAgente(){
@@ -566,10 +609,11 @@ class Dashboard {
         let callback = (value) => {
           if (selector.getAttribute('id') == "municipioA"){
             let previousMunicipioSelected = self.municipio;
+            let previousRegionSelected    = self.region;
             self.municipio = value;
             self.loadQuestions();
             self.updateAgente();
-            self.updateMapColor(previousMunicipioSelected, value);
+            self.updateMapColorSelector(previousMunicipioSelected, previousRegionSelected,value);
           } else if (selector.getAttribute('id') == "municipio1"){
             self.compareMunicipioSelection1 = value;
             self.loadQuestions(true);

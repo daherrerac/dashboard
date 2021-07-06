@@ -6,8 +6,8 @@
     
   }else{
     // Si no está logueado lo redireccion a la página de login.
-    //header("HTTP/1.1 302 Moved Temporarily"); 
-    //header("Location: index.html"); 
+    header("HTTP/1.1 302 Moved Temporarily"); 
+    header("Location: index.html"); 
   }
 ?>
 <!doctype html>
@@ -275,26 +275,26 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                EXPERIENCIA FRENTE A LA VIOLENCIA Y LA RESPUESTA INSTITUCIONAL DE LAS MUJERES INDÍGENAS Y AFRODESCENDIENTES                            
+                                ENCUESTA DE TOLERANCIA SOCIAL E INSTITUCIONAL A LAS VIOLENCIAS CONTRA LAS MUJERES
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional contra las
-                                MujeresTolerancia Social e Institucional contra las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
+                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional a las Violencias contra las Mujeres 
+                                en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
                             </h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-xxl-10 col-xl-9 col-md-12">
+                <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
                         <div class="blue-info">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <div class="info-box">
+                                <div class="col-lg-5 col-md-4 col-sm-12">
+                                    <div class="info-box init">
                                         <div class="row">
                                             <div class="col-3">
                                                 <div class="pin">
-                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9">
@@ -308,16 +308,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <div class="info-box">
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="info-box middle">
                                         <div class="row">
                                             <div class="col-3">
                                             <div class="pin">
-                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9">
-                                                <p>En camino de cambio
+                                                <p>En ruta de cambio
                                                  </p>
                                                  <div class="numero agente2">
                                                     20.8%
@@ -331,7 +331,7 @@
                                         <div class="row">
                                             <div class="col-3">
                                             <div class="pin">
-                                                <img src="img/pin.png" alt="" class=img-fluid>
+                                                <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9 last">
@@ -407,7 +407,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6">
+                    <div class="col-xl-6 col-lg-6 d-none d-md-block">
                         <div class="util-box" style="height:97%">
                             <div class="mapa">
                                 <h4>Regiones</h4>
@@ -587,7 +587,7 @@
         // iniciar dashboard
         // iniciar funciones y carga de datos
         const mapGrahs = [
-            { title: 'Indigena', filterKey: 'Pertenencia étnica', filterValue: 'Indigena'},
+            { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
             { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'}
         ];
         const secondChartConfig = {
@@ -599,7 +599,7 @@
             },
             graph2: { 
                 id: 'chartc',
-                filter: { title: 'Indigena', filterKey: 'Pertenencia étnica', filterValue: 'Indigena'},
+                filter: { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
             }
         };
         let dash = new Dashboard('mujeresEtnicas', true, mapGrahs, secondChartConfig);

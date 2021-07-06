@@ -354,6 +354,9 @@ class Dashboard {
     // cargar regiones en selectores inferiores
     this.loadRegions();
 
+    // cargar filtro de edad
+    this.loadAges();
+
 
     // inicializar graficas
     if (this.mapGraphs){
@@ -566,12 +569,12 @@ class Dashboard {
         // adicionar clase selected al elemento del evento
         this.classList.add('selected');
         console.log("Click question", self.selectedQuestion);
+        document.getElementById("qIndigenas").innerHTML = self.selectedQuestion;
+        document.getElementById("qAfro").innerHTML = self.selectedQuestion;
         if (self.hasMap){
           self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
           self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
-        }
-        self.updateGraph2(self.lowerGraphs.graph1.id, {Region:'', [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue});
-        self.updateGraph2(self.lowerGraphs.graph2.id, {Region:'', [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue});
+        }        
       });
     });
   }
@@ -624,6 +627,58 @@ class Dashboard {
       } else if (selector.getAttribute('id') == 'region2'){
         selector.selectedIndex = 1;
       }
+      updateOption(selector, callback, regionsList[selector.selectedIndex]);
+      
+    });
+  }
+
+
+  loadAges(){
+    let self = this;
+    let previousRegionSelected;
+    const regionsDropDown = document.querySelectorAll('.fedad.custom-select select');
+    const regionsList = this.dr.getFilters(this.survey, 'Grupo de edad');
+    self.graphRegionSelection1 = regionsList[0];
+    self.graphRegionSelection2 = regionsList[1];
+    regionsDropDown.forEach((selector, i) => {
+      // limpiar opciones
+      selector.innerHTML = '';
+      // adicionar atributo de selector
+      regionsList.forEach((q) => {
+        selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
+      });      
+      let callback = (value) => {
+        // previousRegionSelected = self.region;
+        // if (selector.getAttribute('id') == "regionA"){
+        //   self.region = value;
+        //   self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
+        //   self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+        // } else if (selector.getAttribute('id') == "region1"){
+        //   self.graphRegionSelection1 = value;
+        // } else if (selector.getAttribute('id') == 'region2'){
+        //   self.graphRegionSelection2 = value;
+        // }
+        // self.updateGraph2(self.lowerGraphs.graph1.id, {Region:'', [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue});
+        // self.updateGraph2(self.lowerGraphs.graph2.id, {Region:'', [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue});
+        // console.log("Region seleccionada:", value, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
+        // let updatedOptions = {'areas': {}};
+        // updatedOptions.areas[value] ={
+        //   attrs: {fill: "#022869", opacity: 1}
+        // },
+        // updatedOptions.areas[previousRegionSelected] ={
+        //   attrs: {fill: "#767676", opacity: 1}
+        // }
+        // $(".mapcontainer").trigger('update', [{
+        //   mapOptions: updatedOptions, 
+        //   animDuration: 100
+        // }]);
+      };
+      // definir selecciones por defecto de ambos selectores
+      if (selector.getAttribute('id') == "edad"){
+        selector.selectedIndex = 0;
+      } else if (selector.getAttribute('id') == 'fil_edad'){
+        selector.selectedIndex = 0;
+      } 
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
       
     });

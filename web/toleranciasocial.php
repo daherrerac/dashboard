@@ -4,11 +4,11 @@
   // Controlo si el usuario ya está logueado en el sistema.
   if(isset($_SESSION['email'])){    
     
-  }/*else{
+  }else{
     // Si no está logueado lo redireccion a la página de login.
     header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: index.html"); 
-  }*/
+  }
 ?>
 <!doctype html>
 <html lang="es">
@@ -267,22 +267,22 @@
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                            En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional a las Violencias contra las Mujeres 
-                            en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
+                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional a las Violencias contra las Mujeres 
+                                en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
                             </h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xxl-10 col-xl-9 col-md-12">
+                    <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
                         <div class="blue-info">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <div class="info-box">
+                                <div class="col-lg-5 col-md-4 col-sm-12">
+                                    <div class="info-box init">
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-3 d-none d-md-block">
                                                 <div class="pin">
-                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9">
@@ -296,16 +296,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <div class="info-box">
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="info-box middle">
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-3 d-none d-md-block">
                                             <div class="pin">
-                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9">
-                                                <p>En camino de cambio
+                                                <p>En ruta de cambio
                                                  </p>
                                                  <div class="numero agente2">
                                                     20.8%
@@ -317,9 +317,9 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-3 ">
                                             <div class="pin">
-                                                <img src="img/pin.png" alt="" class=img-fluid>
+                                                <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9 last">
@@ -395,7 +395,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6">
+                    <div class="col-xl-6 col-lg-6 d-none d-md-block" >
                         <div class="util-box" style="height:97%">
                             <div class="mapa">
                                 <h4>Regiones</h4>
@@ -431,21 +431,19 @@
                         <div class="row ">
                             <div class="col-xxl-12 col-xl-12 col-lg-12">
                                 <div class="util-box blue-bg">
-                                    <h4 class="py-2">Hombres</h4>
-                                    <!-- <div id="chart"></div>
-                                    <div id="chartalt" style="display:none"></div> -->
-                                    <div class="chart">
-                                        <canvas id="myChart"  width="630" height="280"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
-                                <div class="util-box blue-bg">
                                     <h4 class="py-2">Mujeres</h4>                                    
                                     <div class="chart">
                                         <canvas id="myChart2" width="630" height="280"></canvas>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                <div class="util-box blue-bg">
+                                    <h4 class="py-2">Hombres</h4>                                    
+                                    <div class="chart">
+                                        <canvas id="myChart"  width="630" height="280"></canvas>
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -491,18 +489,6 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                    <div class="util-box">
-                        <div class="mapa">
-                            <h4 class="text-center">
-                                Hombres
-                            </h4>
-                        </div>
-                        <div id="chartb"></div>                        
-                    </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
                         <div class="util-box">
                             <div class="mapa">
                                 <h4 class="text-center">
@@ -510,6 +496,18 @@
                                 </h4>
                             </div>                           
                             <div id="chartc"></div>                            
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="util-box">
+                            <div class="mapa">
+                                <h4 class="text-center">
+                                    Hombres
+                                </h4>
+                            </div>
+                            <div id="chartb"></div>                        
                         </div>
                     </div>
                 </div>
