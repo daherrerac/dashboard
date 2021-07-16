@@ -1,6 +1,6 @@
 //const siteurl = 'http://pruebas.kugelelectronics.com.co/dashboard/';
-const siteurl = 'http://webdash.test/';
-//const siteurl = 'http://dashboard.local/';
+// const siteurl = 'http://webdash.test/';
+const siteurl = 'http://dashboard.local/';
 //const siteurl = 'http://pruebadevelopment.com/';
 
 
@@ -476,6 +476,7 @@ class Dashboard {
 
   updateMapColor(previuosMunicipio, newMunicipio){
     let updatedOptions = {'areas': {}};
+    console.log(previuosMunicipio, newMunicipio);
     if(this.region.toLowerCase() === 'CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO'.toLowerCase()){
       if (newMunicipio.toLowerCase() === 'PUERTO RICO'.toLowerCase()){
         newMunicipio = 'Pto Rico';
@@ -484,22 +485,27 @@ class Dashboard {
         previuosMunicipio = 'Pto Rico';
       }
     }
-    
+    newMunicipio = newMunicipio.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    previuosMunicipio = previuosMunicipio.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    console.log(previuosMunicipio, newMunicipio);
     
     updatedOptions.areas[newMunicipio] = {
       attrs: {fill: "#C2113B", opacity: 1}
     };
-    updatedOptions.areas[previuosMunicipio] = {
+    /*updatedOptions.areas[previuosMunicipio] = {
       attrs: {fill: '#767676', opacity: 1}
-    };
-    /*
-    let pBack = $(".mapcontainer").data('mapael').areas[previuosMunicipio].mapElem.attrs.fill;
-    updatedOptions.areas[previuosMunicipio] = {
-      attrs: {fill: this.previousSelectedBackground, opacity: 1}
-    };
-    */
-    this.previousSelectedBackground = pBack;
-    //console.log($(".mapcontainer").data('mapael'));
+    };*/
+    console.log($(".mapcontainer").data('mapael'));
+
+    let munData = $(".mapcontainer").data('mapael').areas[previuosMunicipio];
+    if (munData && munData.mapElem){
+      let pBack = munData.mapElem.originalAttrs.fill;
+      updatedOptions.areas[previuosMunicipio] = {
+        attrs: {fill: pBack, opacity: 1}
+      };
+    }
+    
+    
     $(".mapcontainer").trigger('update', [{
       mapOptions: updatedOptions, 
       animDuration: 100
