@@ -252,26 +252,26 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                Encuesta DE Tolerancia Social e Institucional contra las Mujeres a Servidores Públicos
+                                ENCUESTA DE TOLERANCIA SOCIAL E INSTITUCIONAL A LAS VIOLENCIAS CONTRA LAS MUJERES
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional 
-                                contra las Mujeres en 59 municipios PDET y 2 ciudades capitales: Cali y Quibdó.
+                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional a las Violencias contra las Mujeres 
+                                en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
                             </h2>
                         </div>
                     </div>
                 </div>                
                 <div class="row">
-                <div class="col-xxl-10 col-xl-9 col-md-12">
+                <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
                         <div class="blue-info">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <div class="info-box">
+                                <div class="col-lg-5 col-md-4 col-sm-12">
+                                    <div class="info-box init">
                                         <div class="row">
                                             <div class="col-3">
                                                 <div class="pin">
-                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9">
@@ -285,16 +285,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <div class="info-box">
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="info-box middle">
                                         <div class="row">
                                             <div class="col-3">
                                             <div class="pin">
-                                                    <img src="img/pin.png" alt="" class=img-fluid>
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9">
-                                                <p>En camino de cambio
+                                                <p>En ruta de cambio
                                                  </p>
                                                  <div class="numero agente2">
                                                     20.8%
@@ -308,7 +308,7 @@
                                         <div class="row">
                                             <div class="col-3">
                                             <div class="pin">
-                                                <img src="img/pin.png" alt="" class=img-fluid>
+                                                <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
                                             </div>
                                             <div class="col-9 last">
@@ -321,7 +321,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                                                       
+                            </div>                                                      
                         </div>
                     </div>
                     <div class="col-xxl-2 col-xl-3 col-md-12">
@@ -386,17 +386,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="util-box blue-bg hg">
-                            <h4 class="text-center py-2 border-aux">Hombres</h4>
-                            <div id="chart"></div>
-                        </div>
-                    </div>
+                <div class="row">                    
                     <div class="col-lg-12">
                         <div class="util-box blue-bg hg">
                             <h4 class="text-center py-2 border-aux">Mujeres</h4>
                             <div id="chart-2"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="util-box blue-bg hg">
+                            <h4 class="text-center py-2 border-aux">Hombres</h4>
+                            <div id="chart"></div>
                         </div>
                     </div>
                 </div>

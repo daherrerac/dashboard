@@ -6,8 +6,8 @@
     
   }else{
     // Si no está logueado lo redireccion a la página de login.
-    //header("HTTP/1.1 302 Moved Temporarily"); 
-    //header("Location: index.html"); 
+    header("HTTP/1.1 302 Moved Temporarily"); 
+    header("Location: index.html"); 
   }
 ?>
 <!doctype html>
@@ -261,7 +261,7 @@
                     <div class="col-lg-12">
                         <div class="box-title red">
                             <h1>
-                                Estudio de entorno institucional habilitante para el empoderamiento de género en Colombia 
+                                ESTUDIO DEL ENTORNO INSTITUCIONAL HABILITANTE PARA EL EMPODERAMIENTO DE GÉNERO EN COLOMBIA 
                             </h1>
                             <div class="linea"></div>
                             <h2>
@@ -272,7 +272,7 @@
                     </div>
                 </div>                
                 <div class="row">
-                    <div class="col-xxl-10 col-xl-9 col-md-12">
+                    <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
                         <div class="blue-info red-bg">
                             <div class="container-fluid px-2">
                                 <div class="row">
@@ -281,7 +281,7 @@
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="pin">
-                                                        <img src="img/pin.png" alt="" class=img-fluid>
+                                                        <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                     </div>
                                                 </div>
                                                 <div class="col-8">
@@ -289,37 +289,37 @@
                                                         Municipios que cuentan con mecanismos de víctimas o paz
                                                     </p>
                                                     <div class="numero agente1">
-                                                        21
+                                                        -
                                                     </div>
                                                 </div>                                                                    
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12">
-                                        <div class="info-box">
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="info-box middle-red">
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="pin">
-                                                        <img src="img/pin.png" alt="" class=img-fluid>
+                                                        <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                     </div>
                                                 </div>
                                                 <div class="col-8">
                                                     <p>
-                                                        Municipios que cuentan con mecanismos de genero
+                                                        Municipios que cuentan con mecanismos de género
                                                     </p>
                                                     <div class="numero agente2">
-                                                        19
+                                                        -
                                                     </div>
                                                 </div>                                                                    
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12">
-                                        <div class="info-box">
+                                    <div class="col-lg-5 col-md-4 col-sm-12">
+                                        <div class="info-box finish">
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="pin">
-                                                        <img src="img/pin.png" alt="" class=img-fluid>
+                                                        <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                     </div>
                                                 </div>
                                                 <div class="col-8 last">
@@ -327,7 +327,7 @@
                                                         Municipios en los que se plantea la formulación de política para los sectores LGBTI
                                                     </p>
                                                     <div class="numero agente3">
-                                                        17
+                                                        -
                                                     </div>
                                                 </div>                                                                    
                                             </div>
@@ -356,11 +356,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 d-none d-md-block">
                         <div class="util-box adp-hg">
                             <div class="mapa">
                                 <h4 class="red">Municipios donde se llevó a cabo el estudio</h4>
-                                <p>Seleccione en el mapa el municipio que sesee consultar</p>
+                                <p>Seleccione en el mapa el municipio que se desee consultar</p>
                                 <div class="mapcontainer red">
                                     <div class="map red">
                                         
@@ -433,17 +433,17 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="mapa">
-                                        <h4 class="mt-5">COMPARACIÓN ENTRE MUNICIPIOS</h4>
+                                        <h4 class="mt-4">COMPARACIÓN ENTRE MUNICIPIOS</h4>
                                         <p>Planeación y gestión de políticas en planes de desarrollo.</p>                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="mapa">                                        
-                                        <p class="mt-4 text-center">Seleccione dos municipios para hacer un comparativo</p>                                        
+                                        <p class="mt-2 mb-0 text-start" style="margin-left:2.1rem">Seleccione dos municipios para hacer un comparativo</p>                                      
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="region custom-select extr">
+                                            <div class="region custom-select extr ms-4">
                                                 <select id="region1">
                                                     <option>REGIÓN</option>
                                                     <option value="1">Chocó</option>                                             
@@ -451,7 +451,7 @@
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="region custom-select extr">
+                                            <div class="region custom-select extr me-5">
                                                 <select id="region2">
                                                     <option>REGIÓN</option>
                                                     <option value="1">Putumayo</option>                                             
@@ -461,7 +461,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <div class="municipio custom-select extr">
+                                            <div class="municipio custom-select extr ms-4">
                                                 <select id="municipio1">
                                                     <option>MUNICIPIO</option>
                                                     <option value="1">Anorí</option>                                             
@@ -469,7 +469,7 @@
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="municipio custom-select extr">
+                                            <div class="municipio custom-select extr me-5">
                                                 <select id="municipio2">
                                                     <option>MUNICIPIO</option>
                                                     <option value="1">Mesetas</option>                                             

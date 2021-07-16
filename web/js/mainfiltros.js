@@ -40,7 +40,7 @@ class DashboardDataReader {
   };
 
   // declaracion de filtros
-  static filterFields = ['Region','Region PDET', 'Departamento', 'Municipio PDET', 'Grupo de edad', 'Sexo',
+  static filterFields = ['Region','Region PDET', 'Departamento', 'Municipio PDET', 'Gedad', 'Sexo',
   'Tiempo que lleva trabajando en la institución', 'Pertenencia étnica','Filtro','Pregunta','Agente1','Agente2','Agente3'];
 
 
@@ -291,6 +291,9 @@ class Dashboard {
   graphRegionSelection1;
   graphRegionSelection2;
 
+  graphAgeSelection1;
+  graphAgeSelection2;
+
   filterQuestionSelection1;
   filterQuestionSelection2;
 
@@ -305,12 +308,12 @@ class Dashboard {
     this.hasMap = hasMap;
     this.mapGraphs = mapGraphs;
     this.lowerGraphs = lowerGraphs;
+    let self = this;
     if (this.hasMap && this.mapGraphs){
       this.mapClickCallback = (region) => {
         let previousRegionSelected = this.region;
         this.region = region;
-        this.updateGraph1(this.menGraph, {Region:this.region, [this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue});
-        this.updateGraph1(this.womenGraph, {Region:this.region, [this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue});
+        
         selOption(document.getElementById("regionA"), region);
         let updatedOptions = {
           areas:{}
@@ -325,6 +328,9 @@ class Dashboard {
           mapOptions: updatedOptions, 
           animDuration: 100
         }]);
+        let filtroEdad = document.getElementById("edad").value;           
+        self.updateGraph3(self.lowerGraphs.graph1.id, {Region:region, [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue,Gedad:filtroEdad});
+        self.updateGraph3(self.lowerGraphs.graph2.id, {Region:region, [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue,Gedad:filtroEdad});        
       }
     }
     this.init();
@@ -354,14 +360,16 @@ class Dashboard {
     // cargar regiones en selectores inferiores
     this.loadRegions();
 
-
-    // inicializar graficas
-    if (this.mapGraphs){
-      this.initGraphs1();
+    // cargar filtro de edad
+    
+    if (this.lowerGraphs){
+      this.initGraphsmini();
     }
     if (this.lowerGraphs){
-      this.initGraphs2();
+      this.initGraphsmini2();
     }
+
+    
 
     // incializar mapa
     if (this.hasMap){
@@ -371,61 +379,45 @@ class Dashboard {
     // TODO esconder loader
   }
 
-  initGraphs1(){
-    let menGraphEl = document.getElementById('myChart').getContext('2d');
-    let womenGraphEl = document.getElementById('myChart2').getContext('2d');
-    let filter = {[this.mapGraphs[0].filterKey]:this.mapGraphs[0].filterValue};
-    if (this.hasMap){
-      filter.Region=this.region;
-    }
-    const labelColumn = "Grupo de edad";
-    let graphData1 = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+  initGraphsmini(){
+    let config1 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
+    let config2 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
+    config1.chart.id = this.lowerGraphs.graph1.id;
+    config2.chart.id = this.lowerGraphs.graph2.id;
 
-    this.menGraph = new Chart(menGraphEl, {
-      id:"myChart",
-      type: 'bar',  
-      data: {        
-        labels: graphData1.labels,
-        datasets: [{
-          label: this.region,
-          data: graphData1.data,
-          backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
-          borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
-          color: chartConfig.datasetsColor,
-          borderWidth: chartConfig.datasetsBorderWidth
-        }]
-      },
-      options: chartConfig.options
-    });
-    let filter2 = {[this.mapGraphs[1].filterKey]:this.mapGraphs[1].filterValue};
-    if (this.hasMap){
-      filter2.Region=this.region;
-    }
-    let graphData2 = this.dr.getColumnData(this.survey, this.selectedQuestion, labelColumn, filter2);
+    const labelColumn = this.lowerGraphs.labelColumn;
 
-    this.womenGraph = new Chart(womenGraphEl, {
-      id:"myChart2",
-      type: 'bar',
-      data: {
-        labels: graphData2.labels,
-        datasets: [{
-          label: this.region,
-          data: graphData2.data,
-          backgroundColor: Array(6).fill(chartConfig.datasetsBackgroundColor),
-          borderColor: Array(6).fill(chartConfig.datasetsBorderColor),
-          color: chartConfig.datasetsColor,
-          borderWidth: chartConfig.datasetsBorderWidth
-        }]
-      },
-      options: chartConfig.options
-    });
-    // fix graphs default title
-    this.menGraph.options.plugins.title.text = Dashboard.splitText(this.selectedQuestion);
-    this.menGraph.update();
-    this.womenGraph.options.plugins.title.text = Dashboard.splitText(this.selectedQuestion);
-    this.womenGraph.update();
+    let filter  = {[this.lowerGraphs.graph1.filter.filterKey]:this.lowerGraphs.graph1.filter.filterValue};
+    let filter2 = {[this.lowerGraphs.graph2.filter.filterKey]:this.lowerGraphs.graph2.filter.filterValue};
+    if (this.hasMap){
+      filter.Region=this.graphRegionSelection1;
+      filter.Gedad=this.graphAgeSelection1;
+      filter2.Region=this.graphRegionSelection1;
+      filter2.Gedad=this.graphAgeSelection1;
+    }
+    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    let womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter2);
+        
+    config1.series[0].name = this.graphRegionSelection1;
+    config1.series[0].data = menGraphDataSeries.data;
+    config2.series[0].name = this.graphRegionSelection1;
+    config2.series[0].data = womenGraphDataSeries.data;
+     
+    //config1.xaxis.categories = menGraphDataSeries.labels;
+    //carga de graficas
+    config1.yaxis.max = function(val) {if(val < 6){return val + 70} else if( 6 <= val < 15){return val + 75}else if(15 <= val < 40){return val + 60}else if(40 <= val < 90){return val + 10}else if(90 <= val <= 100){return val}}  
+    config1.dataLabels.formatter = function (val) {return val + "%"};
+    
+    config2.yaxis.labels.formatter = function (val) {return val + "%"};  
+    config2.yaxis.max = function(val) {if(val < 6){return val + 70} else if( 6 <= val < 15){return val + 75}else if(15 <= val < 40){return val + 60}else if(40 <= val < 90){return val + 10}else if(90 <= val <= 100){return val}}  
+    config2.dataLabels.formatter = function (val) {return val + "%"};
+
+    let chartb = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph1.id), config1);
+    let chartc = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph2.id), config2);              
+    chartb.render();    
+    chartc.render();    
   }
-
+  
   updateGraph1(graph, filter){
     const labelColumn = "Grupo de edad";
     // cargar datos del grafico
@@ -447,112 +439,9 @@ class Dashboard {
       indexArray = this.dr.data.servidoresPublicos.filters.Region.indexOf(this.region);
     }    
     graph.options.plugins.title.text = Dashboard.splitText(this.selectedQuestion);
-
-    //console.log("hidehere", graph.canvas);
-    //config2.xaxis.categories = menGraphDataSeries.labels;
-    if (Dashboard.hasValidValuesInDataArray(graph.data.datasets[0].data)){
-      //console.log("has valid data");
-      graph.canvas.closest(".util-box").style.display = "block";
-      graph.update();
-    } else {
-      //console.log("has valid data");
-      graph.canvas.closest(".util-box").style.display = "none";
-    }
+    graph.update();
     this.updateAgente(indexArray);
   }
-
-  initGraphs2(){
-    let config1 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
-    let config2 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
-    
-    config1.chart.id = this.lowerGraphs.graph1.id;
-    config2.chart.id = this.lowerGraphs.graph2.id;
-    const labelColumn = this.lowerGraphs.labelColumn;
-    
-    
-    let filter = {[this.lowerGraphs.graph1.filter.filterKey]:this.lowerGraphs.graph1.filter.filterValue};
-    if (this.hasMap){
-      filter.Region=this.graphRegionSelection1;
-    }
-    
-    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
-    if (this.hasMap){
-      filter.Region=this.graphRegionSelection2;
-    }
-    let womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
-   
-    config1.series[0].name = this.graphRegionSelection1;
-    config1.series[0].data = menGraphDataSeries.data;
-    if (this.hasMap){
-      config1.series[1].name = this.graphRegionSelection2;
-      config1.series[1].data = womenGraphDataSeries.data; 
-    }  
-    config1.xaxis.categories = menGraphDataSeries.labels;
-    config1.yaxis.labels.formatter = function (val) {return val + "%"};    
-    config1.dataLabels.formatter = function (val) {return val + "%"};
-    
-    // console.log("config", config1);
-
-    let filter2 = {[this.lowerGraphs.graph1.filter.filterKey]:this.lowerGraphs.graph1.filter.filterValue};
-    if (this.hasMap){
-      filter2.Region=this.graphRegionSelection1;
-    }
-    menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter2);
-    if (this.hasMap){
-      filter2.Region=this.graphRegionSelection2;
-    }
-    womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter2);
-    config2.series[0].name = this.graphRegionSelection1;
-    config2.series[0].data = menGraphDataSeries.data;
-    if (this.hasMap){
-      config2.series[1].name = this.graphRegionSelection2;
-      config2.series[1].data = womenGraphDataSeries.data;
-    }
-    config2.xaxis.categories = menGraphDataSeries.labels;
-    config2.yaxis.labels.formatter = function (val) {return val + "%"};
-    config2.dataLabels.formatter = function (val) {return val + "%"};
-
-    // console.log("config2", config2);
-    
-    let chartb = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph1.id), config1);
-    let chartc = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph2.id), config2);            
-    chartb.render();
-    chartc.render();
-  }
-
-  updateGraph2(graphId, filter){
-    const labelColumn = "Grupo de edad";
-    // cargar datos del grafico
-    filter.Region=this.graphRegionSelection1;
-    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
-    filter.Region=this.graphRegionSelection2;
-    let womenGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
-    let series = [
-      {
-        name:this.graphRegionSelection1,
-        data: menGraphDataSeries.data,
-      },
-    ];
-    if (this.hasMap){
-      series.push({
-        name:this.graphRegionSelection2,
-        data:womenGraphDataSeries.data,
-      });
-    }
-    // ocultar grafica si los datos estan vacios
-    //console.log("hidehere", graphId, series, filter);
-    //config2.xaxis.categories = menGraphDataSeries.labels;
-    if (Dashboard.hasValidValuesInDataArray(series[0].data)){
-      //console.log("has valid data");
-      document.getElementById(graphId).closest(".util-box").style.display = "block";
-      ApexCharts.exec(graphId, 'updateSeries', series, true);
-    }else{
-      //console.log("has valid data");
-      document.getElementById(graphId).closest(".util-box").style.display = "none";
-    }
-  }
-
-  
 
   loadQuestions(){
     let self = this;
@@ -585,12 +474,14 @@ class Dashboard {
         // adicionar clase selected al elemento del evento
         this.classList.add('selected');
         console.log("Click question", self.selectedQuestion);
+        document.getElementById("qIndigenas").innerHTML = self.selectedQuestion;
+        document.getElementById("qAfro").innerHTML = self.selectedQuestion;
+        let filtroEdad   = document.getElementById("edad").value;
+        let filtroRegion = document.getElementById("regionA").value;
         if (self.hasMap){
-          self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
-          self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
-        }
-        self.updateGraph2(self.lowerGraphs.graph1.id, {Region:'', [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue});
-        self.updateGraph2(self.lowerGraphs.graph2.id, {Region:'', [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue});
+          self.updateGraph2(self.lowerGraphs.graph1.id, {Region:filtroRegion, [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue,Gedad:filtroEdad});
+          self.updateGraph2(self.lowerGraphs.graph2.id, {Region:filtroRegion, [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue,Gedad:filtroEdad});
+        }        
       });
     });
   }
@@ -598,7 +489,11 @@ class Dashboard {
   loadRegions(){
     let self = this;
     let previousRegionSelected;
-    const regionsDropDown = document.querySelectorAll('.region.custom-select select');
+    let filtroEdad; 
+    let filtroRegion;
+    let filtroRegion2;
+    let regionSt;
+    const regionsDropDown = document.querySelectorAll('.region.custom-select select');    
     const regionsList = this.dr.getFilters(this.survey, 'Region');
     self.graphRegionSelection1 = regionsList[0];
     self.graphRegionSelection2 = regionsList[1];
@@ -609,31 +504,46 @@ class Dashboard {
       regionsList.forEach((q) => {
         selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
       });      
-      let callback = (value) => {
+      let callback = (value) => {        
         previousRegionSelected = self.region;
         if (selector.getAttribute('id') == "regionA"){
-          self.region = value;
-          self.updateGraph1(self.menGraph, {Region:self.region, [self.mapGraphs[0].filterKey]:self.mapGraphs[0].filterValue});
-          self.updateGraph1(self.womenGraph, {Region:self.region, [self.mapGraphs[1].filterKey]:self.mapGraphs[1].filterValue});
+          self.region = value; 
+          filtroEdad = document.getElementById("edad").value;           
+          self.updateGraph3(self.lowerGraphs.graph1.id, {Region:self.region, [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue,Gedad:filtroEdad});
+          self.updateGraph3(self.lowerGraphs.graph2.id, {Region:self.region, [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue,Gedad:filtroEdad});        
+          let updatedOptions = {'areas': {}};
+          updatedOptions.areas[value] ={
+            attrs: {fill: "#022869", opacity: 1}
+          },
+          updatedOptions.areas[previousRegionSelected] ={
+            attrs: {fill: "#767676", opacity: 1}
+          }
+          $(".mapcontainer").trigger('update', [{
+            mapOptions: updatedOptions, 
+            animDuration: 100
+          }]);
         } else if (selector.getAttribute('id') == "region1"){
-          self.graphRegionSelection1 = value;
-        } else if (selector.getAttribute('id') == 'region2'){
-          self.graphRegionSelection2 = value;
-        }
-        self.updateGraph2(self.lowerGraphs.graph1.id, {Region:'', [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue});
-        self.updateGraph2(self.lowerGraphs.graph2.id, {Region:'', [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue});
+          filtroRegion2 = document.getElementById("region2").value;
+          filtroEdad    = document.getElementById("fil_edad").value;
+          self.updateGraph4(self.lowerGraphs.graph3.id, {Region:value, [self.lowerGraphs.graph3.filter.filterKey]:self.lowerGraphs.graph3.filter.filterValue,Gedad:filtroEdad});                        
+          self.updateGraph4(self.lowerGraphs.graph5.id, {Region:filtroRegion2, [self.lowerGraphs.graph5.filter.filterKey]:self.lowerGraphs.graph5.filter.filterValue,Gedad:filtroEdad});                        
+          self.updateGraph4(self.lowerGraphs.graph4.id, {Region:value, [self.lowerGraphs.graph4.filter.filterKey]:self.lowerGraphs.graph4.filter.filterValue,Gedad:filtroEdad});                        
+          self.updateGraph4(self.lowerGraphs.graph6.id, {Region:filtroRegion2, [self.lowerGraphs.graph6.filter.filterKey]:self.lowerGraphs.graph6.filter.filterValue,Gedad:filtroEdad});                                  
+        } else if (selector.getAttribute('id') == 'region2'){          
+          filtroRegion2 = document.getElementById("region1").value;
+          filtroEdad    = document.getElementById("fil_edad").value;
+          self.updateGraph4(self.lowerGraphs.graph3.id, {Region:filtroRegion2, [self.lowerGraphs.graph3.filter.filterKey]:self.lowerGraphs.graph3.filter.filterValue,Gedad:filtroEdad});                        
+          self.updateGraph4(self.lowerGraphs.graph5.id, {Region:value, [self.lowerGraphs.graph5.filter.filterKey]:self.lowerGraphs.graph5.filter.filterValue,Gedad:filtroEdad});                        
+          self.updateGraph4(self.lowerGraphs.graph4.id, {Region:filtroRegion2, [self.lowerGraphs.graph4.filter.filterKey]:self.lowerGraphs.graph4.filter.filterValue,Gedad:filtroEdad});                        
+          self.updateGraph4(self.lowerGraphs.graph6.id, {Region:value, [self.lowerGraphs.graph6.filter.filterKey]:self.lowerGraphs.graph6.filter.filterValue,Gedad:filtroEdad});                                  
+        }        
         console.log("Region seleccionada:", value, "sel1:", self.graphRegionSelection1, "sel2:",self.graphRegionSelection2);
-        let updatedOptions = {'areas': {}};
-        updatedOptions.areas[value] ={
-          attrs: {fill: "#022869", opacity: 1}
-        },
-        updatedOptions.areas[previousRegionSelected] ={
-          attrs: {fill: "#767676", opacity: 1}
-        }
-        $(".mapcontainer").trigger('update', [{
-          mapOptions: updatedOptions, 
-          animDuration: 100
-        }]);
+        
+        let indexArray;
+                
+        indexArray = this.dr.data.mujeresEtnicas.filters.Region.indexOf(this.region);
+        
+        this.updateAgente(indexArray);
       };
       // definir selecciones por defecto de ambos selectores
       if (selector.getAttribute('id') == "regionA"){
@@ -646,6 +556,119 @@ class Dashboard {
       updateOption(selector, callback, regionsList[selector.selectedIndex]);
       
     });
+    const edadesDropDown = document.querySelectorAll('.fedad.custom-select select');
+    const edadesList = this.dr.getFilters(this.survey, 'Gedad');
+    self.graphAgeSelection1 = edadesList[0];
+    self.graphAgeSelection2 = edadesList[1];
+    edadesDropDown.forEach((selector, i) => {
+      // limpiar opciones
+      selector.innerHTML = '';
+      // adicionar atributo de selector
+      edadesList.forEach((q) => {
+        selector.add(HTMLbuilder.createSelectorOptionElement(q),null);
+      });      
+      let callback = (value) => {        
+        if (selector.getAttribute('id') == "edad"){
+          self.edad = value;   
+          filtroRegion = document.getElementById("regionA").value;
+          self.updateGraph3(self.lowerGraphs.graph1.id, {Region:filtroRegion, [self.lowerGraphs.graph1.filter.filterKey]:self.lowerGraphs.graph1.filter.filterValue,Gedad:self.edad});
+          self.updateGraph3(self.lowerGraphs.graph2.id, {Region:filtroRegion, [self.lowerGraphs.graph2.filter.filterKey]:self.lowerGraphs.graph2.filter.filterValue,Gedad:self.edad});                        
+        }else if(selector.getAttribute('id') == "fil_edad"){          
+          self.edad = value;
+          filtroRegion  = document.getElementById("region1").value;
+          filtroRegion2 = document.getElementById("region2").value;
+          self.updateGraph4(self.lowerGraphs.graph3.id, {Region:filtroRegion, [self.lowerGraphs.graph3.filter.filterKey]:self.lowerGraphs.graph3.filter.filterValue,Gedad:self.edad});                        
+          self.updateGraph4(self.lowerGraphs.graph5.id, {Region:filtroRegion2, [self.lowerGraphs.graph5.filter.filterKey]:self.lowerGraphs.graph5.filter.filterValue,Gedad:self.edad});                        
+          self.updateGraph4(self.lowerGraphs.graph4.id, {Region:filtroRegion, [self.lowerGraphs.graph4.filter.filterKey]:self.lowerGraphs.graph4.filter.filterValue,Gedad:self.edad});                        
+          self.updateGraph4(self.lowerGraphs.graph6.id, {Region:filtroRegion2, [self.lowerGraphs.graph6.filter.filterKey]:self.lowerGraphs.graph6.filter.filterValue,Gedad:self.edad});                                  
+        }        
+      };
+      // definir selecciones por defecto de ambos selectores
+      if (selector.getAttribute('id') == "edad"){
+        selector.selectedIndex = 0;
+      } else if (selector.getAttribute('id') == 'fil_edad'){
+        selector.selectedIndex = 0;
+      } 
+      updateOption(selector, callback, edadesList[selector.selectedIndex]);
+      
+    });
+  }
+  
+
+  updateGraph2(graphId, filter){
+    this.lowerGraphs.config.chart.height       = 390;
+    this.lowerGraphs.config.dataLabels.offsetY = -80;
+    this.lowerGraphs.config.dataLabels.style   ={fontSize: '65px'}
+
+    const labelColumn = "Grupo de edad";
+    // cargar datos del grafico
+    
+    filter.Region = document.getElementById("regionA").value;
+    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);    
+    
+    let series = [
+      {
+        name: filter.Region,
+        data: menGraphDataSeries.data,
+      },
+    ];
+
+    if(menGraphDataSeries.data == '-'){
+      document.getElementById(graphId).style.display = "none";
+    }else{
+      document.getElementById(graphId).style.display = "block";
+      ApexCharts.exec(graphId, 'updateSeries', series, true);
+    }
+    
+  }
+
+  updateGraph3(graphId, filter){
+    this.lowerGraphs.config.chart.height       = 390;
+    this.lowerGraphs.config.dataLabels.offsetY = -80;
+    this.lowerGraphs.config.dataLabels.style   ={fontSize: '65px'}
+    const labelColumn = "Grupo de edad";
+    // cargar datos del grafico
+    filter.Region = document.getElementById("regionA").value;
+    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    //filter.Region=this.graphRegionSelection2;        
+    let series = [
+      {
+        name: filter.Region,
+        data: menGraphDataSeries.data,
+      },
+    ];
+    
+    if(menGraphDataSeries.data == '-'){
+      document.getElementById(graphId).style.display = "none";
+    }else{
+      document.getElementById(graphId).style.display = "block";
+      ApexCharts.exec(graphId, 'updateSeries', series, true);
+    }
+    
+  }
+  
+  updateGraph4(graphId, filter){
+    this.lowerGraphs.config.chart.height       = 390;
+    this.lowerGraphs.config.dataLabels.offsetY = -80;
+    this.lowerGraphs.config.dataLabels.style   ={fontSize: '65px'}
+    const labelColumn = "Grupo de edad";
+    // cargar datos del grafico    
+    let menGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    //filter.Region=this.graphRegionSelection2;        
+    let series = [
+      {
+        name: filter.Region,
+        data: menGraphDataSeries.data,
+      },
+    ];
+    
+    if(menGraphDataSeries.data == '-'){
+      document.getElementById(graphId).style.display = "none";
+    }else{
+      document.getElementById(graphId).style.display = "block";
+      ApexCharts.exec(graphId, 'updateSeries', series, true);
+    }
+    
   }
 
   //parte para cargar filtros de preguntas
@@ -679,6 +702,7 @@ class Dashboard {
     const agente3Items = document.querySelector('.agente3');
     
     const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
+    agente1List.push("38.9");
     const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
     const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
 
@@ -698,6 +722,7 @@ class Dashboard {
     const agente3Items = document.querySelector('.agente3');
     
     const agente1List = this.dr.getFilters(this.survey, 'Agente1' );
+    agente1List.push("38.9");
     const agente2List = this.dr.getFilters(this.survey, 'Agente2' );
     const agente3List = this.dr.getFilters(this.survey, 'Agente3' );
 
@@ -709,6 +734,86 @@ class Dashboard {
     agente2Items.innerHTML = this.filterAgente2 + "%";
     agente3Items.innerHTML = this.filterAgente3 + "%";
   }
+
+
+  //Segundo grupo de gráficas
+
+  initGraphsmini2(){
+    this.lowerGraphs.config.chart.height       = 140;
+    this.lowerGraphs.config.dataLabels.offsetY = -65;
+    this.lowerGraphs.config.dataLabels.style   ={fontSize: '40px'}
+    //this.lowerGraphs.config.tooltip.style      ={color: '#000000'}
+    let config1 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
+    let config2 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
+    let config3 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
+    let config4 = JSON.parse(JSON.stringify(this.lowerGraphs.config));
+
+    config1.chart.id = this.lowerGraphs.graph3.id;
+    config2.chart.id = this.lowerGraphs.graph4.id;
+    config3.chart.id = this.lowerGraphs.graph5.id;
+    config4.chart.id = this.lowerGraphs.graph6.id;
+    
+    const labelColumn = "";
+
+    let filter  = {[this.lowerGraphs.graph3.filter.filterKey]:this.lowerGraphs.graph3.filter.filterValue};
+    let filter2 = {[this.lowerGraphs.graph4.filter.filterKey]:this.lowerGraphs.graph4.filter.filterValue};
+    let filter3 = {[this.lowerGraphs.graph5.filter.filterKey]:this.lowerGraphs.graph5.filter.filterValue};
+    let filter4 = {[this.lowerGraphs.graph6.filter.filterKey]:this.lowerGraphs.graph6.filter.filterValue};
+    if (this.hasMap){
+      filter.Region=this.graphRegionSelection1;
+      filter.Gedad=this.graphAgeSelection1;
+      filter2.Region=this.graphRegionSelection1;
+      filter2.Gedad=this.graphAgeSelection1;
+      filter3.Region=this.graphRegionSelection2;
+      filter3.Gedad=this.graphAgeSelection1;
+      filter4.Region=this.graphRegionSelection2;
+      filter4.Gedad=this.graphAgeSelection1;
+    }
+
+    let IndgGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter);
+    let AfroGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter2);
+    let IndgBGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter3);
+    let AfroBGraphDataSeries = this.dr.getColumnData(this.survey,this.selectedQuestion, labelColumn, filter4);
+    
+        
+    config1.series[0].name = this.graphRegionSelection1;
+    config1.series[0].data = IndgGraphDataSeries.data;
+    config2.series[0].name = this.graphRegionSelection1;
+    config2.series[0].data = AfroGraphDataSeries.data;
+    config3.series[0].name = this.graphRegionSelection2;
+    config3.series[0].data = IndgBGraphDataSeries.data;
+    config4.series[0].name = this.graphRegionSelection2;
+    config4.series[0].data = AfroBGraphDataSeries.data;
+     
+    //config1.xaxis.categories = menGraphDataSeries.labels;
+    config1.yaxis.labels.formatter = function (val) {return val + "%"};  
+    config1.yaxis.max = function(val) {if(val < 6){return val + 70} else if( 6 <= val < 15){return val + 65}else if(15 <= val < 40){return val + 60}else if(40 <= val < 90){return val + 10}else if(90 <= val <= 100){return val}}
+    config1.dataLabels.formatter = function (val) {return val + "%"};
+    
+    config2.yaxis.labels.formatter = function (val) {return val + "%"};  
+    config2.yaxis.max = function(val) {if(val < 6){return val + 70} else if( 6 <= val < 15){return val + 65}else if(15 <= val < 40){return val + 60}else if(40 <= val < 90){return val + 10}else if(90 <= val <= 100){return val}}
+    config2.dataLabels.formatter = function (val) {return val + "%"};
+
+    config3.yaxis.labels.formatter = function (val) {return val + "%"};  
+    config3.yaxis.max = function(val) {if(val < 6){return val + 70} else if( 6 <= val < 15){return val + 65}else if(15 <= val < 40){return val + 60}else if(40 <= val < 90){return val + 10}else if(90 <= val <= 100){return val}}
+    config3.dataLabels.formatter = function (val) {return val + "%"};
+    
+    config4.yaxis.labels.formatter = function (val) {return val + "%"};  
+    config4.yaxis.max = function(val) {if(val < 6){return val + 70} else if( 6 <= val < 15){return val + 65}else if(15 <= val < 40){return val + 60}else if(40 <= val < 90){return val + 10}else if(90 <= val <= 100){return val}}
+    config4.dataLabels.formatter = function (val) {return val + "%"};
+
+    let charta = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph3.id), config1);
+    let chartb = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph4.id), config2); 
+    let chartc = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph5.id), config3);
+    let chartd = new ApexCharts(document.querySelector("#"+this.lowerGraphs.graph6.id), config4);              
+    charta.render();    
+    chartb.render(); 
+    chartc.render();    
+    chartd.render();    
+  }
+
+
+
 
   /**
    * Funcion que divide el texto por uno de los espacios si supera un maximo dado.
@@ -724,24 +829,6 @@ class Dashboard {
     }
     
     return text;
-  }
-
-  /**
-   * Devuelve true si al menos un valor del array es diferente de vacio
-   * @param {*} arr 
-   * @returns 
-   */
-  static hasValidValuesInDataArray(arr){
-    //console.log("checking array", arr);
-    if (arr && arr.length) {
-      for(let val of arr){
-        if (val!== ""){
-          //console.log("valid!", val);
-          return true
-        }
-      }
-    }
-    return false;
   }
 }
 

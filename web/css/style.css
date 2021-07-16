@@ -540,6 +540,15 @@ h2 span{
     max-width: 330px;   
     position: relative; 
 }
+.blue-info .info-box.init{
+    margin-left: 4em;    
+}
+.blue-info .info-box.middle{
+    margin-left: -5em;
+}
+.blue-info .info-box.middle-red{
+    margin-right: -5em;
+}
 .blue-info .col-8.last{
     border-right: none;
 }
@@ -547,9 +556,14 @@ h2 span{
     border-right: none;
 }
 .blue-info.comparacion{
-    height: auto;
-    min-height: 210px;
-    padding-bottom: 1em;
+    height: auto;    
+    padding-bottom: 1.3em;
+}
+.blue-info.comparacion.white-bg{
+    background: #ffffff;
+    box-shadow: 1px 1px 10px #a6a6a6b6;
+    height: auto;    
+    padding-bottom: 1.3em;
 }
 .info-box .row:first-of-type{
     margin-left: 5px;
@@ -560,7 +574,7 @@ h2 span{
     left: 30px;
 }
 .info-box .pin img{
-    width: 70px;
+    width: 65px;
 }
 .info-box p{
     color: #ffffff;
@@ -635,7 +649,7 @@ h2 span{
     height: 400px;
 }
 .util-box.blue-bg.hg{
-    height: 500px;
+    height: 450px;
 }
 .util-box.red-bg{
     background: #C2113B;
@@ -665,10 +679,21 @@ h2 span{
     height: 100%;
     max-height: 830px;
 }
+.grf{
+    position: relative;
+}
 .chart{
     max-width: 630px;
     margin: 0 auto;
     height: 312px;
+}
+.chart.br{
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    width: 100%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
 }
 .respuesta{
     font-family:'SourceBold';
@@ -742,6 +767,10 @@ h2 span{
     background: #C2113B;
     color: #ffffff;
 }
+.fila-cajon .cajon.blue{
+    background: #022869;
+    color: #ffffff;
+}
 .fila-cajon:hover .cajon.white{
     background: #ffffff;
 }
@@ -782,7 +811,11 @@ h2 span{
     padding: 1.5em 1em 1em;
     overflow-y: auto;
 }
-
+.cajon .mapa h4{
+    font-size: 19px;
+    padding: 0;
+    color: #ffffff;
+}
 .respuestas.full .cajon.ask{
     font-family:'SourceRegular';
     width: calc(50% - 20px);
@@ -799,6 +832,29 @@ h2 span{
     font-size: 17px;
     width: 20%;
     padding-left: 10px;
+    position: relative;
+}
+
+.respuestas.full .cajon.ans.blue{
+    width: 25%;    
+}
+.respuestas.full .cajon.ans2.blue{
+    font-family:'SourceSemiBold';
+    text-align: center;
+    font-size: 17px;
+    width: 25%;
+    padding-left: 10px;
+    position: relative;
+}
+.respuestas.full .cajon.ans svg{
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+}
+.respuestas.full .cajon.ans2 svg{
+    position: absolute;
+    bottom: -35px;
+    left: 0;
 }
 /* Works on Chrome, Edge, and Safari */
 .respuestas::-webkit-scrollbar {
@@ -1036,6 +1092,12 @@ select option{
     width: 93%;  
     max-height: 770px;  
 }
+.map.map_small svg{    
+    display: block;
+    margin: 0 auto; 
+    width: 93%;  
+    max-height: 465px;  
+}
 .mapael.red .map{    
     position: relative;
     max-height: 650px;
@@ -1088,6 +1150,9 @@ select option{
     display: none;    
     border: 1px solid #a6a6a6;
     text-align: center;
+}
+.apexcharts-tooltip {    
+    color: #474747;
 }
 .video video{
     width: 100%;
@@ -1146,6 +1211,9 @@ select option{
 .custom-select.extr{
     margin-top: 1.5em;
     margin-left: 1em;
+}
+.comparacion .custom-select.extr{
+    margin-top: 1em;
 }
 .ext .select-selected{
     width: 100%;
@@ -1309,6 +1377,11 @@ select option{
         height: 96%;
     }
 }
+@media screen and (max-width:1500px) {
+    .blue-info .info-box.init{
+        margin-left: 2em;    
+    }    
+}
 @media screen and (min-width:1440px){
     .encuesta{
         display: none;
@@ -1334,6 +1407,12 @@ select option{
     }
     .extr .select-selected:after {
         right: 12px;
+    }
+    .blue-info .info-box.init{
+        margin-left: 1em;    
+    }
+    .blue-info .info-box.middle{
+        margin-left: -3em;    
     }
 }
 @media screen and (max-width:1399px) {
@@ -1363,7 +1442,15 @@ select option{
         height: 60px;
         padding: 0 0.6em;
     }
-    
+    .blue-info .info-box.init{
+        margin-left: -1em;    
+    }
+    .blue-info .info-box.middle{
+        margin-left: -3em;    
+    }
+    .info-box.finish .pin {        
+        left: 60px;
+    }
 }
 @media screen and (max-width:1280px) {
     .info-box .punto{
@@ -1513,6 +1600,15 @@ select option{
     .blue-info .col-8 {
         border-right: none;
     }
+    .blue-info .col-9 {
+        border-right: none;
+    }
+    .blue-info .info-box.init {
+        margin-left: auto;
+    }
+    .blue-info .info-box.middle {
+        margin-left: auto;
+    }
     .custom-select.ext {
         margin-top: 0em;
     }
@@ -1533,6 +1629,22 @@ select option{
     }
     .adicional p {        
         text-align: center;
+    }
+    .box-title h1 {
+        font-size: 1.9em;
+        width: 90%;        
+    }
+    .blue-info .info-box {        
+        max-width: 100%;  
+        padding: 0;  
+        margin: 0.1em;    
+    }
+    .info-box p {
+        height: 35px;        
+    }
+    .adicional {
+        max-width: 100%;
+        height: 170px;        
     }
 }
 

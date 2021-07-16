@@ -16,31 +16,41 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">     
-    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">  
+    <link rel="stylesheet" href="css/style.css">    
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">   
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
-    <script src="js/papaparse.min.js"></script>    
+    <script src="js/papaparse.min.js"></script>
+
+    
     <script src="js/mapahandler.js"></script>    
     
-    <title>Tolerancia Social</title>
 
+    
+    <title>Experiencia frente a la violencia</title>
     <style>
         .mapael .mapTooltip {
+            font-family:'SourceBold';
+            position: absolute;
+            background-color: #ffffff;            
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            max-width: 200px;
+            display: none;
             color: #022869;
+            border: 1px solid #a6a6a6;
+            text-align: center;
         }
     </style>
-
   </head>
-  <body>
+  <body style="overflow-y: auto;background: #fbfbfb;">
       
     <div class="container-fluid">
         <div class="fila">
@@ -54,6 +64,7 @@
                             <h2>
                                 La Tolerancia Social e Institucional a las Violencias contra las Mujeres
                             </h2>
+
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingOne">                                    
@@ -62,34 +73,34 @@
                                             <img src="img/icono-02.svg" alt="">
                                             Encuesta Tolerancia Social
                                         </a>
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
                                         </button>
                                     </div>
                                   </h2>
-                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                  <div id="flush-collapseOne" class="accordion-collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-											  
-                                        <div class="box-message">
+                                        
+                                        <div class="box-message activo" >
                                             <ul>
                                                 <li>
-                                                    <a href="experienciaalaviolencia.php" class="activo">
+                                                    <a href="experienciaalaviolencia.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
                                                         Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                                     </a>
                                                 </li>
-                                            </ul>                                            
+                                            </ul>
+                                            
                                         </div>
                                     </div>
                                   </div>
                                 </div>                                                                
                             </div>
-                                                                                    
                             <div class="box-buttons">
-                                <a href="toleranciainstitucional.php" class="hblue">                                    
-                                    <img src="img/icono-03.svg" alt="" >                                                                                
-                                    Encuesta Tolerancia Institucional                                                                                                                
+                                <a href="toleranciainstitucional.php" class="hblue">
+                                    <img src="img/icono-03.svg" alt="">
+                                    Encuesta Tolerancia Institucional
                                 </a>
                                 <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <img src="img/info-blue.png" alt="" >    
+                                    <img src="img/info-blue.png" alt="" >  
                                     Ficha técnica
                                 </a>
                             </div>
@@ -111,7 +122,7 @@
                                     <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional LGBTI
                                 </a>
-                                <a href="#exampleModal2" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                <a href="#exampleModal2" class="hred" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     <img src="img/info.png" alt="">     
                                     Ficha técnica
                                 </a>
@@ -138,7 +149,8 @@
                                         Bienvenido/a
                                         <a href="#">'.$_SESSION['email'].'</a>
                                     </p>
-                                    <a href="cerrar.php"> Cerrar sesión</a>                                    
+                                    <a href="cerrar.php"> Cerrar sesión</a>
+                                    
                                     ';
                                 }
                             ?>                                                        
@@ -263,7 +275,7 @@
                     <div class="col-lg-12">
                         <div class="box-title">
                             <h1>
-                                Encuesta de Tolerancia Social e Institucional a las Violencias contra las Mujeres
+                                ENCUESTA DE TOLERANCIA SOCIAL E INSTITUCIONAL A LAS VIOLENCIAS CONTRA LAS MUJERES
                             </h1>
                             <div class="linea"></div>
                             <h2>
@@ -274,13 +286,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
+                <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
                         <div class="blue-info">
                             <div class="row">
                                 <div class="col-lg-5 col-md-4 col-sm-12">
                                     <div class="info-box init">
                                         <div class="row">
-                                            <div class="col-3 d-none d-md-block">
+                                            <div class="col-3">
                                                 <div class="pin">
                                                     <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
@@ -299,7 +311,7 @@
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="info-box middle">
                                         <div class="row">
-                                            <div class="col-3 d-none d-md-block">
+                                            <div class="col-3">
                                             <div class="pin">
                                                     <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
@@ -317,7 +329,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="info-box">
                                         <div class="row">
-                                            <div class="col-3 ">
+                                            <div class="col-3">
                                             <div class="pin">
                                                 <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
@@ -339,7 +351,7 @@
                         <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" class="hblue" target="_blank">
+                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" target="_blank" class="hblue">
                                     <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
@@ -375,12 +387,12 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row">                
+                
+                <div class="row">
                     <div class="col-xl-12">
                         <div class="util-box">
                             <div class="mapa">
-                                <h4>Respuestas</h4>
+                                <h4>Preguntas</h4>
                                 <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
                             </div>
                             <div class="preguntas">
@@ -395,20 +407,20 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 d-none d-md-block" >
+                    <div class="col-xl-5 col-lg-5 d-none d-md-block">
                         <div class="util-box" style="height:97%">
                             <div class="mapa">
                                 <h4>Regiones</h4>
                                 <p>Seleccione en el mapa la región que desee consultar</p>
                                 <div class="mapcontainer">
-                                    <div class="map">
+                                    <div class="map map_small">
                                         
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6">
+                    <div class="col-xl-7 col-lg-7">
                         <div class="util-box">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -428,30 +440,49 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="row ">
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
-                                <div class="util-box blue-bg">
-                                    <h4 class="py-2">Mujeres</h4>                                    
-                                    <div class="chart">
-                                        <canvas id="myChart2" width="630" height="280"></canvas>
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione el rango de edad que desee consultar</p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="fedad custom-select ext">
+                                        <select id="edad">
+                                            <option>FILTRO DE EDAD</option>
+                                                                                 
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
-                                <div class="util-box blue-bg">
-                                    <h4 class="py-2">Hombres</h4>                                    
-                                    <div class="chart">
-                                        <canvas id="myChart"  width="630" height="280"></canvas>
-                                    </div>
-                                </div>                                
-                            </div>
                         </div>
+                        <div class="row ">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-6">
+                                <div class="util-box blue-bg">
+                                    <h4 class="py-2">Indigena</h4>
+                                    
+                                    <div class="chart">
+                                        <canvas id="myChart"  ></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-6">
+                                <div class="util-box blue-bg">
+                                    <h4 class="py-2">Afrodescendiente</h4>                                      
+                                    <div class="chart">
+                                        <canvas id="myChart2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
                     </div>
                 </div>
-                
+
 
                 
-                
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="util-box">
@@ -459,69 +490,125 @@
                                 <div class="col-lg-6">
                                     <div class="mapa mt-2">
                                         <h4>
-                                            SELECCIONE LAS REGIONES QUE DESEE COMPARAR
+                                            TABLA COMPARATIVA
                                         </h4>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">                                    
-                                    <div class="region custom-select mt-3">
-                                        <select id="region1">
-                                            <option>REGIÓN</option>
-                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
-                                            <option value="2">REGIÓN 2</option>                                       
-                                        </select>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">  
+                                            <div class="mapa mt-4">
+                                                <P>
+                                                    Seleccione el rango de edad a comparar
+                                                </p>
+                                            </div>                                                                          
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">                                   
+                                            <div class="fedad custom-select mt-3">
+                                                <select id="fil_edad">
+                                                    <option>14 a 19 AÑOS</option>                                                                                      
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">                                   
-                                    <div class="region custom-select mt-3">
-                                        <select id="region2">
-                                            <option>REGIÓN</option>
-                                            <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
-                                            <option value="2">REGIÓN 3</option>                                       
-                                        </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mapa mt-2">
+                                        <p>
+                                            Seleccione las regiones que desee comparar
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">                                    
+                                        <div class="region custom-select mt-3">
+                                            <select id="region1">
+                                                <option>REGIÓN</option>
+                                                <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
+                                                <option value="2">REGIÓN 2</option>                                       
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">                                   
+                                        <div class="region custom-select mt-3">
+                                            <select id="region2">
+                                                <option>REGIÓN</option>
+                                                <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
+                                                <option value="2">REGIÓN 3</option>                                       
+                                            </select>
+                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>                            
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="util-box">
-                            <div class="mapa">
-                                <h4 class="text-center">
-                                    Mujeres
-                                </h4>
-                            </div>                           
-                            <div id="chartc"></div>                            
+                            <div class="py-2"></div>
                         </div>                        
-                    </div>
+                    </div>                    
                 </div>
+
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-12">
                         <div class="util-box">
-                            <div class="mapa">
-                                <h4 class="text-center">
-                                    Hombres
-                                </h4>
+                            <div class="compare respuestas full">
+
+                                <div class="fila-cajon">
+                                    <div class="cajon blue ask">
+                                        <div class="mapa mt-2">
+                                            <h4>
+                                                INDÍGENAS
+                                            </h4>                                        
+                                        </div>
+                                        <div class="pregunta" id="qIndigenas">
+                                            A la pregunta "Ha sufrido formas de violencia psicológica" los consultados respondieron: 
+                                        </div>
+                                    </div>                                    
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans">
+                                        
+                                    </div>
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans2">
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="fila-cajon">
+                                    <div class="cajon blue ask">
+                                        <div class="mapa mt-2">
+                                            <h4>
+                                                AFRODESCENDIENTES
+                                            </h4>                                        
+                                        </div>
+                                        <div class="pregunta" id="qAfro">
+                                            A la pregunta "Ha sufrido formas de violencia psicológica" los consultados respondieron: 
+                                        </div>
+                                    </div>                                    
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans">
+                                        
+                                    </div>
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans2">
+                                        
+                                    </div>
+                                </div>
+                               
+                                    
                             </div>
-                            <div id="chartb"></div>                        
                         </div>
                     </div>
                 </div>
-                <div class="py-5"></div>
+                <div class="pb-5"></div>
             </div>
         </div>
         
     </div>
-    
-    
 
-  
-  <!-- Modal -->
-    <div class="ficha">
+     <!-- Modal -->
+     <div class="ficha">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -581,29 +668,35 @@
     <script src="js/bootstrap.min.js"></script>    
     <script src="js/charts-config.js"></script>
     <script src="js/mapa/pdet.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/mainfiltros.js"></script>
     <script>
         // iniciar dashboard
         // iniciar funciones y carga de datos
         const mapGrahs = [
-            { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},
-            { title: 'MUJERES', filterKey: 'Sexo', filterValue: 'MUJER'}
+            { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
+            { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'}
         ];
-        const secondChartConfig = {
-            config: lowerChartConfig,
-            labelColumn: 'Grupo de edad',
-            graph1: { 
-                id: 'chartb',
-                filter: { title: 'HOMBRES', filterKey: 'Sexo', filterValue: 'HOMBRE'},
-            },
-            graph2: { 
-                id: 'chartc',
-                filter: { title: 'MUJERES', filterKey: 'Sexo', filterValue: 'MUJER'},
-            }
-        };
-        let dash = new Dashboard('hogaresGenerales', true, mapGrahs, secondChartConfig);
+        // const secondChartConfig = {
+        //     config: lowerChartConfig,
+        //     labelColumn: 'Grupo de edad',
+        //     graph1: { 
+        //         id: 'chartb',
+        //         filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
+        //     },
+        //     graph2: { 
+        //         id: 'chartc',
+        //         filter: { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
+        //     }
+        // };
+        let dash = new Dashboard('mujeresEtnicas', true, mapGrahs, false);
     </script>
     
-   
+    
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
   </body>
 </html>
