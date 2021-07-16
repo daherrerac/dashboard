@@ -559,6 +559,12 @@ h2 span{
     height: auto;    
     padding-bottom: 1.3em;
 }
+.blue-info.comparacion.white-bg{
+    background: #ffffff;
+    box-shadow: 1px 1px 10px #a6a6a6b6;
+    height: auto;    
+    padding-bottom: 1.3em;
+}
 .info-box .row:first-of-type{
     margin-left: 5px;
 }
@@ -673,10 +679,21 @@ h2 span{
     height: 100%;
     max-height: 830px;
 }
+.grf{
+    position: relative;
+}
 .chart{
     max-width: 630px;
     margin: 0 auto;
     height: 312px;
+}
+.chart.br{
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    width: 100%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
 }
 .respuesta{
     font-family:'SourceBold';
@@ -815,6 +832,29 @@ h2 span{
     font-size: 17px;
     width: 20%;
     padding-left: 10px;
+    position: relative;
+}
+
+.respuestas.full .cajon.ans.blue{
+    width: 25%;    
+}
+.respuestas.full .cajon.ans2.blue{
+    font-family:'SourceSemiBold';
+    text-align: center;
+    font-size: 17px;
+    width: 25%;
+    padding-left: 10px;
+    position: relative;
+}
+.respuestas.full .cajon.ans svg{
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+}
+.respuestas.full .cajon.ans2 svg{
+    position: absolute;
+    bottom: -35px;
+    left: 0;
 }
 /* Works on Chrome, Edge, and Safari */
 .respuestas::-webkit-scrollbar {
@@ -1110,6 +1150,9 @@ select option{
     display: none;    
     border: 1px solid #a6a6a6;
     text-align: center;
+}
+.apexcharts-tooltip {    
+    color: #474747;
 }
 .video video{
     width: 100%;

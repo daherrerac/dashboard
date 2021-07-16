@@ -261,7 +261,7 @@
                     <div class="col-lg-12">
                         <div class="box-title red">
                             <h1>
-                                Estudio de entorno institucional habilitante para el empoderamiento de género en Colombia 
+                                ESTUDIO DEL ENTORNO INSTITUCIONAL HABILITANTE PARA EL EMPODERAMIENTO DE GÉNERO EN COLOMBIA 
                             </h1>
                             <div class="linea"></div>
                             <h2>
@@ -288,7 +288,7 @@
                                                         Municipios que cuentan con mecanismos de víctimas o paz
                                                     </p>
                                                     <div class="numero agente1">
-                                                        21
+                                                        -
                                                     </div>
                                                 </div>                                                                    
                                             </div>
@@ -304,10 +304,10 @@
                                                 </div>
                                                 <div class="col-8">
                                                     <p>
-                                                        Municipios que cuentan con mecanismos de genero
+                                                        Municipios que cuentan con mecanismos de género
                                                     </p>
                                                     <div class="numero agente2">
-                                                        19
+                                                        -
                                                     </div>
                                                 </div>                                                                    
                                             </div>
@@ -326,7 +326,7 @@
                                                         Municipios en los que se plantea la formulación de política para los sectores LGBTI
                                                     </p>
                                                     <div class="numero agente3">
-                                                        17
+                                                        -
                                                     </div>
                                                 </div>                                                                    
                                             </div>
@@ -472,7 +472,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="mapa">
-                                        <h4 class="mt-4">COMPARACION ENTRE MUNICIPIOS</h4>
+                                        <h4 class="mt-4">COMPARACIÓN ENTRE MUNICIPIOS</h4>
                                         <p>Planeación y gestión de políticas en planes de desarrollo.</p>                                        
                                     </div>
                                 </div>

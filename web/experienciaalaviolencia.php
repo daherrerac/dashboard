@@ -20,8 +20,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">    
     <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">   
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
@@ -302,7 +301,7 @@
                                                     Violencias contra las Mujeres
                                                  </p>
                                                  <div class="numero agente1">
-                                                    48.3%
+                                                    -
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -320,7 +319,7 @@
                                                 <p>En ruta de cambio
                                                  </p>
                                                  <div class="numero agente2">
-                                                    20.8%
+                                                    -
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -338,7 +337,7 @@
                                                 <p>Tolerantes a las Violencias
                                                  </p>
                                                  <div class="numero agente3">
-                                                    30.9%
+                                                    -
                                                  </div>
                                             </div>                                                                    
                                         </div>
@@ -392,7 +391,7 @@
                     <div class="col-xl-12">
                         <div class="util-box">
                             <div class="mapa">
-                                <h4>Preguntas</h4>
+                            <h4 class=pt-2>Preguntas</h4>
                                 <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
                             </div>
                             <div class="preguntas">
@@ -407,20 +406,20 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 d-none d-md-block">
+                    <div class="col-xl-5 col-lg-5 d-none d-md-block">
                         <div class="util-box" style="height:97%">
                             <div class="mapa">
-                                <h4>Regiones</h4>
+                                <h4 class=pt-2>Regiones</h4>
                                 <p>Seleccione en el mapa la región que desee consultar</p>
                                 <div class="mapcontainer">
-                                    <div class="map">
+                                    <div class="map map_small">
                                         
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6">
+                    <div class="col-xl-7 col-lg-7">
                         <div class="util-box">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -440,21 +439,39 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="row ">
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
-                                <div class="util-box blue-bg">
-                                    <h4 class="py-2">Indigena</h4>
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione el rango de edad que desee consultar</p>
+                                    </div>
                                     
-                                    <div class="chart">
-                                        <canvas id="myChart"  ></canvas>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="fedad custom-select ext">
+                                        <select id="edad">
+                                            <option>FILTRO DE EDAD</option>
+                                                                                 
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                        </div>
+                        <div class="row ">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-6">
+                                <div class="util-box blue-bg grf">
+                                    <h4 class="py-2">MUJERES INDÍGENAS</h4>
+                                    
+                                    <div class="chart br">
+                                        <div id="chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-6">
                                 <div class="util-box blue-bg">
-                                    <h4 class="py-2">Afrodescendiente</h4>                                      
-                                    <div class="chart">
-                                        <canvas id="myChart2"></canvas>
+                                    <h4 class="py-2">MUJERES AFRODESCENDIENTES</h4>                                      
+                                    <div class="chart br">
+                                        <div id="chart2"></div>
                                     </div>
                                 </div>
                             </div>
@@ -463,55 +480,114 @@
                 </div>
 
 
-                
-
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="util-box">
+                    <div class="col-12">
+                        <div class="blue-info comparacion white-bg">
+                            <div class="container-fluid px-3">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="mapa mt-2">
-                                        <h4>
-                                            SELECCIONE LAS REGIONES QUE DESEE COMPARAR
+                                <div class="col-lg-5">
+                                    <div class="mapa">
+                                        <h4 class=pt-4>
+                                            TABLA COMPARATIVA
                                         </h4>
+                                        <p>Seleccione las regiones que desee comparar</p>                                        
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">                                    
-                                    <div class="region custom-select mt-3">
-                                        <select id="region1">
-                                            <option>REGIÓN</option>
-                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
-                                            <option value="2">REGIÓN 2</option>                                       
-                                        </select>
+                                <div class="col-lg-7">                                    
+                                    <div class="row">
+                                        <div class="col-lg-5 offset-lg-1">
+                                        <div class="mapa">                                            
+                                            <p class="pt-3">Seleccione el rango de edad a comparar</p>                                        
+                                        </div>
+                                        
+                                        </div>
+                                        <div class="col-lg-5 offset-lg-1">
+                                            <div class="fedad custom-select mt-3">
+                                                <select id="fil_edad">
+                                                    <option>14 a 19 AÑOS</option>                                                                                      
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-5 offset-lg-1">
+                                            <div class="region custom-select mt-3">
+                                                <select id="region1">
+                                                    <option>REGIÓN</option>
+                                                    <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
+                                                    <option value="2">REGIÓN 2</option>                                       
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 offset-lg-1">
+                                            <div class="region custom-select mt-3">
+                                                <select id="region2">
+                                                    <option>REGIÓN</option>
+                                                    <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
+                                                    <option value="2">REGIÓN 3</option>                                       
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6">                                   
-                                    <div class="region custom-select mt-3">
-                                        <select id="region2">
-                                            <option>REGIÓN</option>
-                                            <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
-                                            <option value="2">REGIÓN 3</option>                                       
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>                            
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+
+                
 
                 <div class="row">
-                    <div class="col-lg-12">
-                    <div class="util-box">
-                        <div id="chartb"></div>
-                        <div id="chartbalt" style="display: none;"></div>
-                    </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-12">
                         <div class="util-box">
-                            <div id="chartc"></div>
-                            <div id="chartcalt" style="display: none;"></div>
+                            <div class="compare respuestas full">
+
+                                <div class="fila-cajon">
+                                    <div class="cajon blue ask">
+                                        <div class="mapa mt-2">
+                                            <h4>
+                                                MUJERES INDÍGENAS
+                                            </h4>                                        
+                                        </div>
+                                        <div class="pregunta" id="qIndigenas">
+                                            A la pregunta "Ha sufrido formas de violencia psicológica" los consultados respondieron: 
+                                        </div>
+                                    </div>                                    
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans">
+                                        <div id="indg"></div>
+                                    </div>
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans2">
+                                        <div id="indgB"></div>
+                                    </div>
+                                </div>
+
+                                <div class="fila-cajon">
+                                    <div class="cajon blue ask">
+                                        <div class="mapa mt-2">
+                                            <h4>
+                                                MUJERES AFRODESCENDIENTES
+                                            </h4>                                        
+                                        </div>
+                                        <div class="pregunta" id="qAfro">
+                                            A la pregunta "Ha sufrido formas de violencia psicológica" los consultados respondieron: 
+                                        </div>
+                                    </div>                                    
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans">
+                                        <div id="afro"></div>
+                                    </div>
+                                    <div class="cajon white"></div>
+                                    <div class="cajon blue ans2">
+                                        <div id="afroB"></div>
+                                    </div>
+                                </div>
+                               
+                                    
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -580,9 +656,9 @@
     
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>    
-    <script src="js/charts-config.js"></script>
+    <script src="js/miniGconfig.js"></script>
     <script src="js/mapa/pdet.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/mainfiltros.js"></script>
     <script>
         // iniciar dashboard
         // iniciar funciones y carga de datos
@@ -591,26 +667,38 @@
             { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'}
         ];
         const secondChartConfig = {
-            config: lowerChartConfig,
-            labelColumn: 'Grupo de edad',
+            config: miniCharts,            
             graph1: { 
-                id: 'chartb',
-                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
+                id: 'chart',
+                filter: { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},                
             },
             graph2: { 
-                id: 'chartc',
-                filter: { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
+                id: 'chart2',
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
+            },
+            graph3: { 
+                id: 'indg',
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
+            },
+            graph4: { 
+                id: 'afro',
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
+            },
+            graph5: { 
+                id: 'indgB',
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
+            },
+            graph6: { 
+                id: 'afroB',
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
             }
         };
         let dash = new Dashboard('mujeresEtnicas', true, mapGrahs, secondChartConfig);
+        
+        
+        
     </script>
     
-    
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
-    -->
+        
   </body>
 </html>

@@ -17,23 +17,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">      
+    <link rel="stylesheet" href="css/style.css">    
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">   
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>   
     <script src="js/jquery.mapael.min.js"></script>
     <script src="js/papaparse.min.js"></script>
-    <script src="js/mapahandler-red.js"></script>    
 
     
+    <script src="js/mapahandler.js"></script>    
+    
 
-    <title>Entorno Paz</title>
+    
+    <title>Experiencia frente a la violencia</title>
     <style>
         .mapael .mapTooltip {
-            color:#C2113B;
+            font-family:'SourceBold';
+            position: absolute;
+            background-color: #ffffff;            
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            max-width: 200px;
+            display: none;
+            color: #022869;
+            border: 1px solid #a6a6a6;
+            text-align: center;
         }
     </style>
   </head>
@@ -51,42 +64,43 @@
                             <h2>
                                 La Tolerancia Social e Institucional a las Violencias contra las Mujeres
                             </h2>
+
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="flush-headingOne">                                    
-                                    <div class="menu-selector">
+                                    <div class="menu-selector activo">
                                         <a href="toleranciasocial.php">
-                                            <img src="img/icono-03.svg" alt="">
+                                            <img src="img/icono-02.svg" alt="">
                                             Encuesta Tolerancia Social
                                         </a>
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
                                         </button>
                                     </div>
                                   </h2>
-                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                  <div id="flush-collapseOne" class="accordion-collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-											  
-                                        <div class="box-message">
+                                        
+                                        <div class="box-message activo" >
                                             <ul>
                                                 <li>
-                                                    <a href="experienciaalaviolencia.php" class="activo">
+                                                    <a href="experienciaalaviolencia.php" style="font-weight: 600; text-shadow: 2px 2px 2px black;color:#ffffff">
                                                         Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                                     </a>
                                                 </li>
-                                            </ul>                                            
+                                            </ul>
+                                            
                                         </div>
                                     </div>
                                   </div>
                                 </div>                                                                
                             </div>
-                                                                                    
                             <div class="box-buttons">
-                                <a href="toleranciainstitucional.php" class="hblue">                                    
-                                    <img src="img/icono-03.svg" alt="" >                                                                                
-                                    Encuesta Tolerancia Institucional                                                                                                                
+                                <a href="toleranciainstitucional.php" class="hblue">
+                                    <img src="img/icono-03.svg" alt="">
+                                    Encuesta Tolerancia Institucional
                                 </a>
                                 <a href="#exampleModal" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <img src="img/info-blue.png" alt="" >    
+                                    <img src="img/info-blue.png" alt="" >  
                                     Ficha técnica
                                 </a>
                             </div>
@@ -96,8 +110,8 @@
                                 Retos del entorno institucional para el empoderamiento de género en Colombia
                             </h2>
                             <div class="box-buttons">
-                                <a href="entornopaz.php" class="hred activo-red">
-                                    <img src="img/icono-05-w.png" alt="">    
+                                <a href="entornopaz.php" class="hred">
+                                    <img src="img/icono-05.svg" alt="">    
                                     Entorno Institucional Paz
                                 </a>
                                 <a href="entornomujeres.php" class="hred">
@@ -167,9 +181,9 @@
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">                                    
-                                <div class="menu-selector">
+                                <div class="menu-selector activo">
                                     <a href="toleranciasocial.php">
-                                        <img src="img/icono-03.svg" alt="">
+                                        <img src="img/icono-02.svg" alt="">
                                         Encuesta Tolerancia Social 
                                     </a>
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">                                                
@@ -181,7 +195,7 @@
                                     <div class="box-message">
                                         <ul>
                                             <li>
-                                                <a href="toleranciainstitucional.php" class="activo">
+                                                <a href="experienciaalaviolencia.php" class="activo">
                                                     Experiencia frente a la violencia y la respuesta institucional de las mujeres indígenas y afrodescendientes
                                                 </a>
                                             </li>
@@ -239,8 +253,8 @@
                         </div>
                     </div>
                     <div class="cerrar">
-                            <?php
-                                if(isset($_SESSION['email'])){    
+                        <?php
+                            if(isset($_SESSION['email'])){    
                                 echo '<img src="img/user.png" alt="">
                                 
                                 <p>
@@ -259,95 +273,91 @@
             <div class="columna2">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="box-title red">
+                        <div class="box-title">
                             <h1>
-                                ESTUDIO DEL ENTORNO INSTITUCIONAL HABILITANTE PARA EL EMPODERAMIENTO DE GÉNERO EN COLOMBIA 
+                                ENCUESTA DE TOLERANCIA SOCIAL E INSTITUCIONAL A LAS VIOLENCIAS CONTRA LAS MUJERES
                             </h1>
                             <div class="linea"></div>
                             <h2>
-                                En el segundo semestre de 2020, USAID/Colombia realizó el estudio Retos del Entorno 
-                                Institucional para el Empoderamiento de Género en Colombia en 65 municipios PDET y tres ciudades capitales: Cali, Quibdó y Cartagena.
+                                En el segundo semestre de 2020, USAID/Colombia realizó la medición de la Tolerancia Social e Institucional a las Violencias contra las Mujeres 
+                                en 14 regiones PDET y 2 ciudades capitales: Cali y Quibdó
                             </h2>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <div class="row">
-                    <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
-                        <div class="blue-info red-bg">
-                            <div class="container-fluid px-2">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-12">
-                                        <div class="info-box">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <div class="pin">
-                                                        <img src="img/manito-01.svg" alt="" class=img-fluid>
-                                                    </div>
+                <div class="col-xxl-10 col-xl-9 col-md-12 d-none d-md-block">
+                        <div class="blue-info">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-4 col-sm-12">
+                                    <div class="info-box init">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <div class="pin">
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
-                                                <div class="col-8">
-                                                    <p>
-                                                        Municipios que cuentan con mecanismos de víctimas o paz
-                                                    </p>
-                                                    <div class="numero agente1">
-                                                        -
-                                                    </div>
-                                                </div>                                                                    
                                             </div>
+                                            <div class="col-9">
+                                                <p>Agentes de cambio frente a las 
+                                                    Violencias contra las Mujeres
+                                                 </p>
+                                                 <div class="numero agente1">
+                                                    -
+                                                 </div>
+                                            </div>                                                                    
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-12">
-                                        <div class="info-box middle-red">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <div class="pin">
-                                                        <img src="img/manito-01.svg" alt="" class=img-fluid>
-                                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="info-box middle">
+                                        <div class="row">
+                                            <div class="col-3">
+                                            <div class="pin">
+                                                    <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
-                                                <div class="col-8">
-                                                    <p>
-                                                        Municipios que cuentan con mecanismos de género
-                                                    </p>
-                                                    <div class="numero agente2">
-                                                        -
-                                                    </div>
-                                                </div>                                                                    
                                             </div>
+                                            <div class="col-9">
+                                                <p>En ruta de cambio
+                                                 </p>
+                                                 <div class="numero agente2">
+                                                    -
+                                                 </div>
+                                            </div>                                                                    
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-4 col-sm-12">
-                                        <div class="info-box finish">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <div class="pin">
-                                                        <img src="img/manito-01.svg" alt="" class=img-fluid>
-                                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="info-box">
+                                        <div class="row">
+                                            <div class="col-3">
+                                            <div class="pin">
+                                                <img src="img/manito-01.svg" alt="" class=img-fluid>
                                                 </div>
-                                                <div class="col-8 last">
-                                                    <p>
-                                                        Municipios en los que se plantea la formulación de política para los sectores LGBTI
-                                                    </p>
-                                                    <div class="numero agente3">
-                                                        -
-                                                    </div>
-                                                </div>                                                                    
                                             </div>
+                                            <div class="col-9 last">
+                                                <p>Tolerantes a las Violencias
+                                                 </p>
+                                                 <div class="numero agente3">
+                                                    -
+                                                 </div>
+                                            </div>                                                                    
                                         </div>
                                     </div>
-                                </div> 
-                            </div>                                                      
+                                </div>
+                            </div>                                                       
                         </div>
                     </div>
                     <div class="col-xxl-2 col-xl-3 col-md-12">
-                        <div class="adicional red-bg">
+                        <div class="adicional">
                             <p>MATERIAL ADICIONAL</p>
                             <div class="box-buttons">
-                                <a href="fichas/Retos del entorno institucional para el empoderamiento de genero en Colombia.pdf" class="hred" target="_blank">
-                                    <img src="img/down-red.png" alt="">
+                                <a href="fichas/La Tolerancia Social e Institucional a las Violencias contra las Mujeres.pdf" target="_blank" class="hblue">
+                                    <img src="img/down.png" alt="">
                                     <span>|</span>
                                     VER INFOGRAFÍA
                                 </a>
-                                <a href="#exampleModal3" class="hred" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                                    <img src="img/play-red.png" alt="">
+                                <a href="#exampleModal3" class="hblue" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                    <img src="img/play.png" alt="">
                                     <span>|</span>
                                     VER VIDEO
                                 </a>                        
@@ -355,167 +365,164 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-lg-5 d-none d-md-block">
-                        <div class="util-box adp-hg">
-                            <div class="mapa">
-                                <h4 class="red">Municipios donde se llevó a cabo el estudio</h4>
-                                <p>Seleccione en el mapa el municipio que se desee consultar</p>
-                                <div class="mapcontainer red">
-                                    <div class="map red">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
+                    <div class="col-xl-12">
                         <div class="util-box">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mapa">
-                                        <p class="mt-4">Seleccione región y municipio</p>
-                                    </div>                                    
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="region custom-select extr">
-                                                <select id="regionA">
-                                                    <option>REGIÓN</option>
-                                                    <option value="1">Chocó</option>                                             
-                                                </select>
-                                            </div> 
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="municipio custom-select extr">
-                                                <select id="municipioA">
-                                                    <option>MUNICIPIO</option>
-                                                    <option value="1">Anorí</option>                                             
-                                                </select>
-                                            </div> 
-                                        </div>
+                                        <p class="mt-4">Seleccione el filtro de la pregunta</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="util-box" style="max-height: 450px;height: 100%;">                            
-                            <div class="mapa">
-                                <h4 class="red">
-                                    PANORAMA MUNICIPAL
-                                </h4>
-                                <p>
-                                    Planeación y gestión de políticas en planes de desarrollo.
-                                </p>                                
-                            </div>
-                            <div class="respuestas">
-                                                                    
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        Cargando...
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        
-                                    </div>
-                                </div>   
-                                
-                            </div>                                                       
-                        </div>                        
-                    </div>
-                </div>
-                <div class="py-2"></div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="blue-info red-bg comparacion">
-                            <div class="container-fluid px-3">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="mapa">
-                                        <h4 class="mt-4">COMPARACIÓN ENTRE MUNICIPIOS</h4>
-                                        <p>Planeación y gestión de políticas en planes de desarrollo.</p>                                        
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="mapa">                                        
-                                        <p class="mt-2 mb-0 text-start" style="margin-left:2.1rem">Seleccione dos municipios para hacer un comparativo</p>                                      
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="region custom-select extr ms-4">
-                                                <select id="region1">
-                                                    <option>REGIÓN</option>
-                                                    <option value="1">Chocó</option>                                             
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="region custom-select extr me-5">
-                                                <select id="region2">
-                                                    <option>REGIÓN</option>
-                                                    <option value="1">Putumayo</option>                                             
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="municipio custom-select extr ms-4">
-                                                <select id="municipio1">
-                                                    <option>MUNICIPIO</option>
-                                                    <option value="1">Anorí</option>                                             
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="municipio custom-select extr me-5">
-                                                <select id="municipio2">
-                                                    <option>MUNICIPIO</option>
-                                                    <option value="1">Mesetas</option>                                             
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="util-box">
-                            <div class="compare respuestas full">
-
-                                <div class="fila-cajon">
-                                    <div class="cajon ask">
-                                        Cargando respuestas...
-                                    </div>                                    
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans">
-                                        
-                                    </div>
-                                    <div class="cajon white"></div>
-                                    <div class="cajon ans2">
-                                        
-                                    </div>
-                                </div>
-
-                                
                                     
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="preg custom-select ext">
+                                        <select id="filtro">
+                                            <option>GRUPO DE PREGUNTA</option>                                                                                 
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="py-5"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="util-box">
+                            <div class="mapa">
+                                <h4>Preguntas</h4>
+                                <p>Seleccione una pregunta del Estudio de tolerancia Social e Institucional a las Violencias Contra las Mujeres para ver los resultados</p>
+                            </div>
+                            <div class="preguntas">
+                                <ul>
+                                    <li>
+                                        <a href="#" >Cargando preguntas...</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 d-none d-md-block">
+                        <div class="util-box" style="height:97%">
+                            <div class="mapa">
+                                <h4>Regiones</h4>
+                                <p>Seleccione en el mapa la región que desee consultar</p>
+                                <div class="mapcontainer">
+                                    <div class="map">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mapa">
+                                        <p class="mt-4">Seleccione la región que desee consultar</p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="region custom-select ext">
+                                        <select id="regionA">
+                                            <option>REGIÓN</option>
+                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
+                                            <option value="2">REGIÓN 2</option>                                       
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row ">
+                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                <div class="util-box blue-bg">
+                                    <h4 class="py-2">Indigena</h4>
+                                    
+                                    <div class="chart">
+                                        <canvas id="myChart"  ></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-xl-12 col-lg-12">
+                                <div class="util-box blue-bg">
+                                    <h4 class="py-2">Afrodescendiente</h4>                                      
+                                    <div class="chart">
+                                        <canvas id="myChart2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                </div>
+
+
+                
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="util-box">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mapa mt-2">
+                                        <h4>
+                                            SELECCIONE LAS REGIONES QUE DESEE COMPARAR
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">                                    
+                                    <div class="region custom-select mt-3">
+                                        <select id="region1">
+                                            <option>REGIÓN</option>
+                                            <option value="1">BAJO CAUCA Y NORDESTE ANTIOQUENO</option> 
+                                            <option value="2">REGIÓN 2</option>                                       
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">                                   
+                                    <div class="region custom-select mt-3">
+                                        <select id="region2">
+                                            <option>REGIÓN</option>
+                                            <option value="1">CUENCA DEL CAGUAN Y PIEDEMONTE CAQUETENO</option> 
+                                            <option value="2">REGIÓN 3</option>                                       
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                    <div class="util-box">
+                        <div id="chartb"></div>
+                        <div id="chartbalt" style="display: none;"></div>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="util-box">
+                            <div id="chartc"></div>
+                            <div id="chartcalt" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-5"></div>
             </div>
         </div>
+        
     </div>
 
-    <!-- Modal -->
-    <div class="ficha">
+     <!-- Modal -->
+     <div class="ficha">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -567,23 +574,37 @@
             </div>
         </div>
     </div>
-    
-    
-    
-    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/mapa/municipios.js"></script>
-    <script src="js/mainrojos.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/charts-config.js"></script>
+    <script src="js/mapa/pdet.js"></script>
+    <script src="js/main.js"></script>
     <script>
-    // iniciar dashboard
+        // iniciar dashboard
         // iniciar funciones y carga de datos
-        
-        let dash = new Dashboard('entornoInstitucionalPaz');
+        const mapGrahs = [
+            { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
+            { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'}
+        ];
+        const secondChartConfig = {
+            config: lowerChartConfig,
+            labelColumn: 'Grupo de edad',
+            graph1: { 
+                id: 'chartb',
+                filter: { title: 'Afrodescendiente', filterKey: 'Pertenencia étnica', filterValue: 'Afrodescendiente'},
+            },
+            graph2: { 
+                id: 'chartc',
+                filter: { title: 'Indígena', filterKey: 'Pertenencia étnica', filterValue: 'Indígena'},
+            }
+        };
+        let dash = new Dashboard('mujeresEtnicas', true, mapGrahs, secondChartConfig);
     </script>
+    
     
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

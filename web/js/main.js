@@ -530,6 +530,12 @@ class Dashboard {
     //config2.xaxis.categories = menGraphDataSeries.labels;
 
     //console.log("graphData1", graphData1);
+    // if(menGraphDataSeries.data[0] == '' ){
+    //   document.getElementById("chartb").style.display = "none";
+    // }else{
+    //   document.getElementById(graphId).style.display = "block";
+    //   ApexCharts.exec(graphId, 'updateSeries', series, true);
+    // }
     ApexCharts.exec(graphId, 'updateSeries', series, true);
   }
 
